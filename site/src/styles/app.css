@@ -1,0 +1,106 @@
+/*
+ * Small additions that replace behaviour the WordPress plugins used to supply
+ * with inline styles injected by JavaScript. Nothing here changes the design.
+ */
+
+/* Search overlay — Rishi's script used to set `display` inline. */
+.search-toggle-form.cover-modal.is-open {
+  display: block;
+}
+
+/* Elementor popup #3288, rebuilt as a plain dialog. */
+.tcs-popup[hidden] {
+  display: none;
+}
+
+.tcs-popup {
+  position: fixed;
+  inset: 0;
+  z-index: 100000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.tcs-popup__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.tcs-popup__panel {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: #fff;
+  border-radius: 5px;
+}
+
+.tcs-popup__close {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  z-index: 2;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  font-size: 26px;
+  line-height: 1;
+  color: #6d7882;
+  cursor: pointer;
+  background: none;
+  border: 0;
+}
+
+.tcs-popup__close:hover {
+  color: #000;
+}
+
+body.tcs-popup-open {
+  overflow: hidden;
+}
+
+/* Form result messaging (previously Elementor's ajax response area). */
+.tcs-form-status:empty {
+  display: none;
+}
+
+.tcs-form-status {
+  width: 100%;
+  margin-top: 12px;
+  padding: 10px 14px;
+  font-size: 14px;
+  line-height: 1.5;
+  border-radius: 3px;
+}
+
+.tcs-form-status[data-kind='ok'] {
+  color: #0c5460;
+  background: #d4edda;
+  border: 1px solid #c3e6cb;
+}
+
+.tcs-form-status[data-kind='error'] {
+  color: #721c24;
+  background: #f8d7da;
+  border: 1px solid #f5c6cb;
+}
+
+/* The WhatsApp widget fades in a moment after load, as the plugin did. */
+.joinchat {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.joinchat.joinchat--show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.joinchat__chatbox[hidden] {
+  display: none;
+}

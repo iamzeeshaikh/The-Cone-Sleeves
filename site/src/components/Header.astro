@@ -1,0 +1,8 @@
+---
+// Captured per page: WordPress renders the site title as <h1> only on the front
+// page and marks the active menu entry, so each page keeps its own copy.
+const parts = import.meta.glob('../chrome/header/*.html', { query: '?raw', import: 'default', eager: true });
+const { stem } = Astro.props as { stem: string };
+const html = parts[`../chrome/header/${stem}.html`];
+---
+<Fragment set:html={html} />

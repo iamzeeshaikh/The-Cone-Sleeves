@@ -1,0 +1,4095 @@
+{
+ "/": {
+  "url": "/",
+  "title": "Custom Ice Cream & Waffle Cone Sleeves, Wholesale | The Cone Sleeves",
+  "description": "Get a 20% discount on custom printed ice cream cone sleeves. We offer custom waffle cone sleeves at wholesale prices. Free design & shipping!",
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.theconesleeves.com/",
+  "og": {
+   "locale": "en_US",
+   "type": "website",
+   "title": "Home",
+   "description": "Get a 20% discount on custom printed ice cream cone sleeves. We offer custom waffle cone sleeves at wholesale prices. Free design & shipping!",
+   "url": "https://www.theconesleeves.com/",
+   "site_name": "The Cone Sleeves",
+   "image": "/media/2023/04/3-4-600x600-1.jpg",
+   "image_width": "600",
+   "image_height": "600",
+   "image_type": "image/jpeg"
+  },
+  "twitter": {
+   "card": "summary_large_image",
+   "site": null
+  },
+  "schema": [
+   [
+    {
+     "@context": "https://schema.org/",
+     "@type": "Organization",
+     "@id": "https://www.theconesleeves.com#Organization",
+     "name": "The Cone Sleeves",
+     "url": "https://www.theconesleeves.com",
+     "sameAs": [],
+     "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.theconesleeves.com/wp-content/uploads/2023/04/TCS-Logos-1.png",
+      "width": "235",
+      "height": "45"
+     }
+    }
+   ]
+  ]
+ },
+ "/about/": {
+  "url": "/about/",
+  "title": "About - The Cone Sleeves",
+  "description": null,
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.theconesleeves.com/about/",
+  "og": {
+   "locale": "en_US",
+   "type": "article",
+   "title": "About",
+   "description": "Our story and mission behind what we do. Our customer loves us. We have collection of best custom cone sleeves that you love!! The Cone Sleeves is a leading manufacturer [\u2026]",
+   "url": "https://www.theconesleeves.com/about/",
+   "site_name": "The Cone Sleeves",
+   "image": "/media/2023/03/waffle-cone-paper-sleeves-1024x1024-1.jpg",
+   "image_width": null,
+   "image_height": null,
+   "image_type": null
+  },
+  "twitter": {
+   "card": "summary_large_image",
+   "site": null
+  },
+  "schema": []
+ },
+ "/blog/": {
+  "url": "/blog/",
+  "title": "Blog - The Cone Sleeves",
+  "description": null,
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.theconesleeves.com/blog/",
+  "og": {
+   "locale": "en_US",
+   "type": "article",
+   "title": "Blog",
+   "description": null,
+   "url": "https://www.theconesleeves.com/blog/",
+   "site_name": "The Cone Sleeves",
+   "image": null,
+   "image_width": null,
+   "image_height": null,
+   "image_type": null
+  },
+  "twitter": {
+   "card": "summary_large_image",
+   "site": null
+  },
+  "schema": [
+   [
+    {
+     "@context": "https://schema.org/",
+     "@type": "Organization",
+     "@id": "https://www.theconesleeves.com#Organization",
+     "name": "The Cone Sleeves",
+     "url": "https://www.theconesleeves.com",
+     "sameAs": [],
+     "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.theconesleeves.com/wp-content/uploads/2023/04/TCS-Logos-1.png",
+      "width": "235",
+      "height": "45"
+     }
+    }
+   ]
+  ]
+ },
+ "/contact/": {
+  "url": "/contact/",
+  "title": "Contact - The Cone Sleeves",
+  "description": null,
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.theconesleeves.com/contact/",
+  "og": {
+   "locale": "en_US",
+   "type": "article",
+   "title": "Contact",
+   "description": "Lets get in touch. Drop us message We will connect you within an hour.Email Us support@conesleeves.com Address Da 408, San Jose, CA 95128, United States Contact +1-929-2141-874",
+   "url": "https://www.theconesleeves.com/contact/",
+   "site_name": "The Cone Sleeves",
+   "image": null,
+   "image_width": null,
+   "image_height": null,
+   "image_type": null
+  },
+  "twitter": {
+   "card": "summary_large_image",
+   "site": null
+  },
+  "schema": []
+ },
+ "/get-a-free-quote/": {
+  "url": "/get-a-free-quote/",
+  "title": "The Cone Sleeves \u2014 Quick & Accurate Estimate",
+  "description": "Get your free, no-obligation quote from The Cone Sleeves today. Fast turnaround, precise cost estimates, and personalized support \u2014 request now.",
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.theconesleeves.com/get-a-free-quote/",
+  "og": {
+   "locale": "en_US",
+   "type": "article",
+   "title": "Get a Free Quote",
+   "description": "Get your free, no-obligation quote from The Cone Sleeves today. Fast turnaround, precise cost estimates, and personalized support \u2014 request now.",
+   "url": "https://www.theconesleeves.com/get-a-free-quote/",
+   "site_name": "The Cone Sleeves",
+   "image": null,
+   "image_width": null,
+   "image_height": null,
+   "image_type": null
+  },
+  "twitter": {
+   "card": "summary_large_image",
+   "site": null
+  },
+  "schema": [
+   {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "The Cone Sleeves \u2014 Quick &amp; Accurate Estimate",
+    "serviceType": "Local SEO",
+    "description": "Get your free, no-obligation quote from The Cone Sleeves today. Fast turnaround, precise cost estimates, and personalized support \u2014 request now.",
+    "url": "https://www.theconesleeves.com/get-a-free-quote/",
+    "areaServed": {
+     "@type": "City",
+     "name": "The Cone Sleeves",
+     "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "The Cone",
+      "addressRegion": "Sleeves",
+      "addressCountry": "US"
+     }
+    },
+    "provider": {
+     "@type": "LocalBusiness",
+     "@id": "https://www.theconesleeves.com/#localbusiness",
+     "name": "The Cone Sleeves",
+     "url": "https://www.theconesleeves.com/",
+     "image": "https://www.theconesleeves.com/wp-content/uploads/2023/04/TCS-Logos-1.png",
+     "telephone": "+1-929-2141-874",
+     "priceRange": "$",
+     "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Da 408",
+      "addressLocality": "San Jose",
+      "addressRegion": "CA",
+      "postalCode": "95128",
+      "addressCountry": "US"
+     },
+     "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": 4.8,
+      "reviewCount": 250,
+      "bestRating": 5,
+      "worstRating": 1
+     }
+    }
+   }
+  ]
+ },
+ "/thank-you/": {
+  "url": "/thank-you/",
+  "title": "Thank You - The Cone Sleeves",
+  "description": null,
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.theconesleeves.com/thank-you/",
+  "og": {
+   "locale": "en_US",
+   "type": "article",
+   "title": "Thank You",
+   "description": "Thanks! Your request was successfully submitted, we will get back to you within 24 hours.",
+   "url": "https://www.theconesleeves.com/thank-you/",
+   "site_name": "The Cone Sleeves",
+   "image": null,
+   "image_width": null,
+   "image_height": null,
+   "image_type": null
+  },
+  "twitter": {
+   "card": "summary_large_image",
+   "site": null
+  },
+  "schema": []
+ },
+ "/privacy-policy/": {
+  "url": "/privacy-policy/",
+  "title": "Privacy Policy - The Cone Sleeves",
+  "description": null,
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.theconesleeves.com/privacy-policy/",
+  "og": {
+   "locale": "en_US",
+   "type": "article",
+   "title": "Privacy Policy",
+   "description": "This Privacy Policy describes how The Cone Sleeves (\u201cwe,\u201d \u201cus,\u201d or \u201cour\u201d) collects, uses, and discloses information that we obtain about visitors to our website at\u00a0https://theconesleeves.com/\u00a0(the \u201cSite\u201d) who are customers [\u2026]",
+   "url": "https://www.theconesleeves.com/privacy-policy/",
+   "site_name": "The Cone Sleeves",
+   "image": null,
+   "image_width": null,
+   "image_height": null,
+   "image_type": null
+  },
+  "twitter": {
+   "card": "summary_large_image",
+   "site": null
+  },
+  "schema": []
+ },
+ "/terms-conditions/": {
+  "url": "/terms-conditions/",
+  "title": "Terms & Conditions - The Cone Sleeves",
+  "description": null,
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.theconesleeves.com/terms-conditions/",
+  "og": {
+   "locale": "en_US",
+   "type": "article",
+   "title": "Terms & Conditions",
+   "description": "Welcome to The Cone Sleeves! We are delighted to have you as our valued customer. Please read these Terms and Conditions carefully before using our website, as they govern your [\u2026]",
+   "url": "https://www.theconesleeves.com/terms-conditions/",
+   "site_name": "The Cone Sleeves",
+   "image": null,
+   "image_width": null,
+   "image_height": null,
+   "image_type": null
+  },
+  "twitter": {
+   "card": "summary_large_image",
+   "site": null
+  },
+  "schema": []
+ },
+ "/waffle-cone-sleeves/": {
+  "url": "/waffle-cone-sleeves/",
+  "title": "Premium Custom Waffle Cone Sleeves \u2013 Bulk & Branded",
+  "description": "Keep ice cream shops mess-free! Food-safe, custom printed waffle cone sleeves that showcase your brand. Bulk pricing & fast quote.",
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.theconesleeves.com/waffle-cone-sleeves/",
+  "og": {
+   "locale": "en_US",
+   "type": "article",
+   "title": "Waffle Cone Sleeves",
+   "description": "Keep ice cream shops mess-free! Food-safe, custom printed waffle cone sleeves that showcase your brand. Bulk pricing & fast quote.",
+   "url": "https://www.theconesleeves.com/waffle-cone-sleeves/",
+   "site_name": "The Cone Sleeves",
+   "image": null,
+   "image_width": null,
+   "image_height": null,
+   "image_type": null
+  },
+  "twitter": {
+   "card": "summary_large_image",
+   "site": null
+  },
+  "schema": [
+   {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Premium Custom Waffle Cone Sleeves \u2013 Bulk &amp; Branded",
+    "serviceType": "Local SEO",
+    "description": "Keep ice cream shops mess-free! Food-safe, custom printed waffle cone sleeves that showcase your brand. Bulk pricing &amp; fast quote.",
+    "url": "https://www.theconesleeves.com/waffle-cone-sleeves/",
+    "areaServed": {
+     "@type": "City",
+     "name": "The Cone Sleeves",
+     "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "The Cone",
+      "addressRegion": "Sleeves",
+      "addressCountry": "US"
+     }
+    },
+    "provider": {
+     "@type": "LocalBusiness",
+     "@id": "https://www.theconesleeves.com/#localbusiness",
+     "name": "The Cone Sleeves",
+     "url": "https://www.theconesleeves.com/",
+     "image": "https://www.theconesleeves.com/wp-content/uploads/2023/04/Our-Sleeves-Are-Inspired-by-Eco-Friendly-Material.png",
+     "telephone": "+1-929-2141-874",
+     "priceRange": "$",
+     "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Da 408",
+      "addressLocality": "San Jose",
+      "addressRegion": "CA",
+      "postalCode": "95128",
+      "addressCountry": "US"
+     },
+     "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": 4.8,
+      "reviewCount": 260,
+      "bestRating": 5,
+      "worstRating": 1
+     }
+    }
+   },
+   {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": "Premium Custom Waffle Cone Sleeves \u2013 Bulk &amp; Branded",
+    "image": "https://www.theconesleeves.com/wp-content/uploads/2023/04/Our-Sleeves-Are-Inspired-by-Eco-Friendly-Material.png",
+    "description": "Keep ice cream shops mess-free! Food-safe, custom printed waffle cone sleeves that showcase your brand. Bulk pricing &amp; fast quote.",
+    "sku": "TCS00018",
+    "mpn": "TCS00018",
+    "brand": {
+     "@type": "Brand",
+     "name": "The Cone Sleeves"
+    },
+    "offers": {
+     "@type": "Offer",
+     "url": "https://www.theconesleeves.com/waffle-cone-sleeves/",
+     "priceCurrency": "USD",
+     "price": "0.50",
+     "priceValidUntil": "2027-12-31",
+     "availability": "https://schema.org/InStock",
+     "itemCondition": "https://schema.org/NewCondition"
+    },
+    "aggregateRating": {
+     "@type": "AggregateRating",
+     "ratingValue": "5",
+     "bestRating": "5",
+     "worstRating": "1",
+     "reviewCount": "209"
+    },
+    "review": {
+     "@type": "Review",
+     "name": "Excellent boxes and quick delivery",
+     "datePublished": "2025-08-12",
+     "author": {
+      "@type": "Person",
+      "name": "Becky Rivett"
+     },
+     "reviewBody": "Great quality and fast shipping. Printing was exactly as requested.",
+     "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "5",
+      "bestRating": "5",
+      "worstRating": "1"
+     },
+     "publisher": {
+      "@type": "Organization",
+      "name": "The Cone Sleeves"
+     }
+    }
+   }
+  ]
+ },
+ "/ice-cream-cone-sleeves/": {
+  "url": "/ice-cream-cone-sleeves/",
+  "title": "Custom Ice Cream Cone Sleeves | Wholesale Designs",
+  "description": "Protect hands and promote your brand with food-safe, customizable ice cream cone sleeves. Recyclable options, bulk pricing, fast turnaround.",
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.theconesleeves.com/ice-cream-cone-sleeves/",
+  "og": {
+   "locale": "en_US",
+   "type": "article",
+   "title": "Ice Cream Cone Sleeves",
+   "description": "Protect hands and promote your brand with food-safe, customizable ice cream cone sleeves. Recyclable options, bulk pricing, fast turnaround.",
+   "url": "https://www.theconesleeves.com/ice-cream-cone-sleeves/",
+   "site_name": "The Cone Sleeves",
+   "image": "/media/2025/08/waffle-cone-sleeves-png-transparent.png",
+   "image_width": null,
+   "image_height": null,
+   "image_type": null
+  },
+  "twitter": {
+   "card": "summary_large_image",
+   "site": null
+  },
+  "schema": [
+   {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Custom Ice Cream Cone Sleeves | Wholesale Designs",
+    "serviceType": "Local SEO",
+    "description": "Protect hands and promote your brand with food-safe, customizable ice cream cone sleeves. Recyclable options, bulk pricing, fast turnaround.",
+    "url": "https://www.theconesleeves.com/ice-cream-cone-sleeves/",
+    "areaServed": {
+     "@type": "City",
+     "name": "The Cone Sleeves",
+     "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "The Cone",
+      "addressRegion": "Sleeves",
+      "addressCountry": "US"
+     }
+    },
+    "provider": {
+     "@type": "LocalBusiness",
+     "@id": "https://www.theconesleeves.com/#localbusiness",
+     "name": "The Cone Sleeves",
+     "url": "https://www.theconesleeves.com/",
+     "image": "https://www.theconesleeves.com/wp-content/uploads/2025/08/waffle-cone-sleeves-png-transparent-768x601.png",
+     "telephone": "+1-929-2141-874",
+     "priceRange": "$",
+     "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Da 408",
+      "addressLocality": "San Jose",
+      "addressRegion": "CA",
+      "postalCode": "95128",
+      "addressCountry": "US"
+     },
+     "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": 4.8,
+      "reviewCount": 250,
+      "bestRating": 5,
+      "worstRating": 1
+     }
+    }
+   },
+   {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": "Custom Ice Cream Cone Sleeves | Wholesale Designs",
+    "image": "https://www.theconesleeves.com/wp-content/uploads/2025/08/waffle-cone-sleeves-png-transparent-768x601.png",
+    "description": "Protect hands and promote your brand with food-safe, customizable ice cream cone sleeves. Recyclable options, bulk pricing, fast turnaround.",
+    "sku": "TCS00014",
+    "mpn": "TCS00014",
+    "brand": {
+     "@type": "Brand",
+     "name": "The Cone Sleeves"
+    },
+    "offers": {
+     "@type": "Offer",
+     "url": "https://www.theconesleeves.com/ice-cream-cone-sleeves/",
+     "priceCurrency": "USD",
+     "price": "0.50",
+     "priceValidUntil": "2027-12-31",
+     "availability": "https://schema.org/InStock",
+     "itemCondition": "https://schema.org/NewCondition"
+    },
+    "aggregateRating": {
+     "@type": "AggregateRating",
+     "ratingValue": "5",
+     "bestRating": "5",
+     "worstRating": "1",
+     "reviewCount": "299"
+    },
+    "review": {
+     "@type": "Review",
+     "name": "Excellent boxes and quick delivery",
+     "datePublished": "2025-08-12",
+     "author": {
+      "@type": "Person",
+      "name": "Kim Henderson"
+     },
+     "reviewBody": "Great quality and fast shipping. Printing was exactly as requested.",
+     "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "5",
+      "bestRating": "5",
+      "worstRating": "1"
+     },
+     "publisher": {
+      "@type": "Organization",
+      "name": "The Cone Sleeves"
+     }
+    }
+   },
+   {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+     {
+      "@type": "Question",
+      "name": "What cone sizes do you support?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "We support most standard waffle and sugar cones. Custom sizes can be requested."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Can I upload my logo for printing?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes. We recommend high-resolution PNG or vector files for the best quality."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "What\u2019s the minimum quantity I can order?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Minimum order starts at 500 sleeves per design."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Can I get samples before ordering?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes. Physical or digital mockups can be arranged upon request."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Do you offer eco-friendly cone sleeves?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes. Both recyclable and compostable options are available."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Is shipping available across the USA?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes, we deliver nationwide with tracking and estimated delivery windows."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "How long does it take to print and deliver?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Usually 7 days for standard orders. Rush options available."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Can I reorder using the same artwork?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes. Reorders are faster once your design is in our system."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Will I see a proof before printing?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes, a proof is sent via email before production starts."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Do you offer custom shapes or die cuts?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes. Special shapes and cutout designs are possible upon request."
+      }
+     }
+    ]
+   }
+  ]
+ },
+ "/custom-sugar-cone-sleeves/": {
+  "url": "/custom-sugar-cone-sleeves/",
+  "title": "Custom Sugar Cone Sleeves | Personalized Ice-Cream Branding",
+  "description": "Order custom sugar cone sleeves to make your ice-cream shop stand out. Unique designs, high quality printing \u2014 perfect for branding & events!",
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.theconesleeves.com/custom-sugar-cone-sleeves/",
+  "og": {
+   "locale": "en_US",
+   "type": "article",
+   "title": "Custom Sugar Cone Sleeves",
+   "description": "Order custom sugar cone sleeves to make your ice-cream shop stand out. Unique designs, high quality printing \u2014 perfect for branding & events!",
+   "url": "https://www.theconesleeves.com/custom-sugar-cone-sleeves/",
+   "site_name": "The Cone Sleeves",
+   "image": "/media/2025/08/waffle-cone-sleeves-png-transparent.png",
+   "image_width": null,
+   "image_height": null,
+   "image_type": null
+  },
+  "twitter": {
+   "card": "summary_large_image",
+   "site": null
+  },
+  "schema": [
+   {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Custom Sugar Cone Sleeves | Personalized Ice-Cream Branding",
+    "serviceType": "Local SEO",
+    "description": "Order custom sugar cone sleeves to make your ice-cream shop stand out. Unique designs, high quality printing \u2014 perfect for branding &amp; events!",
+    "url": "https://www.theconesleeves.com/custom-sugar-cone-sleeves/",
+    "areaServed": {
+     "@type": "City",
+     "name": "The Cone Sleeves",
+     "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "The Cone",
+      "addressRegion": "Sleeves",
+      "addressCountry": "US"
+     }
+    },
+    "provider": {
+     "@type": "LocalBusiness",
+     "@id": "https://www.theconesleeves.com/#localbusiness",
+     "name": "The Cone Sleeves",
+     "url": "https://www.theconesleeves.com/",
+     "image": "https://www.theconesleeves.com/wp-content/uploads/2025/08/waffle-cone-sleeves-png-transparent-768x601.png",
+     "telephone": "+1-929-2141-874",
+     "priceRange": "$",
+     "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Da 408",
+      "addressLocality": "San Jose",
+      "addressRegion": "CA",
+      "postalCode": "95128",
+      "addressCountry": "US"
+     },
+     "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": 4.8,
+      "reviewCount": 270,
+      "bestRating": 5,
+      "worstRating": 1
+     }
+    }
+   },
+   {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": "Custom Sugar Cone Sleeves | Personalized Ice-Cream Branding",
+    "image": "https://www.theconesleeves.com/wp-content/uploads/2025/08/waffle-cone-sleeves-png-transparent-768x601.png",
+    "description": "Order custom sugar cone sleeves to make your ice-cream shop stand out. Unique designs, high quality printing \u2014 perfect for branding &amp; events!",
+    "sku": "TCS00002",
+    "mpn": "TCS00002",
+    "brand": {
+     "@type": "Brand",
+     "name": "The Cone Sleeves"
+    },
+    "offers": {
+     "@type": "Offer",
+     "url": "https://www.theconesleeves.com/custom-sugar-cone-sleeves/",
+     "priceCurrency": "USD",
+     "price": "0.50",
+     "priceValidUntil": "2027-12-31",
+     "availability": "https://schema.org/InStock",
+     "itemCondition": "https://schema.org/NewCondition"
+    },
+    "aggregateRating": {
+     "@type": "AggregateRating",
+     "ratingValue": "5",
+     "bestRating": "5",
+     "worstRating": "1",
+     "reviewCount": "256"
+    },
+    "review": {
+     "@type": "Review",
+     "name": "Excellent boxes and quick delivery",
+     "datePublished": "2025-08-12",
+     "author": {
+      "@type": "Person",
+      "name": "Florin Liviu"
+     },
+     "reviewBody": "Great quality and fast shipping. Printing was exactly as requested.",
+     "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "5",
+      "bestRating": "5",
+      "worstRating": "1"
+     },
+     "publisher": {
+      "@type": "Organization",
+      "name": "The Cone Sleeves"
+     }
+    }
+   },
+   {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+     {
+      "@type": "Question",
+      "name": "What\u2019s the difference between sugar cone and waffle cone sleeves?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Sugar cone sleeves are smaller and tapered for a tighter fit."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Can I print my store logo on the sleeves?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes. Full-color or single-color logo printing is available."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Do the sleeves fit all sugar cones?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes, for most standard sizes. Custom sizing is available."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Are they grease or moisture resistant?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes. Coated paper prevents leaks and keeps hands dry."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "What\u2019s the minimum order?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "500 sleeves per design."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Can I get a proof before production?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes. A digital proof is sent before printing."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Do you ship to multiple locations?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes. We can split orders between different addresses."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "How quickly can I get my sleeves?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Standard is 6\u20137 days. Rush is 3\u20134 days."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Can I add QR codes or social media handles?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes. We can print text, codes, or any scannable design."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Are eco-friendly options available?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes. We offer recyclable and compostable sleeves."
+      }
+     }
+    ]
+   }
+  ]
+ },
+ "/custom-food-sleeves/": {
+  "url": "/custom-food-sleeves/",
+  "title": "Custom Food Sleeves | Branded Protection for Restaurants| TCS",
+  "description": "Custom printed food sleeves for burgers, wraps & sandwiches. Protect hands from grease while showcasing your brand. Bulk orders, fast delivery.",
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.theconesleeves.com/custom-food-sleeves/",
+  "og": {
+   "locale": "en_US",
+   "type": "article",
+   "title": "Custom Food Sleeves",
+   "description": "Custom printed food sleeves for burgers, wraps & sandwiches. Protect hands from grease while showcasing your brand. Bulk orders, fast delivery.",
+   "url": "https://www.theconesleeves.com/custom-food-sleeves/",
+   "site_name": "The Cone Sleeves",
+   "image": null,
+   "image_width": null,
+   "image_height": null,
+   "image_type": null
+  },
+  "twitter": {
+   "card": "summary_large_image",
+   "site": null
+  },
+  "schema": [
+   {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Custom Food Sleeves | Branded Protection for Restaurants| TCS",
+    "serviceType": "Local SEO",
+    "description": "Custom printed food sleeves for burgers, wraps &amp; sandwiches. Protect hands from grease while showcasing your brand. Bulk orders, fast delivery.",
+    "url": "https://www.theconesleeves.com/custom-food-sleeves/",
+    "areaServed": {
+     "@type": "City",
+     "name": "The Cone Sleeves",
+     "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "The Cone",
+      "addressRegion": "Sleeves",
+      "addressCountry": "US"
+     }
+    },
+    "provider": {
+     "@type": "LocalBusiness",
+     "@id": "https://www.theconesleeves.com/#localbusiness",
+     "name": "The Cone Sleeves",
+     "url": "https://www.theconesleeves.com/",
+     "image": "https://www.theconesleeves.com/wp-content/uploads/2025/08/Custom-food-sleeves-600x600-1.jpg",
+     "telephone": "+1-929-2141-874",
+     "priceRange": "$",
+     "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Da 408",
+      "addressLocality": "San Jose",
+      "addressRegion": "CA",
+      "postalCode": "95128",
+      "addressCountry": "US"
+     },
+     "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": 4.8,
+      "reviewCount": 260,
+      "bestRating": 5,
+      "worstRating": 1
+     }
+    }
+   },
+   {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": "Custom Food Sleeves | Branded Protection for Restaurants| TCS",
+    "image": "https://www.theconesleeves.com/wp-content/uploads/2025/08/Custom-food-sleeves-600x600-1.jpg",
+    "description": "Custom printed food sleeves for burgers, wraps &amp; sandwiches. Protect hands from grease while showcasing your brand. Bulk orders, fast delivery.",
+    "sku": "TCS00001",
+    "mpn": "TCS00001",
+    "brand": {
+     "@type": "Brand",
+     "name": "The Cone Sleeves"
+    },
+    "offers": {
+     "@type": "Offer",
+     "url": "https://www.theconesleeves.com/custom-food-sleeves/",
+     "priceCurrency": "USD",
+     "price": "0.50",
+     "priceValidUntil": "2027-12-31",
+     "availability": "https://schema.org/InStock",
+     "itemCondition": "https://schema.org/NewCondition"
+    },
+    "aggregateRating": {
+     "@type": "AggregateRating",
+     "ratingValue": "5",
+     "bestRating": "5",
+     "worstRating": "1",
+     "reviewCount": "246"
+    },
+    "review": {
+     "@type": "Review",
+     "name": "Excellent boxes and quick delivery",
+     "datePublished": "2025-08-12",
+     "author": {
+      "@type": "Person",
+      "name": "Mike Hornbeck"
+     },
+     "reviewBody": "Great quality and fast shipping. Printing was exactly as requested.",
+     "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "5",
+      "bestRating": "5",
+      "worstRating": "1"
+     },
+     "publisher": {
+      "@type": "Organization",
+      "name": "The Cone Sleeves"
+     }
+    }
+   }
+  ]
+ },
+ "/custom-burger-sleeves/": {
+  "url": "/custom-burger-sleeves/",
+  "title": "Custom Printed Burger Sleeves \u2014 Branding That Impresses",
+  "description": "Protect hands and showcase your brand with eco-friendly custom burger sleeves. Perfect for restaurants, food trucks & events. Order a free quote now.",
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.theconesleeves.com/custom-burger-sleeves/",
+  "og": {
+   "locale": "en_US",
+   "type": "article",
+   "title": "Custom Burger Sleeves",
+   "description": "Protect hands and showcase your brand with eco-friendly custom burger sleeves. Perfect for restaurants, food trucks & events. Order a free quote now.",
+   "url": "https://www.theconesleeves.com/custom-burger-sleeves/",
+   "site_name": "The Cone Sleeves",
+   "image": "/media/2025/08/Burger-Sleeves-Wholesale-768x768-1.jpg",
+   "image_width": null,
+   "image_height": null,
+   "image_type": null
+  },
+  "twitter": {
+   "card": "summary_large_image",
+   "site": null
+  },
+  "schema": [
+   {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Custom Burger Sleeves \u2014 Branding That Impresses",
+    "serviceType": "Local SEO",
+    "description": "Protect hands and showcase your brand with eco-friendly custom burger sleeves. Perfect for restaurants, food trucks &amp; events. Order a free quote now.",
+    "url": "https://www.theconesleeves.com/custom-burger-sleeves/",
+    "areaServed": {
+     "@type": "City",
+     "name": "The Cone Sleeves",
+     "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "The Cone",
+      "addressRegion": "Sleeves",
+      "addressCountry": "US"
+     }
+    },
+    "provider": {
+     "@type": "LocalBusiness",
+     "@id": "https://www.theconesleeves.com/#localbusiness",
+     "name": "The Cone Sleeves",
+     "url": "https://www.theconesleeves.com/",
+     "image": "https://www.theconesleeves.com/wp-content/uploads/2025/08/Burger-Sleeves-Wholesale-768x768-1.jpg",
+     "telephone": "+1-929-2141-874",
+     "priceRange": "$",
+     "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Da 408",
+      "addressLocality": "San Jose",
+      "addressRegion": "CA",
+      "postalCode": "95128",
+      "addressCountry": "US"
+     },
+     "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": 4.8,
+      "reviewCount": 138,
+      "bestRating": 5,
+      "worstRating": 1
+     }
+    }
+   },
+   {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": "Custom Burger Sleeves \u2014 Branding That Impresses",
+    "image": "https://www.theconesleeves.com/wp-content/uploads/2025/08/Burger-Sleeves-Wholesale-768x768-1.jpg",
+    "description": "Protect hands and showcase your brand with eco-friendly custom burger sleeves. Perfect for restaurants, food trucks &amp; events. Order a free quote now.",
+    "sku": "TCS00015",
+    "mpn": "TCS00015",
+    "brand": {
+     "@type": "Brand",
+     "name": "The Cone Sleeves"
+    },
+    "offers": {
+     "@type": "Offer",
+     "url": "https://www.theconesleeves.com/custom-burger-sleeves/",
+     "priceCurrency": "USD",
+     "price": "0.50",
+     "priceValidUntil": "2027-12-31",
+     "availability": "https://schema.org/InStock",
+     "itemCondition": "https://schema.org/NewCondition"
+    },
+    "aggregateRating": {
+     "@type": "AggregateRating",
+     "ratingValue": "5",
+     "bestRating": "5",
+     "worstRating": "1",
+     "reviewCount": "300"
+    },
+    "review": {
+     "@type": "Review",
+     "name": "Excellent boxes and quick delivery",
+     "datePublished": "2025-08-12",
+     "author": {
+      "@type": "Person",
+      "name": "Tommesha Davis"
+     },
+     "reviewBody": "Great quality and fast shipping. Printing was exactly as requested.",
+     "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "5",
+      "bestRating": "5",
+      "worstRating": "1"
+     },
+     "publisher": {
+      "@type": "Organization",
+      "name": "The Cone Sleeves"
+     }
+    }
+   },
+   {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+     {
+      "@type": "Question",
+      "name": "What sizes of burgers can these sleeves hold?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Regular, slider, and wrap-sized sleeves are available."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Can my brand colors and logo be printed?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes. Full-color and single-color printing are supported."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Are the sleeves grease-resistant?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes. Coated papers help block grease and oil."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "What\u2019s the minimum order size?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "500 sleeves per design."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Can I get a proof before printing?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes. You\u2019ll receive a digital proof for approval."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Do you provide eco-friendly options?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes. Recyclable and compostable materials are available."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "How long does production take?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "6\u20137 business days for standard, 3\u20134 business days for rush."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Do you ship internationally?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes. Orders ship with tracking."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Can QR codes be added?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes. QR codes, social handles, and text can be printed."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Can I reorder with the same design?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes. Reorders are faster and may have lower setup costs."
+      }
+     }
+    ]
+   }
+  ]
+ },
+ "/custom-cake-cone-sleeves/": {
+  "url": "/custom-cake-cone-sleeves/",
+  "title": "Custom Cake Cone Sleeves | Personalize Your Treats",
+  "description": "Order custom cake cone sleeves\u2014add your logo or design for birthdays, weddings, events. Unique, branded, sweet presentation!",
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.theconesleeves.com/custom-cake-cone-sleeves/",
+  "og": {
+   "locale": "en_US",
+   "type": "article",
+   "title": "Custom Cake Cone Sleeves",
+   "description": "Order custom cake cone sleeves\u2014add your logo or design for birthdays, weddings, events. Unique, branded, sweet presentation!",
+   "url": "https://www.theconesleeves.com/custom-cake-cone-sleeves/",
+   "site_name": "The Cone Sleeves",
+   "image": "/media/2025/08/waffle-cone-sleeves-png-transparent.png",
+   "image_width": null,
+   "image_height": null,
+   "image_type": null
+  },
+  "twitter": {
+   "card": "summary_large_image",
+   "site": null
+  },
+  "schema": [
+   {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Custom Cake Cone Sleeves | Personalize Your Treats",
+    "serviceType": "Local SEO",
+    "description": "Order custom cake cone sleeves\u2014add your logo or design for birthdays, weddings, events. Unique, branded, sweet presentation!",
+    "url": "https://www.theconesleeves.com/custom-cake-cone-sleeves/",
+    "areaServed": {
+     "@type": "City",
+     "name": "The Cone Sleeves",
+     "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "The Cone",
+      "addressRegion": "Sleeves",
+      "addressCountry": "US"
+     }
+    },
+    "provider": {
+     "@type": "LocalBusiness",
+     "@id": "https://www.theconesleeves.com/#localbusiness",
+     "name": "The Cone Sleeves",
+     "url": "https://www.theconesleeves.com/",
+     "image": "https://www.theconesleeves.com/wp-content/uploads/2025/08/2-768x768-1.jpg",
+     "telephone": "+1-929-2141-874",
+     "priceRange": "$",
+     "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Da 408",
+      "addressLocality": "San Jose",
+      "addressRegion": "CA",
+      "postalCode": "95128",
+      "addressCountry": "US"
+     },
+     "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": 4.8,
+      "reviewCount": 158,
+      "bestRating": 5,
+      "worstRating": 1
+     }
+    }
+   },
+   {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": "Custom Cake Cone Sleeves | Personalize Your Treats",
+    "image": "https://www.theconesleeves.com/wp-content/uploads/2025/08/2-768x768-1.jpg",
+    "description": "Order custom cake cone sleeves\u2014add your logo or design for birthdays, weddings, events. Unique, branded, sweet presentation!",
+    "sku": "TCS00017",
+    "mpn": "TCS00017",
+    "brand": {
+     "@type": "Brand",
+     "name": "The Cone Sleeves"
+    },
+    "offers": {
+     "@type": "Offer",
+     "url": "https://www.theconesleeves.com/custom-cake-cone-sleeves/",
+     "priceCurrency": "USD",
+     "price": "0.50",
+     "priceValidUntil": "2027-12-31",
+     "availability": "https://schema.org/InStock",
+     "itemCondition": "https://schema.org/NewCondition"
+    },
+    "aggregateRating": {
+     "@type": "AggregateRating",
+     "ratingValue": "5",
+     "bestRating": "5",
+     "worstRating": "1",
+     "reviewCount": "207"
+    },
+    "review": {
+     "@type": "Review",
+     "name": "Excellent boxes and quick delivery",
+     "datePublished": "2025-08-12",
+     "author": {
+      "@type": "Person",
+      "name": "Joanne Groff"
+     },
+     "reviewBody": "Great quality and fast shipping. Printing was exactly as requested.",
+     "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "5",
+      "bestRating": "5",
+      "worstRating": "1"
+     },
+     "publisher": {
+      "@type": "Organization",
+      "name": "The Cone Sleeves"
+     }
+    }
+   },
+   {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+     {
+      "@type": "Question",
+      "name": "What are cake cone sleeves used for?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "They are small paper wraps for cake cones, designed to keep hands clean and cones easy to hold."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Can I print my shop\u2019s logo?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes. We support full-color and single-color logo printing."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Do they fit all cake cones?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "They fit most standard cake cones. Custom sizing is available."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Are the sleeves food-safe?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes. All papers and inks are food-grade and safe for contact."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Are they grease and moisture resistant?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes. Coated paper helps prevent leaks and mess."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "What\u2019s the minimum order size?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "500 sleeves per design."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "How fast is delivery?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "6\u20137 business days standard. 3\u20134 days with rush service."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Can I add QR codes or messages?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes. QR codes, slogans, and social handles can be printed."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Do you ship internationally?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes. Orders ship with tracking worldwide."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Can I reorder quickly?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes. Reorders are fast and may qualify for lower setup costs."
+      }
+     }
+    ]
+   }
+  ]
+ },
+ "/custom-crepe-sleeves/": {
+  "url": "/custom-crepe-sleeves/",
+  "title": "Custom Crepe Sleeves \u2013 Branded, Food-Safe & Eco Friendly | The Cone Sleeves",
+  "description": "Order custom crepe sleeves with your logo \u2014 food-safe, eco-friendly materials, fast turnaround and bulk discounts.",
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.theconesleeves.com/custom-crepe-sleeves/",
+  "og": {
+   "locale": "en_US",
+   "type": "article",
+   "title": "Custom Crepe Sleeves",
+   "description": "Order custom crepe sleeves with your logo \u2014 food-safe, eco-friendly materials, fast turnaround and bulk discounts.",
+   "url": "https://www.theconesleeves.com/custom-crepe-sleeves/",
+   "site_name": "The Cone Sleeves",
+   "image": null,
+   "image_width": null,
+   "image_height": null,
+   "image_type": null
+  },
+  "twitter": {
+   "card": "summary_large_image",
+   "site": null
+  },
+  "schema": [
+   {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Custom Crepe Sleeves \u2013 Branded, Food-Safe &amp; Eco Friendly | The Cone Sleeves",
+    "serviceType": "Local SEO",
+    "description": "Order custom crepe sleeves with your logo \u2014 food-safe, eco-friendly materials, fast turnaround and bulk discounts.",
+    "url": "https://www.theconesleeves.com/custom-coffee-sleeves/",
+    "areaServed": {
+     "@type": "City",
+     "name": "The Cone Sleeves",
+     "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "The Cone",
+      "addressRegion": "Sleeves",
+      "addressCountry": "US"
+     }
+    },
+    "provider": {
+     "@type": "LocalBusiness",
+     "@id": "https://www.theconesleeves.com/#localbusiness",
+     "name": "The Cone Sleeves",
+     "url": "https://www.theconesleeves.com/",
+     "image": "https://www.theconesleeves.com/wp-content/uploads/2025/08/Custom-Crepe-Sleeves-Packaging-768x768-1.jpg",
+     "telephone": "+1-929-2141-874",
+     "priceRange": "$",
+     "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Da 408",
+      "addressLocality": "San Jose",
+      "addressRegion": "CA",
+      "postalCode": "95128",
+      "addressCountry": "US"
+     },
+     "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": 4.8,
+      "reviewCount": 178,
+      "bestRating": 5,
+      "worstRating": 1
+     }
+    }
+   },
+   {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": "Custom Crepe Sleeves \u2013 Branded, Food-Safe &amp; Eco Friendly | The Cone Sleeves",
+    "image": "https://www.theconesleeves.com/wp-content/uploads/2025/08/Custom-Crepe-Sleeves-Packaging-768x768-1.jpg",
+    "description": "Order custom crepe sleeves with your logo \u2014 food-safe, eco-friendly materials, fast turnaround and bulk discounts.",
+    "sku": "TCS00006",
+    "mpn": "TCS00006",
+    "brand": {
+     "@type": "Brand",
+     "name": "The Cone Sleeves"
+    },
+    "offers": {
+     "@type": "Offer",
+     "url": "https://www.theconesleeves.com/custom-crepe-sleeves/",
+     "priceCurrency": "USD",
+     "price": "0.50",
+     "priceValidUntil": "2027-12-31",
+     "availability": "https://schema.org/InStock",
+     "itemCondition": "https://schema.org/NewCondition"
+    },
+    "aggregateRating": {
+     "@type": "AggregateRating",
+     "ratingValue": "5",
+     "bestRating": "5",
+     "worstRating": "1",
+     "reviewCount": "270"
+    },
+    "review": {
+     "@type": "Review",
+     "name": "Excellent boxes and quick delivery",
+     "datePublished": "2025-08-12",
+     "author": {
+      "@type": "Person",
+      "name": "Valerie A Ross"
+     },
+     "reviewBody": "Great quality and fast shipping. Printing was exactly as requested.",
+     "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "5",
+      "bestRating": "5",
+      "worstRating": "1"
+     },
+     "publisher": {
+      "@type": "Organization",
+      "name": "The Cone Sleeves"
+     }
+    }
+   },
+   {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+     {
+      "@type": "Question",
+      "name": "What are crepe sleeves used for?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "They hold crepes securely while keeping hands clean."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Can I print my logo and colors?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes. Full-color and single-color options are available."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Do they fit all crepe sizes?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Standard sleeves fit most crepes. Custom sizes are available."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Are they food safe?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes. We use food-grade papers and inks."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Are the sleeves grease resistant?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes. Coated paper helps prevent leaks and stains."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "What\u2019s the minimum order?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "500 sleeves per design."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "How long is production?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "6\u20137 business days for standard. 3\u20134 days for rush orders."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Can QR codes or text be added?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes. QR codes, slogans, and social handles are supported."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Do you ship worldwide?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes. Orders include tracking and clear delivery times."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Can I reorder easily?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes. Reorders are faster and may cost less if artwork is stored."
+      }
+     }
+    ]
+   }
+  ]
+ },
+ "/custom-sandwich-sleeves/": {
+  "url": "/custom-sandwich-sleeves/",
+  "title": "Custom Printed Sandwich Sleeves | Branding & Food Safety",
+  "description": "Create custom sandwich sleeves that protect food, show your brand, and delight customers. Durable, eco-friendly sleeves available in any design.",
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.theconesleeves.com/custom-sandwich-sleeves/",
+  "og": {
+   "locale": "en_US",
+   "type": "article",
+   "title": "Custom Sandwich Sleeves",
+   "description": "Create custom sandwich sleeves that protect food, show your brand, and delight customers. Durable, eco-friendly sleeves available in any design.",
+   "url": "https://www.theconesleeves.com/custom-sandwich-sleeves/",
+   "site_name": "The Cone Sleeves",
+   "image": null,
+   "image_width": null,
+   "image_height": null,
+   "image_type": null
+  },
+  "twitter": {
+   "card": "summary_large_image",
+   "site": null
+  },
+  "schema": [
+   {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Custom Sandwich Sleeves | Branding &amp; Food Safety",
+    "serviceType": "Local SEO",
+    "description": "Create custom sandwich sleeves that protect food, show your brand, and delight customers. Durable, eco-friendly sleeves available in any design.",
+    "url": "https://www.theconesleeves.com/custom-sandwich-sleeves/",
+    "areaServed": {
+     "@type": "City",
+     "name": "The Cone Sleeves",
+     "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "The Cone",
+      "addressRegion": "Sleeves",
+      "addressCountry": "US"
+     }
+    },
+    "provider": {
+     "@type": "LocalBusiness",
+     "@id": "https://www.theconesleeves.com/#localbusiness",
+     "name": "The Cone Sleeves",
+     "url": "https://www.theconesleeves.com/",
+     "image": "https://www.theconesleeves.com/wp-content/uploads/2025/08/Custom-Sandwich-Sleeves-768x768-1.jpg",
+     "telephone": "+1-929-2141-874",
+     "priceRange": "$",
+     "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Da 408",
+      "addressLocality": "San Jose",
+      "addressRegion": "CA",
+      "postalCode": "95128",
+      "addressCountry": "US"
+     },
+     "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": 4.8,
+      "reviewCount": 248,
+      "bestRating": 5,
+      "worstRating": 1
+     }
+    }
+   },
+   {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": "Custom Sandwich Sleeves | Branding &amp; Food Safety",
+    "image": "https://www.theconesleeves.com/wp-content/uploads/2025/08/Custom-Sandwich-Sleeves-768x768-1.jpg",
+    "description": "Create custom sandwich sleeves that protect food, show your brand, and delight customers. Durable, eco-friendly sleeves available in any design.",
+    "sku": "TCS00013",
+    "mpn": "TCS00013",
+    "brand": {
+     "@type": "Brand",
+     "name": "The Cone Sleeves"
+    },
+    "offers": {
+     "@type": "Offer",
+     "url": "https://www.theconesleeves.com/custom-sandwich-sleeves/",
+     "priceCurrency": "USD",
+     "price": "0.50",
+     "priceValidUntil": "2027-12-31",
+     "availability": "https://schema.org/InStock",
+     "itemCondition": "https://schema.org/NewCondition"
+    },
+    "aggregateRating": {
+     "@type": "AggregateRating",
+     "ratingValue": "5",
+     "bestRating": "5",
+     "worstRating": "1",
+     "reviewCount": "298"
+    },
+    "review": {
+     "@type": "Review",
+     "name": "Excellent boxes and quick delivery",
+     "datePublished": "2025-08-12",
+     "author": {
+      "@type": "Person",
+      "name": "Nicole Ehrlich"
+     },
+     "reviewBody": "Great quality and fast shipping. Printing was exactly as requested.",
+     "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "5",
+      "bestRating": "5",
+      "worstRating": "1"
+     },
+     "publisher": {
+      "@type": "Organization",
+      "name": "The Cone Sleeves"
+     }
+    }
+   },
+   {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+     {
+      "@type": "Question",
+      "name": "What types of sandwiches do these sleeves fit?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "They fit paninis, subs, wraps, and regular sandwiches. Custom sizes available."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Can I print my logo and brand colors?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes. Full-color and one-color options are supported."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Are the sleeves food-safe?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes. All paper and inks are safe for direct contact."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Are they grease-resistant?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes. Coated paper prevents leaks and stains."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "What\u2019s the minimum order?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "500 sleeves per design."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Can I get a proof before production?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes. A digital proof is sent before printing."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "How long is the turnaround?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "6\u20137 business days standard, 3\u20134 business days rush."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Do you provide eco-friendly options?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes. Recyclable and compostable sleeves are available."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Do you ship internationally?Do you ship internationally?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes. Orders ship with tracking and delivery estimates."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Can I reorder using the same design?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes. Reorders are faster and may qualify for discounts."
+      }
+     }
+    ]
+   }
+  ]
+ },
+ "/custom-coffee-sleeves/": {
+  "url": "/custom-coffee-sleeves/",
+  "title": "Custom Coffee Sleeves \u2013 Personalised Branding in Bulk",
+  "description": "Stand out with custom coffee sleeves. High quality, logo-ready sleeves in bulk\u2014ideal for cafes & events. Fast shipping.",
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.theconesleeves.com/custom-coffee-sleeves/",
+  "og": {
+   "locale": "en_US",
+   "type": "article",
+   "title": "Custom Coffee Sleeves",
+   "description": "Stand out with custom coffee sleeves. High quality, logo-ready sleeves in bulk\u2014ideal for cafes & events. Fast shipping.",
+   "url": "https://www.theconesleeves.com/custom-coffee-sleeves/",
+   "site_name": "The Cone Sleeves",
+   "image": null,
+   "image_width": null,
+   "image_height": null,
+   "image_type": null
+  },
+  "twitter": {
+   "card": "summary_large_image",
+   "site": null
+  },
+  "schema": [
+   {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Custom Coffee Sleeves \u2013 Personalised Branding in Bulk",
+    "serviceType": "Local SEO",
+    "description": "Stand out with custom coffee sleeves. High quality, logo-ready sleeves in bulk\u2014ideal for cafes &amp; events. Fast shipping.",
+    "url": "https://www.theconesleeves.com/custom-coffee-sleeves/",
+    "areaServed": {
+     "@type": "City",
+     "name": "The Cone Sleeves",
+     "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "The Cone",
+      "addressRegion": "Sleeves",
+      "addressCountry": "US"
+     }
+    },
+    "provider": {
+     "@type": "LocalBusiness",
+     "@id": "https://www.theconesleeves.com/#localbusiness",
+     "name": "The Cone Sleeves",
+     "url": "https://www.theconesleeves.com/",
+     "image": "https://www.theconesleeves.com/wp-content/uploads/2025/08/Custom-printed-coffee-sleeves-768x768-1.jpg",
+     "telephone": "+1-929-2141-874",
+     "priceRange": "$",
+     "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Da 408",
+      "addressLocality": "San Jose",
+      "addressRegion": "CA",
+      "postalCode": "95128",
+      "addressCountry": "US"
+     },
+     "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": 4.8,
+      "reviewCount": 168,
+      "bestRating": 5,
+      "worstRating": 1
+     }
+    }
+   },
+   {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": "Custom Coffee Sleeves \u2013 Personalised Branding in Bulk",
+    "image": "https://www.theconesleeves.com/wp-content/uploads/2025/08/Custom-printed-coffee-sleeves-768x768-1.jpg",
+    "description": "Stand out with custom coffee sleeves. High quality, logo-ready sleeves in bulk\u2014ideal for cafes &amp; events. Fast shipping.",
+    "sku": "TCS00005",
+    "mpn": "TCS00005",
+    "brand": {
+     "@type": "Brand",
+     "name": "The Cone Sleeves"
+    },
+    "offers": {
+     "@type": "Offer",
+     "url": "https://www.theconesleeves.com/custom-coffee-sleeves/",
+     "priceCurrency": "USD",
+     "price": "0.50",
+     "priceValidUntil": "2027-12-31",
+     "availability": "https://schema.org/InStock",
+     "itemCondition": "https://schema.org/NewCondition"
+    },
+    "aggregateRating": {
+     "@type": "AggregateRating",
+     "ratingValue": "5",
+     "bestRating": "5",
+     "worstRating": "1",
+     "reviewCount": "269"
+    },
+    "review": {
+     "@type": "Review",
+     "name": "Excellent boxes and quick delivery",
+     "datePublished": "2025-08-12",
+     "author": {
+      "@type": "Person",
+      "name": "Lisa Lindner"
+     },
+     "reviewBody": "Great quality and fast shipping. Printing was exactly as requested.",
+     "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "5",
+      "bestRating": "5",
+      "worstRating": "1"
+     },
+     "publisher": {
+      "@type": "Organization",
+      "name": "The Cone Sleeves"
+     }
+    }
+   },
+   {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+     {
+      "@type": "Question",
+      "name": "What are custom coffee sleeves used for?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "They protect hands from hot drinks and add branding to cups."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Can I print my logo and brand colors?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes. We offer both full-color and single-color printing."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "What cup sizes do they fit?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "They fit 8oz, 12oz, 16oz, and 20oz standard cups. Custom sizing is available."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Are they eco-friendly?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes. We offer recyclable kraft and compostable sleeves."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "What\u2019s the minimum order size?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "500 sleeves per design."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "How long does production take?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Standard: 6\u20137 business days. Rush: 3\u20134 days."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Can I get a digital proof before printing?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes. Proofs are provided before production."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Are they grease or moisture resistant?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes. Coated options help prevent stains and leaks."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Do you ship internationally?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes. Orders ship with tracking worldwide."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Can I reorder with the same artwork?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes. Reorders are faster and may qualify for reduced setup costs."
+      }
+     }
+    ]
+   }
+  ]
+ },
+ "/custom-hot-dog-sleeves/": {
+  "url": "/custom-hot-dog-sleeves/",
+  "title": "Custom Food Trays | The Cone Sleeves \u2013 Premium Quality",
+  "description": "Order custom food trays tailored to your brand. Durable, stylish & food-safe. Bulk options + fast delivery. Elevate your presentation now!",
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.theconesleeves.com/custom-hot-dog-sleeves/",
+  "og": {
+   "locale": "en_US",
+   "type": "article",
+   "title": "Custom Hot Dog Sleeves",
+   "description": "Order custom food trays tailored to your brand. Durable, stylish & food-safe. Bulk options + fast delivery. Elevate your presentation now!",
+   "url": "https://www.theconesleeves.com/custom-hot-dog-sleeves/",
+   "site_name": "The Cone Sleeves",
+   "image": "/media/2025/09/Custom-Hot-Dog-Sleeves-768x768-1.jpg",
+   "image_width": "768",
+   "image_height": "768",
+   "image_type": "image/jpeg"
+  },
+  "twitter": {
+   "card": "summary_large_image",
+   "site": null
+  },
+  "schema": [
+   {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Custom Hot Dog Sleeves | Personalize Your Packaging",
+    "serviceType": "Local SEO",
+    "description": "Order custom hot dog sleeves to enhance your branding. Durable, food-safe materials. Fast turnaround and fully customizable artwork.",
+    "url": "https://www.theconesleeves.com/custom-hot-dog-sleeves/",
+    "areaServed": {
+     "@type": "City",
+     "name": "The Cone Sleeves",
+     "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "The Cone",
+      "addressRegion": "Sleeves",
+      "addressCountry": "US"
+     }
+    },
+    "provider": {
+     "@type": "LocalBusiness",
+     "@id": "https://www.theconesleeves.com/#localbusiness",
+     "name": "The Cone Sleeves",
+     "url": "https://www.theconesleeves.com/",
+     "image": "https://www.theconesleeves.com/wp-content/uploads/2025/09/Custom-Hot-Dog-Sleeves-768x768-1.jpg",
+     "telephone": "+1-929-2141-874",
+     "priceRange": "$",
+     "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Da 408",
+      "addressLocality": "San Jose",
+      "addressRegion": "CA",
+      "postalCode": "95128",
+      "addressCountry": "US"
+     },
+     "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": 4.8,
+      "reviewCount": 128,
+      "bestRating": 5,
+      "worstRating": 1
+     }
+    }
+   },
+   {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": "Custom Hot Dog Sleeves | Personalize Your Packaging",
+    "image": "https://www.theconesleeves.com/wp-content/uploads/2025/09/Custom-Hot-Dog-Sleeves-768x768-1.jpg",
+    "description": "Order custom hot dog sleeves to enhance your branding. Durable, food-safe materials. Fast turnaround and fully customizable artwork.",
+    "sku": "TCS00011",
+    "mpn": "TCS00011",
+    "brand": {
+     "@type": "Brand",
+     "name": "The Cone Sleeves"
+    },
+    "offers": {
+     "@type": "Offer",
+     "url": "https://www.theconesleeves.com/custom-hot-dog-sleeves/",
+     "priceCurrency": "USD",
+     "price": "0.50",
+     "priceValidUntil": "2027-12-31",
+     "availability": "https://schema.org/InStock",
+     "itemCondition": "https://schema.org/NewCondition"
+    },
+    "aggregateRating": {
+     "@type": "AggregateRating",
+     "ratingValue": "5",
+     "bestRating": "5",
+     "worstRating": "1",
+     "reviewCount": "296"
+    },
+    "review": {
+     "@type": "Review",
+     "name": "Excellent boxes and quick delivery",
+     "datePublished": "2025-08-12",
+     "author": {
+      "@type": "Person",
+      "name": "Janis Testa"
+     },
+     "reviewBody": "Great quality and fast shipping. Printing was exactly as requested.",
+     "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "5",
+      "bestRating": "5",
+      "worstRating": "1"
+     },
+     "publisher": {
+      "@type": "Organization",
+      "name": "The Cone Sleeves"
+     }
+    }
+   },
+   {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+     {
+      "@type": "Question",
+      "name": "What are custom hot dog sleeves used for?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "They protect hands from grease and heat, keep hot dogs intact, and display your branding."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Can I print my logo on the sleeves?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes. Full-color logo printing is available along with promotional graphics or QR codes."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Are your sleeves food-safe?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "All materials and inks are FDA-approved and certified for direct food contact."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Do you offer eco-friendly sleeves?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes, we provide kraft, recyclable, and compostable options."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "What sizes are available?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "We produce sleeves for regular, footlong, and jumbo hot dogs, as well as custom sizes."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "What finishing options do you provide?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Gloss, matte, Spot UV, soft-touch, and foil stamping are available."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Are the sleeves grease-resistant?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes. Special coatings and boards prevent sauces from soaking through."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Can I order small quantities?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "MOQ is 100 units \u2014 suitable for small shops, trials, or event-based runs."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Do you ship internationally?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes, we deliver worldwide with fast turnaround times."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Can I get a sample before bulk ordering?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "We offer 2D layouts, 3D mockups, and physical samples upon request."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "How long is the production time?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Standard production takes 7\u201310 business days after design approval."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Do you provide design assistance?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes. Our design team provides free support to set up your artwork."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "What industries use hot dog sleeves?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Food trucks, snack bars, stadiums, catering companies, and event vendors."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Are hot dog sleeves reusable?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "They are designed for single use, but all eco options are recyclable or compostable."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Can I match my sleeves with other packaging?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes. We also offer custom cone sleeves, burger sleeves, and tray packaging for consistent branding."
+      }
+     }
+    ]
+   }
+  ]
+ },
+ "/custom-dessert-sleeves/": {
+  "url": "/custom-dessert-sleeves/",
+  "title": "Custom Dessert Sleeves, Wholesale & Printing | Unique Cone Branding",
+  "description": "Design your custom dessert sleeves for cones & treats. Elevate your brand with eye-catching designs, durable materials & fast turnaround.",
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.theconesleeves.com/custom-dessert-sleeves/",
+  "og": {
+   "locale": "en_US",
+   "type": "article",
+   "title": "Custom Dessert Sleeves",
+   "description": "Design your custom dessert sleeves for cones & treats. Elevate your brand with eye-catching designs, durable materials & fast turnaround.",
+   "url": "https://www.theconesleeves.com/custom-dessert-sleeves/",
+   "site_name": "The Cone Sleeves",
+   "image": "/media/2025/08/2-768x768-1.jpg",
+   "image_width": null,
+   "image_height": null,
+   "image_type": null
+  },
+  "twitter": {
+   "card": "summary_large_image",
+   "site": null
+  },
+  "schema": [
+   {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Custom Dessert Sleeves | Unique Cone Branding",
+    "serviceType": "Local SEO",
+    "description": "Design your custom dessert sleeves for cones &amp; treats. Elevate your brand with eye-catching designs, durable materials &amp; fast turnaround.",
+    "url": "https://www.theconesleeves.com/custom-dessert-sleeves/",
+    "areaServed": {
+     "@type": "City",
+     "name": "The Cone Sleeves",
+     "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "The Cone",
+      "addressRegion": "Sleeves",
+      "addressCountry": "US"
+     }
+    },
+    "provider": {
+     "@type": "LocalBusiness",
+     "@id": "https://www.theconesleeves.com/#localbusiness",
+     "name": "The Cone Sleeves",
+     "url": "https://www.theconesleeves.com/",
+     "image": "https://www.theconesleeves.com/wp-content/uploads/2025/09/Dessert-Sleeves-768x768-1.jpg",
+     "telephone": "+1-929-2141-874",
+     "priceRange": "$",
+     "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Da 408",
+      "addressLocality": "San Jose",
+      "addressRegion": "CA",
+      "postalCode": "95128",
+      "addressCountry": "US"
+     },
+     "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": 4.8,
+      "reviewCount": 188,
+      "bestRating": 5,
+      "worstRating": 1
+     }
+    }
+   },
+   {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": "Custom Dessert Sleeves | Unique Cone Branding",
+    "image": "https://www.theconesleeves.com/wp-content/uploads/2025/09/Dessert-Sleeves-768x768-1.jpg",
+    "description": "Design your custom dessert sleeves for cones &amp; treats. Elevate your brand with eye-catching designs, durable materials &amp; fast turnaround.",
+    "sku": "TCS00007",
+    "mpn": "TCS00007",
+    "brand": {
+     "@type": "Brand",
+     "name": "The Cone Sleeves"
+    },
+    "offers": {
+     "@type": "Offer",
+     "url": "https://www.theconesleeves.com/custom-dessert-sleeves/",
+     "priceCurrency": "USD",
+     "price": "0.50",
+     "priceValidUntil": "2027-12-31",
+     "availability": "https://schema.org/InStock",
+     "itemCondition": "https://schema.org/NewCondition"
+    },
+    "aggregateRating": {
+     "@type": "AggregateRating",
+     "ratingValue": "5",
+     "bestRating": "5",
+     "worstRating": "1",
+     "reviewCount": "280"
+    },
+    "review": {
+     "@type": "Review",
+     "name": "Excellent boxes and quick delivery",
+     "datePublished": "2025-08-12",
+     "author": {
+      "@type": "Person",
+      "name": "May Boudreaux"
+     },
+     "reviewBody": "Great quality and fast shipping. Printing was exactly as requested.",
+     "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "5",
+      "bestRating": "5",
+      "worstRating": "1"
+     },
+     "publisher": {
+      "@type": "Organization",
+      "name": "The Cone Sleeves"
+     }
+    }
+   },
+   {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+     {
+      "@type": "Question",
+      "name": "What are custom dessert sleeves used for?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "They protect desserts from mess, keep handling clean, and showcase branding."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Can I customize dessert sleeve sizes?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes, we make sleeves to fit cupcakes, donuts, brownies, or custom shapes."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Are these sleeves eco-friendly?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "We offer recyclable, biodegradable, and compostable options."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Can I print my logo on dessert sleeves?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Absolutely \u2014 logos, artwork, and messages can be printed in full color."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Do you offer grease-resistant sleeves?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes, special coatings prevent staining from chocolate, icing, or oils."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "What finishes can I choose from?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Options include Gloss, Matte, Spot UV, Foil, and Soft-Touch coatings."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "What is the minimum order quantity?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "MOQ is 100 pieces, making them suitable for small businesses or events."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Do you provide design support?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes, our design team offers free assistance with layouts and branding."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "How long does production take?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Typically 7\u201310 business days after artwork approval."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Can I order dessert sleeves for weddings or parties?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes, many clients order themed sleeves for weddings, birthdays, and seasonal events."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Are dessert sleeves safe for direct food contact?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes, all materials and inks are food-safe and FDA-approved."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Do you offer samples?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "We provide 2D layouts, 3D mockups, and physical samples upon request."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Can sleeves be used for frozen desserts?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes, with the right coating, they hold up in cooler conditions."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Do you ship internationally?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes, we ship worldwide with fast and reliable delivery options."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Can dessert sleeves be matched with other packaging?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes, you can create a full branded set with cone sleeves, burger sleeves, and food trays."
+      }
+     }
+    ]
+   }
+  ]
+ },
+ "/custom-donut-sleeves/": {
+  "url": "/custom-donut-sleeves/",
+  "title": "Custom Printed Donut Sleeves \u2013 Unique & Customisable Sleeves",
+  "description": "Order custom donut sleeves with your logo & design. Elevate your brand\u2019s look with colourful, premium quality sleeves made just for your sweet products.",
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.theconesleeves.com/custom-donut-sleeves/",
+  "og": {
+   "locale": "en_US",
+   "type": "article",
+   "title": "Custom Donut Sleeves",
+   "description": "Order custom donut sleeves with your logo & design. Elevate your brand\u2019s look with colourful, premium quality sleeves made just for your sweet products.",
+   "url": "https://www.theconesleeves.com/custom-donut-sleeves/",
+   "site_name": "The Cone Sleeves",
+   "image": "/media/2025/09/Dessert-Sleeves-768x768-1.jpg",
+   "image_width": null,
+   "image_height": null,
+   "image_type": null
+  },
+  "twitter": {
+   "card": "summary_large_image",
+   "site": null
+  },
+  "schema": [
+   {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Custom Donut Sleeves \u2013 Unique &amp; Customisable Sleeves",
+    "serviceType": "Local SEO",
+    "description": "Order custom donut sleeves with your logo &amp; design. Elevate your brand\u2019s look with colourful, premium quality sleeves made just for your sweet products.",
+    "url": "https://www.theconesleeves.com/custom-donut-sleeves/",
+    "areaServed": {
+     "@type": "City",
+     "name": "The Cone Sleeves",
+     "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "The Cone",
+      "addressRegion": "Sleeves",
+      "addressCountry": "US"
+     }
+    },
+    "provider": {
+     "@type": "LocalBusiness",
+     "@id": "https://www.theconesleeves.com/#localbusiness",
+     "name": "The Cone Sleeves",
+     "url": "https://www.theconesleeves.com/",
+     "image": "https://www.theconesleeves.com/wp-content/uploads/2025/09/Custom-Donut-Sleeves-768x768-1.jpg",
+     "telephone": "+1-929-2141-874",
+     "priceRange": "$",
+     "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Da 408",
+      "addressLocality": "San Jose",
+      "addressRegion": "CA",
+      "postalCode": "95128",
+      "addressCountry": "US"
+     },
+     "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": 4.8,
+      "reviewCount": 198,
+      "bestRating": 5,
+      "worstRating": 1
+     }
+    }
+   },
+   {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": "Custom Donut Sleeves \u2013 Unique &amp; Customisable Sleeves",
+    "image": "https://www.theconesleeves.com/wp-content/uploads/2025/09/Custom-Donut-Sleeves-768x768-1.jpg",
+    "description": "Order custom donut sleeves with your logo &amp; design. Elevate your brand\u2019s look with colourful, premium quality sleeves made just for your sweet products.",
+    "sku": "TCS00008",
+    "mpn": "TCS00008",
+    "brand": {
+     "@type": "Brand",
+     "name": "The Cone Sleeves"
+    },
+    "offers": {
+     "@type": "Offer",
+     "url": "https://www.theconesleeves.com/custom-donut-sleeves/",
+     "priceCurrency": "USD",
+     "price": "0.50",
+     "priceValidUntil": "2027-12-31",
+     "availability": "https://schema.org/InStock",
+     "itemCondition": "https://schema.org/NewCondition"
+    },
+    "aggregateRating": {
+     "@type": "AggregateRating",
+     "ratingValue": "5",
+     "bestRating": "5",
+     "worstRating": "1",
+     "reviewCount": "293"
+    },
+    "review": {
+     "@type": "Review",
+     "name": "Excellent boxes and quick delivery",
+     "datePublished": "2025-08-12",
+     "author": {
+      "@type": "Person",
+      "name": "Nicole Ehrlich"
+     },
+     "reviewBody": "Great quality and fast shipping. Printing was exactly as requested.",
+     "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "5",
+      "bestRating": "5",
+      "worstRating": "1"
+     },
+     "publisher": {
+      "@type": "Organization",
+      "name": "The Cone Sleeves"
+     }
+    }
+   },
+   {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+     {
+      "@type": "Question",
+      "name": "What are custom donut sleeves used for?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "They keep donuts mess-free while showcasing your branding."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Can I print my logo on the sleeves?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes. We offer full-color printing, foil stamping, and Spot UV."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Are the sleeves eco-friendly?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes, options include recyclable kraft and compostable paper."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "What finishes are available?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Gloss, matte, soft-touch, foil, and Spot UV."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Are donut sleeves food-safe?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Absolutely \u2014 all materials and inks are FDA-approved."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Do you provide grease-resistant sleeves?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes, they\u2019re ideal for sticky, glazed, or cream-filled donuts."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "What is the minimum order quantity?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "MOQ is 100 units, perfect for small businesses or events."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Can I order different sizes?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes, we customize sleeves for standard, mini, or oversized donuts."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "How long does production take?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Typically 7\u201310 business days after artwork approval."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Do you ship internationally?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes, we provide worldwide delivery."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Can I get samples before ordering bulk?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes \u2014 2D layouts, 3D mockups, and physical samples are available."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Are donut sleeves reusable?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "They are designed for single use but eco-friendly options are recyclable."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Do you offer design assistance?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes, we provide free artwork setup and design support."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Can sleeves match seasonal themes?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes, we can print designs for Christmas, Halloween, weddings, or birthdays."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "What businesses use donut sleeves?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Bakeries, cafes, catering services, restaurants, and event vendors."
+      }
+     }
+    ]
+   }
+  ]
+ },
+ "/custom-beverage-sleeves/": {
+  "url": "/custom-beverage-sleeves/",
+  "title": "Custom Beverage Sleeves | Eco Branding & Fast Turnaround",
+  "description": "Get custom beverage sleeves that protect hot & cold drinks, promote your brand, and are eco-friendly. Free design & fast delivery!",
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.theconesleeves.com/custom-beverage-sleeves/",
+  "og": {
+   "locale": "en_US",
+   "type": "article",
+   "title": "Custom Beverage Sleeves",
+   "description": "Get custom beverage sleeves that protect hot & cold drinks, promote your brand, and are eco-friendly. Free design & fast delivery!",
+   "url": "https://www.theconesleeves.com/custom-beverage-sleeves/",
+   "site_name": "The Cone Sleeves",
+   "image": null,
+   "image_width": null,
+   "image_height": null,
+   "image_type": null
+  },
+  "twitter": {
+   "card": "summary_large_image",
+   "site": null
+  },
+  "schema": [
+   {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Custom Beverage Sleeves | Eco Branding &amp; Fast Turnaround",
+    "serviceType": "Local SEO",
+    "description": "Get custom beverage sleeves that protect hot &amp; cold drinks, promote your brand, and are eco-friendly. Free design &amp; fast delivery!",
+    "url": "https://www.theconesleeves.com/custom-beverage-sleeves/",
+    "areaServed": {
+     "@type": "City",
+     "name": "The Cone Sleeves",
+     "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "The Cone",
+      "addressRegion": "Sleeves",
+      "addressCountry": "US"
+     }
+    },
+    "provider": {
+     "@type": "LocalBusiness",
+     "@id": "https://www.theconesleeves.com/#localbusiness",
+     "name": "The Cone Sleeves",
+     "url": "https://www.theconesleeves.com/",
+     "image": "https://www.theconesleeves.com/wp-content/uploads/2025/09/Custom-Cardboard-Beverage-Sleeves-Packaging-768x768-1.jpg",
+     "telephone": "+1-929-2141-874",
+     "priceRange": "$",
+     "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Da 408",
+      "addressLocality": "San Jose",
+      "addressRegion": "CA",
+      "postalCode": "95128",
+      "addressCountry": "US"
+     },
+     "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": 4.8,
+      "reviewCount": 158,
+      "bestRating": 5,
+      "worstRating": 1
+     }
+    }
+   },
+   {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": "Custom Beverage Sleeves | Eco Branding &amp; Fast Turnaround",
+    "image": "https://www.theconesleeves.com/wp-content/uploads/2025/09/Custom-Cardboard-Beverage-Sleeves-Packaging-768x768-1.jpg",
+    "description": "Get custom beverage sleeves that protect hot &amp; cold drinks, promote your brand, and are eco-friendly. Free design &amp; fast delivery!",
+    "sku": "TCS00009",
+    "mpn": "TCS00009",
+    "brand": {
+     "@type": "Brand",
+     "name": "The Cone Sleeves"
+    },
+    "offers": {
+     "@type": "Offer",
+     "url": "https://www.theconesleeves.com/custom-beverage-sleeves/",
+     "priceCurrency": "USD",
+     "price": "0.50",
+     "priceValidUntil": "2027-12-31",
+     "availability": "https://schema.org/InStock",
+     "itemCondition": "https://schema.org/NewCondition"
+    },
+    "aggregateRating": {
+     "@type": "AggregateRating",
+     "ratingValue": "5",
+     "bestRating": "5",
+     "worstRating": "1",
+     "reviewCount": "294"
+    },
+    "review": {
+     "@type": "Review",
+     "name": "Excellent boxes and quick delivery",
+     "datePublished": "2025-08-12",
+     "author": {
+      "@type": "Person",
+      "name": "Valerie A Ross"
+     },
+     "reviewBody": "Great quality and fast shipping. Printing was exactly as requested.",
+     "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "5",
+      "bestRating": "5",
+      "worstRating": "1"
+     },
+     "publisher": {
+      "@type": "Organization",
+      "name": "The Cone Sleeves"
+     }
+    }
+   },
+   {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+     {
+      "@type": "Question",
+      "name": "What are custom beverage sleeves used for?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "They insulate hot or cold drinks and showcase your branding."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Can I print my logo on the sleeves?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes, we offer full-color printing and logo placement."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Are these sleeves eco-friendly?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "We provide kraft, recyclable, and compostable materials."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "What sizes are available?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Small (8 oz cups), Medium (12\u201316 oz cups), and Large (20\u201324 oz cups)."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Do beverage sleeves work for both hot and cold drinks?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes \u2014 they insulate against heat and control condensation."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "What finishes do you offer?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Gloss, matte, soft-touch, Spot UV, and foil."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Are sleeves reusable?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "They are designed for single use but recyclable options are available."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "What is your minimum order quantity?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "MOQ is 100 units \u2014 ideal for small businesses or events."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Do you provide design support?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes, our design team offers free artwork assistance."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "How long is production time?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Usually 7\u201310 business days after artwork approval."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Can I order samples?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes, we provide 2D proofs, 3D mockups, and physical samples."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Do you ship internationally?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes, with fast turnaround times worldwide."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Are inks and coatings food-safe?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes, all printing is done with FDA-approved, food-safe materials."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Can I match sleeves with seasonal themes?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes, we produce custom designs for holidays, weddings, or promotions."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "What businesses benefit from beverage sleeves?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Cafes, restaurants, juice bars, catering companies, and event organizers."
+      }
+     }
+    ]
+   }
+  ]
+ },
+ "/custom-food-trays/": {
+  "url": "/custom-food-trays/",
+  "title": "Custom Food Trays, Wholesale With Printing | The Cone Sleeves",
+  "description": "Create your own custom food sleeves! Durable, vibrant designs to fit your brand. Fast turnaround and wholesale pricing.",
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.theconesleeves.com/custom-food-trays/",
+  "og": {
+   "locale": "en_US",
+   "type": "article",
+   "title": "Custom Food Trays",
+   "description": "Create your own custom food sleeves! Durable, vibrant designs to fit your brand. Fast turnaround and wholesale pricing.",
+   "url": "https://www.theconesleeves.com/custom-food-trays/",
+   "site_name": "The Cone Sleeves",
+   "image": "/media/2025/09/Dessert-Sleeves-768x768-1.jpg",
+   "image_width": null,
+   "image_height": null,
+   "image_type": null
+  },
+  "twitter": {
+   "card": "summary_large_image",
+   "site": null
+  },
+  "schema": [
+   {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Custom Food Sleeves | The Cone Sleeves Co.",
+    "serviceType": "Local SEO",
+    "description": "Create your own custom food sleeves! Durable, vibrant designs to fit your brand. Fast turnaround and wholesale pricing.",
+    "url": "https://www.theconesleeves.com/custom-food-sleeves/",
+    "areaServed": {
+     "@type": "City",
+     "name": "The Cone Sleeves",
+     "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "The Cone",
+      "addressRegion": "Sleeves",
+      "addressCountry": "US"
+     }
+    },
+    "provider": {
+     "@type": "LocalBusiness",
+     "@id": "https://www.theconesleeves.com/#localbusiness",
+     "name": "The Cone Sleeves",
+     "url": "https://www.theconesleeves.com/",
+     "image": "https://www.theconesleeves.com/wp-content/uploads/2025/09/Custom-Cardboard-Food-Trays-768x768-1.jpg",
+     "telephone": "+1-929-2141-874",
+     "priceRange": "$",
+     "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Da 408",
+      "addressLocality": "San Jose",
+      "addressRegion": "CA",
+      "postalCode": "95128",
+      "addressCountry": "US"
+     },
+     "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": 4.8,
+      "reviewCount": 128,
+      "bestRating": 5,
+      "worstRating": 1
+     }
+    }
+   },
+   {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": "Custom Food Sleeves | The Cone Sleeves Co.",
+    "image": "https://www.theconesleeves.com/wp-content/uploads/2025/09/Custom-Cardboard-Food-Trays-768x768-1.jpg",
+    "description": "Create your own custom food sleeves! Durable, vibrant designs to fit your brand. Fast turnaround and wholesale pricing.",
+    "sku": "TCS00010",
+    "mpn": "TCS00010",
+    "brand": {
+     "@type": "Brand",
+     "name": "The Cone Sleeves"
+    },
+    "offers": {
+     "@type": "Offer",
+     "url": "https://www.theconesleeves.com/custom-food-trays/",
+     "priceCurrency": "USD",
+     "price": "0.50",
+     "priceValidUntil": "2027-12-31",
+     "availability": "https://schema.org/InStock",
+     "itemCondition": "https://schema.org/NewCondition"
+    },
+    "aggregateRating": {
+     "@type": "AggregateRating",
+     "ratingValue": "5",
+     "bestRating": "5",
+     "worstRating": "1",
+     "reviewCount": "295"
+    },
+    "review": {
+     "@type": "Review",
+     "name": "Excellent boxes and quick delivery",
+     "datePublished": "2025-08-12",
+     "author": {
+      "@type": "Person",
+      "name": "Janis Testa"
+     },
+     "reviewBody": "Great quality and fast shipping. Printing was exactly as requested.",
+     "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "5",
+      "bestRating": "5",
+      "worstRating": "1"
+     },
+     "publisher": {
+      "@type": "Organization",
+      "name": "The Cone Sleeves"
+     }
+    }
+   },
+   {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+     {
+      "@type": "Question",
+      "name": "What are custom food trays used for?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "They are used to serve multiple food items cleanly while promoting your brand."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Can I print my logo on trays?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes, trays can be custom-printed with logos, slogans, and graphics."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Are these trays food-safe?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Absolutely \u2014 all materials and inks are FDA-approved for direct food contact."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "What materials are available?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Options include kraft, cardboard, corrugated, and compostable bagasse."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Do you offer grease-resistant trays?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes, trays can be coated to prevent oil and sauces from seeping through."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "What sizes are available?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "We produce small, medium, large, and custom sizes to match your menu."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Are trays eco-friendly?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes, we offer recyclable, biodegradable, and compostable trays."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "What is the minimum order quantity?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "MOQ is 100 trays \u2014 ideal for small shops and large businesses alike."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "How long does production take?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Standard production takes 7\u201310 business days after design approval."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Do you ship internationally?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes, we deliver worldwide."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Can I order trays for events?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes, we specialize in event-based trays for parties, festivals, and catering."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Do you provide design support?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes, free design help is included with every order."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Are trays sturdy enough for heavy meals?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Corrugated and reinforced trays can easily handle larger portions."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Can I get samples before placing bulk orders?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes, we provide digital proofs, 3D mockups, and physical samples."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Do you offer combo trays with drink holders?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes, we can design trays with compartments for burgers, fries, and drinks."
+      }
+     }
+    ]
+   }
+  ]
+ },
+ "/custom-burger-trays/": {
+  "url": "/custom-burger-trays/",
+  "title": "Custom Burger Trays | Durable Branded Serving Trays",
+  "description": "Elevate your burger presentation with custom trays \u2014 eco-friendly, strong, vibrant branding, full-color print, quick turnaround. Order now!",
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.theconesleeves.com/custom-burger-trays/",
+  "og": {
+   "locale": "en_US",
+   "type": "article",
+   "title": "Custom Burger Trays",
+   "description": "Elevate your burger presentation with custom trays \u2014 eco-friendly, strong, vibrant branding, full-color print, quick turnaround. Order now!",
+   "url": "https://www.theconesleeves.com/custom-burger-trays/",
+   "site_name": "The Cone Sleeves",
+   "image": "/media/2025/09/Dessert-Sleeves-768x768-1.jpg",
+   "image_width": null,
+   "image_height": null,
+   "image_type": null
+  },
+  "twitter": {
+   "card": "summary_large_image",
+   "site": null
+  },
+  "schema": [
+   {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Custom Burger Trays | Durable Branded Serving Trays",
+    "serviceType": "Local SEO",
+    "description": "Elevate your burger presentation with custom trays \u2014 eco-friendly, strong, vibrant branding, full-color print, quick turnaround. Order now!",
+    "url": "https://www.theconesleeves.com/custom-burger-trays/",
+    "areaServed": {
+     "@type": "City",
+     "name": "The Cone Sleeves",
+     "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "The Cone",
+      "addressRegion": "Sleeves",
+      "addressCountry": "US"
+     }
+    },
+    "provider": {
+     "@type": "LocalBusiness",
+     "@id": "https://www.theconesleeves.com/#localbusiness",
+     "name": "The Cone Sleeves",
+     "url": "https://www.theconesleeves.com/",
+     "image": "https://www.theconesleeves.com/wp-content/uploads/2025/09/Custom-Burger-Trays-Packaging-768x768-1.jpg",
+     "telephone": "+1-929-2141-874",
+     "priceRange": "$",
+     "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Da 408",
+      "addressLocality": "San Jose",
+      "addressRegion": "CA",
+      "postalCode": "95128",
+      "addressCountry": "US"
+     },
+     "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": 4.8,
+      "reviewCount": 148,
+      "bestRating": 5,
+      "worstRating": 1
+     }
+    }
+   },
+   {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": "Custom Burger Trays | Durable Branded Serving Trays",
+    "image": "https://www.theconesleeves.com/wp-content/uploads/2025/09/Custom-Burger-Trays-Packaging-768x768-1.jpg",
+    "description": "Elevate your burger presentation with custom trays \u2014 eco-friendly, strong, vibrant branding, full-color print, quick turnaround. Order now!",
+    "sku": "TCS00016",
+    "mpn": "TCS00016",
+    "brand": {
+     "@type": "Brand",
+     "name": "The Cone Sleeves"
+    },
+    "offers": {
+     "@type": "Offer",
+     "url": "https://www.theconesleeves.com/custom-burger-trays/",
+     "priceCurrency": "USD",
+     "price": "0.50",
+     "priceValidUntil": "2027-12-31",
+     "availability": "https://schema.org/InStock",
+     "itemCondition": "https://schema.org/NewCondition"
+    },
+    "aggregateRating": {
+     "@type": "AggregateRating",
+     "ratingValue": "5",
+     "bestRating": "5",
+     "worstRating": "1",
+     "reviewCount": "205"
+    },
+    "review": {
+     "@type": "Review",
+     "name": "Excellent boxes and quick delivery",
+     "datePublished": "2025-08-12",
+     "author": {
+      "@type": "Person",
+      "name": "Christine In Hawaii"
+     },
+     "reviewBody": "Great quality and fast shipping. Printing was exactly as requested.",
+     "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "5",
+      "bestRating": "5",
+      "worstRating": "1"
+     },
+     "publisher": {
+      "@type": "Organization",
+      "name": "The Cone Sleeves"
+     }
+    }
+   },
+   {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+     {
+      "@type": "Question",
+      "name": "What are custom burger trays used for?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "They\u2019re used to serve burgers, fries, and combos in a clean, branded way."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Can I print my logo on the trays?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes, we provide full-color printing, foil, or Spot UV for your branding."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Are your trays food-safe?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes, all materials and inks are FDA-approved for direct food contact."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Do you offer grease-resistant trays?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes, trays can be coated to resist sauces, cheese, and oils."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "What materials do you use?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Options include kraft, cardboard, corrugated, and bagasse."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Are trays eco-friendly?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes, recyclable and compostable options are available."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "What sizes are available?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Small, medium, large, and custom dimensions to fit your menu."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "What is the minimum order quantity?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "MOQ is 100 trays. Bulk discounts apply for larger orders."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Can I order custom-shaped trays?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes, we produce die-cut trays in unique shapes and designs."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Do you provide samples?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes, digital proofs, 3D mockups, and physical samples are available."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "How long does production take?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "7\u201310 business days after artwork approval."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Do you ship internationally?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes, we deliver worldwide."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Are trays suitable for heavy meals?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes, corrugated and reinforced trays handle large portions."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Can trays be used at events?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes, they\u2019re perfect for catering, festivals, and food fairs."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Do you offer combo trays with drink holders?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes, we can create trays with compartments for burgers, fries, and drinks."
+      }
+     }
+    ]
+   }
+  ]
+ },
+ "/custom-waffle-trays/": {
+  "url": "/custom-waffle-trays/",
+  "title": "Custom Waffle Trays \u2013 Made Per Your Design",
+  "description": "Get custom waffle trays crafted just for you. Unique designs, durable materials & perfect fit for events, brands, or gifting. Customization available now.",
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.theconesleeves.com/custom-waffle-trays/",
+  "og": {
+   "locale": "en_US",
+   "type": "article",
+   "title": "Custom Waffle Trays",
+   "description": "Get custom waffle trays crafted just for you. Unique designs, durable materials & perfect fit for events, brands, or gifting. Customization available now.",
+   "url": "https://www.theconesleeves.com/custom-waffle-trays/",
+   "site_name": "The Cone Sleeves",
+   "image": null,
+   "image_width": null,
+   "image_height": null,
+   "image_type": null
+  },
+  "twitter": {
+   "card": "summary_large_image",
+   "site": null
+  },
+  "schema": [
+   {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Custom Waffle Trays \u2013 Made Per Your Design",
+    "serviceType": "Local SEO",
+    "description": "Get custom waffle trays crafted just for you. Unique designs, durable materials &amp; perfect fit for events, brands, or gifting. Customization available now.",
+    "url": "https://www.theconesleeves.com/custom-waffle-trays/",
+    "areaServed": {
+     "@type": "City",
+     "name": "The Cone Sleeves",
+     "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "The Cone",
+      "addressRegion": "Sleeves",
+      "addressCountry": "US"
+     }
+    },
+    "provider": {
+     "@type": "LocalBusiness",
+     "@id": "https://www.theconesleeves.com/#localbusiness",
+     "name": "The Cone Sleeves",
+     "url": "https://www.theconesleeves.com/",
+     "image": "https://www.theconesleeves.com/wp-content/uploads/2025/09/Wholesale-Waffle-Trays-768x768-1.jpg",
+     "telephone": "+1-929-2141-874",
+     "priceRange": "$",
+     "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Da 408",
+      "addressLocality": "San Jose",
+      "addressRegion": "CA",
+      "postalCode": "95128",
+      "addressCountry": "US"
+     },
+     "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": 4.8,
+      "reviewCount": 260,
+      "bestRating": 5,
+      "worstRating": 1
+     }
+    }
+   },
+   {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": "Custom Waffle Trays \u2013 Made Per Your Design",
+    "image": "https://www.theconesleeves.com/wp-content/uploads/2025/09/Wholesale-Waffle-Trays-768x768-1.jpg",
+    "description": "Get custom waffle trays crafted just for you. Unique designs, durable materials &amp; perfect fit for events, brands, or gifting. Customization available now.",
+    "sku": "TCS00004",
+    "mpn": "TCS00004",
+    "brand": {
+     "@type": "Brand",
+     "name": "The Cone Sleeves"
+    },
+    "offers": {
+     "@type": "Offer",
+     "url": "https://www.theconesleeves.com/custom-waffle-trays/",
+     "priceCurrency": "USD",
+     "price": "0.50",
+     "priceValidUntil": "2027-12-31",
+     "availability": "https://schema.org/InStock",
+     "itemCondition": "https://schema.org/NewCondition"
+    },
+    "aggregateRating": {
+     "@type": "AggregateRating",
+     "ratingValue": "5",
+     "bestRating": "5",
+     "worstRating": "1",
+     "reviewCount": "268"
+    },
+    "review": {
+     "@type": "Review",
+     "name": "Excellent boxes and quick delivery",
+     "datePublished": "2025-08-12",
+     "author": {
+      "@type": "Person",
+      "name": "Nick Cassidy"
+     },
+     "reviewBody": "Great quality and fast shipping. Printing was exactly as requested.",
+     "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "5",
+      "bestRating": "5",
+      "worstRating": "1"
+     },
+     "publisher": {
+      "@type": "Organization",
+      "name": "The Cone Sleeves"
+     }
+    }
+   },
+   {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+     {
+      "@type": "Question",
+      "name": "What are custom waffle trays used for?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "They are designed to hold waffles and toppings securely while promoting your brand."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Can I print my logo on waffle trays?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes, we offer full-color printing, foil stamping, and Spot UV branding."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Are the trays food-safe?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes, all materials and inks are FDA-approved for direct food contact."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Do you provide grease-resistant trays?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes, coatings are available to handle syrup, chocolate, or oils."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "What materials do you use?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Kraft, cardboard, corrugated, and bagasse/compostable options."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Are waffle trays eco-friendly?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes, we provide recyclable and compostable materials."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "What sizes are available?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Small, medium, large, and custom dimensions tailored to your menu."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "What is the minimum order quantity?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "MOQ is 100 trays, ideal for small vendors and large businesses alike."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Can trays be customized with compartments?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes, we design trays with sections for toppings and sides."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Do you offer samples before bulk ordering?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes, we provide 2D proofs, 3D mockups, and physical samples."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "How long does production take?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "7\u201310 business days after artwork approval."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Do you ship internationally?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes, we deliver worldwide with fast turnaround."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Can trays hold heavy waffles?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes, corrugated and reinforced trays are built for strength."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Are trays suitable for events and festivals?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes, they are lightweight, durable, and easy to stack for large-scale events."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Do you make takeaway waffle trays with lids?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes, custom trays with lids are available for delivery and takeaway orders."
+      }
+     }
+    ]
+   }
+  ]
+ },
+ "/ice-cream-cone-tray/": {
+  "url": "/ice-cream-cone-tray/",
+  "title": "Custom Ice Cream Cone Tray \u2012 Eco Friendly & Branded",
+  "description": "Wholesale custom ice cream cone trays. Durable & eco-friendly materials with full-color branding. Fast delivery & design support included.",
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.theconesleeves.com/ice-cream-cone-tray/",
+  "og": {
+   "locale": "en_US",
+   "type": "article",
+   "title": "Ice Cream Cone Tray",
+   "description": "Wholesale custom ice cream cone trays. Durable & eco-friendly materials with full-color branding. Fast delivery & design support included.",
+   "url": "https://www.theconesleeves.com/ice-cream-cone-tray/",
+   "site_name": "The Cone Sleeves",
+   "image": null,
+   "image_width": null,
+   "image_height": null,
+   "image_type": null
+  },
+  "twitter": {
+   "card": "summary_large_image",
+   "site": null
+  },
+  "schema": [
+   {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Custom Ice Cream Cone Tray \u2012 Eco Friendly &amp; Branded",
+    "serviceType": "Local SEO",
+    "description": "Wholesale custom ice cream cone trays. Durable &amp; eco-friendly materials with full-color branding. Fast delivery &amp; design support included.",
+    "url": "https://www.theconesleeves.com/ice-cream-cone-tray/",
+    "areaServed": {
+     "@type": "City",
+     "name": "The Cone Sleeves",
+     "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "The Cone",
+      "addressRegion": "Sleeves",
+      "addressCountry": "US"
+     }
+    },
+    "provider": {
+     "@type": "LocalBusiness",
+     "@id": "https://www.theconesleeves.com/#localbusiness",
+     "name": "The Cone Sleeves",
+     "url": "https://www.theconesleeves.com/",
+     "image": "https://www.theconesleeves.com/wp-content/uploads/2025/08/Custom-food-sleeves-600x600-1.jpg",
+     "telephone": "+1-929-2141-874",
+     "priceRange": "$",
+     "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Da 408",
+      "addressLocality": "San Jose",
+      "addressRegion": "CA",
+      "postalCode": "95128",
+      "addressCountry": "US"
+     },
+     "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": 4.8,
+      "reviewCount": 260,
+      "bestRating": 5,
+      "worstRating": 1
+     }
+    }
+   },
+   {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": "Custom Ice Cream Cone Tray \u2012 Eco Friendly &amp; Branded",
+    "image": "https://www.theconesleeves.com/wp-content/uploads/2025/09/custom-ice-cream-cone-tray-768x768-1.jpg",
+    "description": "Wholesale custom ice cream cone trays. Durable &amp; eco-friendly materials with full-color branding. Fast delivery &amp; design support included.",
+    "sku": "TCS00003",
+    "mpn": "TCS00003",
+    "brand": {
+     "@type": "Brand",
+     "name": "The Cone Sleeves"
+    },
+    "offers": {
+     "@type": "Offer",
+     "url": "https://www.theconesleeves.com/ice-cream-cone-tray/",
+     "priceCurrency": "USD",
+     "price": "0.50",
+     "priceValidUntil": "2027-12-31",
+     "availability": "https://schema.org/InStock",
+     "itemCondition": "https://schema.org/NewCondition"
+    },
+    "aggregateRating": {
+     "@type": "AggregateRating",
+     "ratingValue": "5",
+     "bestRating": "5",
+     "worstRating": "1",
+     "reviewCount": "258"
+    },
+    "review": {
+     "@type": "Review",
+     "name": "Excellent boxes and quick delivery",
+     "datePublished": "2025-08-12",
+     "author": {
+      "@type": "Person",
+      "name": "izzy woolley"
+     },
+     "reviewBody": "Great quality and fast shipping. Printing was exactly as requested.",
+     "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "5",
+      "bestRating": "5",
+      "worstRating": "1"
+     },
+     "publisher": {
+      "@type": "Organization",
+      "name": "The Cone Sleeves"
+     }
+    }
+   },
+   {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+     {
+      "@type": "Question",
+      "name": "What are ice cream cone trays used for?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "They hold multiple cones upright for clean and quick serving."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Can I print my logo on the trays?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes, we offer full-color custom printing for branding."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Are the trays food-safe?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes, all materials and inks are FDA-approved for direct food contact."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Do you offer eco-friendly trays?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes, options include kraft and compostable bagasse board."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "What sizes are available?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "We produce trays that hold 2, 4, 6, or more cones, plus custom sizes."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Can I get trays with compartments?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes, we design trays with separate slots for stability."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Are trays grease or moisture-resistant?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes, coatings are available to handle drips and melting ice cream."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "What is the minimum order quantity?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "MOQ is 100 trays \u2014 suitable for small shops or events."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "How long does production take?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Typically 7\u201310 business days after artwork approval."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Do you ship internationally?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes, we provide worldwide delivery."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Can I order trays for parties or weddings?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes, custom-printed trays are popular for events and catering."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Do you provide design support?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes, we offer free design help to set up your artwork."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Can trays be reused?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "They are designed for single use, but eco-friendly versions are recyclable."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Are trays sturdy enough for jumbo cones?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes, corrugated options provide extra strength for larger servings.s maintain food quality during transport and storage."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Do you offer samples before bulk orders?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes, digital proofs, 3D mockups, and physical samples are available."
+      }
+     }
+    ]
+   }
+  ]
+ },
+ "/custom-hot-dog-trays/": {
+  "url": "/custom-hot-dog-trays/",
+  "title": "Personalized Hot Dog Trays \u2014 Print Your Logo Today",
+  "description": "Get personalized hot dog trays with custom designs and logos. Ideal for festivals, fairs & foodservice.",
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.theconesleeves.com/custom-hot-dog-trays/",
+  "og": {
+   "locale": "en_US",
+   "type": "article",
+   "title": "Custom Hot Dog Trays",
+   "description": "Get personalized hot dog trays with custom designs and logos. Ideal for festivals, fairs & foodservice.",
+   "url": "https://www.theconesleeves.com/custom-hot-dog-trays/",
+   "site_name": "The Cone Sleeves",
+   "image": "/media/2025/09/Custom-Burger-Trays-Packaging-768x768-1.jpg",
+   "image_width": null,
+   "image_height": null,
+   "image_type": null
+  },
+  "twitter": {
+   "card": "summary_large_image",
+   "site": null
+  },
+  "schema": [
+   {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Personalized Hot Dog Trays \u2014 Print Your Logo Today",
+    "serviceType": "Local SEO",
+    "description": "Get personalized hot dog trays with custom designs and logos. Ideal for festivals, fairs &amp; foodservice.",
+    "url": "https://www.theconesleeves.com/custom-hot-dog-trays/",
+    "areaServed": {
+     "@type": "City",
+     "name": "The Cone Sleeves",
+     "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "The Cone",
+      "addressRegion": "Sleeves",
+      "addressCountry": "US"
+     }
+    },
+    "provider": {
+     "@type": "LocalBusiness",
+     "@id": "https://www.theconesleeves.com/#localbusiness",
+     "name": "The Cone Sleeves",
+     "url": "https://www.theconesleeves.com/",
+     "image": "https://www.theconesleeves.com/wp-content/uploads/2025/09/Custom-Hot-Dog-Trays-768x768-1.jpg",
+     "telephone": "+1-929-2141-874",
+     "priceRange": "$",
+     "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Da 408",
+      "addressLocality": "San Jose",
+      "addressRegion": "CA",
+      "postalCode": "95128",
+      "addressCountry": "US"
+     },
+     "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": 4.8,
+      "reviewCount": 228,
+      "bestRating": 5,
+      "worstRating": 1
+     }
+    }
+   },
+   {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": "Personalized Hot Dog Trays \u2014 Print Your Logo Today",
+    "image": "https://www.theconesleeves.com/wp-content/uploads/2025/09/Custom-Hot-Dog-Trays-768x768-1.jpg",
+    "description": "Get personalized hot dog trays with custom designs and logos. Ideal for festivals, fairs &amp; foodservice.",
+    "sku": "TCS00012",
+    "mpn": "TCS00012",
+    "brand": {
+     "@type": "Brand",
+     "name": "The Cone Sleeves"
+    },
+    "offers": {
+     "@type": "Offer",
+     "url": "https://www.theconesleeves.com/custom-hot-dog-trays/",
+     "priceCurrency": "USD",
+     "price": "0.50",
+     "priceValidUntil": "2027-12-31",
+     "availability": "https://schema.org/InStock",
+     "itemCondition": "https://schema.org/NewCondition"
+    },
+    "aggregateRating": {
+     "@type": "AggregateRating",
+     "ratingValue": "5",
+     "bestRating": "5",
+     "worstRating": "1",
+     "reviewCount": "297"
+    },
+    "review": {
+     "@type": "Review",
+     "name": "Excellent boxes and quick delivery",
+     "datePublished": "2025-08-12",
+     "author": {
+      "@type": "Person",
+      "name": "Palizzi Pastries"
+     },
+     "reviewBody": "Great quality and fast shipping. Printing was exactly as requested.",
+     "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "5",
+      "bestRating": "5",
+      "worstRating": "1"
+     },
+     "publisher": {
+      "@type": "Organization",
+      "name": "The Cone Sleeves"
+     }
+    }
+   },
+   {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+     {
+      "@type": "Question",
+      "name": "What are custom hot dog trays used for?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "They hold hot dogs securely, prevent spills, and promote branding."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Can I print my logo on trays?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes, full-color printing and finishes like Spot UV and foil are available."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Are these trays food-safe?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes, all materials and inks are FDA-approved for direct contact."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Do you provide grease-resistant trays?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes, coatings help with sauces, cheese, and oils."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "What materials do you offer?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Kraft, cardboard, corrugated, and bagasse/compostable."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Are trays eco-friendly?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes, recyclable and biodegradable options are available."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "What sizes are available?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Standard, large, combo trays, and custom sizes."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "What is the minimum order quantity?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "MOQ is 100 trays, ideal for small and bulk orders."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Can trays include compartments?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes, trays can be designed with sections for fries or sauces."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Do you provide design support?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes, free design help and artwork setup are included."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "How long does production take?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "7\u201310 business days after approval."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Do you ship internationally?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes, we deliver worldwide."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Are trays suitable for events?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes, they are lightweight and easy to serve in bulk."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Can I get samples before bulk ordering?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes, digital proofs, 3D mockups, and physical samples are available."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Do you offer takeaway trays with lids?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes, custom trays with lids are available for delivery and transport."
+      }
+     }
+    ]
+   }
+  ]
+ }
+}

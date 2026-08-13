@@ -1,0 +1,75 @@
+---
+/**
+ * Search results.
+ *
+ * WordPress answered `/?s=<query>` from the database. A static build cannot, so
+ * the query is redirected here (see vercel.json) and matched client-side
+ * against a prebuilt index. The markup, classes and layout are the Rishi
+ * search-results template, so the page looks exactly like the original.
+ */
+import Layout from '../layouts/Layout.astro';
+import { SITE } from '../data/site';
+
+const seo = {
+  title: 'You searched for - The Cone Sleeves',
+  description: null,
+  robots: 'noindex, follow',
+  canonical: `${SITE.origin}/search/`,
+  og: { locale: 'en_US', type: 'article', title: 'Search', site_name: SITE.name },
+  twitter: { card: 'summary_large_image' },
+  schema: [],
+};
+
+const bodyClass =
+  'search search-results wp-custom-logo wp-embed-responsive wp-theme-rishi theme-rishi hfeed default-layout blog-classic rightsidebar';
+const bodyAttrs = {
+  'data-link': 'type-2',
+  'data-forms': 'classic',
+  'data-prefix': 'search',
+  'data-header': 'type-1',
+  'data-footer': 'type-1',
+};
+---
+
+<Layout seo={seo} bodyClass={bodyClass} bodyAttrs={bodyAttrs} stem="blog">
+  <div class="site-content reveal_none_desktop reveal_none_tablet reveal_none_mobile">
+    <div class="archive-title-wrapper clear" data-alignment="left">
+      <div class="rishi-container" data-strech="none">
+        <section class="search-result-wrapper">
+          <div class="rishi-searchres-inner">
+            <h1 class="search-res">Search Result for: <span data-search-term></span></h1>
+            <form action="/search/" autocomplete="off" class="search-form" method="get" role="search">
+              <label>
+                <span class="screen-reader-text">Search for:</span>
+                <input
+                  class="search-field"
+                  name="s"
+                  placeholder="Search"
+                  title="Search Input"
+                  type="search"
+                  value=""
+                />
+              </label>
+              <input class="search-submit" type="submit" value="Search" />
+            </form>
+          </div>
+        </section>
+        <section class="rishi-search-count" data-count="yes">
+          <span class="srch-results-cnt" data-search-count></span>
+        </section>
+      </div>
+    </div>
+
+    <div class="rishi-container">
+      <div class="main-content-wrapper clear">
+        <main class="site-main">
+          <div class="rishi-container-wrap">
+            <div class="posts-wrap" data-search-results></div>
+          </div>
+        </main>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<script src="../scripts/search.js"></script>

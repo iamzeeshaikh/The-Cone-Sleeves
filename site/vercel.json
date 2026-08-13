@@ -1,0 +1,754 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "theconesleeves.com"
+        }
+      ],
+      "destination": "https://www.theconesleeves.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "query",
+          "key": "t",
+          "value": "(?<t>\\d+)"
+        }
+      ],
+      "destination": "/api/gone/",
+      "permanent": false
+    },
+    {
+      "source": "/comment.php",
+      "destination": "/api/gone/",
+      "permanent": false
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "s",
+          "value": "(?<q>.*)"
+        }
+      ],
+      "destination": "/search/?s=:q",
+      "permanent": true
+    },
+    {
+      "source": "/sitemap_index.xml",
+      "destination": "/sitemap.xml",
+      "permanent": true
+    },
+    {
+      "source": "/page-sitemap.xml",
+      "destination": "/sitemap.xml",
+      "permanent": true
+    },
+    {
+      "source": "/wp-sitemap.xml",
+      "destination": "/sitemap.xml",
+      "permanent": true
+    },
+    {
+      "source": "/post-sitemap.xml",
+      "destination": "/sitemap.xml",
+      "permanent": true
+    },
+    {
+      "source": "/category-sitemap.xml",
+      "destination": "/sitemap.xml",
+      "permanent": true
+    },
+    {
+      "source": "/author-sitemap.xml",
+      "destination": "/sitemap.xml",
+      "permanent": true
+    },
+    {
+      "source": "/ice-cream-cone-sleeves-2/",
+      "destination": "/ice-cream-cone-sleeves/",
+      "permanent": true
+    },
+    {
+      "source": "/ice-cream-cone-sleeves-2",
+      "destination": "/ice-cream-cone-sleeves/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": "3"
+        }
+      ],
+      "destination": "/privacy-policy/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "page_id",
+          "value": "3"
+        }
+      ],
+      "destination": "/privacy-policy/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": "15"
+        }
+      ],
+      "destination": "/contact/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "page_id",
+          "value": "15"
+        }
+      ],
+      "destination": "/contact/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": "3070"
+        }
+      ],
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "page_id",
+          "value": "3070"
+        }
+      ],
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": "3071"
+        }
+      ],
+      "destination": "/about/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "page_id",
+          "value": "3071"
+        }
+      ],
+      "destination": "/about/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": "3073"
+        }
+      ],
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "page_id",
+          "value": "3073"
+        }
+      ],
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": "3189"
+        }
+      ],
+      "destination": "/terms-conditions/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "page_id",
+          "value": "3189"
+        }
+      ],
+      "destination": "/terms-conditions/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": "3277"
+        }
+      ],
+      "destination": "/get-a-free-quote/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "page_id",
+          "value": "3277"
+        }
+      ],
+      "destination": "/get-a-free-quote/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": "3311"
+        }
+      ],
+      "destination": "/thank-you/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "page_id",
+          "value": "3311"
+        }
+      ],
+      "destination": "/thank-you/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": "7381"
+        }
+      ],
+      "destination": "/waffle-cone-sleeves/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "page_id",
+          "value": "7381"
+        }
+      ],
+      "destination": "/waffle-cone-sleeves/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": "7427"
+        }
+      ],
+      "destination": "/ice-cream-cone-sleeves/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "page_id",
+          "value": "7427"
+        }
+      ],
+      "destination": "/ice-cream-cone-sleeves/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": "7473"
+        }
+      ],
+      "destination": "/custom-sugar-cone-sleeves/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "page_id",
+          "value": "7473"
+        }
+      ],
+      "destination": "/custom-sugar-cone-sleeves/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": "7489"
+        }
+      ],
+      "destination": "/custom-food-sleeves/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "page_id",
+          "value": "7489"
+        }
+      ],
+      "destination": "/custom-food-sleeves/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": "7546"
+        }
+      ],
+      "destination": "/custom-burger-sleeves/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "page_id",
+          "value": "7546"
+        }
+      ],
+      "destination": "/custom-burger-sleeves/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": "7575"
+        }
+      ],
+      "destination": "/custom-cake-cone-sleeves/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "page_id",
+          "value": "7575"
+        }
+      ],
+      "destination": "/custom-cake-cone-sleeves/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": "7615"
+        }
+      ],
+      "destination": "/custom-crepe-sleeves/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "page_id",
+          "value": "7615"
+        }
+      ],
+      "destination": "/custom-crepe-sleeves/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": "7629"
+        }
+      ],
+      "destination": "/custom-sandwich-sleeves/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "page_id",
+          "value": "7629"
+        }
+      ],
+      "destination": "/custom-sandwich-sleeves/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": "7641"
+        }
+      ],
+      "destination": "/custom-coffee-sleeves/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "page_id",
+          "value": "7641"
+        }
+      ],
+      "destination": "/custom-coffee-sleeves/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": "7667"
+        }
+      ],
+      "destination": "/custom-hot-dog-sleeves/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "page_id",
+          "value": "7667"
+        }
+      ],
+      "destination": "/custom-hot-dog-sleeves/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": "7684"
+        }
+      ],
+      "destination": "/custom-dessert-sleeves/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "page_id",
+          "value": "7684"
+        }
+      ],
+      "destination": "/custom-dessert-sleeves/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": "7711"
+        }
+      ],
+      "destination": "/custom-donut-sleeves/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "page_id",
+          "value": "7711"
+        }
+      ],
+      "destination": "/custom-donut-sleeves/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": "7734"
+        }
+      ],
+      "destination": "/custom-beverage-sleeves/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "page_id",
+          "value": "7734"
+        }
+      ],
+      "destination": "/custom-beverage-sleeves/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": "7750"
+        }
+      ],
+      "destination": "/custom-food-trays/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "page_id",
+          "value": "7750"
+        }
+      ],
+      "destination": "/custom-food-trays/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": "7756"
+        }
+      ],
+      "destination": "/custom-burger-trays/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "page_id",
+          "value": "7756"
+        }
+      ],
+      "destination": "/custom-burger-trays/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": "7775"
+        }
+      ],
+      "destination": "/custom-waffle-trays/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "page_id",
+          "value": "7775"
+        }
+      ],
+      "destination": "/custom-waffle-trays/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": "7789"
+        }
+      ],
+      "destination": "/ice-cream-cone-tray/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "page_id",
+          "value": "7789"
+        }
+      ],
+      "destination": "/ice-cream-cone-tray/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": "7803"
+        }
+      ],
+      "destination": "/custom-hot-dog-trays/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "page_id",
+          "value": "7803"
+        }
+      ],
+      "destination": "/custom-hot-dog-trays/",
+      "permanent": true
+    },
+    {
+      "source": "/wp-content/uploads/:path*",
+      "destination": "/media/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/blog/feed/",
+      "destination": "/feed/",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/feed/",
+      "destination": "/feed/index.xml"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/media/:path*",
+      "headers": [
+        {
+          "key": "cache-control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/fonts/:path*",
+      "headers": [
+        {
+          "key": "cache-control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/assets/:path*",
+      "headers": [
+        {
+          "key": "cache-control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+---
+import Layout from '../layouts/Layout.astro';
+import seoData from '../data/seo.json';
+import content from '../content/blog.html?raw';
+import '../styles/pages/blog.css';
+const seo = seoData["/blog/"];
+const bodyClass = "blog wp-custom-logo wp-embed-responsive wp-theme-rishi theme-rishi hfeed default-layout blog-classic rightsidebar elementor-default elementor-kit-3067";
+const bodyAttrs = {"data-link": "type-2", "data-forms": "classic", "data-prefix": "blog", "data-header": "type-1", "data-footer": "type-1"};
+---
+<Layout seo={seo} bodyClass={bodyClass} bodyAttrs={bodyAttrs} stem="blog" hasPopup={false}>
+  <Fragment set:html={content} />
+</Layout>

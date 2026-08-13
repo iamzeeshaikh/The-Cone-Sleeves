@@ -1,0 +1,87 @@
+---
+import '../styles/site.css';
+import '../styles/app.css';
+import Header from '../components/Header.astro';
+import OffCanvas from '../components/OffCanvas.astro';
+import Footer from '../components/Footer.astro';
+import QuotePopup from '../components/QuotePopup.astro';
+import JoinChat from '../components/JoinChat.astro';
+import BackToTop from '../components/BackToTop.astro';
+import Analytics from '../components/Analytics.astro';
+import { SITE, INTEGRATIONS } from '../data/site';
+
+interface Props {
+  seo: any;
+  bodyClass?: string;
+  bodyAttrs?: Record<string, string>;
+  /** Page stem, used to pick that page's header/footer markup. */
+  stem: string;
+  /** Only pages with a trigger carried the popup markup on WordPress. */
+  hasPopup?: boolean;
+}
+
+const { seo, bodyClass = '', bodyAttrs = {}, stem, hasPopup = false } = Astro.props;
+const og = seo.og ?? {};
+const tw = seo.twitter ?? {};
+const schemas = seo.schema ?? [];
+const abs = (u: string) => (u?.startsWith('http') ? u : new URL(u, SITE.origin).href);
+---
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="profile" href="https://gmpg.org/xfn/11" />
+    <meta name="google-site-verification" content={INTEGRATIONS.googleSiteVerification} />
+
+    <title>{seo.title}</title>
+    {seo.description && <meta name="description" content={seo.description} />}
+    {seo.robots && <meta name="robots" content={seo.robots} />}
+    <link rel="canonical" href={seo.canonical} />
+
+    {og.locale && <meta property="og:locale" content={og.locale} />}
+    {og.type && <meta property="og:type" content={og.type} />}
+    {og.title && <meta property="og:title" content={og.title} />}
+    {og.description && <meta property="og:description" content={og.description} />}
+    <meta property="og:url" content={seo.canonical} />
+    {og.site_name && <meta property="og:site_name" content={og.site_name} />}
+    {og.image && <meta property="og:image" content={abs(og.image)} />}
+    {og.image_width && <meta property="og:image:width" content={og.image_width} />}
+    {og.image_height && <meta property="og:image:height" content={og.image_height} />}
+    {og.image_type && <meta property="og:image:type" content={og.image_type} />}
+
+    {tw.card && <meta name="twitter:card" content={tw.card} />}
+    {tw.site && <meta name="twitter:site" content={tw.site} />}
+
+    <link rel="icon" href={SITE.favicon32} sizes="32x32" />
+    <link rel="icon" href={SITE.favicon192} sizes="192x192" />
+    <link rel="apple-touch-icon" href={SITE.appleTouchIcon} />
+    <meta name="msapplication-TileImage" content={abs(SITE.msTileImage)} />
+
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      crossorigin
+      href="/fonts/6xKjdSxYI9_3nPWNAGn5LA.woff2"
+    />
+
+    {schemas.map((s: unknown) => <script type="application/ld+json" set:html={JSON.stringify(s)} />)}
+
+    <Analytics />
+  </head>
+  <body class={bodyClass} {...bodyAttrs}>
+    <div id="main-container" class="site">
+      <a class="skip-link screen-reader-text" href="#primary">Skip to content</a>
+      <Header stem={stem} />
+      <OffCanvas stem={stem} />
+      <slot />
+      <Footer stem={stem} />
+    </div>
+    <BackToTop />
+    <div class="cb__drawer-canvas"></div>
+    {hasPopup && <QuotePopup />}
+    <JoinChat />
+    <script src="../scripts/site.js"></script>
+  </body>
+</html>

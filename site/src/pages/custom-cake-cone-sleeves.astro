@@ -1,0 +1,12 @@
+---
+import Layout from '../layouts/Layout.astro';
+import seoData from '../data/seo.json';
+import content from '../content/custom-cake-cone-sleeves.html?raw';
+import '../styles/pages/custom-cake-cone-sleeves.css';
+const seo = seoData["/custom-cake-cone-sleeves/"];
+const bodyClass = "wp-singular page-template page-template-elementor_header_footer page page-id-7575 wp-custom-logo wp-embed-responsive wp-theme-rishi theme-rishi box-layout rightsidebar elementor-default elementor-template-full-width elementor-kit-3067 elementor-page elementor-page-7575";
+const bodyAttrs = {"data-link": "type-2", "data-forms": "classic", "data-prefix": "single_page", "data-header": "type-1", "data-footer": "type-1"};
+---
+<Layout seo={seo} bodyClass={bodyClass} bodyAttrs={bodyAttrs} stem="custom-cake-cone-sleeves" hasPopup={true}>
+  <Fragment set:html={content} />
+</Layout>

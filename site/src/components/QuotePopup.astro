@@ -1,0 +1,11 @@
+---
+// Elementor popup #3288 ("Get Instant Quote"), rebuilt as a native dialog.
+import html from './_popup.html?raw';
+---
+<div class="tcs-popup" id="quote-popup" role="dialog" aria-modal="true" aria-label="Get Instant Quote" hidden>
+  <div class="tcs-popup__overlay" data-popup-close></div>
+  <div class="tcs-popup__panel">
+    <button type="button" class="tcs-popup__close" aria-label="Close" data-popup-close>&times;</button>
+    <Fragment set:html={html} />
+  </div>
+</div>

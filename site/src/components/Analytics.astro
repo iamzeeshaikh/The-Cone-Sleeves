@@ -1,0 +1,46 @@
+---
+/**
+ * Third-party integrations carried over from WordPress, byte-for-byte:
+ *   - Google Tag Manager container GTM-K4R5CPR
+ *   - Zendesk Chat (Zopim) widget
+ *
+ * Both were inline <script> tags in <head> on the live site and are reproduced
+ * as-is so the containers keep firing exactly as before. IDs live in
+ * src/data/site.ts; nothing here is a secret.
+ */
+import { INTEGRATIONS } from '../data/site';
+---
+<script is:inline define:vars={{ gtmId: INTEGRATIONS.gtmId }}>
+  (function (w, d, s, l, i) {
+    w[l] = w[l] || [];
+    w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+    var f = d.getElementsByTagName(s)[0],
+      j = d.createElement(s),
+      dl = l != 'dataLayer' ? '&l=' + l : '';
+    j.async = true;
+    j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+    f.parentNode.insertBefore(j, f);
+  })(window, document, 'script', 'dataLayer', gtmId);
+</script>
+
+<script is:inline define:vars={{ zopimKey: INTEGRATIONS.zopimKey }}>
+  window.$zopim ||
+    (function (d, s) {
+      var z = ($zopim = function (c) {
+          z._.push(c);
+        }),
+        $ = (z.s = d.createElement(s)),
+        e = d.getElementsByTagName(s)[0];
+      z.set = function (o) {
+        z.set._.push(o);
+      };
+      z._ = [];
+      z.set._ = [];
+      $.async = !0;
+      $.setAttribute('charset', 'utf-8');
+      $.src = 'https://v2.zopim.com/?' + zopimKey;
+      z.t = +new Date();
+      $.type = 'text/javascript';
+      e.parentNode.insertBefore($, e);
+    })(document, 'script');
+</script>

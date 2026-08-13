@@ -1,0 +1,27 @@
+{
+  "name": "theconesleeves",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build && node tools/purge.mjs",
+    "preview": "astro preview",
+    "prune-assets": "node tools/prune-assets.mjs",
+    "audit": "node tools/audit.mjs",
+    "audit:live": "node tools/audit.mjs --live",
+    "verify:css": "node tools/verify-all.mjs",
+    "verify:headings": "node tools/headings.mjs",
+    "shots": "node tools/shoot.mjs"
+  },
+  "dependencies": {
+    "@astrojs/vercel": "^11.0.5",
+    "astro": "^7.2.1",
+    "nodemailer": "^9.0.5"
+  },
+  "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^8.0.0",
+    "playwright": "^1.62.1",
+    "purgecss": "^8.0.0"
+  }
+}
