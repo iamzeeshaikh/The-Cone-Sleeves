@@ -143,6 +143,14 @@ These were caught by comparing computed styles against the live site, not by eye
    `current-menu-ancestor` states.
 8. **PurgeCSS dropped attribute-selector rules.** `[data-page-spacing=top\:bottom]{margin:0}` was removed,
    adding 160px to every page. Attribute-selector rules are now safelisted and escaped selectors restored.
+9. **Quote popup rendered at 0×0.** Elementor Pro ships `.elementor-location-popup` as `display:none` and
+   its JS lifts the contents into a modal it builds at runtime. The replacement dialog needs the wrapper
+   to render in place. *(Found by driving the built site in a browser, not by reading the markup.)*
+10. **WhatsApp widget markup drift.** The first version was hand-written; the plugin's stylesheet targets
+    its own class structure, so the button lost its icon and the "Open chat" label inherited the site's
+    link colour. It now uses the plugin's rendered markup with the control turned into a real `wa.me` link.
+11. **Schema image paths.** JSON-LD `image` URLs still pointed at `/wp-content/uploads/`, costing a
+    redirect hop per reference. Paths are localised to `/media/`; the structured data itself is untouched.
 
 ---
 
@@ -262,6 +270,9 @@ change, which is out of scope. Flagging them for a decision:
 5. **In-body `<title>` and `<meta>` tags.** `/waffle-cone-sleeves/` contains a full document head inside an
    Elementor HTML widget, including a second `<title>`. Preserved because it is in the live markup.
 6. **70 images without alt text**, and 3 images without `width`/`height` on `/waffle-cone-sleeves/`.
+7. **Broken skip link.** The header's "Skip to content" link points at `#primary`, which does not exist on
+   the live site either. Preserved rather than silently retargeted, since it changes keyboard behaviour —
+   the fix is a one-line `id` on `main`/`.site-content`.
 
 ---
 
@@ -328,8 +339,8 @@ WhatsApp button and chatbox, all six forms.
 
 | | Before (WordPress) | After |
 |---|---|---|
-| CSS per page | ~1.0 MB across 25 stylesheets | 136–166 KB across 2 |
-| JavaScript | jQuery, Elementor, Elementor Pro, WooCommerce, EAEL, Rishi (~600 KB) | **4 KB** (+ GTM/Zendesk, unchanged) |
+| CSS per page | ~1.0 MB across 25 stylesheets | 135–177 KB across 2 |
+| JavaScript | jQuery, Elementor, Elementor Pro, WooCommerce, EAEL, Rishi (~600 KB) | **4 KB** on every content page (+ GTM/Zendesk, unchanged). `/search/` additionally loads its 98 KB index. |
 | Icon fonts | 5 formats, 4.2 MB | woff2 + woff, 640 KB |
 | Requests to third parties | Google Fonts, `s.w.org` emoji | none beyond GTM/Zendesk |
 

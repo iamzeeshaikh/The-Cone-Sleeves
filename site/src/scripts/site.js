@@ -214,3 +214,34 @@ $$('form[data-tcs-form]').forEach((form) => {
     }
   });
 });
+
+/* ------------------------------------------------- gravity form logic --- */
+
+/*
+ * Gravity Forms conditional logic, recovered from the form definition in the
+ * WordPress database. Only one field uses it: "Other Product Name" (field 21)
+ * is shown when the Product select (field 1) is "Others". Without this the
+ * field is permanently visible, which it never was on WordPress.
+ */
+const GF_CONDITIONS = [
+  { field: 'field_1_21', controlledBy: 'input_1', showWhen: 'Others' },
+];
+
+for (const rule of GF_CONDITIONS) {
+  const target = document.getElementById(rule.field);
+  const control = document.querySelector(`[name="${rule.controlledBy}"]`);
+  if (!target || !control) continue;
+
+  const apply = () => {
+    const show = control.value === rule.showWhen;
+    target.style.display = show ? '' : 'none';
+    if (!show) {
+      target.querySelectorAll('input, select, textarea').forEach((el) => {
+        el.value = '';
+      });
+    }
+  };
+
+  on(control, 'change', apply);
+  apply();
+}

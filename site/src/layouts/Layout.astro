@@ -58,6 +58,8 @@ const abs = (u: string) => (u?.startsWith('http') ? u : new URL(u, SITE.origin).
     <link rel="apple-touch-icon" href={SITE.appleTouchIcon} />
     <meta name="msapplication-TileImage" content={abs(SITE.msTileImage)} />
 
+    {/* Sen variable font — body copy on every page. Filename comes from
+        tools/fonts.py; re-run it if Google reissues the file. */}
     <link
       rel="preload"
       as="font"
@@ -72,6 +74,8 @@ const abs = (u: string) => (u?.startsWith('http') ? u : new URL(u, SITE.origin).
   </head>
   <body class={bodyClass} {...bodyAttrs}>
     <div id="main-container" class="site">
+      {/* Kept as WordPress rendered it. The #primary target does not exist on
+          the live site either; see MIGRATION-REPORT.md §6 before changing it. */}
       <a class="skip-link screen-reader-text" href="#primary">Skip to content</a>
       <Header stem={stem} />
       <OffCanvas stem={stem} />

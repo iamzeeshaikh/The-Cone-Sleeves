@@ -11,7 +11,7 @@ Reads the captured rendered HTML of every live URL and emits:
 
 Nothing here runs at build time; it is a one-shot source generator.
 """
-import os, re, json, glob, shutil, html
+import os, re, json, shutil
 from bs4 import BeautifulSoup
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -77,8 +77,6 @@ def rewrite_url(u):
     return u
 
 
-SRCSET_RE = re.compile(r"([^\s,]+)(\s+[0-9.]+[wx])?")
-
 
 def rewrite_srcset(v):
     out = []
@@ -124,10 +122,6 @@ def clean_tree(node, page_stem):
             )
     return node
 
-
-def strip_empty_search_state(soup):
-    """Header/footer are components; only the page body is extracted here."""
-    return soup
 
 
 # --------------------------------------------------------------------------- #
@@ -439,10 +433,26 @@ def main():
     open(os.path.join(SITE, "src/components/_popup.html"), "w",
          encoding="utf-8").write(popup.decode())
 
+    # -------- WhatsApp widget ----------------------------------------------
+    # Keep the Join.chat plugin's own markup — its stylesheet targets these
+    # classes — but replace the parts its JavaScript used to supply: the
+    # "Open chat" control becomes a real wa.me link (the href is filled in by
+    # JoinChat.astro) and the chatbox starts closed.
     joinchat = src.select_one(".joinchat")
     clean_tree(joinchat, "joinchat")
+    for attr in ("data-settings", "hidden"):
+        joinchat.attrs.pop(attr, None)
+    open_btn = joinchat.select_one(".joinchat__open")
+    open_btn.name = "a"
+    open_btn.attrs = {
+        "class": ["joinchat__open"],
+        "href": "{{WA_HREF}}",
+        "target": "_blank",
+        "rel": "noopener noreferrer",
+    }
+    joinchat.select_one(".joinchat__chatbox")["hidden"] = ""
     open(os.path.join(SITE, "src/components/_joinchat.html"), "w",
-         encoding="utf-8").write(joinchat.decode())
+         encoding="utf-8").write(re.sub(r"\n\s*\n", "\n", joinchat.decode()))
 
 
     totop = src.select_one("div.to_top")
@@ -484,18 +494,6 @@ def main():
     print(f"\nmedia: {copied} copied, {missing} missing")
     print("pages:", len(PAGES))
 
-
-PAGE_TEMPLATE = """---
-import Layout from '../layouts/Layout.astro';
-import seoData from '../data/seo.json';
-{css_import}
-const seo = seoData['{url}'];
-const bodyClass = {body_classes};
----
-<Layout seo={{seo}} bodyClass={{bodyClass}}>
-  <Fragment set:html={{content}} />
-</Layout>
-"""
 
 
 def write_page(stem, url, markup, body_classes, has_css, body_attrs, has_js,
