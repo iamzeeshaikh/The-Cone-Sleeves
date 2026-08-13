@@ -59,17 +59,46 @@ function restoreEscapedRules(original, purged) {
   return kept.length ? `${purged}\n/* restored escaped selectors */\n${kept.join('\n')}\n` : purged;
 }
 
+/*
+ * The icon webfonts ship in five formats for browsers that no longer exist.
+ * `npm run prune-assets` deletes the eot/ttf/svg files once; this drops the
+ * matching entries from every @font-face src list, and must run on every build
+ * because the CSS is regenerated from source each time. Without it the built
+ * stylesheets reference files that are no longer on disk.
+ */
+const DEAD_FORMATS = /\.(eot|ttf|svg)(\?|#|$|\))/i;
+
+function dropDeadFontFormats(css) {
+  return css
+    .replace(/src:\s*([^;}]+)/g, (whole, list) => {
+      if (!/\/assets\/.*(webfonts|fonts)\//.test(list)) return whole;
+      const kept = list
+        .split(',')
+        .map((s) => s.trim())
+        .filter((s) => !DEAD_FORMATS.test(s));
+      // A src list that only ever named dead formats is dropped entirely.
+      return kept.length ? `src:${kept.join(',')}` : '';
+    })
+    .replace(/;\s*;+/g, ';')
+    .replace(/\{\s*;/g, '{');
+}
+
 let after = 0;
 let restored = 0;
+let fontsTrimmed = 0;
 for (const r of results) {
   const original = originals.get(r.file) ?? '';
   const before = r.css;
-  const css = restoreEscapedRules(original, before);
+  let css = restoreEscapedRules(original, before);
   if (css !== before) restored++;
+  const trimmed = dropDeadFontFormats(css);
+  if (trimmed !== css) fontsTrimmed++;
+  css = trimmed;
   fs.writeFileSync(r.file, css);
   after += Buffer.byteLength(css);
 }
 if (restored) console.log(`restored escaped-selector rules in ${restored} file(s)`);
+if (fontsTrimmed) console.log(`dropped legacy font formats from ${fontsTrimmed} file(s)`);
 
 const kb = (n) => (n / 1024).toFixed(0) + ' KB';
 console.log(`CSS: ${kb(before)} -> ${kb(after)} (${(100 - (after / before) * 100).toFixed(0)}% smaller)`);
