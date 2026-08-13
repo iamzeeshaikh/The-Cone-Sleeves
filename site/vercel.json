@@ -2,18 +2,18 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "redirects": [
     {
-      "source": "/:path*",
+      "source": "/(.*)",
       "has": [
         {
           "type": "host",
           "value": "theconesleeves.com"
         }
       ],
-      "destination": "https://www.theconesleeves.com/:path*",
-      "permanent": true
+      "destination": "https://www.theconesleeves.com/$1",
+      "statusCode": 301
     },
     {
-      "source": "/:path*",
+      "source": "/(.*)",
       "has": [
         {
           "type": "query",
@@ -22,12 +22,12 @@
         }
       ],
       "destination": "/api/gone/",
-      "permanent": false
+      "statusCode": 307
     },
     {
       "source": "/comment.php",
       "destination": "/api/gone/",
-      "permanent": false
+      "statusCode": 307
     },
     {
       "source": "/",
@@ -39,47 +39,47 @@
         }
       ],
       "destination": "/search/?s=:q",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/sitemap_index.xml",
       "destination": "/sitemap.xml",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/page-sitemap.xml",
       "destination": "/sitemap.xml",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/wp-sitemap.xml",
       "destination": "/sitemap.xml",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/post-sitemap.xml",
       "destination": "/sitemap.xml",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/category-sitemap.xml",
       "destination": "/sitemap.xml",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/author-sitemap.xml",
       "destination": "/sitemap.xml",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/ice-cream-cone-sleeves-2/",
       "destination": "/ice-cream-cone-sleeves/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/ice-cream-cone-sleeves-2",
       "destination": "/ice-cream-cone-sleeves/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/",
@@ -91,7 +91,7 @@
         }
       ],
       "destination": "/privacy-policy/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/",
@@ -103,7 +103,7 @@
         }
       ],
       "destination": "/privacy-policy/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/",
@@ -115,7 +115,7 @@
         }
       ],
       "destination": "/contact/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/",
@@ -127,7 +127,7 @@
         }
       ],
       "destination": "/contact/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/",
@@ -139,7 +139,7 @@
         }
       ],
       "destination": "/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/",
@@ -151,7 +151,7 @@
         }
       ],
       "destination": "/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/",
@@ -163,7 +163,7 @@
         }
       ],
       "destination": "/about/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/",
@@ -175,7 +175,7 @@
         }
       ],
       "destination": "/about/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/",
@@ -187,7 +187,7 @@
         }
       ],
       "destination": "/blog/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/",
@@ -199,7 +199,7 @@
         }
       ],
       "destination": "/blog/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/",
@@ -211,7 +211,7 @@
         }
       ],
       "destination": "/terms-conditions/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/",
@@ -223,7 +223,7 @@
         }
       ],
       "destination": "/terms-conditions/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/",
@@ -235,7 +235,7 @@
         }
       ],
       "destination": "/get-a-free-quote/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/",
@@ -247,7 +247,7 @@
         }
       ],
       "destination": "/get-a-free-quote/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/",
@@ -259,7 +259,7 @@
         }
       ],
       "destination": "/thank-you/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/",
@@ -271,7 +271,7 @@
         }
       ],
       "destination": "/thank-you/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/",
@@ -283,7 +283,7 @@
         }
       ],
       "destination": "/waffle-cone-sleeves/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/",
@@ -295,7 +295,7 @@
         }
       ],
       "destination": "/waffle-cone-sleeves/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/",
@@ -307,7 +307,7 @@
         }
       ],
       "destination": "/ice-cream-cone-sleeves/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/",
@@ -319,7 +319,7 @@
         }
       ],
       "destination": "/ice-cream-cone-sleeves/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/",
@@ -331,7 +331,7 @@
         }
       ],
       "destination": "/custom-sugar-cone-sleeves/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/",
@@ -343,7 +343,7 @@
         }
       ],
       "destination": "/custom-sugar-cone-sleeves/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/",
@@ -355,7 +355,7 @@
         }
       ],
       "destination": "/custom-food-sleeves/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/",
@@ -367,7 +367,7 @@
         }
       ],
       "destination": "/custom-food-sleeves/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/",
@@ -379,7 +379,7 @@
         }
       ],
       "destination": "/custom-burger-sleeves/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/",
@@ -391,7 +391,7 @@
         }
       ],
       "destination": "/custom-burger-sleeves/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/",
@@ -403,7 +403,7 @@
         }
       ],
       "destination": "/custom-cake-cone-sleeves/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/",
@@ -415,7 +415,7 @@
         }
       ],
       "destination": "/custom-cake-cone-sleeves/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/",
@@ -427,7 +427,7 @@
         }
       ],
       "destination": "/custom-crepe-sleeves/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/",
@@ -439,7 +439,7 @@
         }
       ],
       "destination": "/custom-crepe-sleeves/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/",
@@ -451,7 +451,7 @@
         }
       ],
       "destination": "/custom-sandwich-sleeves/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/",
@@ -463,7 +463,7 @@
         }
       ],
       "destination": "/custom-sandwich-sleeves/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/",
@@ -475,7 +475,7 @@
         }
       ],
       "destination": "/custom-coffee-sleeves/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/",
@@ -487,7 +487,7 @@
         }
       ],
       "destination": "/custom-coffee-sleeves/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/",
@@ -499,7 +499,7 @@
         }
       ],
       "destination": "/custom-hot-dog-sleeves/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/",
@@ -511,7 +511,7 @@
         }
       ],
       "destination": "/custom-hot-dog-sleeves/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/",
@@ -523,7 +523,7 @@
         }
       ],
       "destination": "/custom-dessert-sleeves/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/",
@@ -535,7 +535,7 @@
         }
       ],
       "destination": "/custom-dessert-sleeves/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/",
@@ -547,7 +547,7 @@
         }
       ],
       "destination": "/custom-donut-sleeves/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/",
@@ -559,7 +559,7 @@
         }
       ],
       "destination": "/custom-donut-sleeves/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/",
@@ -571,7 +571,7 @@
         }
       ],
       "destination": "/custom-beverage-sleeves/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/",
@@ -583,7 +583,7 @@
         }
       ],
       "destination": "/custom-beverage-sleeves/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/",
@@ -595,7 +595,7 @@
         }
       ],
       "destination": "/custom-food-trays/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/",
@@ -607,7 +607,7 @@
         }
       ],
       "destination": "/custom-food-trays/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/",
@@ -619,7 +619,7 @@
         }
       ],
       "destination": "/custom-burger-trays/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/",
@@ -631,7 +631,7 @@
         }
       ],
       "destination": "/custom-burger-trays/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/",
@@ -643,7 +643,7 @@
         }
       ],
       "destination": "/custom-waffle-trays/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/",
@@ -655,7 +655,7 @@
         }
       ],
       "destination": "/custom-waffle-trays/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/",
@@ -667,7 +667,7 @@
         }
       ],
       "destination": "/ice-cream-cone-tray/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/",
@@ -679,7 +679,7 @@
         }
       ],
       "destination": "/ice-cream-cone-tray/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/",
@@ -691,7 +691,7 @@
         }
       ],
       "destination": "/custom-hot-dog-trays/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/",
@@ -703,17 +703,17 @@
         }
       ],
       "destination": "/custom-hot-dog-trays/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/wp-content/uploads/:path*",
       "destination": "/media/:path*",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/blog/feed/",
       "destination": "/feed/",
-      "permanent": true
+      "statusCode": 301
     }
   ],
   "rewrites": [
