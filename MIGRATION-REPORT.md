@@ -181,7 +181,7 @@ Credentials live in `site/.env` (git-ignored, `chmod 600`). `site/.env.example` 
 |---|---|---|---|---|
 | `db5b507` Hero "Get Free Quote" | `/` | `/api/contact/` | shanimazhar82@gmail.com, customforms24@gmail.com | New message from The Cone Sleeves |
 | `dab954a` "Find Out the Cost" | `/` | `/api/contact/` | shanimazhar82@gmail.com, customforms24@gmail.com | New message The Cone Sleeves Quote |
-| `2725c75` "Find Out the Cost" | 17 product pages | `/api/contact/` | shanimazhar82@gmail.com, customforms24@gmail.com | New message The Cone Sleeves Quote |
+| `2725c75` "Find Out the Cost" | 18 pages | `/api/contact/` | shanimazhar82@gmail.com, customforms24@gmail.com | New message The Cone Sleeves Quote |
 | `fba3ad2` Contact form | `/contact/` | `/api/contact/` | shanimazhar82@gmail.com, customforms24@gmail.com | New message from "The Cone Sleeves" |
 | `881a5df` "Get Instant Quote" popup | 18 pages | `/api/contact/` | shanimazhar82@gmail.com, uzairzia19@gmail.com, info@theconesleeves.com | New message from "The Cone Sleeves" |
 | Gravity Form #1 "Get A Free Quote" | `/get-a-free-quote/` | `/api/quote/` | shanimazhar82@gmail.com, customforms24@gmail.com | New submission from Get A Free Quote |
@@ -261,14 +261,17 @@ weighting, while this index matches the rendered text. Both return the same top 
 These are faithful copies of what the live site serves. **None was "fixed"** — that would be a content
 change, which is out of scope. Flagging them for a decision:
 
-1. **`aggregateRating` / `review` markup with no visible reviews.** 17 product pages carry
-   `AggregateRating` (e.g. 4.8/198 and 5/293) and a single hard-coded review inside `Product` and
-   `LocalBusiness` schema. There are no reviews on the pages themselves. This is exactly the pattern that
-   triggers Google structured-data manual actions and Merchant Center suspensions. **Recommend removing.**
+1. **`aggregateRating` / `review` markup with no visible reviews.** Exact counts in the build:
+   **18 pages** carry `Product.aggregateRating` (e.g. 5/293) plus one hard-coded `review`, and
+   **19 pages** carry `AggregateRating` (4.8/198) on the `LocalBusiness` inside `Service` schema —
+   the extra one being `/get-a-free-quote/`, which has no `Product` block. No reviews appear on any page.
+   **Decision (client, 2026-08-13): keep exactly as on WordPress — do not remove.** Recorded here because
+   it is the pattern behind Google structured-data manual actions and Merchant Center suspensions, so the
+   trade-off is a known one rather than an oversight.
 2. **Duplicate/incorrect SEO title.** `/custom-hot-dog-sleeves/` has the title
    *"Custom Food Trays | The Cone Sleeves – Premium Quality"* — copy from a different product.
-3. **Heading structure.** `/` and `/blog/` have 2 `<h1>` elements; 17 product pages have **no** `<h1>` at
-   all; several pages skip from `<h2>` to `<h5>`.
+3. **Heading structure.** `/` and `/blog/` have 2 `<h1>` elements; **18 pages** (17 product pages plus
+   `/get-a-free-quote/`) have **no** `<h1>` at all; several pages skip from `<h2>` to `<h5>`.
 4. **`Service` schema oddity.** `serviceType` is `"Local SEO"` and `areaServed` is
    `{City: "The Cone Sleeves", addressLocality: "The Cone", addressRegion: "Sleeves"}` on every product page.
 5. **In-body `<title>` and `<meta>` tags.** `/waffle-cone-sleeves/` contains a full document head inside an
@@ -387,10 +390,11 @@ saving is proven not to change rendering.
 
 ### Recommended follow-ups (not done — each is a content or policy decision)
 
-1. **Remove the unsupported `aggregateRating`/`review` schema** on the 17 product pages (§6.1).
-2. **Fix the `/custom-hot-dog-sleeves/` SEO title**, which currently describes food trays.
-3. Add missing `<h1>` elements to the 17 product pages, and alt text to the 70 images.
-4. Point DNS at the new deployment only after confirming `www` remains canonical.
+1. **Fix the `/custom-hot-dog-sleeves/` SEO title**, which currently describes food trays.
+2. Add missing `<h1>` elements to the 18 pages that lack one, and alt text to the 70 images.
+3. Point DNS at the new deployment only after confirming `www` remains canonical.
+
+Closed: the review/rating schema (§6.1) stays as-is by client decision.
 
 ---
 
