@@ -151,6 +151,10 @@ These were caught by comparing computed styles against the live site, not by eye
     link colour. It now uses the plugin's rendered markup with the control turned into a real `wa.me` link.
 11. **Schema image paths.** JSON-LD `image` URLs still pointed at `/wp-content/uploads/`, costing a
     redirect hop per reference. Paths are localised to `/media/`; the structured data itself is untouched.
+12. **Gravity Forms conditional logic.** The quote form's "Other Product Name" field is shown only when
+    Product is "Others" — logic the plugin applied from JS. Without it the field was permanently visible,
+    making the form 101 px taller on phones. The rule was recovered from the form definition in the
+    database and reproduced in `site.js`.
 
 ---
 
@@ -303,21 +307,30 @@ runtime — informational, not a defect.
 ### Visual fidelity (`npm run verify:css`)
 
 Computed styles (48 properties + bounding box) compared element-by-element against the live site for all
-26 pages at **1440 px, 768 px and 390 px**.
+26 pages at **1440 px, 768 px and 390 px** — 78 page/viewport combinations, ~2 700 elements matched.
 
-- **Desktop 1440 px: 24 / 26 pages report 0 differing elements.**
-- The two exceptions are sub-pixel only: `/blog/`, `/thank-you/`, `/privacy-policy/` and
-  `/terms-conditions/` differ by **0.3 px** on the sidebar search widget's height.
-- `/waffle-cone-sleeves/` reports differences that trace to two duplicated Elementor element IDs on the
-  live page, which make the comparator match different nodes; total page height agrees within **7 px of
-  8 125 px (0.09 %)**.
+**63 / 78 combinations report zero differing elements.** All 15 remaining rows fall into two categories,
+neither of which is a layout difference:
 
-Two live-site rendering artefacts were normalised in the comparator (they are not migration differences):
+| Pages | Viewports | Difference | Cause |
+|---|---|---|---|
+| `/blog/`, `/thank-you/`, `/privacy-policy/`, `/terms-conditions/` | all three | **0.3–0.7 px** on the sidebar search widget, cascading into its two ancestors | sub-pixel rounding on the search submit control; invisible on screen |
+| `/waffle-cone-sleeves/` | all three | 12–14 elements | the live page renders **two elements sharing one Elementor ID**, so the comparator matches different nodes on each side. Total page height agrees within **7 px of 8 125 px (0.09 %)** |
+
+Every other page — including all 18 product pages, the homepage, contact and the quote form — is
+**identical at every viewport**.
+
+Two live-site rendering artefacts are normalised in the comparator (they are not migration differences):
 
 - WordPress replaces emoji characters with `<img class="emoji">` from `s.w.org`; under automation these
   measure ~1140 px before the plugin's sizing CSS loads. The Astro site renders native emoji instead —
   same glyph, one fewer third-party request.
-- The waffle-page hero has an 8-second animated gradient, so a computed-style read catches it mid-keyframe.
+- The waffle-page hero has an 8-second animated gradient, so a computed-style read catches it
+  mid-keyframe. Animations are frozen before measuring.
+
+> **A note on running this yourself.** `astro build` deletes and recreates `dist/`, so rebuilding while
+> `verify:css` is running makes pages fail spuriously (an earlier run reported 59/78 for exactly this
+> reason — every one of those extra failures re-checked as 0). Let the run finish before rebuilding.
 
 ### Content fidelity
 
@@ -331,9 +344,20 @@ including the mobile logo row, hamburger, off-canvas drawer and stacked footer.
 
 ### Interactive components tested
 
-Desktop dropdowns (CSS-only), mobile drawer open/close, mobile submenu toggles, search overlay,
-"Get Instant Quote" popup open/close/Escape, FAQ accordions incl. one-open-at-a-time, back-to-top,
-WhatsApp button and chatbox, all six forms.
+Driven in a real browser at desktop and phone widths:
+
+| Component | Result |
+|---|---|
+| Desktop dropdown menus (CSS-only, no JS) | ✅ |
+| Mobile drawer open / close | ✅ |
+| Mobile submenu toggles | ✅ |
+| Search overlay open / close | ✅ |
+| "Get Instant Quote" popup: open, overlay-click close, Escape close, form renders 580×621 | ✅ |
+| FAQ accordions, one open at a time | ✅ |
+| Back-to-top appears past 300 px scroll | ✅ |
+| WhatsApp button reveal, chatbox toggle, `wa.me` link | ✅ |
+| Quote form conditional field | ✅ |
+| All six forms (submit, validation, honeypot, uploads) | ✅ — see the table above |
 
 ### Weight
 
