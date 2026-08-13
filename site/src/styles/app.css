@@ -9,6 +9,16 @@
 }
 
 /* Elementor popup #3288, rebuilt as a plain dialog. */
+
+/*
+ * Elementor Pro ships the popup wrapper as display:none and its JS lifts the
+ * contents into a modal it builds at runtime. The dialog below replaces that
+ * modal, so the wrapper has to render in place.
+ */
+#quote-popup .elementor-location-popup {
+  display: block;
+}
+
 .tcs-popup[hidden] {
   display: none;
 }
@@ -103,4 +113,13 @@ body.tcs-popup-open {
 
 .joinchat__chatbox[hidden] {
   display: none;
+}
+
+/* The plugin's "Open chat" control is an <a> here, so keep the site's global
+   link colour and underline off it. */
+.joinchat__open,
+.joinchat__open:hover,
+.joinchat__open:focus {
+  color: inherit;
+  text-decoration: none;
 }

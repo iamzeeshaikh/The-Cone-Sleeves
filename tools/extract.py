@@ -208,10 +208,25 @@ def extract_seo(soup, url):
         el = head.select_one(sel)
         return el.get(attr) if el else None
 
+    def localise_schema(node):
+        """Point schema image URLs at their new path.
+
+        The structured data itself is preserved verbatim; only asset paths are
+        updated, because /wp-content/uploads/ no longer exists and would cost a
+        redirect hop on every image reference.
+        """
+        if isinstance(node, dict):
+            return {k: localise_schema(v) for k, v in node.items()}
+        if isinstance(node, list):
+            return [localise_schema(v) for v in node]
+        if isinstance(node, str) and "/wp-content/uploads/" in node:
+            return node.replace("/wp-content/uploads/", "/media/")
+        return node
+
     schemas = []
     for s in head.find_all("script", type="application/ld+json"):
         try:
-            schemas.append(json.loads(s.string or "{}"))
+            schemas.append(localise_schema(json.loads(s.string or "{}")))
         except Exception:
             pass
 
