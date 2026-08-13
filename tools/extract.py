@@ -54,6 +54,44 @@ PAGES = {
 media_used = set()
 page_js = set()
 
+# --------------------------------------------------------------------------- #
+# Post-migration content corrections
+# --------------------------------------------------------------------------- #
+# Changes the client asked for after the like-for-like rebuild. Applied here
+# rather than by hand so re-running the extractor keeps them.
+#
+# 2026-08-13: the business now answers on the WhatsApp number, so the old
+# contact number is replaced everywhere it appears — visible text, tel: links
+# and the telephone field in the LocalBusiness schema.
+PHONE_NEW_DISPLAY = "+1-503-358-0443"
+PHONE_NEW_DIGITS = "+15033580443"
+
+# The old number appears in three groupings across the site; the waffle page's
+# hand-written HTML widget uses its own.
+PHONE_REPLACEMENTS = [
+    ("+1-929-2141-874", PHONE_NEW_DISPLAY),
+    ("+1-929-214-1874", PHONE_NEW_DISPLAY),
+    ("+19292141874", PHONE_NEW_DIGITS),
+]
+
+
+def apply_corrections(text):
+    """Apply the agreed content corrections to a block of migrated text."""
+    for old, new in PHONE_REPLACEMENTS:
+        text = text.replace(old, new)
+    return text
+
+
+def correct_deep(node):
+    """Apply the corrections to every string inside a nested structure."""
+    if isinstance(node, dict):
+        return {k: correct_deep(v) for k, v in node.items()}
+    if isinstance(node, list):
+        return [correct_deep(v) for v in node]
+    if isinstance(node, str):
+        return apply_corrections(node)
+    return node
+
 
 # --------------------------------------------------------------------------- #
 # URL rewriting
@@ -213,8 +251,10 @@ def extract_seo(soup, url):
             return {k: localise_schema(v) for k, v in node.items()}
         if isinstance(node, list):
             return [localise_schema(v) for v in node]
-        if isinstance(node, str) and "/wp-content/uploads/" in node:
-            return node.replace("/wp-content/uploads/", "/media/")
+        if isinstance(node, str):
+            if "/wp-content/uploads/" in node:
+                node = node.replace("/wp-content/uploads/", "/media/")
+            return apply_corrections(node)
         return node
 
     schemas = []
@@ -351,7 +391,7 @@ def main():
         raw = open(f, encoding="utf-8", errors="replace").read()
         soup = BeautifulSoup(raw, "html5lib")
 
-        seo_all[url] = extract_seo(soup, url)
+        seo_all[url] = correct_deep(extract_seo(soup, url))
 
         # ---- collect the theme's inline stylesheets (identical across pages) --
         for st in soup.head.find_all("style"):
@@ -396,7 +436,7 @@ def main():
             clean_tree(part, stem)
             convert_forms(part, stem)
             open(os.path.join(SITE, f"src/chrome/{name}", stem + ".html"), "w",
-                 encoding="utf-8").write(part.decode())
+                 encoding="utf-8").write(apply_corrections(part.decode()))
 
         # ---- body content ---------------------------------------------------
         content = soup.select_one("div.site-content")
@@ -416,7 +456,7 @@ def main():
         # Rishi scopes much of its CSS on these; they are part of the design.
         body_attrs = {k: v for k, v in soup.body.attrs.items() if k.startswith("data-")}
 
-        markup = content.decode()
+        markup = apply_corrections(content.decode())
         # The quote popup only exists on pages that carry a trigger, exactly as
         # Elementor rendered it.
         has_popup = 'href="#quote-popup"' in markup
@@ -431,7 +471,7 @@ def main():
     clean_tree(popup, "popup")
     convert_forms(popup, "popup")
     open(os.path.join(SITE, "src/components/_popup.html"), "w",
-         encoding="utf-8").write(popup.decode())
+         encoding="utf-8").write(apply_corrections(popup.decode()))
 
     # -------- WhatsApp widget ----------------------------------------------
     # Keep the Join.chat plugin's own markup — its stylesheet targets these
@@ -458,7 +498,7 @@ def main():
     totop = src.select_one("div.to_top")
     clean_tree(totop, "totop")
     open(os.path.join(SITE, "src/components/_totop.html"), "w",
-         encoding="utf-8").write(totop.decode())
+         encoding="utf-8").write(apply_corrections(totop.decode()))
 
     # -------- stylesheets ---------------------------------------------------
     parts = ['@import "./fonts.css";']

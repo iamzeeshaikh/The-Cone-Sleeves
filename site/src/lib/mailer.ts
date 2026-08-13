@@ -34,11 +34,21 @@ export function transport() {
   return cached;
 }
 
+/**
+ * Envelope sender. Note this is deliberately allowed to differ from SMTP_USER:
+ * mail is relayed through one account but presented as support@conesleeves.com.
+ */
 export const MAIL_FROM = () =>
-  `"${read('MAIL_FROM_NAME') || 'The Cone Sleeves'}" <${env('MAIL_FROM')}>`;
+  `"${read('SMTP_FROM_NAME') || 'The Cone Sleeves'}" <${env('SMTP_FROM_EMAIL')}>`;
 
+/**
+ * Resolves who a form's notification goes to, most specific first:
+ *   1. a per-form override (FORM_TO_DEFAULT / FORM_TO_POPUP / FORM_TO_QUOTE)
+ *   2. SMTP_TO — the single address every form uses today
+ *   3. the recipients recovered from the WordPress form config, as a last resort
+ */
 export function recipients(name: string, fallback: string): string[] {
-  return (read(name) || fallback)
+  return (read(name) || read('SMTP_TO') || fallback)
     .split(',')
     .map((s) => s.trim())
     .filter(Boolean);
