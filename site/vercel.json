@@ -13,7 +13,7 @@
       "statusCode": 301
     },
     {
-      "source": "/(.*)",
+      "source": "/((?!api/gone).*)",
       "has": [
         {
           "type": "query",
