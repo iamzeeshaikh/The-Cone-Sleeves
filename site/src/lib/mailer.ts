@@ -42,16 +42,21 @@ export const MAIL_FROM = () =>
   `"${read('SMTP_FROM_NAME') || 'The Cone Sleeves'}" <${env('SMTP_FROM_EMAIL')}>`;
 
 /**
- * Resolves who a form's notification goes to, most specific first:
- *   1. a per-form override (FORM_TO_DEFAULT / FORM_TO_POPUP / FORM_TO_QUOTE)
- *   2. SMTP_TO — the single address every form uses today
- *   3. the recipients recovered from the WordPress form config, as a last resort
+ * Resolves who a form's notification goes to: a per-form override
+ * (FORM_TO_DEFAULT / FORM_TO_POPUP / FORM_TO_QUOTE) if set, otherwise SMTP_TO.
+ *
+ * Addresses live only in the environment — never in source — so this repo can
+ * be public without exposing anyone's inbox.
  */
-export function recipients(name: string, fallback: string): string[] {
-  return (read(name) || read('SMTP_TO') || fallback)
+export function recipients(name: string): string[] {
+  const list = (read(name) || read('SMTP_TO') || '')
     .split(',')
     .map((s) => s.trim())
     .filter(Boolean);
+  if (!list.length) {
+    throw new Error(`No recipient configured: set SMTP_TO (or ${name}) in the environment`);
+  }
+  return list;
 }
 
 const escapeHtml = (s: string) =>

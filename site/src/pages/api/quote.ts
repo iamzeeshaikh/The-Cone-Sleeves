@@ -7,7 +7,6 @@ export const prerender = false;
  * Replaces Gravity Forms form #1 ("Get A Free Quote"). Recipients, subject,
  * sender and the post-submit redirect are the ones configured in WordPress.
  */
-const TO = 'shanimazhar82@gmail.com, customforms24@gmail.com';
 const SUBJECT = 'New submission from Get A Free Quote';
 const REDIRECT = '/thank-you/';
 
@@ -88,7 +87,7 @@ export const POST: APIRoute = async ({ request }) => {
   try {
     await transport().sendMail({
       from: MAIL_FROM(),
-      to: recipients('FORM_TO_QUOTE', TO),
+      to: recipients('FORM_TO_QUOTE'),
       replyTo: email,
       subject: SUBJECT,
       text: renderText(rows),

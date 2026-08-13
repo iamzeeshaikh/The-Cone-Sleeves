@@ -7,9 +7,7 @@ interface FormConfig {
   /** Human name, for logs only. */
   label: string;
   subject: string;
-  /** Recipients recovered from the WordPress database. */
-  to: string;
-  /** Environment variable that may override the recipients. */
+  /** Environment variable that may override SMTP_TO for this form. */
   envKey: string;
   /** Elementor field id -> on-screen label, in display order. */
   fields: Array<[string, string]>;
@@ -26,7 +24,6 @@ const FORMS: Record<string, FormConfig> = {
   db5b507: {
     label: 'Homepage hero — Get Free Quote',
     subject: 'New message from The Cone Sleeves',
-    to: 'shanimazhar82@gmail.com, customforms24@gmail.com',
     envKey: 'FORM_TO_DEFAULT',
     fields: [
       ['email', 'Name'],
@@ -39,7 +36,6 @@ const FORMS: Record<string, FormConfig> = {
   dab954a: {
     label: 'Homepage — Find Out the Cost',
     subject: 'New message The Cone Sleeves Quote',
-    to: 'shanimazhar82@gmail.com, customforms24@gmail.com',
     envKey: 'FORM_TO_DEFAULT',
     fields: [
       ['name', 'Name'],
@@ -53,7 +49,6 @@ const FORMS: Record<string, FormConfig> = {
   '2725c75': {
     label: 'Product pages — Find Out the Cost',
     subject: 'New message The Cone Sleeves Quote',
-    to: 'shanimazhar82@gmail.com, customforms24@gmail.com',
     envKey: 'FORM_TO_DEFAULT',
     fields: [
       ['name', 'Name'],
@@ -67,7 +62,6 @@ const FORMS: Record<string, FormConfig> = {
   fba3ad2: {
     label: 'Contact page',
     subject: 'New message from "The Cone Sleeves"',
-    to: 'shanimazhar82@gmail.com, customforms24@gmail.com',
     envKey: 'FORM_TO_DEFAULT',
     fields: [
       ['name', 'Name'],
@@ -79,7 +73,6 @@ const FORMS: Record<string, FormConfig> = {
   '881a5df': {
     label: 'Get Instant Quote popup',
     subject: 'New message from "The Cone Sleeves"',
-    to: 'shanimazhar82@gmail.com, uzairzia19@gmail.com, info@theconesleeves.com',
     envKey: 'FORM_TO_POPUP',
     fields: [
       ['name', 'Name'],
@@ -145,7 +138,7 @@ export const POST: APIRoute = async ({ request }) => {
   try {
     await transport().sendMail({
       from: MAIL_FROM(),
-      to: recipients(config.envKey, config.to),
+      to: recipients(config.envKey),
       replyTo: email,
       subject: config.subject,
       text: renderText(rows),

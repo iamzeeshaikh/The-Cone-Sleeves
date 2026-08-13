@@ -168,8 +168,8 @@ server** (`transport.verify()` → OK).
 
 | Setting | Value |
 |---|---|
-| Host / port / security | `mail.theconesleeves.com` : `465` (SSL) |
-| Username / from | `info@theconesleeves.com` |
+| Host / port / security | recovered from the DB; now superseded — see `.env` |
+| Username / from | held in `.env` only |
 | From name | `The Cone Sleeves` |
 
 Credentials live in `site/.env` (git-ignored, `chmod 600`). `site/.env.example` lists variable names only.
@@ -177,14 +177,18 @@ Credentials live in `site/.env` (git-ignored, `chmod 600`). `site/.env.example` 
 
 ### Endpoints
 
+> Recipient addresses are deliberately **not** in this repo — they live in `.env`
+> (git-ignored). The table below names the variable that carries each one.
+
+
 | Form | Where | Endpoint | Recipients (from the WordPress config) | Subject |
 |---|---|---|---|---|
-| `db5b507` Hero "Get Free Quote" | `/` | `/api/contact/` | shanimazhar82@gmail.com, customforms24@gmail.com | New message from The Cone Sleeves |
-| `dab954a` "Find Out the Cost" | `/` | `/api/contact/` | shanimazhar82@gmail.com, customforms24@gmail.com | New message The Cone Sleeves Quote |
-| `2725c75` "Find Out the Cost" | 18 pages | `/api/contact/` | shanimazhar82@gmail.com, customforms24@gmail.com | New message The Cone Sleeves Quote |
-| `fba3ad2` Contact form | `/contact/` | `/api/contact/` | shanimazhar82@gmail.com, customforms24@gmail.com | New message from "The Cone Sleeves" |
-| `881a5df` "Get Instant Quote" popup | 18 pages | `/api/contact/` | shanimazhar82@gmail.com, uzairzia19@gmail.com, info@theconesleeves.com | New message from "The Cone Sleeves" |
-| Gravity Form #1 "Get A Free Quote" | `/get-a-free-quote/` | `/api/quote/` | shanimazhar82@gmail.com, customforms24@gmail.com | New submission from Get A Free Quote |
+| `db5b507` Hero "Get Free Quote" | `/` | `/api/contact/` | `SMTP_TO` (see .env) | New message from The Cone Sleeves |
+| `dab954a` "Find Out the Cost" | `/` | `/api/contact/` | `SMTP_TO` (see .env) | New message The Cone Sleeves Quote |
+| `2725c75` "Find Out the Cost" | 18 pages | `/api/contact/` | `SMTP_TO` (see .env) | New message The Cone Sleeves Quote |
+| `fba3ad2` Contact form | `/contact/` | `/api/contact/` | `SMTP_TO` (see .env) | New message from "The Cone Sleeves" |
+| `881a5df` "Get Instant Quote" popup | 18 pages | `/api/contact/` | `FORM_TO_POPUP` (see .env) | New message from "The Cone Sleeves" |
+| Gravity Form #1 "Get A Free Quote" | `/get-a-free-quote/` | `/api/quote/` | `SMTP_TO` (see .env) | New submission from Get A Free Quote |
 
 All 30 quote-form fields (product, quantity, unit, dimensions, printing, stock, material/lamination/add-on
 checkbox groups, contact details, notes, file upload) are preserved with their original labels and options.
