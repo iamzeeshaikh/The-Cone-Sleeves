@@ -1,5 +1,5 @@
 import type { APIRoute } from 'astro';
-import { transport, MAIL_FROM, recipients, renderTable, renderText, json } from '../../lib/mailer';
+import { transport, MAIL_FROM, recipients, renderTable, renderText, json, success } from '../../lib/mailer';
 
 export const prerender = false;
 
@@ -8,7 +8,6 @@ export const prerender = false;
  * sender and the post-submit redirect are the ones configured in WordPress.
  */
 const SUBJECT = 'New submission from Get A Free Quote';
-const REDIRECT = '/thank-you/';
 
 /** Gravity Forms input names, in the order they appear on the page. */
 const SINGLE_FIELDS: Array<[string, string]> = [
@@ -102,5 +101,5 @@ export const POST: APIRoute = async ({ request }) => {
     );
   }
 
-  return json({ ok: true, redirect: REDIRECT });
+  return success(request);
 };

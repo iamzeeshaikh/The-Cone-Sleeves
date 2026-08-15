@@ -92,3 +92,17 @@ export const json = (data: unknown, status = 200) =>
     status,
     headers: { 'content-type': 'application/json' },
   });
+
+/** Every form ends on the thank-you page. */
+export const THANK_YOU = '/thank-you/';
+
+/**
+ * Success response. The front-end posts with `Accept: application/json` and
+ * follows `redirect` itself; anything else (a form posted without JavaScript,
+ * or a crawler) gets a real 303 so it still lands on the thank-you page.
+ */
+export function success(request: Request) {
+  const wantsJson = (request.headers.get('accept') || '').includes('application/json');
+  if (wantsJson) return json({ ok: true, redirect: THANK_YOU });
+  return new Response(null, { status: 303, headers: { location: THANK_YOU } });
+}

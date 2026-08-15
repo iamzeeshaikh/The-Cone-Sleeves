@@ -191,7 +191,11 @@ $$('form[data-tcs-form]').forEach((form) => {
     setStatus(form, '', '');
 
     try {
-      const res = await fetch(form.action, { method: 'POST', body: new FormData(form) });
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { Accept: 'application/json' },
+      });
       const data = await res.json().catch(() => ({}));
       if (res.ok && data.ok) {
         form.reset();

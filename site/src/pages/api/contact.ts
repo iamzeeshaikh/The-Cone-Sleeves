@@ -1,5 +1,5 @@
 import type { APIRoute } from 'astro';
-import { transport, MAIL_FROM, recipients, renderTable, renderText, json } from '../../lib/mailer';
+import { transport, MAIL_FROM, recipients, renderTable, renderText, json, success } from '../../lib/mailer';
 
 export const prerender = false;
 
@@ -105,7 +105,7 @@ export const POST: APIRoute = async ({ request }) => {
 
   // Accept silently so bots learn nothing from the response.
   if (HONEYPOTS.some((h) => field(h) !== '')) {
-    return json({ ok: true, message: 'Thanks! Your request was sent.' });
+    return success(request);
   }
 
   const config = FORMS[String(form.get('form_id') || '')];
@@ -153,5 +153,5 @@ export const POST: APIRoute = async ({ request }) => {
     );
   }
 
-  return json({ ok: true, message: 'Thanks! Your request was sent. We will reply within 24 hours.' });
+  return success(request);
 };
