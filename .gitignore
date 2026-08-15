@@ -6,6 +6,9 @@ localhost.sql
 *.zip
 !site/**/*.xml
 
+# Captured WordPress HTML, kept for post-cutover comparison (5.5 MB, local only)
+reference/live-snapshot/
+
 # --- build + tooling artefacts ---
 node_modules/
 dist/
