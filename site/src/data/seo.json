@@ -68,7 +68,7 @@
   "url": "/blog/",
   "title": "Blog - The Cone Sleeves",
   "description": null,
-  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "robots": "noindex, follow",
   "canonical": "https://www.theconesleeves.com/blog/",
   "og": {
    "locale": "en_US",
@@ -200,7 +200,7 @@
   "url": "/thank-you/",
   "title": "Thank You - The Cone Sleeves",
   "description": null,
-  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "robots": "noindex, follow",
   "canonical": "https://www.theconesleeves.com/thank-you/",
   "og": {
    "locale": "en_US",
@@ -1916,15 +1916,15 @@
  },
  "/custom-hot-dog-sleeves/": {
   "url": "/custom-hot-dog-sleeves/",
-  "title": "Custom Food Trays | The Cone Sleeves \u2013 Premium Quality",
-  "description": "Order custom food trays tailored to your brand. Durable, stylish & food-safe. Bulk options + fast delivery. Elevate your presentation now!",
+  "title": "Custom Hot Dog Sleeves | Wholesale, Eco-Friendly & Branded",
+  "description": "Custom hot dog sleeves at wholesale prices \u2014 eco-friendly materials, bold printing and sizes tailored to your menu. Get a free quote.",
   "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
   "canonical": "https://www.theconesleeves.com/custom-hot-dog-sleeves/",
   "og": {
    "locale": "en_US",
    "type": "article",
    "title": "Custom Hot Dog Sleeves",
-   "description": "Order custom food trays tailored to your brand. Durable, stylish & food-safe. Bulk options + fast delivery. Elevate your presentation now!",
+   "description": "Custom hot dog sleeves at wholesale prices \u2014 eco-friendly materials, bold printing and sizes tailored to your menu. Get a free quote.",
    "url": "https://www.theconesleeves.com/custom-hot-dog-sleeves/",
    "site_name": "The Cone Sleeves",
    "image": "/media/2025/09/Custom-Hot-Dog-Sleeves-768x768-1.jpg",

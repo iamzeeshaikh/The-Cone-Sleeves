@@ -272,8 +272,9 @@ change, which is out of scope. Flagging them for a decision:
    **Decision (client, 2026-08-13): keep exactly as on WordPress — do not remove.** Recorded here because
    it is the pattern behind Google structured-data manual actions and Merchant Center suspensions, so the
    trade-off is a known one rather than an oversight.
-2. **Duplicate/incorrect SEO title.** `/custom-hot-dog-sleeves/` has the title
-   *"Custom Food Trays | The Cone Sleeves – Premium Quality"* — copy from a different product.
+2. ~~**Duplicate/incorrect SEO title.**~~ **Fixed 2026-08-15.** `/custom-hot-dog-sleeves/` carried the
+   food-trays title *and* meta description — copy from a different product. Both now describe hot dog
+   sleeves, using wording taken from the page's own opening paragraph. `og:title` was already correct.
 3. **Heading structure.** `/` and `/blog/` have 2 `<h1>` elements; **18 pages** (17 product pages plus
    `/get-a-free-quote/`) have **no** `<h1>` at all; several pages skip from `<h2>` to `<h5>`.
 4. **`Service` schema oddity.** `serviceType` is `"Local SEO"` and `areaServed` is
@@ -394,9 +395,22 @@ saving is proven not to change rendering.
 
 ### Recommended follow-ups (not done — each is a content or policy decision)
 
-1. **Fix the `/custom-hot-dog-sleeves/` SEO title**, which currently describes food trays.
-2. Add missing `<h1>` elements to the 18 pages that lack one, and alt text to the 70 images.
-3. Point DNS at the new deployment only after confirming `www` remains canonical.
+1. Add missing `<h1>` elements to the 18 pages that lack one, and alt text to the 70 images.
+
+Closed: the `/custom-hot-dog-sleeves/` title (fixed 2026-08-15), the two thin pages removed from the
+sitemap (below), and DNS cutover (done 2026-08-15).
+
+### Index hygiene (2026-08-15)
+
+Two pages were pulled out of the sitemap and set to `noindex, follow`:
+
+| Page | Words | Reason |
+|---|---|---|
+| `/blog/` | 17 | Renders *"Nothing Found — It seems we can't find what you're looking for."* There are no posts, so Google would read it as a soft 404. Yoast had already excluded it from the WordPress sitemap; including it was a mistake in the original migration. **Revert both when the blog has posts.** |
+| `/thank-you/` | 17 | Form confirmation. Nothing to rank for, and it should never be a search landing page. |
+
+`/contact/` is also short (32 words) but is a genuine contact page with NAP and a form, so it stays
+indexed. The sitemap is now **24 URLs**.
 
 Closed: the review/rating schema (§6.1) stays as-is by client decision.
 

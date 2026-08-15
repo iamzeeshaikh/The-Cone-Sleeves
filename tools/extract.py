@@ -82,6 +82,38 @@ def apply_corrections(text):
     return text
 
 
+# Per-page SEO corrections agreed after launch. Everything else is carried over
+# from WordPress untouched.
+SEO_OVERRIDES = {
+    # WordPress served this page the food-trays title and description — copy
+    # from a different product. Replaced with copy taken from this page's own
+    # opening paragraph; og:title was already correct.
+    "/custom-hot-dog-sleeves/": {
+        "title": "Custom Hot Dog Sleeves | Wholesale, Eco-Friendly & Branded",
+        "description": ("Custom hot dog sleeves at wholesale prices — eco-friendly materials, "
+                        "bold printing and sizes tailored to your menu. Get a free quote."),
+        "og.description": ("Custom hot dog sleeves at wholesale prices — eco-friendly materials, "
+                           "bold printing and sizes tailored to your menu. Get a free quote."),
+    },
+    # Renders "Nothing Found" — a soft 404 to Google. Yoast already kept it out
+    # of the sitemap; noindex stops it being indexed as thin content. Revert
+    # both when the blog has posts.
+    "/blog/": {"robots": "noindex, follow"},
+    # Form confirmation page: nothing to rank for, and it should not be a
+    # landing page from search.
+    "/thank-you/": {"robots": "noindex, follow"},
+}
+
+
+def apply_seo_overrides(url, seo):
+    for key, value in SEO_OVERRIDES.get(url, {}).items():
+        if key.startswith("og."):
+            seo["og"][key[3:]] = value
+        else:
+            seo[key] = value
+    return seo
+
+
 def correct_deep(node):
     """Apply the corrections to every string inside a nested structure."""
     if isinstance(node, dict):
@@ -391,7 +423,7 @@ def main():
         raw = open(f, encoding="utf-8", errors="replace").read()
         soup = BeautifulSoup(raw, "html5lib")
 
-        seo_all[url] = correct_deep(extract_seo(soup, url))
+        seo_all[url] = apply_seo_overrides(url, correct_deep(extract_seo(soup, url)))
 
         # ---- collect the theme's inline stylesheets (identical across pages) --
         for st in soup.head.find_all("style"):
