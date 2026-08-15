@@ -448,3 +448,64 @@ npm run audit:live        # also diffs page text against the live site
 npm run verify:css        # computed-style diff vs live, 26 pages × 3 viewports
 npm run verify:headings   # heading structure diff vs live
 ```
+
+---
+
+## 10. Deployment
+
+| | |
+|---|---|
+| Repository | `github.com/iamzeeshaikh/The-Cone-Sleeves` (public) |
+| Vercel project | `the-cone-sleeves` |
+| Preview URL | https://the-cone-sleeves.vercel.app |
+| Root Directory | **`site`** — the Astro project is not at the repo root; leaving this unset was why the first deploy returned 404 |
+| Framework | Astro |
+| Env vars | 7 SMTP variables, encrypted, on production + preview + development |
+
+### Domains
+
+| Domain | Role |
+|---|---|
+| `www.theconesleeves.com` | **primary** — every canonical, sitemap entry and schema URL uses `www` |
+| `theconesleeves.com` | 301 → `www`, applied at the Vercel edge |
+
+### DNS for cutover (not yet applied)
+
+Both hosts still resolve to the WordPress server `34.174.80.21`. To move:
+
+| Type | Name | Value |
+|---|---|---|
+| `A` | `@` | `76.76.21.21` |
+| `A` | `www` | `76.76.21.21` |
+
+Remove the old `34.174.80.21` records. Vercel issues the certificate automatically.
+
+### Issues found only after deploying
+
+Three defects were invisible locally and only surfaced against the real edge:
+
+1. **The spam-parameter 410 rule never fired.** Vercel does not apply a `/:path*`
+   catch-all that is gated on a query condition; `/(.*)` does. The host-canonicalisation
+   rule had the same defect and would have failed the moment a domain was attached.
+2. **Redirects returned 308, not 301.** `permanent: true` maps to 308; the status codes
+   are now explicit.
+3. **Fixing (1) created a redirect loop** — Vercel appends the original query string to
+   the destination, so `/api/gone/?t=123` re-matched the same rule. The pattern now
+   excludes the 410 endpoint.
+
+Verified live afterwards: all pages 200; redirects 301; `?t=`, `/comment.php` → **410**;
+search and normal pages unaffected; contact and quote forms deliver real mail.
+
+### Final pre-cutover verification
+
+Re-run in full against the live WordPress site before any DNS change —
+**78/78 page-viewport combinations measured, 63 with zero differing elements.**
+The 15 non-zero rows are the same two non-layout categories documented in §7
+(0.3–0.7 px on the sidebar search widget across 4 pages; the duplicate-Elementor-ID
+comparator artefact on `/waffle-cone-sleeves/`). Identical to the pre-deployment
+baseline, so the phone change, the SMTP move and the CSS/font build fixes changed
+nothing visually.
+
+The 27 rendered WordPress pages the migration was built from are archived at
+`reference/live-snapshot/` (local, git-ignored) so comparisons remain possible once
+the old site is gone.

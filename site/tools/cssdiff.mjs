@@ -29,7 +29,7 @@ const ctx = await browser.newContext({ viewport: { width, height: 900 } });
 
 async function snap(url) {
   const page = await ctx.newPage();
-  await page.goto(url, { waitUntil: 'load', timeout: 60000 });
+  await page.goto(url, { waitUntil: 'load', timeout: 120000 });
   await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
   await page.waitForTimeout(1500);
   await page.evaluate(() => window.scrollTo(0, 0));
