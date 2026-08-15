@@ -1,0 +1,121 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { POSTS, postByDate } from '../../data/posts';
+import { SITE } from '../../data/site';
+import '../../styles/pages/blog.css';
+import '../../styles/blog.css';
+
+export function getStaticPaths() {
+  return POSTS.map((post) => ({ params: { slug: post.slug }, props: { post } }));
+}
+
+const { post } = Astro.props;
+const url = `${SITE.origin}/blog/${post.slug}/`;
+const related = postByDate()
+  .filter((p) => p.slug !== post.slug)
+  .slice(0, 3);
+
+const seo = {
+  title: `${post.title} | The Cone Sleeves`,
+  description: post.description,
+  robots: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
+  canonical: url,
+  og: {
+    locale: 'en_US',
+    type: 'article',
+    title: post.title,
+    description: post.description,
+    site_name: SITE.name,
+    image: post.image,
+  },
+  twitter: { card: 'summary_large_image' },
+  schema: [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BlogPosting',
+      headline: post.title,
+      description: post.description,
+      image: `${SITE.origin}${post.image}`,
+      datePublished: post.published,
+      dateModified: post.updated ?? post.published,
+      mainEntityOfPage: { '@type': 'WebPage', '@id': url },
+      publisher: {
+        '@type': 'Organization',
+        name: SITE.name,
+        url: `${SITE.origin}/`,
+        logo: { '@type': 'ImageObject', url: `${SITE.origin}${SITE.logo.src}` },
+      },
+      author: { '@type': 'Organization', name: SITE.name, url: `${SITE.origin}/` },
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE.origin}/` },
+        { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE.origin}/blog/` },
+        { '@type': 'ListItem', position: 3, name: post.title, item: url },
+      ],
+    },
+  ],
+};
+
+const fmt = (iso: string) =>
+  new Date(iso).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+---
+
+<Layout
+  seo={seo}
+  bodyClass="post-template-default single single-post wp-custom-logo wp-embed-responsive wp-theme-rishi theme-rishi default-layout"
+  bodyAttrs={{ 'data-link': 'type-2', 'data-forms': 'classic', 'data-prefix': 'single_blog_post', 'data-header': 'type-1', 'data-footer': 'type-1' }}
+  stem="blog"
+  hasPopup={false}
+>
+  <div class="site-content reveal_none_desktop reveal_none_tablet reveal_none_mobile">
+    <div class="rishi-container">
+      <div class="main-content-wrapper clear">
+        <main class="site-main">
+          <article class="tcs-post">
+            <nav class="tcs-breadcrumb" aria-label="Breadcrumb">
+              <a href="/">Home</a> › <a href="/blog/">Blog</a> › <span>{post.title}</span>
+            </nav>
+
+            <h1>{post.title}</h1>
+
+            <div class="tcs-post__meta">
+              <time datetime={post.published}>{fmt(post.published)}</time>
+              <span> · {post.readingMinutes} min read</span>
+            </div>
+
+            <p class="tcs-post__lede">{post.description}</p>
+
+            <img
+              class="tcs-post__hero"
+              src={post.image}
+              alt={post.imageAlt}
+              width="900"
+              height="600"
+              loading="eager"
+              decoding="async"
+            />
+
+            <div class="tcs-post__body" set:html={post.body} />
+
+            <aside class="tcs-post__cta">
+              <p>Need sleeves cut to your own cone size?</p>
+              <a class="tcs-btn" href="/get-a-free-quote/">Get a free quote</a>
+            </aside>
+
+            <nav class="tcs-related" aria-label="More articles">
+              <h2>More guides</h2>
+              <ul>
+                {related.map((r) => (
+                  <li><a href={`/blog/${r.slug}/`}>{r.title}</a></li>
+                ))}
+              </ul>
+            </nav>
+          </article>
+        </main>
+      </div>
+    </div>
+  </div>
+</Layout>

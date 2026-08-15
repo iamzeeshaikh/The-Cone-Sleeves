@@ -54,6 +54,12 @@ PAGES = {
 media_used = set()
 page_js = set()
 
+# Pages whose .astro is hand-maintained rather than generated. Their chrome,
+# per-page CSS and SEO entry are still produced here; only the page file is
+# left alone. /blog/ became a real archive once posts were written, so the
+# WordPress "Nothing Found" markup no longer applies.
+HAND_WRITTEN = {"blog"}
+
 # --------------------------------------------------------------------------- #
 # Post-migration content corrections
 # --------------------------------------------------------------------------- #
@@ -95,10 +101,6 @@ SEO_OVERRIDES = {
         "og.description": ("Custom hot dog sleeves at wholesale prices — eco-friendly materials, "
                            "bold printing and sizes tailored to your menu. Get a free quote."),
     },
-    # Renders "Nothing Found" — a soft 404 to Google. Yoast already kept it out
-    # of the sitemap; noindex stops it being indexed as thin content. Revert
-    # both when the blog has posts.
-    "/blog/": {"robots": "noindex, follow"},
     # Form confirmation page: nothing to rank for, and it should not be a
     # landing page from search.
     "/thank-you/": {"robots": "noindex, follow"},
@@ -467,6 +469,13 @@ def main():
             part = soup.select_one(selector)
             clean_tree(part, stem)
             convert_forms(part, stem)
+            # WordPress treated /blog/ as the posts home and rendered the site
+            # title as <h1> there. It is a normal archive now with its own
+            # content heading, so the branding reverts to a <span> as on every
+            # other inner page.
+            if stem == "blog" and name == "header":
+                for t in part.select("h1.site-title"):
+                    t.name = "span"
             open(os.path.join(SITE, f"src/chrome/{name}", stem + ".html"), "w",
                  encoding="utf-8").write(apply_corrections(part.decode()))
 
@@ -578,6 +587,8 @@ def write_page(stem, url, markup, body_classes, has_css, body_attrs, has_js,
     """
     open(os.path.join(SITE, "src/content", stem + ".html"), "w",
          encoding="utf-8").write(markup)
+    if stem in HAND_WRITTEN:
+        return
 
     out_name = "index.astro" if stem == "index" else f"{stem}.astro"
     imports = [

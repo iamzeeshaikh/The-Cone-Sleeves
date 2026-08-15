@@ -1,0 +1,237 @@
+/*
+ * Blog styling.
+ *
+ * WordPress never published a post, so there is no original layout to copy.
+ * These rules reuse the theme's own custom properties (--paletteColor*,
+ * --fontFamily, --contentWidth) so the archive and article pages read as part
+ * of the same site rather than as a bolted-on section.
+ */
+
+/* ------------------------------------------------------------- archive --- */
+
+.tcs-archive-head {
+  padding: 50px 0 10px;
+}
+
+.tcs-archive-head h1 {
+  margin: 0 0 10px;
+  font-size: 40px;
+  line-height: 1.2;
+  color: var(--paletteColor2, #3d3835);
+}
+
+.tcs-archive-head p {
+  max-width: 640px;
+  margin: 0;
+  color: var(--paletteColor1, #252525);
+}
+
+.tcs-post-list {
+  display: grid;
+  gap: 40px;
+  padding: 30px 0 60px;
+  grid-template-columns: repeat(auto-fill, minmax(min(320px, 100%), 1fr));
+}
+
+.tcs-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid var(--genborderColor, #e6e6e6);
+  border-radius: 6px;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.tcs-card:hover {
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  transform: translateY(-3px);
+}
+
+.tcs-card__media {
+  display: block;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  background: var(--paletteColor7, #f7f4ef);
+}
+
+.tcs-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tcs-card__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 22px 24px 26px;
+}
+
+.tcs-card__meta,
+.tcs-post__meta {
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: rgba(37, 37, 37, 0.65);
+}
+
+.tcs-card__body h2 {
+  margin: 0 0 10px;
+  font-size: 21px;
+  line-height: 1.35;
+}
+
+.tcs-card__body h2 a {
+  color: var(--paletteColor2, #3d3835);
+  text-decoration: none;
+}
+
+.tcs-card__body h2 a:hover {
+  color: var(--paletteColor3, #ee7a7a);
+}
+
+.tcs-card__body p {
+  flex: 1;
+  margin: 0 0 18px;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.tcs-readmore {
+  align-self: flex-start;
+  font-weight: 600;
+  color: var(--paletteColor3, #ee7a7a);
+  text-decoration: none;
+}
+
+.tcs-readmore:hover {
+  text-decoration: underline;
+}
+
+/* ------------------------------------------------------------- article --- */
+
+.tcs-post {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 46px 0 70px;
+}
+
+.tcs-breadcrumb {
+  margin-bottom: 18px;
+  font-size: 14px;
+  color: rgba(37, 37, 37, 0.65);
+}
+
+.tcs-breadcrumb a {
+  color: inherit;
+}
+
+.tcs-post h1 {
+  margin: 0 0 14px;
+  font-size: 38px;
+  line-height: 1.2;
+  color: var(--paletteColor2, #3d3835);
+}
+
+.tcs-post__lede {
+  margin: 0 0 26px;
+  font-size: 19px;
+  line-height: 1.65;
+  color: rgba(37, 37, 37, 0.8);
+}
+
+.tcs-post__hero {
+  width: 100%;
+  height: auto;
+  margin-bottom: 34px;
+  border-radius: 6px;
+}
+
+.tcs-post__body h2 {
+  margin: 38px 0 14px;
+  font-size: 26px;
+  line-height: 1.3;
+  color: var(--paletteColor2, #3d3835);
+}
+
+.tcs-post__body p {
+  margin: 0 0 18px;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.tcs-post__body a {
+  color: var(--paletteColor3, #ee7a7a);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.tcs-post__body a:hover {
+  text-decoration: none;
+}
+
+.tcs-post__cta {
+  margin-top: 44px;
+  padding: 28px 30px;
+  text-align: center;
+  background: var(--paletteColor7, #f7f4ef);
+  border-radius: 6px;
+}
+
+.tcs-post__cta p {
+  margin: 0 0 16px;
+  font-size: 17px;
+}
+
+.tcs-btn {
+  display: inline-block;
+  padding: 13px 28px;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+  background: var(--paletteColor2, #3d3835);
+  border-radius: 4px;
+}
+
+.tcs-btn:hover {
+  background: var(--paletteColor3, #ee7a7a);
+  color: #fff;
+}
+
+.tcs-related {
+  margin-top: 52px;
+  padding-top: 26px;
+  border-top: 1px solid var(--genborderColor, #e6e6e6);
+}
+
+.tcs-related h2 {
+  margin: 0 0 14px;
+  font-size: 20px;
+}
+
+.tcs-related ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.tcs-related li {
+  margin-bottom: 8px;
+}
+
+@media (max-width: 689.98px) {
+  .tcs-archive-head h1 {
+    font-size: 30px;
+  }
+
+  .tcs-post h1 {
+    font-size: 28px;
+  }
+
+  .tcs-post__body h2 {
+    font-size: 22px;
+  }
+
+  .tcs-post__lede {
+    font-size: 17px;
+  }
+}

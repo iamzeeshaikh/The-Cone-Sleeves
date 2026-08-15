@@ -1,9 +1,15 @@
 import type { APIRoute } from 'astro';
 import { SITEMAP } from '../data/sitemap';
+import { POSTS } from '../data/posts';
 import { SITE } from '../data/site';
 
 export const GET: APIRoute = () => {
-  const urls = SITEMAP.map(
+  const entries = [
+    ...SITEMAP,
+    ...POSTS.map((p) => ({ path: `/blog/${p.slug}/`, lastmod: p.updated ?? p.published })),
+  ];
+
+  const urls = entries.map(
     ({ path, lastmod }) =>
       `\t<url>\n\t\t<loc>${SITE.origin}${path}</loc>\n\t\t<lastmod>${lastmod}</lastmod>\n\t</url>`
   ).join('\n');

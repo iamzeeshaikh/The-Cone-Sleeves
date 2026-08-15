@@ -24,6 +24,11 @@ const PAGES = [
   '/custom-dessert-sleeves/', '/custom-donut-sleeves/', '/custom-beverage-sleeves/',
   '/custom-food-trays/', '/custom-burger-trays/', '/custom-waffle-trays/',
   '/ice-cream-cone-tray/', '/custom-hot-dog-trays/',
+  '/blog/how-to-choose-cone-sleeve-size/',
+  '/blog/cone-sleeve-materials-explained/',
+  '/blog/branded-cone-sleeves-worth-it/',
+  '/blog/artwork-setup-for-printed-sleeves/',
+  '/blog/bulk-ordering-lead-times-and-moqs/',
 ];
 
 const REDIRECTED = new Set(['/blog/feed/']);

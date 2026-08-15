@@ -68,7 +68,7 @@
   "url": "/blog/",
   "title": "Blog - The Cone Sleeves",
   "description": null,
-  "robots": "noindex, follow",
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
   "canonical": "https://www.theconesleeves.com/blog/",
   "og": {
    "locale": "en_US",

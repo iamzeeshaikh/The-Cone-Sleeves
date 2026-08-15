@@ -64,6 +64,24 @@ def main():
             "text": text[:4000].lower(),
         })
 
+    # Blog posts live in src/data/posts.ts, not in the migrated page HTML, so
+    # they are pulled in separately or site search would never find them.
+    posts_ts = open(os.path.join(SITE, "src/data/posts.ts"), encoding="utf-8").read()
+    for block in re.findall(r"\{\s*slug: '([^']+)',\s*title:\s*'([^']*)',\s*description:\s*\n?\s*'([^']*)',\s*published: '([^']+)'", posts_ts):
+        slug, title, desc, published = block
+        body_m = re.search(r"slug: '%s'.*?body: `(.*?)`,\n  \}" % re.escape(slug), posts_ts, re.S)
+        body = re.sub(r"<[^>]+>", " ", body_m.group(1)) if body_m else ""
+        body = re.sub(r"\s+", " ", body).strip()
+        index.append({
+            "url": f"/blog/{slug}/",
+            "id": None,
+            "title": title.replace("\\'", "'"),
+            "published": published,
+            "modified": published,
+            "excerpt": desc[:280],
+            "text": (title + " " + desc + " " + body)[:4000].lower(),
+        })
+
     out = os.path.join(SITE, "src/data/search-index.json")
     json.dump(index, open(out, "w"), separators=(",", ":"))
     print(f"indexed {len(index)} pages -> {round(os.path.getsize(out) / 1024)} KB")
