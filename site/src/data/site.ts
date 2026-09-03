@@ -1,7 +1,7 @@
 export const SITE = {
   origin: 'https://www.theconesleeves.com',
   name: 'The Cone Sleeves',
-  phone: '+1-503-461-4788',
+  phone: '+1-503-358-0443',
   email: 'support@conesleeves.com',
   address: 'Da 408, San Jose, CA 95128, United States',
   mapUrl: 'https://goo.gl/maps/ggzDQFw967rMnvjw5',
@@ -11,7 +11,7 @@ export const SITE = {
     linkedin: 'https://www.linkedin.com/company/82632304/',
   },
   whatsapp: {
-    telephone: '15034614788',
+    telephone: '15033580443',
     message:
       'Hi *The Cone Sleeves*! I need more info about The Cone Sleeves https://www.theconesleeves.com/',
     bubble:
