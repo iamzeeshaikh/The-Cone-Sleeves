@@ -1,13 +1,352 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import seoData from '../data/seo.json';
-import content from '../content/get-a-free-quote.html?raw';
-import '../styles/pages/get-a-free-quote.css';
-import '../styles/gravityforms.css';
-const seo = seoData["/get-a-free-quote/"];
-const bodyClass = "wp-singular page-template page-template-elementor_header_footer page page-id-3277 wp-custom-logo wp-embed-responsive wp-theme-rishi theme-rishi box-layout rightsidebar elementor-default elementor-template-full-width elementor-kit-3067";
-const bodyAttrs = {"data-link": "type-2", "data-forms": "classic", "data-prefix": "single_page", "data-header": "type-1", "data-footer": "type-1"};
+/**
+ * The long quote form. Posts to /api/quote/, which is the endpoint that
+ * replaced Gravity Forms form #1 — the field names below are the ones that
+ * endpoint reads, so they must not be renamed.
+ */
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import { SITE } from '../data/site';
+import { ALL_PRODUCTS } from '../data/products';
+import { productBySlug } from '../data/nav';
+
+const options = ALL_PRODUCTS.map((p) => productBySlug(p.slug)!.label);
+
+const schema = [
+  {
+    '@type': 'WebPage',
+    '@id': `${SITE.origin}/get-a-free-quote/#webpage`,
+    url: `${SITE.origin}/get-a-free-quote/`,
+    name: 'Get a Free Quote',
+    isPartOf: { '@id': `${SITE.origin}/#website` },
+  },
+];
 ---
-<Layout seo={seo} bodyClass={bodyClass} bodyAttrs={bodyAttrs} stem="get-a-free-quote" hasPopup={false}>
-  <Fragment set:html={content} />
-</Layout>
+
+<Base
+  title="Get a Free Quote | Custom Sleeves & Trays | The Cone Sleeves"
+  description="Request a free quote for custom printed cone sleeves, food sleeves and trays. Send your size, quantity and artwork. Free dieline and digital proof included."
+  path="/get-a-free-quote/"
+  crumbs={[{ name: 'Get a Free Quote', path: '/get-a-free-quote/' }]}
+  schema={schema}
+  hideCta={true}
+>
+  <section class="section-tight" style="background:linear-gradient(180deg,var(--paper-blush),var(--paper))">
+    <div class="container center">
+      <p class="eyebrow eyebrow-line" style="justify-content:center">Free quote</p>
+      <h1 style="max-width:20ch;margin-inline:auto">Get a price for your packaging</h1>
+      <p style="font-size:var(--step-1);color:var(--ink-600);max-width:58ch;margin-inline:auto">
+        Fill in what you know and leave the rest blank. We come back with a written price, and the
+        dieline and digital proof cost nothing either way.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container quote-page">
+      <form class="quote-form-long" method="POST" action="/api/quote/" data-long-quote enctype="multipart/form-data">
+        <fieldset>
+          <legend>What you need</legend>
+
+          <div class="qf-grid">
+            <div class="field">
+              <label for="q-product">Product</label>
+              <select id="q-product" name="input_1">
+                <option value="">Select a product…</option>
+                {options.map((o) => <option value={o}>{o}</option>)}
+                <option value="Other">Something else</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="q-other">If other, what?</label>
+              <input id="q-other" name="input_21" type="text" placeholder="Describe the item" />
+            </div>
+
+            <div class="field">
+              <label for="q-qty">Quantity</label>
+              <input id="q-qty" name="input_2" type="text" inputmode="numeric" placeholder="e.g. 2,000" />
+            </div>
+
+            <div class="field">
+              <label for="q-unit">Units</label>
+              <select id="q-unit" name="input_23">
+                <option value="Pieces">Pieces</option>
+                <option value="Boxes">Boxes</option>
+              </select>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Size</legend>
+          <p class="form-note">
+            Measurements in inches. If you are not sure, leave these blank and tell us the cone or
+            cup you serve in the notes — we will work it out.
+          </p>
+          <div class="qf-grid qf-grid-3">
+            <div class="field">
+              <label for="q-l">Length</label>
+              <input id="q-l" name="input_3" type="text" inputmode="decimal" />
+            </div>
+            <div class="field">
+              <label for="q-w">Width</label>
+              <input id="q-w" name="input_5" type="text" inputmode="decimal" />
+            </div>
+            <div class="field">
+              <label for="q-h">Height</label>
+              <input id="q-h" name="input_4" type="text" inputmode="decimal" />
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Board and print</legend>
+          <div class="qf-grid">
+            <div class="field">
+              <label for="q-stock">Board</label>
+              <select id="q-stock" name="input_11">
+                <option value="">Not sure — advise me</option>
+                <option value="White SBS cardstock">White SBS cardstock</option>
+                <option value="Natural kraft">Natural kraft</option>
+                <option value="Recycled board">Recycled board</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="q-print">Printing</label>
+              <select id="q-print" name="input_10">
+                <option value="">Not sure — advise me</option>
+                <option value="Full-color CMYK">Full-color CMYK</option>
+                <option value="Single-color logo">Single-color logo</option>
+                <option value="Pantone spot colors">Pantone spot colors</option>
+                <option value="No printing (plain)">No printing (plain)</option>
+              </select>
+            </div>
+          </div>
+
+          <p class="qf-legend">Finishes (choose any)</p>
+          <div class="qf-checks">
+            {
+              ['Gloss lamination', 'Matte lamination', 'Spot UV', 'Foil stamping', 'Uncoated'].map((f, i) => (
+                <label class="qf-check">
+                  <input type="checkbox" name={`input_8.${i + 1}`} value={f} />
+                  <span>{f}</span>
+                </label>
+              ))
+            }
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Your details</legend>
+          <div class="qf-grid">
+            <div class="field">
+              <label for="q-name">Name</label>
+              <input id="q-name" name="input_12.3" type="text" required autocomplete="name" />
+            </div>
+            <div class="field">
+              <label for="q-email">Email</label>
+              <input id="q-email" name="input_13" type="email" required autocomplete="email" />
+            </div>
+            <div class="field">
+              <label for="q-phone">Phone</label>
+              <input id="q-phone" name="input_14" type="tel" required autocomplete="tel" inputmode="tel" />
+            </div>
+            <div class="field">
+              <label for="q-file">Artwork (optional)</label>
+              <input id="q-file" name="input_19" type="file" accept=".jpg,.jpeg,.png,.gif,.webp,.svg,.pdf,.ai,.eps,.psd,.zip,.rar,.cdr" />
+            </div>
+          </div>
+
+          <div class="field" style="margin-top:var(--sp-4)">
+            <label for="q-notes">Anything else</label>
+            <textarea id="q-notes" name="input_18" placeholder="The cone or cup you serve, your deadline, and anything unusual about the job."></textarea>
+          </div>
+        </fieldset>
+
+        <p class="form-msg error" data-form-error hidden></p>
+
+        <button class="btn btn-primary btn-lg btn-block" type="submit">
+          <span data-submit-label>Send my request</span>
+          <Icon name="arrow" size={17} />
+        </button>
+        <p class="form-note" style="text-align:center;margin-top:.85rem">
+          {SITE.replyPromise}. Artwork files up to 25 MB.
+        </p>
+      </form>
+
+      <aside class="quote-aside">
+        <div class="card">
+          <h3 style="font-size:var(--step-1)">What happens next</h3>
+          <ol class="qf-steps">
+            <li>We read your request and come back with a written price.</li>
+            <li>We build the cutting dieline around your item, free.</li>
+            <li>You get a digital proof and a mock-up to approve.</li>
+            <li>We print in 6–7 business days, or 3–4 on a rush.</li>
+          </ol>
+        </div>
+
+        <div class="card" style="background:var(--paper-blush);border-color:var(--coral-100)">
+          <h3 style="font-size:var(--step-1)">Prefer to talk?</h3>
+          <p style="color:var(--ink-600);font-size:.94rem">
+            Call or message and describe the item. That is often quicker than filling a form.
+          </p>
+          <a class="btn btn-ink btn-block" href={`tel:${SITE.phone}`}>
+            <Icon name="phone" size={16} />{SITE.phone}
+          </a>
+        </div>
+      </aside>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .quote-page {
+    display: grid;
+    gap: clamp(2rem, 4vw, 3rem);
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
+    align-items: start;
+  }
+
+  .quote-form-long {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    padding: clamp(1.25rem, 3vw, 2.25rem);
+    box-shadow: var(--shadow);
+  }
+
+  .quote-form-long fieldset {
+    border: 0;
+    padding: 0;
+    margin: 0 0 var(--sp-6);
+  }
+
+  .quote-form-long legend {
+    font-family: var(--font-display);
+    font-size: var(--step-1);
+    font-weight: 600;
+    color: var(--ink-900);
+    padding: 0;
+    margin-bottom: var(--sp-4);
+  }
+
+  .qf-grid {
+    display: grid;
+    gap: var(--sp-4);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .qf-grid-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .qf-legend {
+    font-size: 0.86rem;
+    font-weight: 700;
+    color: var(--ink-700);
+    margin: var(--sp-5) 0 var(--sp-3);
+  }
+
+  .qf-checks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+
+  .qf-check {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.55rem 0.9rem;
+    border: 1.5px solid var(--line);
+    border-radius: var(--radius-pill);
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--ink-700);
+    transition: border-color 0.15s ease, background 0.15s ease;
+  }
+
+  .qf-check:has(input:checked) {
+    border-color: var(--coral-400);
+    background: var(--coral-50);
+    color: var(--coral-800);
+  }
+
+  .qf-check input {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--coral-500);
+    margin: 0;
+  }
+
+  .quote-form-long input[type='file'] {
+    padding: 0.55rem;
+    font-size: 0.86rem;
+  }
+
+  .quote-aside {
+    display: grid;
+    gap: var(--sp-4);
+    position: sticky;
+    top: calc(var(--header-h) + 1.25rem);
+  }
+
+  .qf-steps {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: var(--ink-600);
+    font-size: 0.95rem;
+  }
+
+  @media (max-width: 900px) {
+    .quote-page {
+      grid-template-columns: minmax(0, 1fr);
+    }
+    .quote-aside {
+      position: static;
+      grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+    }
+  }
+
+  @media (max-width: 560px) {
+    .qf-grid,
+    .qf-grid-3 {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+</style>
+
+<script>
+  const form = document.querySelector<HTMLFormElement>('[data-long-quote]');
+  if (form) {
+    const err = form.querySelector<HTMLElement>('[data-form-error]')!;
+    const label = form.querySelector<HTMLElement>('[data-submit-label]')!;
+    const button = form.querySelector<HTMLButtonElement>('button[type=submit]')!;
+    const original = label.textContent;
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      err.hidden = true;
+      button.disabled = true;
+      label.textContent = 'Sending…';
+
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { Accept: 'application/json' },
+        });
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok || !data.ok) throw new Error(data.error || 'We could not send that. Please try again.');
+        window.location.assign(data.redirect || '/thank-you/');
+      } catch (e) {
+        err.textContent = e instanceof Error ? e.message : 'Something went wrong. Please try again.';
+        err.hidden = false;
+        button.disabled = false;
+        label.textContent = original;
+      }
+    });
+  }
+</script>

@@ -1,36 +1,21 @@
 /**
- * Sitemap entries. `lastmod` values are carried over from the WordPress
- * (Yoast) page-sitemap so crawl signals survive the migration.
+ * Extra sitemap entries — the pages that are not products or blog posts.
  *
- * /thank-you/ is deliberately absent: it is a form confirmation page, set to
- * noindex, with nothing to rank for.
+ * Products come from src/data/products (via nav.ts) and posts from posts.ts, so
+ * neither needs listing here. `/thank-you/`, `/search/` and `/404/` are absent
+ * on purpose: all three are noindex.
  *
- * Blog posts are appended from src/data/posts.ts rather than listed here.
+ * `lastmod` values are the date the page's content last changed.
  */
-export const SITEMAP: Array<{ path: string; lastmod: string }> = [
-  { path: '/', lastmod: '2025-09-26T10:39:50+00:00' },
-  { path: '/about/', lastmod: '2023-03-28T11:07:05+00:00' },
-  { path: '/blog/', lastmod: '2026-08-15T11:00:00+00:00' },
-  { path: '/privacy-policy/', lastmod: '2023-03-28T11:12:10+00:00' },
-  { path: '/terms-conditions/', lastmod: '2023-03-28T11:25:07+00:00' },
-  { path: '/contact/', lastmod: '2024-07-05T13:03:59+00:00' },
-  { path: '/get-a-free-quote/', lastmod: '2025-09-14T21:34:58+00:00' },
-  { path: '/custom-food-sleeves/', lastmod: '2025-09-15T14:13:02+00:00' },
-  { path: '/custom-sugar-cone-sleeves/', lastmod: '2025-09-15T15:03:34+00:00' },
-  { path: '/ice-cream-cone-tray/', lastmod: '2025-09-15T15:21:48+00:00' },
-  { path: '/custom-waffle-trays/', lastmod: '2025-09-15T15:38:51+00:00' },
-  { path: '/ice-cream-cone-sleeves/', lastmod: '2025-09-15T19:22:28+00:00' },
-  { path: '/waffle-cone-sleeves/', lastmod: '2025-09-15T20:07:30+00:00' },
-  { path: '/custom-burger-trays/', lastmod: '2025-09-22T13:51:36+00:00' },
-  { path: '/custom-food-trays/', lastmod: '2025-09-22T14:13:15+00:00' },
-  { path: '/custom-beverage-sleeves/', lastmod: '2025-09-23T06:58:26+00:00' },
-  { path: '/custom-burger-sleeves/', lastmod: '2025-09-23T06:59:14+00:00' },
-  { path: '/custom-dessert-sleeves/', lastmod: '2025-09-23T07:01:47+00:00' },
-  { path: '/custom-donut-sleeves/', lastmod: '2025-09-23T07:05:15+00:00' },
-  { path: '/custom-hot-dog-sleeves/', lastmod: '2025-09-23T07:13:07+00:00' },
-  { path: '/custom-sandwich-sleeves/', lastmod: '2025-09-23T07:25:03+00:00' },
-  { path: '/custom-coffee-sleeves/', lastmod: '2025-09-25T12:32:28+00:00' },
-  { path: '/custom-hot-dog-trays/', lastmod: '2025-09-26T10:13:27+00:00' },
-  { path: '/custom-crepe-sleeves/', lastmod: '2025-09-26T10:24:12+00:00' },
-  { path: '/custom-cake-cone-sleeves/', lastmod: '2025-09-26T10:36:28+00:00' },
+export const STATIC_PAGES: Array<{ path: string; lastmod: string; priority: string }> = [
+  { path: '/', lastmod: '2026-09-07', priority: '1.0' },
+  { path: '/get-a-free-quote/', lastmod: '2026-09-07', priority: '0.9' },
+  { path: '/about/', lastmod: '2026-09-07', priority: '0.6' },
+  { path: '/contact/', lastmod: '2026-09-07', priority: '0.7' },
+  { path: '/blog/', lastmod: '2026-09-07', priority: '0.6' },
+  { path: '/privacy-policy/', lastmod: '2026-09-07', priority: '0.2' },
+  { path: '/terms-conditions/', lastmod: '2026-09-07', priority: '0.2' },
 ];
+
+/** The date the 18 product pages were rewritten. */
+export const PRODUCTS_LASTMOD = '2026-09-07';

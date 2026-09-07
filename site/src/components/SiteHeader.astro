@@ -1,0 +1,227 @@
+---
+import Icon from './Icon.astro';
+import { SITE } from '../data/site';
+import { GROUPS, productsInGroup } from '../data/nav';
+
+interface Props {
+  path: string;
+}
+const { path } = Astro.props as Props;
+
+const groups = (['cone', 'food', 'tray'] as const).map((g) => ({
+  key: g,
+  ...GROUPS[g],
+  items: productsInGroup(g),
+}));
+
+const isCurrent = (p: string) => path === p;
+const groupActive = (items: { path: string }[]) => items.some((i) => i.path === path);
+const waHref = `https://wa.me/${SITE.whatsapp.telephone}?text=${encodeURIComponent(SITE.whatsapp.message)}`;
+---
+
+<div class="topbar">
+  <div class="container topbar-inner">
+    <div class="topbar-contact">
+      <a href={`tel:${SITE.phone}`}><Icon name="phone" size={14} />{SITE.phone}</a>
+      <a href={`mailto:${SITE.email}`}><Icon name="mail" size={14} />{SITE.email}</a>
+    </div>
+    <div class="topbar-social">
+      <a href={SITE.social.facebook} rel="noopener" target="_blank" aria-label="The Cone Sleeves on Facebook"><Icon name="facebook" size={15} /></a>
+      <a href={SITE.social.instagram} rel="noopener" target="_blank" aria-label="The Cone Sleeves on Instagram"><Icon name="instagram" size={15} /></a>
+      <a href={SITE.social.linkedin} rel="noopener" target="_blank" aria-label="The Cone Sleeves on LinkedIn"><Icon name="linkedin" size={15} /></a>
+    </div>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="/" class="brand" aria-label="The Cone Sleeves — home">
+      <img
+        src={SITE.logo.src}
+        alt={SITE.name}
+        width={SITE.logo.width}
+        height={SITE.logo.height}
+        fetchpriority="high"
+      />
+    </a>
+
+    <nav aria-label="Main">
+      <ul class="nav">
+        <li><a class="nav-link" href="/" aria-current={isCurrent('/') ? 'page' : undefined}>Home</a></li>
+        {
+          groups.map((g) => (
+            <li data-menu>
+              <button
+                type="button"
+                class="nav-link"
+                aria-expanded="false"
+                aria-current={groupActive(g.items) ? 'true' : undefined}
+              >
+                {g.label}
+                <Icon name="chevron" size={12} class="nav-caret" />
+              </button>
+              <div class="mega" data-open="false">
+                <p class="mega-head">{g.blurb}</p>
+                <ul class="mega-grid">
+                  {g.items.map((i) => (
+                    <li>
+                      <a class="mega-link" href={i.path} aria-current={isCurrent(i.path) ? 'page' : undefined}>
+                        {i.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </li>
+          ))
+        }
+        <li><a class="nav-link" href="/blog/" aria-current={path.startsWith('/blog') ? 'page' : undefined}>Blog</a></li>
+        <li><a class="nav-link" href="/about/" aria-current={isCurrent('/about/') ? 'page' : undefined}>About</a></li>
+        <li><a class="nav-link" href="/contact/" aria-current={isCurrent('/contact/') ? 'page' : undefined}>Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-cta">
+      <a class="btn btn-primary btn-quote" href="/get-a-free-quote/">Get a Free Quote</a>
+      <button type="button" class="burger" aria-expanded="false" aria-controls="drawer" aria-label="Open menu">
+        <span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="drawer" id="drawer" data-open="false" hidden>
+  <div class="drawer-panel" role="dialog" aria-modal="true" aria-label="Menu">
+    <div class="drawer-head">
+      <img src={SITE.logo.src} alt={SITE.name} width={SITE.logo.width} height={SITE.logo.height} style="height:34px;width:auto" />
+      <button type="button" class="drawer-close" aria-label="Close menu">&times;</button>
+    </div>
+
+    <ul class="drawer-nav">
+      <li><a href="/">Home</a></li>
+      {
+        groups.map((g) => (
+          <li>
+            <button type="button" class="drawer-toggle" aria-expanded="false">
+              {g.label}
+              <Icon name="chevron" size={14} />
+            </button>
+            <ul class="drawer-sub" hidden>
+              {g.items.map((i) => (
+                <li>
+                  <a href={i.path}>{i.label}</a>
+                </li>
+              ))}
+            </ul>
+          </li>
+        ))
+      }
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about/">About</a></li>
+      <li><a href="/contact/">Contact</a></li>
+    </ul>
+
+    <a class="btn btn-primary btn-block" href="/get-a-free-quote/">Get a Free Quote</a>
+    <a class="btn btn-ghost btn-block" href={`tel:${SITE.phone}`}>
+      <Icon name="phone" size={16} />Call {SITE.phone}
+    </a>
+    <a class="btn btn-ghost btn-block" href={waHref} rel="noopener" target="_blank">
+      <Icon name="whatsapp" size={16} />WhatsApp us
+    </a>
+  </div>
+</div>
+
+<script>
+  // Desktop dropdowns: click to open (works for touch and keyboard alike),
+  // hover only as an enhancement on devices that actually have a pointer.
+  const menus = Array.from(document.querySelectorAll<HTMLElement>('[data-menu]'));
+
+  function closeAll(except?: HTMLElement) {
+    for (const m of menus) {
+      if (m === except) continue;
+      m.querySelector('.mega')?.setAttribute('data-open', 'false');
+      m.querySelector('button')?.setAttribute('aria-expanded', 'false');
+    }
+  }
+
+  for (const menu of menus) {
+    const btn = menu.querySelector('button')!;
+    const panel = menu.querySelector<HTMLElement>('.mega')!;
+
+    // A mouse user hovers the item (which opens it) and then clicks it. Without
+    // this flag the click reads the panel as already open and closes it again,
+    // so the menu appears to flash shut under the cursor.
+    let openedByHover = false;
+
+    const setOpen = (open: boolean) => {
+      panel.setAttribute('data-open', String(open));
+      btn.setAttribute('aria-expanded', String(open));
+    };
+
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (openedByHover) {
+        openedByHover = false;
+        return;
+      }
+      const open = panel.getAttribute('data-open') === 'true';
+      closeAll(menu);
+      setOpen(!open);
+    });
+
+    if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+      let timer: number;
+      menu.addEventListener('mouseenter', () => {
+        window.clearTimeout(timer);
+        if (panel.getAttribute('data-open') !== 'true') openedByHover = true;
+        closeAll(menu);
+        setOpen(true);
+      });
+      menu.addEventListener('mouseleave', () => {
+        openedByHover = false;
+        timer = window.setTimeout(() => setOpen(false), 120);
+      });
+    }
+  }
+
+  document.addEventListener('click', (e) => {
+    if (!(e.target as HTMLElement).closest('[data-menu]')) closeAll();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeAll();
+  });
+
+  // Mobile drawer
+  const drawer = document.getElementById('drawer');
+  const burger = document.querySelector<HTMLButtonElement>('.burger');
+  const closeBtn = drawer?.querySelector<HTMLButtonElement>('.drawer-close');
+
+  function setDrawer(open: boolean) {
+    if (!drawer || !burger) return;
+    if (open) drawer.hidden = false;
+    // Let the element paint before transitioning in.
+    requestAnimationFrame(() => drawer.setAttribute('data-open', String(open)));
+    burger.setAttribute('aria-expanded', String(open));
+    document.body.style.overflow = open ? 'hidden' : '';
+    if (!open) window.setTimeout(() => { if (drawer.getAttribute('data-open') === 'false') drawer.hidden = true; }, 280);
+  }
+
+  burger?.addEventListener('click', () => setDrawer(drawer?.getAttribute('data-open') !== 'true'));
+  closeBtn?.addEventListener('click', () => setDrawer(false));
+  drawer?.addEventListener('click', (e) => {
+    if (e.target === drawer) setDrawer(false);
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && drawer?.getAttribute('data-open') === 'true') setDrawer(false);
+  });
+
+  for (const toggle of document.querySelectorAll<HTMLButtonElement>('.drawer-toggle')) {
+    toggle.addEventListener('click', () => {
+      const sub = toggle.nextElementSibling as HTMLElement | null;
+      if (!sub) return;
+      const open = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!open));
+      sub.hidden = open;
+    });
+  }
+</script>

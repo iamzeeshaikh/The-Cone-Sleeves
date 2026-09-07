@@ -1,12 +1,185 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import seoData from '../data/seo.json';
-import content from '../content/contact.html?raw';
-import '../styles/pages/contact.css';
-const seo = seoData["/contact/"];
-const bodyClass = "wp-singular page-template page-template-elementor_header_footer page page-id-15 wp-custom-logo wp-embed-responsive wp-theme-rishi theme-rishi box-layout rightsidebar elementor-default elementor-template-full-width elementor-kit-3067 elementor-page elementor-page-15";
-const bodyAttrs = {"data-link": "type-2", "data-forms": "classic", "data-prefix": "single_page", "data-header": "type-1", "data-footer": "type-1"};
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import QuoteForm from '../components/QuoteForm.astro';
+import { SITE } from '../data/site';
+
+const waHref = `https://wa.me/${SITE.whatsapp.telephone}?text=${encodeURIComponent(SITE.whatsapp.message)}`;
+
+const schema = [
+  {
+    '@type': 'ContactPage',
+    '@id': `${SITE.origin}/contact/#webpage`,
+    url: `${SITE.origin}/contact/`,
+    name: 'Contact The Cone Sleeves',
+    isPartOf: { '@id': `${SITE.origin}/#website` },
+    about: { '@id': `${SITE.origin}/#organization` },
+  },
+];
 ---
-<Layout seo={seo} bodyClass={bodyClass} bodyAttrs={bodyAttrs} stem="contact" hasPopup={false}>
-  <Fragment set:html={content} />
-</Layout>
+
+<Base
+  title="Contact The Cone Sleeves | Quotes, Artwork & Orders"
+  description="Call, email or message us about custom cone sleeves, food sleeves and trays. Send your size and quantity and we reply with a written quote and a free proof."
+  path="/contact/"
+  crumbs={[{ name: 'Contact', path: '/contact/' }]}
+  schema={schema}
+  hideCta={true}
+>
+  <section class="section-tight" style="background:linear-gradient(180deg,var(--paper-blush),var(--paper))">
+    <div class="container">
+      <p class="eyebrow eyebrow-line">Contact</p>
+      <h1 style="max-width:18ch">Tell us what you serve</h1>
+      <p style="font-size:var(--step-1);color:var(--ink-600);max-width:54ch">
+        Quotes, artwork questions, reorders and sample requests all land in the same inbox. Send
+        the item size and the quantity and you will have a written price back quickly.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container contact-grid">
+      <div>
+        <div class="contact-cards">
+          <a class="contact-card" href={`tel:${SITE.phone}`}>
+            <span class="tile-icon"><Icon name="phone" size={20} /></span>
+            <div>
+              <h3>Call us</h3>
+              <p>{SITE.phone}</p>
+            </div>
+          </a>
+
+          <a class="contact-card" href={`mailto:${SITE.email}`}>
+            <span class="tile-icon"><Icon name="mail" size={20} /></span>
+            <div>
+              <h3>Email us</h3>
+              <p>{SITE.email}</p>
+            </div>
+          </a>
+
+          <a class="contact-card" href={waHref} rel="noopener" target="_blank">
+            <span class="tile-icon"><Icon name="whatsapp" size={20} /></span>
+            <div>
+              <h3>WhatsApp</h3>
+              <p>Message us with a photo of your cone</p>
+            </div>
+          </a>
+
+          <div class="contact-card" style="cursor:default">
+            <span class="tile-icon"><Icon name="pin" size={20} /></span>
+            <div>
+              <h3>Address</h3>
+              <p>{SITE.address}</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:var(--sp-5)">
+          <h3 style="font-size:var(--step-1)">What to include for the fastest quote</h3>
+          <ul class="contact-list">
+            {
+              [
+                'The item: cone type, cup size, burger height or tray capacity',
+                'Quantity you want, and whether this is a one-off or repeating',
+                'Board preference if you have one: kraft, white or recycled',
+                'Any artwork you already have, or just your logo',
+                'When you need it in hand',
+              ].map((t) => (
+                <li>
+                  <Icon name="check" size={15} />
+                  {t}
+                </li>
+              ))
+            }
+          </ul>
+          <p class="form-note" style="margin:0">
+            Not sure on sizing? A photo of the cone or cup with a ruler beside it is enough for us
+            to build the dieline.
+          </p>
+        </div>
+      </div>
+
+      <QuoteForm
+        heading="Send us a message"
+        intro="Everything goes to the same team that prices and prints the job. No call center in between."
+      />
+    </div>
+  </section>
+</Base>
+
+<style>
+  .contact-grid {
+    display: grid;
+    gap: clamp(2rem, 4vw, 3.5rem);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.95fr);
+    align-items: start;
+  }
+
+  .contact-cards {
+    display: grid;
+    gap: var(--sp-4);
+    grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+  }
+
+  .contact-card {
+    display: flex;
+    gap: var(--sp-4);
+    align-items: flex-start;
+    padding: var(--sp-5);
+    background: var(--surface);
+    border: 1px solid var(--line-soft);
+    border-radius: var(--radius);
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.18s ease, transform 0.18s ease;
+  }
+
+  a.contact-card:hover {
+    border-color: var(--coral-300);
+    transform: translateY(-2px);
+    color: inherit;
+  }
+
+  .contact-card h3 {
+    font-size: 1.02rem;
+    margin: 0 0 0.2rem;
+    font-family: var(--font-body);
+    font-weight: 700;
+  }
+
+  .contact-card p {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 0.92rem;
+    word-break: break-word;
+  }
+
+  .contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 var(--sp-4);
+    display: grid;
+    gap: 0.55rem;
+  }
+
+  .contact-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin: 0;
+    color: var(--ink-600);
+    font-size: 0.95rem;
+  }
+
+  .contact-list svg {
+    color: var(--mint-600);
+    flex-shrink: 0;
+    margin-top: 0.35em;
+  }
+
+  @media (max-width: 900px) {
+    .contact-grid {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+</style>

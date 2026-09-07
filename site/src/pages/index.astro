@@ -1,12 +1,712 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import seoData from '../data/seo.json';
-import content from '../content/index.html?raw';
-import '../styles/pages/index.css';
-const seo = seoData["/"];
-const bodyClass = "home wp-singular page-template page-template-elementor_header_footer page page-id-3070 wp-custom-logo wp-embed-responsive wp-theme-rishi theme-rishi box-layout rightsidebar elementor-default elementor-template-full-width elementor-kit-3067 elementor-page elementor-page-3070";
-const bodyAttrs = {"data-link": "type-2", "data-forms": "classic", "data-prefix": "single_page", "data-header": "type-1", "data-footer": "type-1"};
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import QuoteForm from '../components/QuoteForm.astro';
+import { ALL_PRODUCTS, productsByGroup } from '../data/products';
+import { productBySlug, GROUPS } from '../data/nav';
+import { POSTS } from '../data/posts';
+import { SITE } from '../data/site';
+import { abs, faqNode } from '../lib/seo';
+
+const featured = [
+  'ice-cream-cone-sleeves',
+  'waffle-cone-sleeves',
+  'custom-sugar-cone-sleeves',
+  'custom-crepe-sleeves',
+  'custom-burger-sleeves',
+  'custom-sandwich-sleeves',
+  'custom-coffee-sleeves',
+  'custom-food-trays',
+]
+  .map((s) => ({ p: ALL_PRODUCTS.find((x) => x.slug === s)!, n: productBySlug(s)! }))
+  .filter((x) => x.p);
+
+const groups = (['cone', 'food', 'tray'] as const).map((g) => ({
+  key: g,
+  ...GROUPS[g],
+  items: productsByGroup(g).map((p) => ({ p, n: productBySlug(p.slug)! })),
+}));
+
+const homeFaqs = [
+  {
+    q: 'What is a cone sleeve?',
+    a: 'A cone sleeve is a printed paper wrap that slides onto an ice cream or crepe cone. It insulates the hand, absorbs drips as the cone melts, and carries your branding on the outside where every passer-by sees it.',
+  },
+  {
+    q: 'What is the minimum order?',
+    a: 'Five hundred pieces per design across every product we print. That is low enough for a single shop to test artwork or run one seasonal flavor, and volume pricing begins at 1,000 pieces.',
+  },
+  {
+    q: 'How long does printing take?',
+    a: 'Six to seven business days after you approve the digital proof, with a three to four day rush available. Proofing usually adds a day, so most first orders are complete inside two weeks.',
+  },
+  {
+    q: 'Do you charge for artwork or proofs?',
+    a: 'No. Dieline setup, design support and the digital proof are all included. Nothing goes to press until you have seen the proof and approved it in writing.',
+  },
+  {
+    q: 'Which board do you print on?',
+    a: 'White SBS cardstock for bright, full-color work, natural kraft for a warm artisan look, and recycled board where sustainability leads. All three are food safe and print well.',
+  },
+  {
+    q: 'Do you ship outside the United States?',
+    a: 'Yes. Most orders go to US ice cream shops, cafes and kitchens, but we print and ship worldwide with tracking. International transit is added to the production window.',
+  },
+];
+
+const schema = [
+  {
+    '@type': 'CollectionPage',
+    '@id': `${SITE.origin}/#webpage`,
+    url: `${SITE.origin}/`,
+    name: 'Custom Ice Cream & Waffle Cone Sleeves, Wholesale | The Cone Sleeves',
+    isPartOf: { '@id': `${SITE.origin}/#website` },
+    speakable: { '@type': 'SpeakableSpecification', cssSelector: ['.hero-lead'] },
+  },
+  {
+    '@type': 'ItemList',
+    name: 'Custom printed sleeves and trays',
+    numberOfItems: ALL_PRODUCTS.length,
+    itemListElement: ALL_PRODUCTS.map((p, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: p.name,
+      url: abs(productBySlug(p.slug)!.path),
+    })),
+  },
+  faqNode(homeFaqs),
+];
 ---
-<Layout seo={seo} bodyClass={bodyClass} bodyAttrs={bodyAttrs} stem="index" hasPopup={true}>
-  <Fragment set:html={content} />
-</Layout>
+
+<Base
+  title="Custom Ice Cream & Waffle Cone Sleeves, Wholesale | The Cone Sleeves"
+  description="Custom printed cone sleeves, food sleeves and trays. Wholesale runs from 500 pieces, free design and digital proof, 6–7 day turnaround. Get a free quote today."
+  path="/"
+  schema={schema}
+>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow eyebrow-line">Custom printed food packaging</p>
+        <h1>Cone sleeves your customers carry down the street</h1>
+        <p class="hero-lead">
+          We print custom cone sleeves, food sleeves and trays for ice cream shops, cafes,
+          kitchens and events across the United States. Wholesale runs start at 500 pieces, with
+          free design help and a digital proof before anything goes to press.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary btn-lg" href="/get-a-free-quote/">
+            Get a Free Quote
+            <Icon name="arrow" size={17} />
+          </a>
+          <a class="btn btn-ghost btn-lg" href="/ice-cream-cone-sleeves/">Browse cone sleeves</a>
+        </div>
+
+        <dl class="hero-stats">
+          <div><dt>500</dt><dd>minimum order</dd></div>
+          <div><dt>6–7 days</dt><dd>standard turnaround</dd></div>
+          <div><dt>18</dt><dd>sleeve &amp; tray formats</dd></div>
+        </dl>
+      </div>
+
+      <div class="hero-media">
+        <img
+          src="/media/2023/11/Custom-Cardboard-Cone-Sleeves.jpg"
+          alt="Custom printed cardboard cone sleeves wrapped around filled ice cream cones"
+          width="1200"
+          height="1200"
+          fetchpriority="high"
+          decoding="async"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="trust">
+    <div class="container trust-row">
+      {
+        [
+          { icon: 'palette', label: 'Free design support' },
+          { icon: 'file', label: 'Free digital proof' },
+          { icon: 'leaf', label: 'Recyclable board' },
+          { icon: 'clock', label: 'Rush option available' },
+          { icon: 'truck', label: 'Worldwide shipping' },
+        ].map((t) => (
+          <div class="trust-item">
+            <Icon name={t.icon as any} size={19} />
+            <span>{t.label}</span>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow eyebrow-line">What we print</p>
+          <h2>Sleeves and trays for everything you serve by hand</h2>
+        </div>
+        <p class="section-head-note">
+          Every format is cut to your item and printed to your artwork. If you serve it in a
+          wrapper, we can print the wrapper.
+        </p>
+      </div>
+
+      <div class="grid grid-4" style="margin-top:var(--sp-6)">
+        {
+          featured.map(({ p, n }) => (
+            <a class="card card-link" href={n.path}>
+              <div class="card-media">
+                <img src={p.images[0].src} alt={p.images[0].alt} width="768" height="768" loading="lazy" decoding="async" />
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">{n.label}</h3>
+                <p class="card-text">{p.hero.bullets.slice(0, 2).join(' · ')}</p>
+                <span class="card-cta">
+                  View product <Icon name="arrow" size={15} />
+                </span>
+              </div>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-cream">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow eyebrow-line">Full range</p>
+          <h2>Find the wrap that fits what you serve</h2>
+        </div>
+      </div>
+
+      <div class="grid grid-3" style="margin-top:var(--sp-6)">
+        {
+          groups.map((g) => (
+            <div class="card">
+              <h3 style="font-size:var(--step-2)">{g.label}</h3>
+              <p style="color:var(--text-muted);font-size:.94rem">{g.blurb}</p>
+              <ul class="range-list">
+                {g.items.map(({ n }) => (
+                  <li>
+                    <a href={n.path}>
+                      {n.label}
+                      <Icon name="arrow" size={14} />
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container steps-grid">
+      <div>
+        <p class="eyebrow eyebrow-line">How ordering works</p>
+        <h2>Four steps from your logo to boxed sleeves</h2>
+        <p style="color:var(--text-muted);max-width:48ch">
+          There is no account to open and no design fee. Tell us what you serve and we handle the
+          rest, with a proof in your inbox before any press runs.
+        </p>
+        <a class="btn btn-primary btn-lg" href="/get-a-free-quote/" style="margin-top:1rem">
+          Start a quote
+          <Icon name="arrow" size={17} />
+        </a>
+      </div>
+
+      <ol class="steps">
+        {
+          [
+            {
+              t: 'Tell us the item',
+              d: 'The cone, cup or burger you serve, the quantity you want and any artwork you already have.',
+            },
+            {
+              t: 'We quote and set the dieline',
+              d: 'A written price plus a cutting template built around your exact item, at no charge.',
+            },
+            {
+              t: 'You approve a digital proof',
+              d: 'A flat artwork proof and a mock-up on the product. Nothing prints until you say yes.',
+            },
+            {
+              t: 'We print and ship',
+              d: 'Six to seven business days, or three to four on a rush. Flat-packed and tracked to your door.',
+            },
+          ].map((s, i) => (
+            <li>
+              <span class="step-n">{i + 1}</span>
+              <div>
+                <h3>{s.t}</h3>
+                <p>{s.d}</p>
+              </div>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </section>
+
+  <section class="section bg-alt">
+    <div class="container quote-split">
+      <div>
+        <p class="eyebrow eyebrow-line">Free quote</p>
+        <h2>Send the details, we will price it</h2>
+        <p style="color:var(--ink-600);max-width:48ch">
+          Tell us the cone or item size, how many you need and roughly when. You get a written
+          quote, and a free digital proof once the artwork is settled.
+        </p>
+
+        <ul class="quote-points">
+          {
+            [
+              'No minimum quote value and no obligation',
+              'Dieline and design support included',
+              'Kraft, white and recycled board options',
+              'Rush production available on request',
+            ].map((t) => (
+              <li>
+                <Icon name="check" size={15} />
+                {t}
+              </li>
+            ))
+          }
+        </ul>
+
+        <div class="quote-contact">
+          <a href={`tel:${SITE.phone}`}><Icon name="phone" size={16} />{SITE.phone}</a>
+          <a href={`mailto:${SITE.email}`}><Icon name="mail" size={16} />{SITE.email}</a>
+        </div>
+      </div>
+
+      <QuoteForm heading="Request a price" />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container home-editorial">
+      <div class="prose">
+        <h2>What custom cone sleeves are, and when a shop needs them</h2>
+        <p>
+          A cone sleeve is a printed paper wrap that slides over an ice cream, waffle or crepe
+          cone. It does three jobs at once: it insulates the hand from a cold cone, it absorbs the
+          melt that runs down the outside, and it puts your name on something a customer carries
+          through a busy street. That last one is why most shops order them — a sleeve is the
+          cheapest advertising you will ever hand out, because the customer does the carrying.
+        </p>
+        <p>
+          The mistake almost every first-time buyer makes is ordering a stock size. Cones vary more
+          than people expect: a waffle cone flares wide at the mouth, a sugar cone tapers the whole
+          way down, and a cake cone has near-parallel walls. A wrap cut for one of them sits loose
+          on another and staff quietly stop using it. That is why we build every dieline around the
+          cone you actually serve, and why our guide to
+          <a href="/blog/how-to-choose-cone-sleeve-size/">choosing the right cone sleeve size</a>
+          starts with measuring rather than with a size chart.
+        </p>
+
+        <h3>Cone sleeves, jackets and wrappers are the same thing</h3>
+        <p>
+          Suppliers use different names for one product. Cone sleeve, cone jacket, cone wrapper and
+          cone cover all describe the printed band that goes around the cone. If two quotes use two
+          different words, you are still comparing like for like — check the board weight and the
+          finish instead, because that is where real differences hide.
+        </p>
+
+        <h3>What changes the price of a run</h3>
+        <p>
+          Three things move a quote more than anything else: how many you order, how many separate
+          designs you want, and whether the sleeve is laminated. Quantity is the big one, because
+          the press setup cost is the same whether you print 500 or 5,000 — which is exactly why
+          volume pricing starts at 1,000 pieces. Splitting one order across four flavors means four
+          designs and four minimums, so it costs more than one design at the same total quantity.
+        </p>
+        <p>
+          Board choice matters less than people assume. Kraft, white SBS and recycled board sit
+          close together, and the recyclable uncoated option is usually the cheapest of the lot.
+          Our guide on
+          <a href="/blog/bulk-ordering-lead-times-and-moqs/">minimums, lead times and storage</a>
+          works through the arithmetic with real run sizes.
+        </p>
+
+        <h3>Beyond cones</h3>
+        <p>
+          The same press and the same board run everything else served by hand. Burgers, subs, hot
+          dogs, donuts and hot cups all take a printed band, and open trays cover the items that
+          will not sit in one. If you are working out which format suits what you serve, the
+          <a href="/custom-food-sleeves/">full food sleeve range</a> lays the options out side by
+          side.
+        </p>
+      </div>
+
+      <aside class="home-editorial-aside">
+        <div class="card">
+          <h3 style="font-size:var(--step-1)">Cone sleeve quick facts</h3>
+          <div class="spec-wrap" style="border:0">
+            <table class="spec">
+              <tbody>
+                <tr><th scope="row">Minimum</th><td>500 pieces per design</td></tr>
+                <tr><th scope="row">Turnaround</th><td>6–7 business days after proof</td></tr>
+                <tr><th scope="row">Rush</th><td>3–4 business days on request</td></tr>
+                <tr><th scope="row">Board</th><td>White SBS, kraft or recycled</td></tr>
+                <tr><th scope="row">Printing</th><td>CMYK, single color or Pantone</td></tr>
+                <tr><th scope="row">Artwork</th><td>Free dieline and digital proof</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container-narrow">
+      <p class="eyebrow eyebrow-line" style="justify-content:center">FAQs</p>
+      <h2 class="center" style="margin-bottom:var(--sp-6)">Ordering custom sleeves, answered</h2>
+      {
+        homeFaqs.map((f, i) => (
+          <details class="faq" open={i === 0}>
+            <summary>{f.q}</summary>
+            <div class="faq-body">
+              <p>{f.a}</p>
+            </div>
+          </details>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="section bg-cream">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow eyebrow-line">Guides</p>
+          <h2>Read before you order</h2>
+        </div>
+        <a class="btn btn-ghost" href="/blog/">All guides</a>
+      </div>
+
+      <div class="grid grid-3" style="margin-top:var(--sp-6)">
+        {
+          POSTS.slice(0, 3).map((post) => (
+            <a class="card card-link" href={`/blog/${post.slug}/`}>
+              <div class="card-media">
+                <img src={post.image} alt={post.imageAlt} width="768" height="576" loading="lazy" />
+              </div>
+              <div class="card-body">
+                <h3 class="card-title" style="font-size:var(--step-1)">{post.title}</h3>
+                <p class="card-text">{post.description}</p>
+                <span class="card-cta">
+                  Read guide <Icon name="arrow" size={15} />
+                </span>
+              </div>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .hero {
+    background:
+      radial-gradient(900px 420px at 88% 6%, var(--coral-50) 0%, transparent 62%),
+      linear-gradient(180deg, var(--paper-blush) 0%, var(--paper) 78%);
+    padding-block: clamp(2.5rem, 1rem + 6vw, 5.5rem);
+  }
+
+  .hero-grid {
+    display: grid;
+    gap: clamp(2rem, 4vw, 4rem);
+    grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr);
+    align-items: center;
+  }
+
+  .hero-copy h1 {
+    max-width: 15ch;
+  }
+
+  .hero-lead {
+    font-size: var(--step-1);
+    color: var(--ink-600);
+    max-width: 50ch;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-top: var(--sp-5);
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: clamp(1.5rem, 4vw, 3rem);
+    margin: var(--sp-7) 0 0;
+    padding-top: var(--sp-5);
+    border-top: 1px solid var(--line);
+    flex-wrap: wrap;
+  }
+
+  .hero-stats div {
+    display: grid;
+    gap: 0.15rem;
+  }
+
+  .hero-stats dt {
+    font-family: var(--font-display);
+    font-size: var(--step-3);
+    font-weight: 600;
+    color: var(--ink-900);
+    line-height: 1;
+  }
+
+  .hero-stats dd {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+
+  .hero-media {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    background: var(--paper-cream);
+  }
+
+  .hero-media img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+  }
+
+  .trust {
+    border-block: 1px solid var(--line-soft);
+    background: var(--surface);
+    padding-block: var(--sp-5);
+  }
+
+  .trust-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: var(--sp-4) var(--sp-6);
+  }
+
+  /* On a phone the flex row wraps into ragged pairs; a two-column grid is tidier. */
+  @media (max-width: 700px) {
+    .trust-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: var(--sp-3) var(--sp-4);
+    }
+    .trust-item {
+      font-size: 0.85rem;
+    }
+  }
+
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--ink-700);
+  }
+
+  .trust-item svg {
+    color: var(--coral-500);
+  }
+
+  .section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: var(--sp-5);
+    flex-wrap: wrap;
+  }
+
+  .section-head h2 {
+    margin: 0;
+    max-width: 22ch;
+  }
+
+  .section-head-note {
+    margin: 0;
+    color: var(--text-muted);
+    max-width: 38ch;
+    font-size: 0.95rem;
+  }
+
+  .range-list {
+    list-style: none;
+    padding: 0;
+    margin: var(--sp-4) 0 0;
+    display: grid;
+    gap: 0.15rem;
+  }
+
+  .range-list li {
+    margin: 0;
+    border-top: 1px solid var(--line-soft);
+  }
+
+  .range-list a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.6rem 0;
+    color: var(--ink-700);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.94rem;
+  }
+
+  .range-list a:hover {
+    color: var(--coral-700);
+  }
+
+  .range-list svg {
+    color: var(--coral-400);
+    opacity: 0;
+    transform: translateX(-4px);
+    transition: opacity 0.16s ease, transform 0.16s ease;
+  }
+
+  .range-list a:hover svg {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .steps-grid,
+  .quote-split {
+    display: grid;
+    gap: clamp(2rem, 4vw, 4rem);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+    align-items: start;
+  }
+
+  .steps {
+    list-style: none;
+    counter-reset: step;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: var(--sp-4);
+  }
+
+  .steps li {
+    display: flex;
+    gap: var(--sp-4);
+    margin: 0;
+    padding: var(--sp-5);
+    background: var(--surface);
+    border: 1px solid var(--line-soft);
+    border-radius: var(--radius);
+  }
+
+  .step-n {
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--ink-900);
+    color: #fff;
+    font-family: var(--font-display);
+    font-weight: 600;
+  }
+
+  .steps h3 {
+    font-size: var(--step-1);
+    margin: 0 0 0.25rem;
+  }
+
+  .steps p {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 0.94rem;
+  }
+
+  .quote-points {
+    list-style: none;
+    padding: 0;
+    margin: var(--sp-5) 0;
+    display: grid;
+    gap: 0.6rem;
+  }
+
+  .quote-points li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.55rem;
+    margin: 0;
+    color: var(--ink-600);
+  }
+
+  .quote-points svg {
+    color: var(--mint-600);
+    flex-shrink: 0;
+    margin-top: 0.35em;
+  }
+
+  .quote-contact {
+    display: flex;
+    gap: var(--sp-5);
+    flex-wrap: wrap;
+    padding-top: var(--sp-4);
+    border-top: 1px solid var(--line);
+  }
+
+  .quote-contact a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--ink-800);
+  }
+
+  .quote-contact svg {
+    color: var(--coral-500);
+  }
+
+  .home-editorial {
+    display: grid;
+    gap: clamp(2rem, 4vw, 3.5rem);
+    grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.65fr);
+    align-items: start;
+  }
+
+  .home-editorial-aside {
+    position: sticky;
+    top: calc(var(--header-h) + 1.25rem);
+  }
+
+  @media (max-width: 900px) {
+    .home-editorial {
+      grid-template-columns: minmax(0, 1fr);
+    }
+    .home-editorial-aside {
+      position: static;
+    }
+    .hero-grid,
+    .steps-grid,
+    .quote-split {
+      grid-template-columns: minmax(0, 1fr);
+    }
+    .hero-media {
+      order: -1;
+    }
+  }
+</style>

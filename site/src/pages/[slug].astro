@@ -1,0 +1,486 @@
+---
+/**
+ * Product page template — renders all 18 products.
+ *
+ * Schema note: `sku`, the offer, the aggregateRating and the single review are
+ * carried over verbatim from the WordPress site via product-schema.json. The
+ * client asked on 2026-08-13 for the ratings to be kept exactly as they were.
+ * Google is currently showing these pages as Product snippets and Merchant
+ * listings, which together account for most of the site's clicks, so the nodes
+ * stay. Broken placeholder values inside the old Service node (an areaServed
+ * "City" called "The Cone Sleeves", serviceType "Local SEO") were plugin
+ * defaults, not data, and are not reproduced.
+ */
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import QuoteForm from '../components/QuoteForm.astro';
+import { ALL_PRODUCTS, getProduct } from '../data/products';
+import { productBySlug } from '../data/nav';
+import { SITE } from '../data/site';
+import { abs, faqNode, stripTags, BUSINESS_ID, ORG_ID } from '../lib/seo';
+import schemaData from '../data/product-schema.json';
+
+export function getStaticPaths() {
+  return ALL_PRODUCTS.map((p) => ({ params: { slug: p.slug } }));
+}
+
+const { slug } = Astro.params;
+const product = getProduct(slug!)!;
+const nav = productBySlug(product.slug)!;
+const legacy = (schemaData as Record<string, any>)[product.slug] ?? {};
+
+const related = product.related
+  .map((s) => ({ product: getProduct(s), nav: productBySlug(s) }))
+  .filter((r) => r.product && r.nav);
+
+const heroImage = product.images[0];
+const gallery = product.images.slice(1);
+
+const productNode = {
+  '@type': 'Product',
+  '@id': `${abs(nav.path)}#product`,
+  name: product.name,
+  description: product.quickAnswer,
+  image: product.images.map((i) => abs(i.src)),
+  sku: legacy.sku,
+  mpn: legacy.sku,
+  brand: { '@type': 'Brand', name: SITE.name },
+  category: 'Food Packaging',
+  material: 'Paperboard',
+  ...(legacy.price
+    ? {
+        offers: {
+          '@type': 'Offer',
+          url: abs(nav.path),
+          priceCurrency: 'USD',
+          price: legacy.price,
+          priceValidUntil: '2027-12-31',
+          availability: 'https://schema.org/InStock',
+          itemCondition: 'https://schema.org/NewCondition',
+          seller: { '@id': ORG_ID },
+        },
+      }
+    : {}),
+  ...(legacy.rating ? { aggregateRating: legacy.rating } : {}),
+  ...(legacy.review ? { review: legacy.review } : {}),
+};
+
+const serviceNode = legacy.localRating
+  ? {
+      '@type': 'Service',
+      name: `${product.name} printing`,
+      serviceType: 'Custom packaging printing',
+      url: abs(nav.path),
+      areaServed: { '@type': 'Country', name: 'United States' },
+      provider: {
+        '@type': 'LocalBusiness',
+        '@id': BUSINESS_ID,
+        name: SITE.name,
+        url: `${SITE.origin}/`,
+        image: abs(SITE.logo.src),
+        telephone: SITE.phone,
+        email: SITE.email,
+        priceRange: '$',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: SITE.streetAddress,
+          addressLocality: SITE.addressLocality,
+          addressRegion: SITE.addressRegion,
+          postalCode: SITE.postalCode,
+          addressCountry: 'US',
+        },
+        aggregateRating: legacy.localRating,
+      },
+    }
+  : null;
+
+const groupLabel = { cone: 'Cone Sleeves', food: 'Food Sleeves', tray: 'Food Trays' }[product.group];
+
+const schema = [
+  productNode,
+  serviceNode,
+  faqNode(product.faqs),
+  {
+    '@type': 'WebPage',
+    '@id': `${abs(nav.path)}#webpage`,
+    url: abs(nav.path),
+    name: product.seo.title,
+    description: product.seo.description,
+    primaryImageOfPage: abs(heroImage.src),
+    isPartOf: { '@id': `${SITE.origin}/#website` },
+    about: { '@id': `${abs(nav.path)}#product` },
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: ['.quick-answer'],
+    },
+  },
+];
+---
+
+<Base
+  title={product.seo.title}
+  description={product.seo.description}
+  path={nav.path}
+  image={heroImage.src}
+  imageAlt={heroImage.alt}
+  crumbs={[{ name: groupLabel, path: '/custom-food-sleeves/' }, { name: nav.label, path: nav.path }]}
+  schema={schema}
+>
+  <section class="p-hero">
+    <div class="container p-hero-grid">
+      <div>
+        <ol class="crumbs">
+          <li><a href="/">Home</a></li>
+          <li><a href="/custom-food-sleeves/">{groupLabel}</a></li>
+          <li aria-current="page">{nav.label}</li>
+        </ol>
+
+        <p class="eyebrow eyebrow-line">{product.hero.eyebrow}</p>
+        <h1>{product.hero.h1}</h1>
+        <p class="p-lead">{product.hero.lead}</p>
+
+        <ul class="p-bullets">
+          {
+            product.hero.bullets.map((b) => (
+              <li>
+                <Icon name="check" size={15} />
+                {b}
+              </li>
+            ))
+          }
+        </ul>
+
+        <div class="p-actions">
+          <a class="btn btn-primary btn-lg" href="#quote">
+            Get a Free Quote
+            <Icon name="arrow" size={17} />
+          </a>
+          <a class="btn btn-ghost btn-lg" href={`tel:${SITE.phone}`}>
+            <Icon name="phone" size={16} />
+            {SITE.phone}
+          </a>
+        </div>
+      </div>
+
+      <div class="p-media">
+        <figure class="p-media-main">
+          <img
+            src={heroImage.src}
+            alt={heroImage.alt}
+            width="768"
+            height="768"
+            fetchpriority="high"
+            decoding="async"
+          />
+        </figure>
+        {
+          gallery.length > 0 && (
+            <div class="p-media-strip">
+              {gallery.map((img) => (
+                <figure>
+                  <img src={img.src} alt={img.alt} width="768" height="768" loading="lazy" decoding="async" />
+                </figure>
+              ))}
+            </div>
+          )
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight bg-alt">
+    <div class="container">
+      <div class="quick-answer">
+        <p class="eyebrow" style="margin-bottom:.55rem">In short</p>
+        <p>{product.quickAnswer}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="center" style="max-width:22ch;margin-inline:auto">
+        Why shops order {nav.label.toLowerCase()} from us
+      </h2>
+      <div class="grid grid-3" style="margin-top:var(--sp-6)">
+        {
+          product.features.map((f, i) => (
+            <div class="tile">
+              <span class="tile-icon">
+                <Icon name={(['shield', 'leaf', 'palette', 'truck', 'clock', 'award'] as const)[i % 6]} size={20} />
+              </span>
+              <h3>{f.title}</h3>
+              <p>{f.text}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-cream" id="specs">
+    <div class="container p-specs-grid">
+      <div>
+        <p class="eyebrow eyebrow-line">Specifications</p>
+        <h2>Everything this order includes</h2>
+        <p style="color:var(--text-muted);max-width:52ch">
+          These are the options we quote against. If you need something outside them, ask — most
+          custom sizes and finishes are possible, and the quote will say so plainly.
+        </p>
+        <div class="spec-wrap" style="margin-top:var(--sp-5)">
+          <table class="spec">
+            <tbody>
+              {
+                product.specs.map((row) => (
+                  <tr>
+                    <th scope="row">{row.label}</th>
+                    <td>{row.value}</td>
+                  </tr>
+                ))
+              }
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div id="quote" style="scroll-margin-top:calc(var(--header-h) + 2rem)">
+        <QuoteForm product={product.name} compact={true} />
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container p-body-grid">
+      <div class="prose">
+        {
+          product.sections.map((s) => (
+            <>
+              <h2>{s.h2}</h2>
+              <Fragment set:html={s.html} />
+            </>
+          ))
+        }
+      </div>
+
+      <aside class="p-aside">
+        <div class="card">
+          <h3 style="font-size:var(--step-1)">Where these are used</h3>
+          <ul class="p-uses">
+            {
+              product.useCases.map((u) => (
+                <li>
+                  <Icon name="check" size={14} />
+                  {u}
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+
+        <div class="card" style="background:var(--paper-blush);border-color:var(--coral-100)">
+          <h3 style="font-size:var(--step-1)">Not sure on size?</h3>
+          <p style="color:var(--ink-600);font-size:.94rem">
+            Send a sample or a photo with a ruler beside it and we cut the dieline to fit. There is
+            no charge for the dieline or the digital proof.
+          </p>
+          <a class="btn btn-ink btn-block" href="/contact/">Ask a question</a>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section bg-alt" id="faq">
+    <div class="container-narrow">
+      <p class="eyebrow eyebrow-line" style="justify-content:center">Questions</p>
+      <h2 class="center" style="margin-bottom:var(--sp-6)">{nav.label}: common questions</h2>
+      {
+        product.faqs.map((f, i) => (
+          <details class="faq" open={i === 0}>
+            <summary>{f.q}</summary>
+            <div class="faq-body">
+              <Fragment set:html={f.a.startsWith('<') ? f.a : `<p>${f.a}</p>`} />
+            </div>
+          </details>
+        ))
+      }
+    </div>
+  </section>
+
+  {
+    related.length > 0 && (
+      <section class="section">
+        <div class="container">
+          <p class="eyebrow eyebrow-line">Related products</p>
+          <h2 style="margin-bottom:var(--sp-6)">Often ordered alongside</h2>
+          <div class="grid grid-4">
+            {related.map(({ product: r, nav: rn }) => (
+              <a class="card card-link" href={rn!.path}>
+                <div class="card-media">
+                  <img src={r!.images[0].src} alt={r!.images[0].alt} width="768" height="768" loading="lazy" />
+                </div>
+                <div class="card-body">
+                  <h3 class="card-title">{rn!.label}</h3>
+                  <p class="card-text">{r!.hero.bullets.slice(0, 2).join(' · ')}</p>
+                  <span class="card-cta">
+                    View product <Icon name="arrow" size={15} />
+                  </span>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+    )
+  }
+</Base>
+
+<style>
+  .p-hero {
+    background: linear-gradient(180deg, var(--paper-blush) 0%, var(--paper) 100%);
+    padding-block: clamp(2rem, 1rem + 4vw, 4rem) clamp(2.5rem, 1rem + 5vw, 4.5rem);
+  }
+
+  .p-hero-grid {
+    display: grid;
+    gap: clamp(2rem, 4vw, 3.5rem);
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+    align-items: center;
+  }
+
+  .p-lead {
+    font-size: var(--step-1);
+    color: var(--ink-600);
+    max-width: 46ch;
+  }
+
+  .p-bullets {
+    list-style: none;
+    padding: 0;
+    margin: var(--sp-5) 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem 1.25rem;
+  }
+
+  .p-bullets li {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    margin: 0;
+    font-weight: 600;
+    font-size: 0.94rem;
+    color: var(--ink-700);
+  }
+
+  .p-bullets svg {
+    color: var(--mint-600);
+    flex-shrink: 0;
+  }
+
+  .p-actions {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .p-media-main {
+    margin: 0;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    background: var(--paper-cream);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .p-media-main img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+  }
+
+  .p-media-strip {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.7rem;
+    margin-top: 0.7rem;
+  }
+
+  .p-media-strip figure {
+    margin: 0;
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: var(--paper-cream);
+  }
+
+  .p-media-strip img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+  }
+
+  .quick-answer {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--coral-500);
+    border-radius: var(--radius);
+    padding: var(--sp-5) var(--sp-6);
+    max-width: 78ch;
+    margin-inline: auto;
+  }
+
+  .quick-answer p:last-child {
+    margin: 0;
+    font-size: var(--step-1);
+    line-height: 1.6;
+    color: var(--ink-700);
+  }
+
+  .p-specs-grid,
+  .p-body-grid {
+    display: grid;
+    gap: clamp(2rem, 4vw, 3.5rem);
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+    align-items: start;
+  }
+
+  .p-aside {
+    display: grid;
+    gap: var(--sp-4);
+    position: sticky;
+    top: calc(var(--header-h) + 1.25rem);
+  }
+
+  .p-uses {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 0.6rem;
+  }
+
+  .p-uses li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin: 0;
+    color: var(--ink-600);
+    font-size: 0.95rem;
+  }
+
+  .p-uses svg {
+    color: var(--coral-500);
+    flex-shrink: 0;
+    margin-top: 0.32em;
+  }
+
+  @media (max-width: 900px) {
+    .p-hero-grid,
+    .p-specs-grid,
+    .p-body-grid {
+      grid-template-columns: minmax(0, 1fr);
+    }
+    .p-aside {
+      position: static;
+      grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+    }
+  }
+</style>

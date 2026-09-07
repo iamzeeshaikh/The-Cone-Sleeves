@@ -1,12 +1,104 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import seoData from '../data/seo.json';
-import content from '../content/privacy-policy.html?raw';
-import '../styles/pages/privacy-policy.css';
-const seo = seoData["/privacy-policy/"];
-const bodyClass = "privacy-policy wp-singular page-template-default page page-id-3 wp-custom-logo wp-embed-responsive wp-theme-rishi theme-rishi box-layout rightsidebar elementor-default elementor-kit-3067";
-const bodyAttrs = {"data-link": "type-2", "data-forms": "classic", "data-prefix": "single_page", "data-header": "type-1", "data-footer": "type-1"};
+import Base from '../layouts/Base.astro';
+import { SITE } from '../data/site';
+
+const updated = '2026-09-07';
 ---
-<Layout seo={seo} bodyClass={bodyClass} bodyAttrs={bodyAttrs} stem="privacy-policy" hasPopup={false}>
-  <Fragment set:html={content} />
-</Layout>
+
+<Base
+  title="Privacy Policy | The Cone Sleeves"
+  description="How The Cone Sleeves collects, uses and protects the information you provide when requesting a quote or contacting us."
+  path="/privacy-policy/"
+  crumbs={[{ name: 'Privacy Policy', path: '/privacy-policy/' }]}
+>
+  <section class="section-tight" style="background:linear-gradient(180deg,var(--paper-blush),var(--paper))">
+    <div class="container-narrow">
+      <p class="eyebrow eyebrow-line">Legal</p>
+      <h1>Privacy Policy</h1>
+      <p class="form-note">Last updated 7 September 2026</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container-narrow prose">
+      <p>
+        This policy describes how {SITE.name} (&ldquo;we&rdquo;, &ldquo;us&rdquo; or &ldquo;our&rdquo;) collects,
+        uses and discloses information about people who visit
+        <a href="/">theconesleeves.com</a> and about our customers and prospective
+        customers. By using this site you agree to it.
+      </p>
+
+      <h2>Information we collect</h2>
+      <ul>
+        <li>
+          <strong>Contact details you give us.</strong> Your name, email address, phone number and
+          anything else you type into a quote or contact form, including artwork files you attach.
+        </li>
+        <li>
+          <strong>Usage information collected automatically.</strong> Your IP address, browser type,
+          the pages you view and the date and time of your visit. This reaches us through Google
+          Tag Manager and the live chat widget, which set cookies in your browser.
+        </li>
+        <li>
+          <strong>Anything else you choose to send.</strong> For example, replies to an email
+          thread, or details you share while chatting with us.
+        </li>
+      </ul>
+
+      <h2>How we use it</h2>
+      <ul>
+        <li>To answer your enquiry, prepare a quote and produce an order;</li>
+        <li>To operate, secure and improve this website;</li>
+        <li>To contact you about work in progress or a previous order;</li>
+        <li>To comply with a legal obligation.</li>
+      </ul>
+      <p>
+        We do not sell your information, and we do not add you to a marketing list because you
+        asked for a quote.
+      </p>
+
+      <h2>Who we share it with</h2>
+      <p>
+        We share information with the service providers who run parts of this operation for us:
+        website hosting, email delivery, analytics and live chat. They may only use it to provide
+        that service. We will also disclose information where the law requires it, or where it is
+        necessary to protect our rights or someone&rsquo;s safety.
+      </p>
+
+      <h2>Artwork and files you send us</h2>
+      <p>
+        Artwork you upload is used to quote, proof and print your job, and is retained so a repeat
+        order can be run from the same file. We do not use your artwork as a portfolio sample or
+        show it to another customer without your permission. Ask us and we will delete it.
+      </p>
+
+      <h2>Your choices</h2>
+      <p>
+        You can opt out of any promotional email using the link in it; we may still send messages
+        about an order in progress. You can block or delete cookies in your browser, though the
+        chat widget will stop working if you do. To ask what we hold about you, or to have it
+        corrected or deleted, email <a href={`mailto:${SITE.email}`}>{SITE.email}</a>.
+      </p>
+
+      <h2>Security</h2>
+      <p>
+        We take reasonable measures to protect information from loss, misuse and unauthorized
+        access. No method of transmission over the internet is completely secure, so we cannot
+        guarantee absolute security.
+      </p>
+
+      <h2>Children</h2>
+      <p>
+        This site sells to businesses. It is not directed at children, and we do not knowingly
+        collect information from anyone under 13.
+      </p>
+
+      <h2>Changes and contact</h2>
+      <p>
+        We may update this policy to reflect changes in our practices or the law, and the date at
+        the top will change with it. Questions about this policy or how we handle your data go to
+        <a href={`mailto:${SITE.email}`}>{SITE.email}</a> or {SITE.phone}.
+      </p>
+    </div>
+  </section>
+</Base>

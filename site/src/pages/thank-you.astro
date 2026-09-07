@@ -1,12 +1,71 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import seoData from '../data/seo.json';
-import content from '../content/thank-you.html?raw';
-import '../styles/pages/thank-you.css';
-const seo = seoData["/thank-you/"];
-const bodyClass = "wp-singular page-template-default page page-id-3311 wp-custom-logo wp-embed-responsive wp-theme-rishi theme-rishi box-layout rightsidebar elementor-default elementor-kit-3067";
-const bodyAttrs = {"data-link": "type-2", "data-forms": "classic", "data-prefix": "single_page", "data-header": "type-1", "data-footer": "type-1"};
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import { SITE } from '../data/site';
+import { POSTS } from '../data/posts';
 ---
-<Layout seo={seo} bodyClass={bodyClass} bodyAttrs={bodyAttrs} stem="thank-you" hasPopup={false}>
-  <Fragment set:html={content} />
-</Layout>
+
+<Base
+  title="Thank You | The Cone Sleeves"
+  description="Your request has been received. We will come back with a written quote and a free digital proof."
+  path="/thank-you/"
+  noindex={true}
+  hideCta={true}
+>
+  <section class="section">
+    <div class="container-narrow center">
+      <span class="ty-mark"><Icon name="check" size={34} /></span>
+      <h1 style="margin-top:var(--sp-5)">Request received</h1>
+      <p style="font-size:var(--step-1);color:var(--ink-600);max-width:52ch;margin-inline:auto">
+        Thanks — your details are with the team that prices and prints the job. You will get a
+        written quote back, and the dieline and digital proof cost nothing either way.
+      </p>
+
+      <div class="ty-steps">
+        {
+          [
+            { i: 'quote', t: 'We price it', d: 'A written quote, with the board and finish options spelled out.' },
+            { i: 'ruler', t: 'We build the dieline', d: 'A cutting template measured to your cone, cup or item. Free.' },
+            { i: 'file', t: 'You approve a proof', d: 'Flat artwork plus a product mock-up. Nothing prints until you say yes.' },
+          ].map((s) => (
+            <div class="tile">
+              <span class="tile-icon"><Icon name={s.i as any} size={20} /></span>
+              <h3>{s.t}</h3>
+              <p>{s.d}</p>
+            </div>
+          ))
+        }
+      </div>
+
+      <p style="color:var(--text-muted);margin-top:var(--sp-6)">
+        Need it sooner? Call <a href={`tel:${SITE.phone}`}>{SITE.phone}</a> and mention that you
+        just submitted a request.
+      </p>
+
+      <div style="display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;margin-top:var(--sp-5)">
+        <a class="btn btn-ghost" href="/">Back to home</a>
+        <a class="btn btn-ghost" href={`/blog/${POSTS[0].slug}/`}>Read a guide while you wait</a>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .ty-mark {
+    width: 76px;
+    height: 76px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    margin-inline: auto;
+    background: var(--mint-100);
+    color: var(--mint-600);
+  }
+  .ty-steps {
+    display: grid;
+    gap: var(--sp-4);
+    grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+    margin-top: var(--sp-7);
+    text-align: left;
+  }
+</style>

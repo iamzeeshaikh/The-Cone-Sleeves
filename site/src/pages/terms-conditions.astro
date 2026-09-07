@@ -1,12 +1,110 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import seoData from '../data/seo.json';
-import content from '../content/terms-conditions.html?raw';
-import '../styles/pages/terms-conditions.css';
-const seo = seoData["/terms-conditions/"];
-const bodyClass = "wp-singular page-template-default page page-id-3189 wp-custom-logo wp-embed-responsive wp-theme-rishi theme-rishi box-layout rightsidebar elementor-default elementor-kit-3067";
-const bodyAttrs = {"data-link": "type-2", "data-forms": "classic", "data-prefix": "single_page", "data-header": "type-1", "data-footer": "type-1"};
+import Base from '../layouts/Base.astro';
+import { SITE } from '../data/site';
+
+const updated = '2026-09-07';
 ---
-<Layout seo={seo} bodyClass={bodyClass} bodyAttrs={bodyAttrs} stem="terms-conditions" hasPopup={false}>
-  <Fragment set:html={content} />
-</Layout>
+
+<Base
+  title="Terms & Conditions | The Cone Sleeves"
+  description="The terms that govern use of theconesleeves.com and the custom printing work we quote, proof and produce for you."
+  path="/terms-conditions/"
+  crumbs={[{ name: 'Terms &amp; Conditions', path: '/terms-conditions/' }]}
+>
+  <section class="section-tight" style="background:linear-gradient(180deg,var(--paper-blush),var(--paper))">
+    <div class="container-narrow">
+      <p class="eyebrow eyebrow-line">Legal</p>
+      <h1>Terms &amp; Conditions</h1>
+      <p class="form-note">Last updated 7 September 2026</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container-narrow prose">
+      <p>
+        These terms govern your use of theconesleeves.com and the custom printing work we quote and
+        produce. Please read them before placing an order. If you do not agree with them, do not
+        use the site.
+      </p>
+
+      <h2>What we sell</h2>
+      <p>
+        We manufacture custom printed packaging to order: cone sleeves, food sleeves and trays,
+        made to your specification and your artwork. This is a business-to-business printing
+        service. The website does not take payment and there is no checkout &mdash; every order
+        begins with a written quote and is confirmed by email.
+      </p>
+
+      <h2>Quotes</h2>
+      <p>
+        A quote is based on the size, quantity, board, printing and finish you describe. If any of
+        those change, the price changes with them and we will re-quote before proceeding. Unless
+        the quote itself says otherwise, it is valid for 30 days.
+      </p>
+
+      <h2>Artwork and proofs</h2>
+      <p>
+        You are responsible for holding the rights to any logo, image, typeface or text you send
+        us, and for confirming that your artwork is correct. We supply a digital proof before
+        printing and nothing goes to press until you approve it in writing. Once a proof is
+        approved, errors it contained &mdash; including spelling, color build and layout &mdash;
+        are not grounds for a reprint at our cost.
+      </p>
+
+      <h2>Color and dimensions</h2>
+      <p>
+        Screens and presses do not render color identically, and no monitor is a reliable proof of
+        a printed color. Slight variation between a screen preview and the printed result, and
+        between print runs, is normal in commercial printing. Cutting and folding carry a small
+        tolerance, which we allow for in every dieline.
+      </p>
+
+      <h2>Production and delivery</h2>
+      <p>
+        Standard production is 6&ndash;7 business days from proof approval, and a rush option of
+        3&ndash;4 business days is available on request. Those windows cover manufacturing only.
+        Delivery time depends on the carrier and destination, and while we give estimates in good
+        faith we cannot guarantee a carrier&rsquo;s performance or events outside our control.
+      </p>
+
+      <h2>Custom work, cancellation and returns</h2>
+      <p>
+        Because every item is printed to your specification, orders cannot be cancelled once they
+        have gone to press, and custom-printed goods are not returnable for a change of mind.
+        Inspect your delivery on arrival. If goods arrive damaged, or the printing does not match
+        the proof you approved, contact us within 14 days of delivery at
+        <a href={`mailto:${SITE.email}`}>{SITE.email}</a> and we will reprint or refund the affected
+        portion of the order.
+      </p>
+
+      <h2>Intellectual property</h2>
+      <p>
+        The text, images, layout and code on this site belong to {SITE.name} or our suppliers and
+        are protected by copyright and trademark law. You may not copy or reuse them without our
+        written consent. Your own artwork remains yours; sending it to us grants only the license
+        we need to quote, proof, print and reprint your job.
+      </p>
+
+      <h2>Acceptable use</h2>
+      <p>
+        Do not use this site for any unlawful purpose, and do not attempt to disrupt it or to
+        interfere with anyone else&rsquo;s use of it. We may refuse work that infringes a third
+        party&rsquo;s rights or that we consider unlawful.
+      </p>
+
+      <h2>Liability</h2>
+      <p>
+        To the extent the law allows, our liability for any order is limited to the amount paid for
+        that order. We are not liable for indirect or consequential losses, including lost profit
+        or lost business, arising from a delay or a defect.
+      </p>
+
+      <h2>Changes and contact</h2>
+      <p>
+        We may revise these terms; the date at the top shows when they last changed, and the terms
+        in force when you place an order are the ones that apply to it. Questions go to
+        <a href={`mailto:${SITE.email}`}>{SITE.email}</a> or {SITE.phone}.
+      </p>
+    </div>
+  </section>
+</Base>

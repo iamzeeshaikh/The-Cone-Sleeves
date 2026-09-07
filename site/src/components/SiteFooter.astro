@@ -1,0 +1,79 @@
+---
+import Icon from './Icon.astro';
+import { SITE } from '../data/site';
+import { productsInGroup } from '../data/nav';
+
+const cone = productsInGroup('cone');
+const food = productsInGroup('food');
+const tray = productsInGroup('tray');
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <img
+          src={SITE.logo.src}
+          alt={SITE.name}
+          width={SITE.logo.width}
+          height={SITE.logo.height}
+          loading="lazy"
+          style="height:38px;width:auto;filter:brightness(0) invert(1)"
+        />
+        <p class="footer-blurb" style="margin-top:1rem">
+          We print custom cone sleeves, food sleeves and trays for ice cream shops, cafes and
+          kitchens across the United States. Free design help, digital proofs and wholesale
+          runs from {'500'} pieces.
+        </p>
+        <div class="social-row" style="margin-top:1.25rem">
+          <a href={SITE.social.facebook} rel="noopener" target="_blank" aria-label="Facebook"><Icon name="facebook" size={16} /></a>
+          <a href={SITE.social.instagram} rel="noopener" target="_blank" aria-label="Instagram"><Icon name="instagram" size={16} /></a>
+          <a href={SITE.social.linkedin} rel="noopener" target="_blank" aria-label="LinkedIn"><Icon name="linkedin" size={16} /></a>
+        </div>
+      </div>
+
+      <div>
+        <h4>Cone Sleeves</h4>
+        <ul class="footer-list">
+          {cone.map((p) => <li><a href={p.path}>{p.label}</a></li>)}
+        </ul>
+        <h4 style="margin-top:1.75rem">Trays</h4>
+        <ul class="footer-list">
+          {tray.map((p) => <li><a href={p.path}>{p.label}</a></li>)}
+        </ul>
+      </div>
+
+      <div>
+        <h4>Food Sleeves</h4>
+        <ul class="footer-list">
+          {food.map((p) => <li><a href={p.path}>{p.label}</a></li>)}
+        </ul>
+      </div>
+
+      <div>
+        <h4>Company</h4>
+        <ul class="footer-list">
+          <li><a href="/about/">About Us</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/contact/">Contact</a></li>
+          <li><a href="/get-a-free-quote/">Get a Free Quote</a></li>
+          <li><a href="/privacy-policy/">Privacy Policy</a></li>
+          <li><a href="/terms-conditions/">Terms &amp; Conditions</a></li>
+        </ul>
+
+        <h4 style="margin-top:1.75rem">Get in touch</h4>
+        <div class="footer-contact">
+          <span><Icon name="pin" size={14} /> {SITE.address}</span>
+          <a href={`tel:${SITE.phone}`}><Icon name="phone" size={14} /> {SITE.phone}</a>
+          <a href={`mailto:${SITE.email}`}><Icon name="mail" size={14} /> {SITE.email}</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>&copy; {year} {SITE.name}. All rights reserved.</span>
+      <span>Custom printed packaging, made to order in the USA.</span>
+    </div>
+  </div>
+</footer>

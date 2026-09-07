@@ -8,3 +8,7 @@ dist/
 .DS_Store
 *.log
 .vercel
+
+# macOS AppleDouble sidecars created on the exFAT drive
+._*
+.DS_Store

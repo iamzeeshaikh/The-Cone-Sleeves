@@ -1,75 +1,167 @@
 ---
 /**
- * Search results.
- *
- * WordPress answered `/?s=<query>` from the database. A static build cannot, so
- * the query is redirected here (see vercel.json) and matched client-side
- * against a prebuilt index. The markup, classes and layout are the Rishi
- * search-results template, so the page looks exactly like the original.
+ * Search results. A static build cannot query a database, so `/?s=<query>` is
+ * redirected here (see vercel.json) and matched client-side against an index
+ * built at compile time from the product and post data.
  */
-import Layout from '../layouts/Layout.astro';
-import { SITE } from '../data/site';
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import { ALL_PRODUCTS } from '../data/products';
+import { productBySlug } from '../data/nav';
+import { POSTS } from '../data/posts';
+import { stripTags } from '../lib/seo';
 
-const seo = {
-  title: 'You searched for - The Cone Sleeves',
-  description: null,
-  robots: 'noindex, follow',
-  canonical: `${SITE.origin}/search/`,
-  og: { locale: 'en_US', type: 'article', title: 'Search', site_name: SITE.name },
-  twitter: { card: 'summary_large_image' },
-  schema: [],
-};
-
-const bodyClass =
-  'search search-results wp-custom-logo wp-embed-responsive wp-theme-rishi theme-rishi hfeed default-layout blog-classic rightsidebar';
-const bodyAttrs = {
-  'data-link': 'type-2',
-  'data-forms': 'classic',
-  'data-prefix': 'search',
-  'data-header': 'type-1',
-  'data-footer': 'type-1',
-};
+const index = [
+  ...ALL_PRODUCTS.map((p) => {
+    const nav = productBySlug(p.slug)!;
+    return {
+      title: nav.label,
+      path: nav.path,
+      kind: 'Product',
+      text: p.quickAnswer,
+      terms: [p.name, ...p.keywords, ...p.useCases].join(' ').toLowerCase(),
+    };
+  }),
+  ...POSTS.map((p) => ({
+    title: p.title,
+    path: `/blog/${p.slug}/`,
+    kind: 'Guide',
+    text: p.description,
+    terms: `${p.title} ${p.description} ${stripTags(p.body).slice(0, 600)}`.toLowerCase(),
+  })),
+  { title: 'Get a Free Quote', path: '/get-a-free-quote/', kind: 'Page', text: 'Request a written price for custom printed packaging.', terms: 'quote price cost estimate order' },
+  { title: 'Contact', path: '/contact/', kind: 'Page', text: 'Call, email or message the team that prints the job.', terms: 'contact phone email address whatsapp support' },
+  { title: 'About', path: '/about/', kind: 'Page', text: 'Who we are and how ordering works.', terms: 'about company who we are story' },
+];
 ---
 
-<Layout seo={seo} bodyClass={bodyClass} bodyAttrs={bodyAttrs} stem="blog">
-  <div class="site-content reveal_none_desktop reveal_none_tablet reveal_none_mobile">
-    <div class="archive-title-wrapper clear" data-alignment="left">
-      <div class="rishi-container" data-strech="none">
-        <section class="search-result-wrapper">
-          <div class="rishi-searchres-inner">
-            <h1 class="search-res">Search Result for: <span data-search-term></span></h1>
-            <form action="/search/" autocomplete="off" class="search-form" method="get" role="search">
-              <label>
-                <span class="screen-reader-text">Search for:</span>
-                <input
-                  class="search-field"
-                  name="s"
-                  placeholder="Search"
-                  title="Search Input"
-                  type="search"
-                  value=""
-                />
-              </label>
-              <input class="search-submit" type="submit" value="Search" />
-            </form>
-          </div>
-        </section>
-        <section class="rishi-search-count" data-count="yes">
-          <span class="srch-results-cnt" data-search-count></span>
-        </section>
-      </div>
-    </div>
+<Base
+  title="Search | The Cone Sleeves"
+  description="Search custom cone sleeves, food sleeves, trays and buying guides on The Cone Sleeves."
+  path="/search/"
+  noindex={true}
+  hideCta={true}
+>
+  <section class="section">
+    <div class="container-narrow">
+      <p class="eyebrow eyebrow-line">Search</p>
+      <h1 id="search-heading">Search results</h1>
 
-    <div class="rishi-container">
-      <div class="main-content-wrapper clear">
-        <main class="site-main">
-          <div class="rishi-container-wrap">
-            <div class="posts-wrap" data-search-results></div>
-          </div>
-        </main>
-      </div>
-    </div>
-  </div>
-</Layout>
+      <form class="search-form" role="search" data-search-form>
+        <label class="visually-hidden" for="s">Search this site</label>
+        <input id="s" name="s" type="search" placeholder="Try “waffle cone” or “lead time”" autocomplete="off" />
+        <button class="btn btn-primary" type="submit"><Icon name="search" size={16} />Search</button>
+      </form>
 
-<script src="../scripts/search.js"></script>
+      <p class="form-note" data-search-count></p>
+      <div class="search-results" data-search-results></div>
+    </div>
+  </section>
+</Base>
+
+<script is:inline define:vars={{ index }}>
+  window.__TCS_INDEX = index;
+</script>
+
+<script>
+  const form = document.querySelector('[data-search-form]');
+  const input = document.getElementById('s');
+  const list = document.querySelector('[data-search-results]');
+  const count = document.querySelector('[data-search-count]');
+  const heading = document.getElementById('search-heading');
+  const index = window.__TCS_INDEX || [];
+
+  function render(query) {
+    const q = query.trim().toLowerCase();
+    if (!list || !count) return;
+    if (!q) {
+      count.textContent = 'Type a word to search products and guides.';
+      list.innerHTML = '';
+      return;
+    }
+    const words = q.split(/\s+/).filter(Boolean);
+    const hits = index
+      .map((item) => {
+        const hay = (item.title + ' ' + item.text + ' ' + item.terms).toLowerCase();
+        let score = 0;
+        for (const w of words) {
+          if (item.title.toLowerCase().includes(w)) score += 5;
+          if (hay.includes(w)) score += 1;
+        }
+        return { item, score };
+      })
+      .filter((r) => r.score > 0)
+      .sort((a, b) => b.score - a.score);
+
+    if (heading) heading.textContent = `Search results for “${query.trim()}”`;
+    count.textContent = hits.length
+      ? `${hits.length} result${hits.length === 1 ? '' : 's'}`
+      : 'No matches. Try a broader word, or ask us directly on the contact page.';
+
+    list.innerHTML = hits
+      .map(
+        ({ item }) =>
+          `<a class="search-hit" href="${item.path}"><span class="pill">${item.kind}</span><h2>${item.title}</h2><p>${item.text}</p></a>`
+      )
+      .join('');
+  }
+
+  const initial = new URLSearchParams(location.search).get('s') || '';
+  if (input) input.value = initial;
+  render(initial);
+
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const value = input?.value || '';
+    history.replaceState(null, '', `/search/?s=${encodeURIComponent(value)}`);
+    render(value);
+  });
+  input?.addEventListener('input', () => render(input.value));
+</script>
+
+<style>
+  .search-form {
+    display: flex;
+    gap: 0.6rem;
+    margin: var(--sp-5) 0 var(--sp-4);
+    flex-wrap: wrap;
+  }
+  .search-form input {
+    flex: 1 1 240px;
+    padding: 0.85rem 1.1rem;
+    border: 1.5px solid var(--line);
+    border-radius: var(--radius-pill);
+    background: var(--surface);
+  }
+  .search-form input:focus {
+    border-color: var(--coral-400);
+    outline: none;
+    box-shadow: 0 0 0 3px var(--coral-50);
+  }
+  .search-results {
+    display: grid;
+    gap: var(--sp-4);
+    margin-top: var(--sp-5);
+  }
+  .search-results :global(.search-hit) {
+    display: block;
+    padding: var(--sp-5);
+    background: var(--surface);
+    border: 1px solid var(--line-soft);
+    border-radius: var(--radius);
+    text-decoration: none;
+    color: inherit;
+  }
+  .search-results :global(.search-hit:hover) {
+    border-color: var(--coral-300);
+  }
+  .search-results :global(.search-hit h2) {
+    font-size: var(--step-1);
+    margin: 0.55rem 0 0.3rem;
+  }
+  .search-results :global(.search-hit p) {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 0.94rem;
+  }
+</style>

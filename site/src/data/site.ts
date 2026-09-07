@@ -4,6 +4,10 @@ export const SITE = {
   phone: '+1-503-358-0443',
   email: 'support@conesleeves.com',
   address: 'Da 408, San Jose, CA 95128, United States',
+  streetAddress: 'Da 408',
+  addressLocality: 'San Jose',
+  addressRegion: 'CA',
+  postalCode: '95128',
   mapUrl: 'https://goo.gl/maps/ggzDQFw967rMnvjw5',
   social: {
     facebook: 'https://web.facebook.com/conesleeves/',
@@ -27,6 +31,10 @@ export const SITE = {
   favicon192: '/media/2023/04/cropped-TCS-Logos-1-192x192.png',
   appleTouchIcon: '/media/2023/04/cropped-TCS-Logos-1-180x180.png',
   msTileImage: '/media/2023/04/cropped-TCS-Logos-1-270x270.png',
+  /** Default social-share image; overridden per page where a better one exists. */
+  ogImage: '/media/2025/08/waffle-cone-sleeves-png-transparent.png',
+  /** Displayed as the promise on quote CTAs — keep in step with data/types.ts FACTS. */
+  replyPromise: 'Quotes answered within one business day',
 } as const;
 
 /**

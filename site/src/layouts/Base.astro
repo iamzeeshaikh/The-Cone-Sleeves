@@ -1,0 +1,173 @@
+---
+/**
+ * The one layout every page uses.
+ *
+ * It owns the document head (meta, Open Graph, JSON-LD), the header and footer,
+ * and the two floating actions. Pages pass their SEO fields and their schema
+ * nodes; nothing here reaches back into page-specific data.
+ */
+import '../styles/tokens.css';
+import '../styles/base.css';
+import '../styles/components.css';
+
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import Icon from '../components/Icon.astro';
+import Analytics from '../components/Analytics.astro';
+import { SITE, INTEGRATIONS } from '../data/site';
+import { abs, graph, organizationNode, websiteNode, breadcrumbNode } from '../lib/seo';
+
+interface Props {
+  title: string;
+  description: string;
+  /** Path with leading and trailing slash, e.g. '/custom-crepe-sleeves/'. */
+  path: string;
+  /** Social share image, site-relative. Falls back to the brand image. */
+  image?: string;
+  imageAlt?: string;
+  /** 'website' for landing pages, 'article' for blog posts. */
+  ogType?: 'website' | 'article';
+  noindex?: boolean;
+  /** Breadcrumb trail; Home is prepended automatically. */
+  crumbs?: Array<{ name: string; path: string }>;
+  /** Extra JSON-LD nodes merged into the page's single @graph. */
+  schema?: unknown[];
+  /** Skips the pre-footer quote band on pages that are themselves a form. */
+  hideCta?: boolean;
+}
+
+const {
+  title,
+  description,
+  path,
+  image = SITE.ogImage,
+  imageAlt = SITE.name,
+  ogType = 'website',
+  noindex = false,
+  crumbs = [],
+  schema = [],
+  hideCta = false,
+} = Astro.props as Props;
+
+const canonical = abs(path);
+const trail = [{ name: 'Home', path: '/' }, ...crumbs];
+const nodes = [
+  organizationNode(),
+  websiteNode(),
+  trail.length > 1 ? breadcrumbNode(trail) : null,
+  ...schema,
+];
+const jsonLd = JSON.stringify(graph(nodes));
+const waHref = `https://wa.me/${SITE.whatsapp.telephone}?text=${encodeURIComponent(SITE.whatsapp.message)}`;
+---
+
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="google-site-verification" content={INTEGRATIONS.googleSiteVerification} />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta
+      name="robots"
+      content={noindex
+        ? 'noindex, follow'
+        : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'}
+    />
+
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:site_name" content={SITE.name} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={abs(image)} />
+    <meta property="og:image:alt" content={imageAlt} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={abs(image)} />
+
+    <link rel="icon" href={SITE.favicon32} sizes="32x32" />
+    <link rel="icon" href={SITE.favicon192} sizes="192x192" />
+    <link rel="apple-touch-icon" href={SITE.appleTouchIcon} />
+    <meta name="theme-color" content="#ef5b41" />
+
+    {/* Body face and display face are both above the fold on every page. */}
+    <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/6xKjdSxYI9_3nPWNAGn5LA.woff2" />
+    <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/fraunces-normal.woff2" />
+
+    <script type="application/ld+json" set:html={jsonLd} />
+
+    <Analytics />
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <SiteHeader path={path} />
+
+    <main id="main">
+      <slot />
+
+      {
+        !hideCta && (
+          <section class="section bg-deep" aria-labelledby="cta-heading">
+            <div class="container center">
+              <p class="eyebrow" style="color:var(--coral-300);justify-content:center">
+                Free quote · No obligation
+              </p>
+              <h2 id="cta-heading" style="max-width:20ch;margin-inline:auto">
+                Tell us your cone, we will price the sleeve
+              </h2>
+              <p style="color:var(--ink-300);max-width:56ch;margin-inline:auto">
+                Send your size, quantity and artwork. You get a written quote and a free digital
+                proof before anything goes to press.
+              </p>
+              <div
+                style="display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;margin-top:1.75rem"
+              >
+                <a class="btn btn-primary btn-lg" href="/get-a-free-quote/">
+                  Get a Free Quote
+                  <Icon name="arrow" size={17} />
+                </a>
+                <a class="btn btn-light btn-lg" href={`tel:${SITE.phone}`}>
+                  <Icon name="phone" size={16} />
+                  {SITE.phone}
+                </a>
+              </div>
+            </div>
+          </section>
+        )
+      }
+    </main>
+
+    <SiteFooter />
+
+    <a
+      class="whatsapp-fab"
+      href={waHref}
+      rel="noopener"
+      target="_blank"
+      aria-label="Chat with us on WhatsApp"
+    >
+      <Icon name="whatsapp" size={26} />
+    </a>
+
+    <button type="button" class="to-top" aria-label="Back to top" data-show="false">
+      <Icon name="chevron" size={18} class="to-top-icon" />
+    </button>
+
+    <script>
+      const btn = document.querySelector<HTMLButtonElement>('.to-top');
+      const icon = btn?.querySelector<SVGElement>('.to-top-icon');
+      icon?.style.setProperty('transform', 'rotate(180deg)');
+      const onScroll = () => btn?.setAttribute('data-show', String(window.scrollY > 700));
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+      btn?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    </script>
+  </body>
+</html>

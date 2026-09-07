@@ -1,0 +1,51 @@
+---
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import { ALL_PRODUCTS } from '../data/products';
+import { productBySlug } from '../data/nav';
+
+const picks = ['ice-cream-cone-sleeves', 'waffle-cone-sleeves', 'custom-burger-sleeves', 'custom-food-trays']
+  .map((s) => ({ p: ALL_PRODUCTS.find((x) => x.slug === s)!, n: productBySlug(s)! }))
+  .filter((x) => x.p);
+---
+
+<Base
+  title="Page Not Found | The Cone Sleeves"
+  description="That page does not exist. Browse our custom cone sleeves, food sleeves and trays, or ask us for a quote."
+  path="/404/"
+  noindex={true}
+>
+  <section class="section center">
+    <div class="container-narrow">
+      <p class="eyebrow eyebrow-line" style="justify-content:center">404</p>
+      <h1>We could not find that page</h1>
+      <p style="font-size:var(--step-1);color:var(--ink-600);max-width:48ch;margin-inline:auto">
+        The link may be old or mistyped. Here is where most people are heading.
+      </p>
+      <div style="display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;margin-top:var(--sp-5)">
+        <a class="btn btn-primary btn-lg" href="/">Go to the home page</a>
+        <a class="btn btn-ghost btn-lg" href="/get-a-free-quote/">Get a Free Quote</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="container">
+      <div class="grid grid-4">
+        {
+          picks.map(({ p, n }) => (
+            <a class="card card-link" href={n.path}>
+              <div class="card-media">
+                <img src={p.images[0].src} alt={p.images[0].alt} width="768" height="768" loading="lazy" />
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">{n.label}</h3>
+                <span class="card-cta">View product <Icon name="arrow" size={15} /></span>
+              </div>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</Base>

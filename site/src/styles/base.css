@@ -1,0 +1,232 @@
+/*
+ * Reset, element defaults and layout primitives.
+ * Component styles live in components.css; page-specific rules live beside
+ * their page. Nothing here should need a class to work.
+ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-h) + 1rem);
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: var(--step-0);
+  line-height: var(--lh-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: var(--lh-tight);
+  color: var(--ink-900);
+  margin: 0 0 var(--sp-4);
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: var(--step-5);
+}
+h2 {
+  font-size: var(--step-4);
+}
+h3 {
+  font-size: var(--step-2);
+  line-height: var(--lh-snug);
+}
+h4 {
+  font-size: var(--step-1);
+  line-height: var(--lh-snug);
+}
+
+p {
+  margin: 0 0 var(--sp-4);
+  text-wrap: pretty;
+}
+
+a {
+  color: var(--coral-700);
+  text-decoration-color: var(--coral-200);
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1.5px;
+  transition: color 0.18s ease, text-decoration-color 0.18s ease;
+}
+
+a:hover {
+  color: var(--coral-800);
+  text-decoration-color: currentColor;
+}
+
+:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+ul,
+ol {
+  margin: 0 0 var(--sp-4);
+  padding-left: 1.25rem;
+}
+
+li {
+  margin-bottom: var(--sp-2);
+}
+
+li::marker {
+  color: var(--coral-400);
+}
+
+strong {
+  font-weight: 700;
+  color: var(--ink-900);
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--line);
+  margin: var(--sp-7) 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+input,
+select,
+textarea,
+button {
+  font: inherit;
+  color: inherit;
+}
+
+/* iOS zooms any field under 16px on focus. */
+input,
+select,
+textarea {
+  font-size: max(16px, 1rem);
+}
+
+/* ---------- Layout primitives ---------- */
+
+.container {
+  width: min(100% - 2.5rem, var(--container));
+  margin-inline: auto;
+}
+
+.container-narrow {
+  width: min(100% - 2.5rem, var(--container-narrow));
+  margin-inline: auto;
+}
+
+.section {
+  padding-block: var(--section-y);
+}
+
+.section-tight {
+  padding-block: calc(var(--section-y) * 0.62);
+}
+
+.bg-alt {
+  background: var(--bg-alt);
+}
+.bg-cream {
+  background: var(--paper-cream);
+}
+.bg-blush {
+  background: var(--paper-blush);
+}
+.bg-deep {
+  background: var(--bg-deep);
+  color: var(--text-invert);
+}
+.bg-deep h1,
+.bg-deep h2,
+.bg-deep h3,
+.bg-deep h4 {
+  color: #fff;
+}
+
+.stack > * + * {
+  margin-top: var(--sp-4);
+}
+
+.grid {
+  display: grid;
+  gap: var(--sp-5);
+}
+
+/* minmax(0,1fr) keeps long words and wide media from blowing the track out. */
+.grid-2 {
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+}
+/* auto-fit alone lets 8 cards land 5+3 on a wide screen; the max() floor caps
+   the track count so they break evenly instead. */
+.grid-3 {
+  grid-template-columns: repeat(auto-fit, minmax(max(260px, (100% - 2 * var(--sp-5)) / 3), 1fr));
+}
+.grid-4 {
+  grid-template-columns: repeat(auto-fit, minmax(max(210px, (100% - 3 * var(--sp-5)) / 4), 1fr));
+}
+
+.center {
+  text-align: center;
+}
+
+.measure {
+  max-width: 68ch;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 200;
+  background: var(--ink-900);
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0 0 var(--radius-sm) 0;
+}
+
+.skip-link:focus {
+  left: 0;
+}

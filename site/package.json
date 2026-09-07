@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build && node tools/purge.mjs",
+    "build": "astro build",
     "preview": "astro preview",
     "prune-assets": "node tools/prune-assets.mjs",
     "audit": "node tools/audit.mjs",
