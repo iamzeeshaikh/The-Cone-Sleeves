@@ -25,6 +25,10 @@ const waHref = `https://wa.me/${SITE.whatsapp.telephone}?text=${encodeURICompone
       <a href={`tel:${SITE.phone}`}><Icon name="phone" size={14} />{SITE.phone}</a>
       <a href={`mailto:${SITE.email}`}><Icon name="mail" size={14} />{SITE.email}</a>
     </div>
+    <div class="topbar-links">
+      <a href="/about/" aria-current={isCurrent('/about/') ? 'page' : undefined}>About</a>
+      <a href="/contact/" aria-current={isCurrent('/contact/') ? 'page' : undefined}>Contact</a>
+    </div>
     <div class="topbar-social">
       <a href={SITE.social.facebook} rel="noopener" target="_blank" aria-label="The Cone Sleeves on Facebook"><Icon name="facebook" size={15} /></a>
       <a href={SITE.social.instagram} rel="noopener" target="_blank" aria-label="The Cone Sleeves on Instagram"><Icon name="instagram" size={15} /></a>
@@ -76,8 +80,6 @@ const waHref = `https://wa.me/${SITE.whatsapp.telephone}?text=${encodeURICompone
           ))
         }
         <li><a class="nav-link" href="/blog/" aria-current={path.startsWith('/blog') ? 'page' : undefined}>Blog</a></li>
-        <li><a class="nav-link" href="/about/" aria-current={isCurrent('/about/') ? 'page' : undefined}>About</a></li>
-        <li><a class="nav-link" href="/contact/" aria-current={isCurrent('/contact/') ? 'page' : undefined}>Contact</a></li>
       </ul>
     </nav>
 

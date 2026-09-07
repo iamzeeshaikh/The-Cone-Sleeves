@@ -49,6 +49,10 @@ export const POST: APIRoute = async ({ request }) => {
     return typeof v === 'string' ? v.trim() : '';
   };
 
+  // Honeypot. Only the configurator renders the field, so an empty or absent
+  // value is normal — a filled one never came from a person.
+  if (value('website_url')) return success(request);
+
   const email = value('input_13');
   const phone = value('input_14');
   if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {

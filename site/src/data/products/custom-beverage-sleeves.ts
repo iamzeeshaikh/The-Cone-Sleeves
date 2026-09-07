@@ -37,6 +37,50 @@ export const product: Product = {
     },
   ],
 
+  gallery: [
+    {
+      src: '/media/lib/paper-cup-sleeves/custom-paper-cup-sleeves-packaging.jpg',
+      alt: 'Wide tan board sleeve wrapped around a lidded drink cup',
+    },
+    {
+      src: '/media/lib/paper-cup-sleeves/custom-paper-cup-sleeves.jpg',
+      alt: 'Black and white wave printed beverage sleeve on a cream cup',
+    },
+    {
+      src: '/media/lib/paper-cup-sleeves/paper-cup-sleeves-packaging.jpg',
+      alt: 'Pale blue beverage sleeve printed with a thank you message',
+    },
+    {
+      src: '/media/lib/custom-cardboard-beverage-sleeves/custom-paper-beverage-sleeves-packaging.jpg',
+      alt: 'Three takeaway cups beside a stack of flat kraft beverage sleeves',
+    },
+    {
+      src: '/media/lib/custom-cardboard-beverage-sleeves/custom-paper-beverage-sleeves.jpg',
+      alt: 'Yellow branded beverage sleeves stacked beside two takeaway cups',
+    },
+    {
+      src: '/media/lib/eco-friendly-beverage-sleeves/custom-eco-friendly-beverage-sleeves.jpg',
+      alt: 'Two cups in recycled board sleeves printed with a leaf mark',
+    },
+    {
+      src: '/media/lib/eco-friendly-beverage-sleeves/eco-friendly-beverage-sleeves.jpg',
+      alt: 'Three cups wearing kraft and black sleeves on an orange backdrop',
+    },
+    {
+      src: '/media/lib/custom-cold-drink-sleeves/cold-drink-sleeves.jpg',
+      alt: 'Cold drink cup wearing a printed sleeve for a tearoom brand',
+    },
+    {
+      src: '/media/lib/custom-cold-drink-sleeves/custom-cold-drink-sleeves-packaging.jpg',
+      alt: 'Dark snowflake printed sleeve fitted to a tall white cup',
+    },
+    {
+      src: '/media/lib/custom-cold-drink-sleeves/custom-cold-drink-sleeves.jpg',
+      alt: 'Kraft drink sleeves printed with a crown logo beside two cups',
+    },
+  ],
+
+
   specs: [
     { label: 'Fits', value: 'Cold cups, smoothie and bubble tea cups, cans and bottles; sized to your container' },
     { label: 'Cup sizes', value: '12, 16, 20 and 24 oz cold cups as standard; custom circumferences cut to sample' },

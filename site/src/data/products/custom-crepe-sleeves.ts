@@ -41,6 +41,42 @@ export const product: Product = {
     },
   ],
 
+  gallery: [
+    {
+      src: '/media/lib/custom-crepe-sleeves/custom-crepe-sleeves.jpg',
+      alt: 'Folded crepe held in a printed orange crepe sleeve',
+    },
+    {
+      src: '/media/lib/custom-crepe-sleeves/crepe-sleeves.jpg',
+      alt: 'Plain white board crepe sleeve holding a rolled crepe',
+    },
+    {
+      src: '/media/lib/custom-crepe-sleeves/crepe-sleeves-packaging.jpg',
+      alt: 'Gold crepe sleeve with a black circular logo held in one hand',
+    },
+    {
+      src: '/media/lib/custom-crepe-sleeves/custom-crepe-sleeves-packaging.jpg',
+      alt: 'Teal triangular crepe packaging printed with a bakery logo',
+    },
+    {
+      src: '/media/lib/crepe-cone-packaging/crepe-cone-packaging.jpg',
+      alt: 'Two loaded crepe cones in printed magenta and red sleeves',
+    },
+    {
+      src: '/media/lib/crepe-cone-packaging/crepe-holder-packaging.jpg',
+      alt: 'White and green striped crepe holders printed for a dessert bar',
+    },
+    {
+      src: '/media/lib/crepe-cone-packaging/custom-crepe-cone-packaging.jpg',
+      alt: 'Fan-shaped printed crepe wrap opened flat to show the artwork',
+    },
+    {
+      src: '/media/lib/crepe-cone-packaging/custom-crepe-holder.jpg',
+      alt: 'Green and yellow crepe holder folded ready for service',
+    },
+  ],
+
+
   specs: [
     { label: 'Fits', value: 'Rolled crepes from roughly 8 to 11 inches long; mini and loaded savory rolls cut to size' },
     { label: 'Board', value: 'White SBS cardstock, natural kraft or recycled board' },

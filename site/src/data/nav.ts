@@ -11,9 +11,9 @@ export interface NavProduct {
 }
 
 export const GROUPS: Record<NavProduct['group'], { label: string; blurb: string }> = {
-  cone: { label: 'Cone Sleeves', blurb: 'Ice cream, waffle, sugar, cake and crepe cones' },
-  food: { label: 'Food Sleeves', blurb: 'Burgers, sandwiches, hot dogs, donuts and drinks' },
-  tray: { label: 'Food Trays', blurb: 'Open trays for counters, kiosks and events' },
+  cone: { label: 'Cone Sleeves', blurb: 'Ice cream, waffle, sugar, cake, crepe and rolled cones' },
+  food: { label: 'Food Sleeves', blurb: 'Burgers, sandwiches, pizza, fries, drinks and bakery' },
+  tray: { label: 'Food Trays', blurb: 'Open trays for counters, kiosks, events and catering' },
 };
 
 export const PRODUCTS: NavProduct[] = [
@@ -22,6 +22,11 @@ export const PRODUCTS: NavProduct[] = [
   { slug: 'custom-sugar-cone-sleeves', path: '/custom-sugar-cone-sleeves/', label: 'Sugar Cone Sleeves', group: 'cone' },
   { slug: 'custom-cake-cone-sleeves', path: '/custom-cake-cone-sleeves/', label: 'Cake Cone Sleeves', group: 'cone' },
   { slug: 'custom-crepe-sleeves', path: '/custom-crepe-sleeves/', label: 'Crepe Sleeves', group: 'cone' },
+  { slug: 'custom-rolled-ice-cream-cone-sleeves', path: '/custom-rolled-ice-cream-cone-sleeves/', label: 'Rolled Ice Cream Cone Sleeves', group: 'cone' },
+  { slug: 'custom-paper-cone-sleeves', path: '/custom-paper-cone-sleeves/', label: 'Paper Cone Sleeves', group: 'cone' },
+  { slug: 'custom-cardboard-cone-sleeves', path: '/custom-cardboard-cone-sleeves/', label: 'Cardboard Cone Sleeves', group: 'cone' },
+  { slug: 'custom-eco-friendly-cone-sleeves', path: '/custom-eco-friendly-cone-sleeves/', label: 'Eco-Friendly Cone Sleeves', group: 'cone' },
+  { slug: 'custom-ice-cream-cone-wrappers', path: '/custom-ice-cream-cone-wrappers/', label: 'Ice Cream Cone Wrappers', group: 'cone' },
 
   { slug: 'custom-food-sleeves', path: '/custom-food-sleeves/', label: 'Food Sleeves', group: 'food' },
   { slug: 'custom-burger-sleeves', path: '/custom-burger-sleeves/', label: 'Burger Sleeves', group: 'food' },
@@ -31,12 +36,20 @@ export const PRODUCTS: NavProduct[] = [
   { slug: 'custom-dessert-sleeves', path: '/custom-dessert-sleeves/', label: 'Dessert Sleeves', group: 'food' },
   { slug: 'custom-coffee-sleeves', path: '/custom-coffee-sleeves/', label: 'Coffee Sleeves', group: 'food' },
   { slug: 'custom-beverage-sleeves', path: '/custom-beverage-sleeves/', label: 'Beverage Sleeves', group: 'food' },
+  { slug: 'custom-pizza-slice-sleeves', path: '/custom-pizza-slice-sleeves/', label: 'Pizza Slice Sleeves', group: 'food' },
+  { slug: 'custom-fries-sleeves', path: '/custom-fries-sleeves/', label: 'Fries Sleeves', group: 'food' },
+  { slug: 'custom-taco-sleeves', path: '/custom-taco-sleeves/', label: 'Taco Sleeves', group: 'food' },
+  { slug: 'custom-popcorn-sleeves', path: '/custom-popcorn-sleeves/', label: 'Popcorn Sleeves', group: 'food' },
+  { slug: 'custom-pastry-sleeves', path: '/custom-pastry-sleeves/', label: 'Pastry Sleeves', group: 'food' },
 
   { slug: 'custom-food-trays', path: '/custom-food-trays/', label: 'Food Trays', group: 'tray' },
   { slug: 'custom-burger-trays', path: '/custom-burger-trays/', label: 'Burger Trays', group: 'tray' },
   { slug: 'custom-hot-dog-trays', path: '/custom-hot-dog-trays/', label: 'Hot Dog Trays', group: 'tray' },
   { slug: 'custom-waffle-trays', path: '/custom-waffle-trays/', label: 'Waffle Trays', group: 'tray' },
   { slug: 'ice-cream-cone-tray', path: '/ice-cream-cone-tray/', label: 'Ice Cream Cone Trays', group: 'tray' },
+  { slug: 'custom-snack-trays', path: '/custom-snack-trays/', label: 'Snack Trays', group: 'tray' },
+  { slug: 'custom-combo-meal-trays', path: '/custom-combo-meal-trays/', label: 'Combo Meal Trays', group: 'tray' },
+  { slug: 'custom-dessert-trays', path: '/custom-dessert-trays/', label: 'Dessert Trays', group: 'tray' },
 ];
 
 export const PAGES = [

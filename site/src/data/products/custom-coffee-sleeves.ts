@@ -28,8 +28,8 @@ export const product: Product = {
       alt: 'Custom printed coffee sleeves fitted to takeaway hot cups on a counter',
     },
     {
-      src: '/media/2025/08/coffee-sleeves-wholesale-768x768-1.jpg',
-      alt: 'Wholesale coffee sleeves stacked flat before a café delivery',
+      src: '/media/lib/custom-printed-coffee-sleeves/custom-paper-coffee-cup-lids-packaging.jpg',
+      alt: 'Wholesale coffee sleeves stacked flat beside three fitted hot cups',
     },
     {
       src: '/media/2025/08/Custom-coffee-sleeves-768x768-1.jpg',
@@ -40,6 +40,42 @@ export const product: Product = {
       alt: 'Branded cup sleeve design shown from the seam side',
     },
   ],
+
+  gallery: [
+    {
+      src: '/media/lib/custom-printed-coffee-sleeves/custom-paper-coffee-cup-lids-packaging.jpg',
+      alt: 'Hot cups fitted with kraft coffee sleeves beside loose flat sleeves',
+    },
+    {
+      src: '/media/lib/custom-printed-coffee-sleeves/custom-paper-coffee-cup-lids.jpg',
+      alt: 'Kraft coffee sleeve personalized for a wedding, on a lidded cup',
+    },
+    {
+      src: '/media/lib/custom-printed-coffee-sleeves/custom-printed-coffee-sleeves-detail-5.jpg',
+      alt: 'Two cups wearing kraft sleeves printed with a moka pot illustration',
+    },
+    {
+      src: '/media/lib/custom-printed-coffee-sleeves/custom-printed-coffee-sleeves.jpg',
+      alt: 'Black ripple coffee sleeve with a single-color logo on a hot cup',
+    },
+    {
+      src: '/media/lib/custom-printed-coffee-sleeves/paper-coffee-cup-sleeves.jpg',
+      alt: 'Group of hot cups with kraft sleeves and matching lids',
+    },
+    {
+      src: '/media/lib/paper-cup-sleeves/custom-paper-sleeves.jpg',
+      alt: 'Orange ripple coffee sleeve printed with a cafe wordmark',
+    },
+    {
+      src: '/media/lib/paper-cup-sleeves/paper-cup-sleeves.jpg',
+      alt: 'Kraft cup sleeve printed with a coffee bean pattern on a wooden table',
+    },
+    {
+      src: '/media/lib/custom-printed-coffee-sleeves/custom-paper-coffee-lids.jpg',
+      alt: 'Kraft coffee sleeves printed with a single-color mark beside lidded cups',
+    },
+  ],
+
 
   specs: [
     { label: 'Cup sizes', value: '8, 12, 16 and 20 oz hot cups; custom sizes cut to the cup you already buy' },

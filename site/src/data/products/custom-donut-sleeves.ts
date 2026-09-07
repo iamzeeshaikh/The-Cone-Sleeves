@@ -37,6 +37,26 @@ export const product: Product = {
     },
   ],
 
+  gallery: [
+    {
+      src: '/media/lib/custom-donut-sleeves/custom-donut-sleeves.jpg',
+      alt: 'Arched donut sleeve printed for a bakery, holding a glazed ring',
+    },
+    {
+      src: '/media/lib/custom-donut-sleeves/custom-donut-sleeves-packaging.jpg',
+      alt: 'Arched donut sleeve branded for a donut shop on an orange backdrop',
+    },
+    {
+      src: '/media/lib/custom-donut-sleeves/donut-sleeves-packaging.jpg',
+      alt: 'Kraft board donut sleeve holding a sesame topped bagel',
+    },
+    {
+      src: '/media/lib/custom-donut-sleeves/donut-sleeves.jpg',
+      alt: 'Two branded donut sleeves standing side by side',
+    },
+  ],
+
+
   specs: [
     { label: 'Fits', value: 'Ring, filled, old-fashioned and cake donuts — cut to your donut diameter and depth' },
     { label: 'Styles', value: 'Half wrap, full band, open-top holder, window cut or custom die-cut' },

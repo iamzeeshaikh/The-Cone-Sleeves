@@ -34,25 +34,25 @@ const year = new Date().getFullYear();
       </div>
 
       <div>
-        <h4>Cone Sleeves</h4>
+        <h3 class="footer-head">Cone Sleeves</h3>
         <ul class="footer-list">
           {cone.map((p) => <li><a href={p.path}>{p.label}</a></li>)}
         </ul>
-        <h4 style="margin-top:1.75rem">Trays</h4>
+        <h3 class="footer-head" style="margin-top:1.75rem">Trays</h3>
         <ul class="footer-list">
           {tray.map((p) => <li><a href={p.path}>{p.label}</a></li>)}
         </ul>
       </div>
 
       <div>
-        <h4>Food Sleeves</h4>
+        <h3 class="footer-head">Food Sleeves</h3>
         <ul class="footer-list">
           {food.map((p) => <li><a href={p.path}>{p.label}</a></li>)}
         </ul>
       </div>
 
       <div>
-        <h4>Company</h4>
+        <h3 class="footer-head">Company</h3>
         <ul class="footer-list">
           <li><a href="/about/">About Us</a></li>
           <li><a href="/blog/">Blog</a></li>
@@ -62,7 +62,7 @@ const year = new Date().getFullYear();
           <li><a href="/terms-conditions/">Terms &amp; Conditions</a></li>
         </ul>
 
-        <h4 style="margin-top:1.75rem">Get in touch</h4>
+        <h3 class="footer-head" style="margin-top:1.75rem">Get in touch</h3>
         <div class="footer-contact">
           <span><Icon name="pin" size={14} /> {SITE.address}</span>
           <a href={`tel:${SITE.phone}`}><Icon name="phone" size={14} /> {SITE.phone}</a>

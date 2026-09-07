@@ -11,9 +11,24 @@
 import Base from '../layouts/Base.astro';
 import Icon from '../components/Icon.astro';
 import Picture from '../components/Picture.astro';
+import Gallery from '../components/Gallery.astro';
+import StatsBand from '../components/StatsBand.astro';
+import Configurator from '../components/Configurator.astro';
 import { SITE } from '../data/site';
 import { ALL_PRODUCTS } from '../data/products';
 import { abs } from '../lib/seo';
+
+/** A cross-section of the range, used by the gallery below the copy. */
+const work = [
+  { src: '/media/lib/custom-cardboard-cone-sleeves/custom-cardboard-cone-sleeves-detail-6.jpg', alt: 'A spread of cone sleeves showing eight different printed designs' },
+  { src: '/media/lib/custom-printed-coffee-sleeves/custom-printed-coffee-sleeves-detail-5.jpg', alt: 'Two cups wearing kraft sleeves printed with a moka pot illustration' },
+  { src: '/media/lib/custom-combo-meal-trays/combo-meal-trays.jpg', alt: 'Orange catering tray holding a platter of wraps and dips' },
+  { src: '/media/lib/custom-crepe-sleeves/crepe-sleeves-packaging.jpg', alt: 'Gold crepe sleeve with a black circular logo held in one hand' },
+  { src: '/media/lib/custom-hot-dog-trays/custom-hot-dog-trays.jpg', alt: 'Three kraft hot dog trays loaded and lined up on a counter' },
+  { src: '/media/lib/custom-popcorn-sleeves/custom-popcorn-sleeves.jpg', alt: 'Two printed popcorn tubs filled with caramel corn' },
+  { src: '/media/lib/ice-cream-cone-holder/ice-cream-cone-paper-holder.jpg', alt: 'Branded kraft cone caddy holding filled paper cones' },
+  { src: '/media/lib/custom-pizza-slice-sleeves/custom-pizza-slice-sleeves.jpg', alt: 'White and red wedge-shaped pizza slice holder' },
+];
 
 const schema = [
   {
@@ -23,7 +38,7 @@ const schema = [
     name: 'About The Cone Sleeves',
     isPartOf: { '@id': `${SITE.origin}/#website` },
     about: { '@id': `${SITE.origin}/#organization` },
-    primaryImageOfPage: abs('/media/2023/03/waffle-cone-paper-sleeves-1024x1024-1.jpg'),
+    primaryImageOfPage: abs('/media/lib/custom-waffle-cone-sleeves/custom-waffle-cone-sleeves.jpg'),
   },
 ];
 ---
@@ -32,8 +47,8 @@ const schema = [
   title="About The Cone Sleeves | Custom Sleeve & Tray Printing"
   description="Who we are, what we print and how ordering works. Custom cone sleeves, food sleeves and trays from 500 pieces, with free design support and digital proofs."
   path="/about/"
-  image="/media/2023/03/waffle-cone-paper-sleeves-1024x1024-1.jpg"
-  imageAlt="Custom printed waffle cone paper sleeves"
+  image="/media/lib/custom-waffle-cone-sleeves/custom-waffle-cone-sleeves.jpg"
+  imageAlt="White waffle cone sleeve printed with a navy polka dot pattern"
   crumbs={[{ name: 'About', path: '/about/' }]}
   schema={schema}
 >
@@ -51,8 +66,8 @@ const schema = [
       </div>
       <div class="about-media">
         <Picture
-          src="/media/2023/03/waffle-cone-paper-sleeves-1024x1024-1.jpg"
-          alt="Printed waffle cone paper sleeves in a stack"
+          src="/media/lib/custom-waffle-cone-sleeves/custom-waffle-cone-sleeves.jpg"
+          alt="White waffle cone sleeve printed with a navy polka dot pattern"
           width={1024}
           height={1024}
           sizes="(max-width: 900px) 100vw, 460px"
@@ -62,6 +77,8 @@ const schema = [
       </div>
     </div>
   </section>
+
+  <StatsBand />
 
   <section class="section">
     <div class="container-narrow prose">
@@ -158,6 +175,18 @@ const schema = [
       </div>
     </div>
   </section>
+
+  <Gallery
+    images={work}
+    eyebrow="Recent work"
+    heading="Some of what has come off the presses"
+    intro="Every one of these started as a customer's artwork and a measurement of the item it had to fit."
+  />
+
+  <Configurator
+    heading="Price your own packaging"
+    intro="If you would rather build the specification than write an email, this asks the same questions we would."
+  />
 
   <section class="section">
     <div class="container-narrow center">

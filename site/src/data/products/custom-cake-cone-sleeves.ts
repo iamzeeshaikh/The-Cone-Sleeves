@@ -41,6 +41,30 @@ export const product: Product = {
     },
   ],
 
+  gallery: [
+    {
+      src: '/media/lib/custom-cake-cone-sleeves/custom-printed-cake-cone-sleeves.jpg',
+      alt: 'Cake cone sitting in a blue scalloped printed cup sleeve',
+    },
+    {
+      src: '/media/lib/custom-cake-cone-sleeves/cake-cone-sleeves-wholesale.jpg',
+      alt: 'Wholesale cake cone sleeve printed with a doodled ice cream pattern',
+    },
+    {
+      src: '/media/lib/custom-cake-cone-sleeves/custom-cake-cone-sleeves-detail-4.jpg',
+      alt: 'Cake cone sleeve with a blue scallop border shot against navy',
+    },
+    {
+      src: '/media/lib/custom-cake-cone-sleeves/custom-cake-cone-sleeves-detail-5.jpg',
+      alt: 'Striped cone sleeve on a red backdrop showing the printed wrap',
+    },
+    {
+      src: '/media/lib/custom-cake-cone-sleeves/custom-cake-cone-sleeves-detail-6.jpg',
+      alt: 'Cake cone in a magenta cup sleeve with a blank logo panel',
+    },
+  ],
+
+
   specs: [
     { label: 'Cone type', value: 'Flat-bottom wafer cone (also sold as cup cone or wafer cone)' },
     { label: 'Wrap style', value: 'Straight band with parallel edges — no taper needed' },

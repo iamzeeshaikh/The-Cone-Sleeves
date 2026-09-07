@@ -37,6 +37,26 @@ export const product: Product = {
     },
   ],
 
+  gallery: [
+    {
+      src: '/media/lib/custom-hot-dog-trays/custom-hot-dog-trays.jpg',
+      alt: 'Three kraft hot dog trays loaded and lined up on a counter',
+    },
+    {
+      src: '/media/lib/custom-hot-dog-trays/custom-hot-dog-trays-packaging.jpg',
+      alt: 'Green and red patterned hot dog tray holding a loaded hot dog',
+    },
+    {
+      src: '/media/lib/custom-hot-dog-trays/hot-dog-trays.jpg',
+      alt: 'Kraft hot dog trays printed with a character illustration',
+    },
+    {
+      src: '/media/lib/custom-snack-trays/custom-snack-trays-packaging.jpg',
+      alt: 'Red striped tray serving a hot dog alongside fries',
+    },
+  ],
+
+
   specs: [
     { label: 'Capacity', value: 'One dressed hot dog; wider cuts hold a dog plus a small side of fries' },
     { label: 'Lengths', value: 'Around 7 in for a standard dog and 11 in for a footlong, cut to your bun' },

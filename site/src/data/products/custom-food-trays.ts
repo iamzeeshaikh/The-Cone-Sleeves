@@ -37,6 +37,42 @@ export const product: Product = {
     },
   ],
 
+  gallery: [
+    {
+      src: '/media/lib/custom-cardboard-food-trays/cardboard-food-trays.jpg',
+      alt: 'Plain white lined cardboard food tray shown empty from above',
+    },
+    {
+      src: '/media/lib/custom-cardboard-food-trays/custom-cardboard-food-trays.jpg',
+      alt: 'Stack of printed food trays in three sizes on a blue backdrop',
+    },
+    {
+      src: '/media/lib/custom-cardboard-food-trays/custom-food-trays.jpg',
+      alt: 'White food tray printed with a red striped pattern inside',
+    },
+    {
+      src: '/media/lib/custom-snack-trays/custom-snack-trays.jpg',
+      alt: 'Fried chicken served in a branded printed snack tray',
+    },
+    {
+      src: '/media/lib/custom-snack-trays/snack-trays-packaging.jpg',
+      alt: 'Blue board tray filled with loaded fries and toppings',
+    },
+    {
+      src: '/media/lib/custom-combo-meal-trays/combo-meal-trays-packaging.jpg',
+      alt: 'Kraft combo meal tray with cut-out carry handles',
+    },
+    {
+      src: '/media/lib/custom-combo-meal-trays/combo-meal-trays.jpg',
+      alt: 'Orange catering tray holding a mezze platter of dips and sticks',
+    },
+    {
+      src: '/media/lib/custom-combo-meal-trays/custom-combo-meal-trays-packaging.jpg',
+      alt: 'Corrugated kraft catering tray built for a group order',
+    },
+  ],
+
+
   specs: [
     { label: 'Tray sizes', value: 'Snack, single-serve, combo and sharing sizes; any footprint cut to your menu item' },
     { label: 'Wall style', value: 'Four-corner glued, foot-lock self-assembly or double wall; 1 in serving depth up to 2 in walls' },

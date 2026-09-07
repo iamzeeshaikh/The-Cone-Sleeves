@@ -9,6 +9,7 @@ import Icon from '../components/Icon.astro';
 import { SITE } from '../data/site';
 import { ALL_PRODUCTS } from '../data/products';
 import { productBySlug } from '../data/nav';
+import Configurator from '../components/Configurator.astro';
 
 const options = ALL_PRODUCTS.map((p) => productBySlug(p.slug)!.label);
 
@@ -36,11 +37,18 @@ const schema = [
       <p class="eyebrow eyebrow-line" style="justify-content:center">Free quote</p>
       <h1 style="max-width:20ch;margin-inline:auto">Get a price for your packaging</h1>
       <p style="font-size:var(--step-1);color:var(--ink-600);max-width:58ch;margin-inline:auto">
-        Fill in what you know and leave the rest blank. We come back with a written price, and the
-        dieline and digital proof cost nothing either way.
+        Two ways to ask. Step through the configurator below, or scroll past it and fill in one
+        long form. Either way you get a written price, and the dieline and digital proof cost
+        nothing.
       </p>
     </div>
   </section>
+
+  <Configurator
+    id="configurator"
+    heading="Step through it"
+    intro="Five short steps that ask the same questions as the form below. Answer what you know and skip the rest."
+  />
 
   <section class="section">
     <div class="container quote-page">

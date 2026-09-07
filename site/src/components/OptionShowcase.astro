@@ -1,0 +1,173 @@
+---
+/**
+ * Board and print choices, shown as photographs rather than a list.
+ *
+ * The images are real printed work from the library, picked because each one
+ * shows the property it is standing for — an unbleached kraft band, a bright
+ * white sheet carrying fine artwork, a recycled board with visible fleck.
+ */
+import Picture from './Picture.astro';
+
+interface Props {
+  heading?: string;
+  intro?: string;
+  tone?: '' | 'bg-alt' | 'bg-cream';
+}
+
+const {
+  heading = 'Board and print, side by side',
+  intro =
+    'Three boards and three ways to print on them. Every combination below is quoted the same way, so the choice is about how you want the packaging to feel in the hand.',
+  tone = 'bg-cream',
+} = Astro.props as Props;
+
+const BOARDS = [
+  {
+    title: 'White SBS cardstock',
+    text: 'A bright, smooth sheet. Photography, gradients and fine type all hold their detail, and colors sit where the proof says they will.',
+    src: '/media/lib/custom-sugar-cone-sleeves/custom-printed-sugar-cone-sleeves.jpg',
+    alt: 'White cone sleeve carrying a detailed multi-color illustration',
+  },
+  {
+    title: 'Natural kraft',
+    text: 'Unbleached brown board. Ink sits into the surface rather than on top of it, which mutes bright colors and reads as craft and small-batch.',
+    src: '/media/lib/paper-cup-sleeves/paper-cup-sleeves.jpg',
+    alt: 'Kraft cup sleeve printed with a coffee bean pattern in one ink',
+  },
+  {
+    title: 'Recycled board',
+    text: 'Post-consumer fiber with a slight fleck through it. It takes a one or two color mark well and tells the customer what it is without a claim printed on it.',
+    src: '/media/lib/eco-friendly-beverage-sleeves/custom-eco-friendly-beverage-sleeves.jpg',
+    alt: 'Recycled board cup sleeves printed with a simple leaf mark',
+  },
+];
+
+const PRINT = [
+  {
+    title: 'Full-color CMYK',
+    text: 'Four process inks. The right choice when the artwork is a photograph, an illustration or anything with a gradient in it.',
+    src: '/media/lib/custom-rolled-ice-cream-cone-sleeves/rolled-ice-cream-cone-sleeves-1.jpg',
+    alt: 'Cone sleeves printed edge to edge in full color with photographic artwork',
+  },
+  {
+    title: 'Single-color logo',
+    text: 'One ink on plain board. It is the least expensive way to print a run and, on kraft, it is often the better looking one.',
+    src: '/media/lib/custom-printed-coffee-sleeves/custom-paper-coffee-lids.jpg',
+    alt: 'Kraft coffee sleeves carrying a single-color logo mark',
+  },
+  {
+    title: 'Pantone spot colors',
+    text: 'A mixed ink matched to a Pantone reference. Use it when a brand color has to be exact across every reprint.',
+    src: '/media/lib/custom-cake-cone-sleeves/custom-cake-cone-sleeves-detail-4.jpg',
+    alt: 'Cake cone sleeve printed in a flat spot color with a scalloped border',
+  },
+];
+---
+
+<section class={`section ${tone}`.trim()}>
+  <div class="container">
+    <div class="opt-head">
+      <p class="eyebrow eyebrow-line">Materials and printing</p>
+      <h2>{heading}</h2>
+      <p class="opt-intro">{intro}</p>
+    </div>
+
+    <h3 class="opt-sub">Choose the board</h3>
+    <div class="opt-grid">
+      {
+        BOARDS.map((b) => (
+          <article class="opt-card">
+            <div class="opt-media">
+              <Picture src={b.src} alt={b.alt} width={1200} height={996} sizes="(max-width: 760px) 100vw, 360px" />
+            </div>
+            <div class="opt-body">
+              <h4>{b.title}</h4>
+              <p>{b.text}</p>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+
+    <h3 class="opt-sub">Choose how it prints</h3>
+    <div class="opt-grid">
+      {
+        PRINT.map((b) => (
+          <article class="opt-card">
+            <div class="opt-media">
+              <Picture src={b.src} alt={b.alt} width={1200} height={996} sizes="(max-width: 760px) 100vw, 360px" />
+            </div>
+            <div class="opt-body">
+              <h4>{b.title}</h4>
+              <p>{b.text}</p>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .opt-head {
+    max-width: 62ch;
+    margin-bottom: var(--sp-6);
+  }
+
+  .opt-head h2 {
+    margin-bottom: var(--sp-3);
+  }
+
+  .opt-intro {
+    margin: 0;
+    color: var(--ink-600);
+    font-size: var(--step-1);
+  }
+
+  .opt-sub {
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-500);
+    margin: var(--sp-6) 0 var(--sp-4);
+  }
+
+  .opt-grid {
+    display: grid;
+    gap: var(--sp-4);
+    grid-template-columns: repeat(auto-fit, minmax(max(260px, (100% - 2 * var(--sp-4)) / 3), 1fr));
+  }
+
+  .opt-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .opt-media img {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+  }
+
+  .opt-body {
+    padding: var(--sp-5);
+  }
+
+  .opt-body h4 {
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    margin: 0 0 0.4rem;
+    color: var(--ink-900);
+  }
+
+  .opt-body p {
+    margin: 0;
+    font-size: 0.94rem;
+    color: var(--ink-600);
+  }
+</style>

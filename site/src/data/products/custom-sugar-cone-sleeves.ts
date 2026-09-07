@@ -41,6 +41,34 @@ export const product: Product = {
     },
   ],
 
+  gallery: [
+    {
+      src: '/media/lib/custom-sugar-cone-sleeves/custom-printed-sugar-cone-sleeves.jpg',
+      alt: 'Sugar cone in a white sleeve printed with playful ice cream doodles',
+    },
+    {
+      src: '/media/lib/custom-sugar-cone-sleeves/custom-sugar-cone-sleeves-detail-4.jpg',
+      alt: 'Blue and red sugar cone sleeves standing upright on a pink backdrop',
+    },
+    {
+      src: '/media/lib/custom-sugar-cone-sleeves/custom-sugar-cone-sleeves-detail-5.jpg',
+      alt: 'Two sugar cones in blue gradient sleeves against a blue background',
+    },
+    {
+      src: '/media/lib/custom-sugar-cone-sleeves/custom-sugar-cone-sleeves-detail-6.jpg',
+      alt: 'Olive and white banded sleeves fitted to a pair of sugar cones',
+    },
+    {
+      src: '/media/lib/custom-sugar-cone-sleeves/custom-sugar-cone-sleeves.jpg',
+      alt: 'Patterned sugar cone sleeves laid out to show three artwork options',
+    },
+    {
+      src: '/media/lib/custom-sugar-cone-sleeves/sugar-cone-sleeves-wholesale.jpg',
+      alt: 'Chocolate sugar cone finished with a gold wholesale printed sleeve',
+    },
+  ],
+
+
   specs: [
     { label: 'Cone shape', value: 'Rolled sugar cone with a continuous taper to a closed point' },
     { label: 'Cone diameter', value: 'Cut to your cone; sugar cones typically sit near 2 in across the mouth' },

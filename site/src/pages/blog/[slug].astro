@@ -5,6 +5,7 @@ import Picture from '../../components/Picture.astro';
 import { POSTS } from '../../data/posts';
 import { SITE } from '../../data/site';
 import { abs, ORG_ID } from '../../lib/seo';
+import Configurator from '../../components/Configurator.astro';
 
 export function getStaticPaths() {
   return POSTS.map((post) => ({ params: { slug: post.slug }, props: { post } }));
@@ -111,6 +112,11 @@ const schema = [
       </div>
     </div>
   </section>
+
+  <Configurator
+    heading="Put this into a quote"
+    intro="If the guide has settled what you need, the five steps below turn it into a specification we can price."
+  />
 </Base>
 
 <style>

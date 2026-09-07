@@ -204,6 +204,6 @@ show('External link targets', report.externalLinks, 30);
 if (withLive) show('Pages whose text differs from live', report.textDiffs, 30);
 
 fs.writeFileSync(
-  '/private/tmp/claude-501/-Users-sajjadahmad/c5f6b030-e21f-47fd-aa14-e25114d4bcbd/scratchpad/audit.json',
+  new URL('../audit.json', import.meta.url),
   JSON.stringify({ ...report, externalLinks: [...report.externalLinks] }, null, 1)
 );

@@ -1,0 +1,855 @@
+---
+/**
+ * Step-by-step quote configurator.
+ *
+ * It builds a specification, not a price. The site quotes every job by hand, so
+ * nothing here shows or implies a figure — the last step hands the whole
+ * specification to /api/quote/, the same endpoint the long form posts to, using
+ * the field names that endpoint reads. Those names came from Gravity Forms and
+ * must not be renamed.
+ *
+ * On a product page pass `product` and the first step is answered already; the
+ * customer can still change it.
+ */
+import Icon from './Icon.astro';
+import { GROUPS, productsInGroup } from '../data/nav';
+import { FACTS } from '../data/types';
+
+interface Props {
+  /** Pre-selects the product, e.g. 'Ice Cream Cone Sleeves'. */
+  product?: string;
+  heading?: string;
+  intro?: string;
+  /** Anchor id, so a page can link to it. */
+  id?: string;
+}
+
+const {
+  product = '',
+  heading = 'Build your packaging spec',
+  intro =
+    'Five short steps. Answer what you know, skip what you do not, and we come back with a written price and a free dieline.',
+  id = 'configurator',
+} = Astro.props as Props;
+
+const groups = (['cone', 'food', 'tray'] as const).map((g) => ({
+  key: g,
+  label: GROUPS[g].label,
+  items: productsInGroup(g),
+}));
+
+const STEPS = ['Product', 'Size', 'Board', 'Finish', 'Details'];
+
+const QUANTITIES = ['500', '1,000', '2,500', '5,000', '10,000', '25,000+'];
+
+const BOARDS = [
+  { value: 'White SBS cardstock', note: 'Bright white, best for full-color artwork' },
+  { value: 'Natural kraft', note: 'Unbleached brown, reads as craft and eco' },
+  { value: 'Recycled board', note: 'Post-consumer fibre, slightly flecked' },
+  { value: 'Not sure — advise me', note: 'We pick one to suit your artwork' },
+];
+
+const PRINTS = [
+  { value: 'Full-color CMYK', note: 'Photos, gradients, multi-color brand art' },
+  { value: 'Single-color logo', note: 'One ink, the most economical run' },
+  { value: 'Pantone spot colors', note: 'Exact brand color matching' },
+  { value: 'No printing (plain)', note: 'Blank stock, no artwork' },
+];
+
+const FINISHES = ['Gloss lamination', 'Matte lamination', 'Spot UV', 'Foil stamping', 'Uncoated'];
+
+const ADDONS = [
+  'Rush production',
+  'Pre-production sample',
+  'Design help needed',
+  'Compostable or recyclable priority',
+  'Repeat order, keep the dieline on file',
+];
+---
+
+<section class="cfg-section" id={id}>
+  <div class="container">
+    <div class="cfg-head">
+      <p class="eyebrow eyebrow-line">Quote configurator</p>
+      <h2>{heading}</h2>
+      <p class="cfg-intro">{intro}</p>
+    </div>
+
+    <div class="cfg" data-configurator>
+      <form
+        class="cfg-form"
+        method="POST"
+        action="/api/quote/"
+        enctype="multipart/form-data"
+        data-cfg-form
+      >
+        <ol class="cfg-steps" role="list">
+          {
+            STEPS.map((label, i) => (
+              <li>
+                <button type="button" class="cfg-chip" data-goto={i} aria-current={i === 0 ? 'step' : undefined}>
+                  <span class="cfg-chip-n">{i + 1}</span>
+                  <span class="cfg-chip-l">{label}</span>
+                </button>
+              </li>
+            ))
+          }
+        </ol>
+
+        <div class="cfg-progress" aria-hidden="true"><span data-cfg-bar style="width:20%"></span></div>
+
+        {/* ---- 1. Product ---------------------------------------------- */}
+        <fieldset class="cfg-panel" data-panel="0">
+          <legend class="cfg-legend">What are we printing?</legend>
+          {
+            groups.map((g) => (
+              <>
+                <p class="cfg-grouphead">{g.label}</p>
+                <div class="cfg-options cfg-options-3">
+                  {g.items.map((item) => (
+                    <label class="cfg-opt">
+                      <input
+                        type="radio"
+                        name="input_1"
+                        value={item.label}
+                        checked={product === item.label}
+                        data-summary="product"
+                      />
+                      <span class="cfg-opt-body">
+                        <span class="cfg-opt-title">{item.label}</span>
+                      </span>
+                    </label>
+                  ))}
+                </div>
+              </>
+            ))
+          }
+
+          <p class="cfg-grouphead">Something else</p>
+          <div class="cfg-options cfg-options-3">
+            <label class="cfg-opt">
+              <input type="radio" name="input_1" value="Other" data-summary="product" data-reveals="cfg-other" />
+              <span class="cfg-opt-body">
+                <span class="cfg-opt-title">Not listed here</span>
+              </span>
+            </label>
+          </div>
+          <div class="field cfg-reveal" id="cfg-other" hidden>
+            <label for="cfg-other-input">Tell us what it is</label>
+            <input id="cfg-other-input" name="input_21" type="text" placeholder="e.g. printed churro sleeve" />
+          </div>
+        </fieldset>
+
+        {/* ---- 2. Quantity and size ------------------------------------ */}
+        <fieldset class="cfg-panel" data-panel="1" hidden>
+          <legend class="cfg-legend">How many, and how big?</legend>
+
+          <p class="cfg-grouphead">Quantity per design</p>
+          <div class="cfg-options cfg-options-6">
+            {
+              QUANTITIES.map((q) => (
+                <label class="cfg-opt cfg-opt-sm">
+                  <input type="radio" name="input_2" value={q} data-summary="quantity" />
+                  <span class="cfg-opt-body">
+                    <span class="cfg-opt-title">{q}</span>
+                  </span>
+                </label>
+              ))
+            }
+          </div>
+          <p class="cfg-note">Runs start at {FACTS.moq}. Ask for any figure in between — the field below takes it.</p>
+
+          <div class="cfg-grid cfg-grid-2">
+            <div class="field">
+              <label for="cfg-qty-exact">Exact quantity, if you know it</label>
+              <input id="cfg-qty-exact" type="text" inputmode="numeric" data-qty-exact placeholder="e.g. 3,500" />
+            </div>
+            <div class="field">
+              <label for="cfg-unit">Counted in</label>
+              <select id="cfg-unit" name="input_23" data-summary="unit">
+                <option value="Pieces">Pieces</option>
+                <option value="Boxes">Boxes</option>
+              </select>
+            </div>
+          </div>
+
+          <p class="cfg-grouphead">Size</p>
+          <p class="cfg-note">
+            Inches. Not sure? Leave them blank and name the cone or cup you serve in the last step —
+            we measure it and build the dieline for you.
+          </p>
+          <div class="cfg-grid cfg-grid-3">
+            <div class="field">
+              <label for="cfg-l">Length</label>
+              <input id="cfg-l" name="input_3" type="text" inputmode="decimal" data-summary="length" />
+            </div>
+            <div class="field">
+              <label for="cfg-w">Width</label>
+              <input id="cfg-w" name="input_5" type="text" inputmode="decimal" data-summary="width" />
+            </div>
+            <div class="field">
+              <label for="cfg-h">Height</label>
+              <input id="cfg-h" name="input_4" type="text" inputmode="decimal" data-summary="height" />
+            </div>
+          </div>
+        </fieldset>
+
+        {/* ---- 3. Board and print -------------------------------------- */}
+        <fieldset class="cfg-panel" data-panel="2" hidden>
+          <legend class="cfg-legend">Board and printing</legend>
+
+          <p class="cfg-grouphead">Board</p>
+          <div class="cfg-options cfg-options-2">
+            {
+              BOARDS.map((b) => (
+                <label class="cfg-opt">
+                  <input type="radio" name="input_11" value={b.value} data-summary="board" />
+                  <span class="cfg-opt-body">
+                    <span class="cfg-opt-title">{b.value}</span>
+                    <span class="cfg-opt-note">{b.note}</span>
+                  </span>
+                </label>
+              ))
+            }
+          </div>
+
+          <p class="cfg-grouphead">Printing</p>
+          <div class="cfg-options cfg-options-2">
+            {
+              PRINTS.map((b) => (
+                <label class="cfg-opt">
+                  <input type="radio" name="input_10" value={b.value} data-summary="print" />
+                  <span class="cfg-opt-body">
+                    <span class="cfg-opt-title">{b.value}</span>
+                    <span class="cfg-opt-note">{b.note}</span>
+                  </span>
+                </label>
+              ))
+            }
+          </div>
+        </fieldset>
+
+        {/* ---- 4. Finish and add-ons ----------------------------------- */}
+        <fieldset class="cfg-panel" data-panel="3" hidden>
+          <legend class="cfg-legend">Finish and extras</legend>
+
+          <p class="cfg-grouphead">Surface finish — pick any</p>
+          <div class="cfg-options cfg-options-3">
+            {
+              FINISHES.map((f, i) => (
+                <label class="cfg-opt cfg-opt-check">
+                  <input type="checkbox" name={`input_8.${i + 1}`} value={f} data-summary="finish" />
+                  <span class="cfg-opt-body">
+                    <span class="cfg-opt-title">{f}</span>
+                  </span>
+                </label>
+              ))
+            }
+          </div>
+
+          <p class="cfg-grouphead">Anything else we should plan for?</p>
+          <div class="cfg-options cfg-options-2">
+            {
+              ADDONS.map((a, i) => (
+                <label class="cfg-opt cfg-opt-check">
+                  <input type="checkbox" name={`input_9.${i + 1}`} value={a} data-summary="addon" />
+                  <span class="cfg-opt-body">
+                    <span class="cfg-opt-title">{a}</span>
+                  </span>
+                </label>
+              ))
+            }
+          </div>
+        </fieldset>
+
+        {/* ---- 5. Contact ---------------------------------------------- */}
+        <fieldset class="cfg-panel" data-panel="4" hidden>
+          <legend class="cfg-legend">Where do we send the quote?</legend>
+
+          <div class="cfg-grid cfg-grid-2">
+            <div class="field">
+              <label for="cfg-name">Your name</label>
+              <input id="cfg-name" name="input_12.3" type="text" required autocomplete="name" />
+            </div>
+            <div class="field">
+              <label for="cfg-email">Email</label>
+              <input id="cfg-email" name="input_13" type="email" required autocomplete="email" />
+            </div>
+            <div class="field">
+              <label for="cfg-phone">Phone</label>
+              <input id="cfg-phone" name="input_14" type="tel" required autocomplete="tel" inputmode="tel" />
+            </div>
+            <div class="field">
+              <label for="cfg-file">Artwork or a photo (optional)</label>
+              <input
+                id="cfg-file"
+                name="input_19"
+                type="file"
+                accept=".jpg,.jpeg,.png,.gif,.webp,.svg,.pdf,.ai,.eps,.psd,.zip,.rar,.cdr"
+              />
+            </div>
+          </div>
+
+          <div class="field" style="margin-top:var(--sp-4)">
+            <label for="cfg-notes">Anything else</label>
+            <textarea
+              id="cfg-notes"
+              name="input_18"
+              placeholder="The cone or cup you serve, your deadline, and anything unusual about the job."></textarea>
+          </div>
+
+          {/* Honeypot: the endpoint drops anything that arrives with it filled. */}
+          <div class="cfg-hp" aria-hidden="true">
+            <label for="cfg-hp">Leave this empty</label>
+            <input id="cfg-hp" name="website_url" type="text" tabindex="-1" autocomplete="off" />
+          </div>
+
+          <p class="form-msg error" data-cfg-error hidden></p>
+        </fieldset>
+
+        <div class="cfg-actions">
+          <button type="button" class="btn btn-ghost" data-cfg-back hidden>
+            <Icon name="chevron" size={15} class="cfg-back-icon" />
+            Back
+          </button>
+          <button type="button" class="btn btn-primary" data-cfg-next>
+            Next step
+            <Icon name="arrow" size={16} />
+          </button>
+          <button type="submit" class="btn btn-primary" data-cfg-submit hidden>
+            <span data-cfg-label>Send my request</span>
+            <Icon name="arrow" size={16} />
+          </button>
+        </div>
+      </form>
+
+      <aside class="cfg-summary">
+        <h3>Your specification</h3>
+        <dl class="cfg-sum-list" data-cfg-summary>
+          <div data-row="product"><dt>Product</dt><dd>—</dd></div>
+          <div data-row="quantity"><dt>Quantity</dt><dd>—</dd></div>
+          <div data-row="size"><dt>Size</dt><dd>—</dd></div>
+          <div data-row="board"><dt>Board</dt><dd>—</dd></div>
+          <div data-row="print"><dt>Printing</dt><dd>—</dd></div>
+          <div data-row="finish"><dt>Finish</dt><dd>—</dd></div>
+          <div data-row="addon"><dt>Extras</dt><dd>—</dd></div>
+        </dl>
+
+        <ul class="cfg-included">
+          <li><Icon name="check" size={14} />Dieline built to your item, free</li>
+          <li><Icon name="check" size={14} />Digital proof before anything prints</li>
+          <li><Icon name="check" size={14} />Written price, no obligation</li>
+        </ul>
+
+        <p class="cfg-sum-note">
+          No price is calculated here. Every job is quoted by a person once we have read the spec.
+        </p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<style>
+  .cfg-section {
+    padding-block: clamp(2.5rem, 1.5rem + 4vw, 5rem);
+    background: var(--paper-cream);
+    border-block: 1px solid var(--line-soft);
+  }
+
+  .cfg-head {
+    max-width: 60ch;
+    margin-bottom: var(--sp-6);
+  }
+
+  .cfg-intro {
+    color: var(--ink-600);
+    font-size: var(--step-1);
+    margin: 0;
+  }
+
+  .cfg {
+    display: grid;
+    gap: clamp(1.25rem, 3vw, 2rem);
+    grid-template-columns: minmax(0, 1.55fr) minmax(0, 0.45fr);
+    align-items: start;
+  }
+
+  .cfg-form {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    padding: clamp(1.1rem, 2.5vw, 2rem);
+    box-shadow: var(--shadow);
+  }
+
+  /* Step chips */
+  .cfg-steps {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    list-style: none;
+    margin: 0 0 var(--sp-4);
+    padding: 0;
+  }
+
+  .cfg-steps li {
+    margin: 0;
+  }
+
+  .cfg-chip {
+    appearance: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    border: 1px solid var(--line);
+    background: var(--paper);
+    color: var(--ink-600);
+    border-radius: 999px;
+    padding: 0.35rem 0.8rem 0.35rem 0.35rem;
+    font: inherit;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .cfg-chip-n {
+    display: grid;
+    place-items: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--ink-100);
+    color: var(--ink-700);
+    font-size: 0.76rem;
+  }
+
+  .cfg-chip[aria-current='step'] {
+    border-color: var(--coral-400);
+    background: var(--coral-50);
+    color: var(--coral-800);
+  }
+
+  .cfg-chip[aria-current='step'] .cfg-chip-n,
+  .cfg-chip[data-done='true'] .cfg-chip-n {
+    background: var(--coral-500);
+    color: #fff;
+  }
+
+  .cfg-progress {
+    height: 4px;
+    border-radius: 999px;
+    background: var(--ink-100);
+    overflow: hidden;
+    margin-bottom: var(--sp-5);
+  }
+
+  .cfg-progress span {
+    display: block;
+    height: 100%;
+    background: var(--coral-500);
+    transition: width 0.25s ease;
+  }
+
+  /* Panels */
+  .cfg-panel {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    min-inline-size: 0;
+  }
+
+  .cfg-legend {
+    font-family: var(--font-display);
+    font-size: var(--step-2);
+    font-weight: 600;
+    color: var(--ink-900);
+    padding: 0;
+    margin-bottom: var(--sp-4);
+  }
+
+  .cfg-grouphead {
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-500);
+    margin: var(--sp-5) 0 var(--sp-3);
+  }
+
+  .cfg-panel > .cfg-grouphead:first-of-type {
+    margin-top: 0;
+  }
+
+  .cfg-note {
+    font-size: 0.88rem;
+    color: var(--ink-500);
+    margin: 0 0 var(--sp-4);
+  }
+
+  /* Option cards */
+  .cfg-options {
+    display: grid;
+    gap: 0.5rem;
+  }
+
+  .cfg-options-2 {
+    grid-template-columns: repeat(auto-fit, minmax(max(220px, (100% - 0.5rem) / 2), 1fr));
+  }
+
+  .cfg-options-3 {
+    grid-template-columns: repeat(auto-fit, minmax(max(150px, (100% - 1rem) / 3), 1fr));
+  }
+
+  .cfg-options-6 {
+    grid-template-columns: repeat(auto-fit, minmax(max(92px, (100% - 2.5rem) / 6), 1fr));
+  }
+
+  .cfg-opt {
+    position: relative;
+    display: block;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--paper);
+    padding: 0.7rem 0.85rem;
+    cursor: pointer;
+    transition: border-color 0.15s, background 0.15s, box-shadow 0.15s;
+  }
+
+  .cfg-opt:hover {
+    border-color: var(--coral-300);
+    background: var(--surface);
+  }
+
+  .cfg-opt input {
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+  }
+
+  .cfg-opt-title {
+    display: block;
+    font-weight: 600;
+    font-size: 0.92rem;
+    color: var(--ink-800);
+    line-height: 1.35;
+  }
+
+  .cfg-opt-note {
+    display: block;
+    font-size: 0.82rem;
+    color: var(--ink-500);
+    margin-top: 0.2rem;
+  }
+
+  .cfg-opt-sm {
+    text-align: center;
+    padding: 0.6rem 0.4rem;
+  }
+
+  .cfg-opt:has(input:checked) {
+    border-color: var(--coral-500);
+    background: var(--coral-50);
+    box-shadow: inset 0 0 0 1px var(--coral-500);
+  }
+
+  .cfg-opt:has(input:focus-visible) {
+    outline: 2px solid var(--coral-600);
+    outline-offset: 2px;
+  }
+
+  .cfg-opt-check .cfg-opt-title::before {
+    content: '';
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin-right: 0.5rem;
+    vertical-align: -2px;
+    border: 1.5px solid var(--ink-300);
+    border-radius: 4px;
+  }
+
+  .cfg-opt-check:has(input:checked) .cfg-opt-title::before {
+    background: var(--coral-500) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E")
+      center / 10px no-repeat;
+    border-color: var(--coral-500);
+  }
+
+  .cfg-grid {
+    display: grid;
+    gap: var(--sp-4);
+    margin-top: var(--sp-4);
+  }
+
+  .cfg-grid-2 {
+    grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
+  }
+
+  .cfg-grid-3 {
+    grid-template-columns: repeat(auto-fit, minmax(min(150px, 100%), 1fr));
+  }
+
+  .cfg-reveal {
+    margin-top: var(--sp-4);
+  }
+
+  .cfg-hp {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+
+  /* Actions */
+  .cfg-actions {
+    display: flex;
+    gap: 0.6rem;
+    margin-top: var(--sp-6);
+    padding-top: var(--sp-5);
+    border-top: 1px solid var(--line-soft);
+  }
+
+  .cfg-back-icon {
+    transform: rotate(90deg);
+  }
+
+  .cfg-actions [data-cfg-next],
+  .cfg-actions [data-cfg-submit] {
+    margin-left: auto;
+  }
+
+  /* Summary */
+  .cfg-summary {
+    position: sticky;
+    top: calc(var(--header-h) + 1.25rem);
+    background: var(--ink-900);
+    color: var(--ink-100);
+    border-radius: var(--radius-lg);
+    padding: var(--sp-6);
+  }
+
+  .cfg-summary h3 {
+    color: #fff;
+    font-size: var(--step-1);
+    margin: 0 0 var(--sp-4);
+  }
+
+  .cfg-sum-list {
+    margin: 0;
+    display: grid;
+    gap: 0.65rem;
+  }
+
+  .cfg-sum-list > div {
+    display: grid;
+    gap: 0.1rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid rgb(255 255 255 / 0.1);
+  }
+
+  .cfg-sum-list dt {
+    font-size: 0.74rem;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--ink-400);
+  }
+
+  .cfg-sum-list dd {
+    margin: 0;
+    font-size: 0.94rem;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  .cfg-included {
+    list-style: none;
+    padding: 0;
+    margin: var(--sp-5) 0 0;
+    display: grid;
+    gap: 0.5rem;
+  }
+
+  .cfg-included li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin: 0;
+    font-size: 0.88rem;
+    color: var(--ink-200);
+  }
+
+  .cfg-included svg {
+    color: var(--mint-400);
+    flex-shrink: 0;
+    margin-top: 0.3em;
+  }
+
+  .cfg-sum-note {
+    font-size: 0.82rem;
+    color: var(--ink-400);
+    margin: var(--sp-5) 0 0;
+    padding-top: var(--sp-4);
+    border-top: 1px solid rgb(255 255 255 / 0.1);
+  }
+
+  @media (max-width: 900px) {
+    .cfg {
+      grid-template-columns: minmax(0, 1fr);
+    }
+    .cfg-summary {
+      position: static;
+    }
+  }
+</style>
+
+<script>
+  for (const root of document.querySelectorAll<HTMLElement>('[data-configurator]')) {
+    const form = root.querySelector<HTMLFormElement>('[data-cfg-form]')!;
+    const panels = Array.from(root.querySelectorAll<HTMLElement>('[data-panel]'));
+    const chips = Array.from(root.querySelectorAll<HTMLButtonElement>('[data-goto]'));
+    const bar = root.querySelector<HTMLElement>('[data-cfg-bar]')!;
+    const back = root.querySelector<HTMLButtonElement>('[data-cfg-back]')!;
+    const next = root.querySelector<HTMLButtonElement>('[data-cfg-next]')!;
+    const submit = root.querySelector<HTMLButtonElement>('[data-cfg-submit]')!;
+    const label = root.querySelector<HTMLElement>('[data-cfg-label]')!;
+    const err = root.querySelector<HTMLElement>('[data-cfg-error]')!;
+    const summary = root.querySelector<HTMLElement>('[data-cfg-summary]')!;
+    const qtyExact = root.querySelector<HTMLInputElement>('[data-qty-exact]');
+    const last = panels.length - 1;
+    let step = 0;
+
+    const cell = (row: string) => summary.querySelector<HTMLElement>(`[data-row="${row}"] dd`)!;
+    /**
+     * Reads a field for the summary. Radio groups only count when something is
+     * actually checked — falling back to the first radio made the panel claim
+     * choices the customer had not made.
+     */
+    const val = (name: string) => {
+      const group = form.querySelectorAll<HTMLInputElement>(`input[type="radio"][name="${name}"]`);
+      if (group.length) {
+        const picked = form.querySelector<HTMLInputElement>(`input[name="${name}"]:checked`);
+        return picked ? picked.value.trim() : '';
+      }
+      const el = form.querySelector<HTMLInputElement | HTMLSelectElement>(`[name="${name}"]`);
+      return el ? el.value.trim() : '';
+    };
+    const many = (prefix: string) =>
+      Array.from(form.querySelectorAll<HTMLInputElement>(`input[name^="${prefix}."]:checked`)).map((i) => i.value);
+
+    function paintSummary() {
+      cell('product').textContent = val('input_1') || '—';
+
+      const qty = qtyExact?.value.trim() || val('input_2');
+      cell('quantity').textContent = qty ? `${qty} ${(val('input_23') || 'pieces').toLowerCase()}` : '—';
+
+      const dims = [val('input_3'), val('input_5'), val('input_4')].filter(Boolean);
+      cell('size').textContent = dims.length ? `${dims.join(' × ')} in` : '—';
+
+      cell('board').textContent = val('input_11') || '—';
+      cell('print').textContent = val('input_10') || '—';
+      cell('finish').textContent = many('input_8').join(', ') || '—';
+      cell('addon').textContent = many('input_9').join(', ') || '—';
+    }
+
+    function show(n: number) {
+      step = Math.max(0, Math.min(last, n));
+      panels.forEach((p, i) => {
+        p.hidden = i !== step;
+      });
+      chips.forEach((c, i) => {
+        if (i === step) c.setAttribute('aria-current', 'step');
+        else c.removeAttribute('aria-current');
+        c.dataset.done = String(i < step);
+      });
+      bar.style.width = `${((step + 1) / panels.length) * 100}%`;
+      back.hidden = step === 0;
+      next.hidden = step === last;
+      submit.hidden = step !== last;
+      err.hidden = true;
+    }
+
+    /**
+     * Only the final step is required — the earlier ones are a specification the
+     * customer may legitimately not know yet, and blocking on them loses the
+     * enquiry we actually want.
+     */
+    function valid(n: number) {
+      if (n !== last) return true;
+      const fields = panels[last].querySelectorAll<HTMLInputElement>('input[required]');
+      for (const f of fields) {
+        if (!f.checkValidity()) {
+          f.reportValidity();
+          return false;
+        }
+      }
+      return true;
+    }
+
+    next.addEventListener('click', () => {
+      if (valid(step)) show(step + 1);
+    });
+    back.addEventListener('click', () => show(step - 1));
+    for (const [i, chip] of chips.entries()) {
+      chip.addEventListener('click', () => show(i));
+    }
+
+    // A typed exact quantity replaces whichever preset was picked.
+    qtyExact?.addEventListener('input', () => {
+      if (qtyExact.value.trim()) {
+        for (const r of form.querySelectorAll<HTMLInputElement>('input[name="input_2"]')) r.checked = false;
+      }
+      paintSummary();
+    });
+
+    form.addEventListener('change', (event) => {
+      const target = event.target as HTMLElement;
+      const reveals = target.getAttribute?.('data-reveals');
+      if (reveals) {
+        const panel = document.getElementById(reveals);
+        if (panel) panel.hidden = false;
+      }
+      // Picking a listed product hides the "tell us what it is" field again.
+      if ((target as HTMLInputElement).name === 'input_1' && !reveals) {
+        const other = document.getElementById('cfg-other');
+        if (other) other.hidden = true;
+      }
+      paintSummary();
+    });
+    form.addEventListener('input', paintSummary);
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      if (!valid(last)) return;
+
+      // The presets post as input_2; a typed figure has to take that name.
+      const data = new FormData(form);
+      const exact = qtyExact?.value.trim();
+      if (exact) data.set('input_2', exact);
+
+      err.hidden = true;
+      submit.disabled = true;
+      const original = label.textContent;
+      label.textContent = 'Sending…';
+
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: data,
+          headers: { Accept: 'application/json' },
+        });
+        const payload = await res.json().catch(() => ({}));
+        if (!res.ok || !payload.ok) throw new Error(payload.error || 'We could not send that. Please try again.');
+        window.location.assign(payload.redirect || '/thank-you/');
+      } catch (e) {
+        err.textContent = e instanceof Error ? e.message : 'Something went wrong. Please try again.';
+        err.hidden = false;
+        submit.disabled = false;
+        label.textContent = original;
+      }
+    });
+
+    paintSummary();
+    show(0);
+  }
+</script>

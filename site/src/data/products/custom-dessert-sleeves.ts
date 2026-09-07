@@ -37,6 +37,26 @@ export const product: Product = {
     },
   ],
 
+  gallery: [
+    {
+      src: '/media/lib/custom-dessert-sleeves/custom-dessert-sleeves.jpg',
+      alt: 'Teal and yellow printed dessert sleeve box shown closed',
+    },
+    {
+      src: '/media/lib/custom-dessert-sleeves/custom-dessert-sleeves-packaging.jpg',
+      alt: 'Teal dessert sleeve slid open to reveal the inner drawer tray',
+    },
+    {
+      src: '/media/lib/custom-dessert-sleeves/dessert-sleeves-packaging.jpg',
+      alt: 'Teal chocolate truffle sleeve printed with a lace border',
+    },
+    {
+      src: '/media/lib/custom-dessert-sleeves/dessert-sleeves.jpg',
+      alt: 'Kraft dessert sleeve wrapped around a boxed patisserie selection',
+    },
+  ],
+
+
   specs: [
     { label: 'Fits', value: 'Cake slices, brownies, bars, churros, waffle sticks, tarts, croissants and danishes' },
     { label: 'Shapes', value: 'Straight band, tapered wedge wrap, L-fold with a base, or a full custom die-cut' },

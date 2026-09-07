@@ -29,7 +29,7 @@ export const POSTS: Post[] = [
       'A practical guide to measuring cones and picking a sleeve size that grips properly — covering standard, waffle, sugar and kiddie cones.',
     published: '2026-08-15T09:00:00+00:00',
     readingMinutes: 5,
-    image: '/media/2023/03/waffle-cone-paper-sleeves-1024x1024-1.jpg',
+    image: '/media/lib/custom-waffle-cone-sleeves/custom-waffle-cone-sleeves.jpg',
     imageAlt: 'Custom printed waffle cone sleeves stacked ready for use',
     body: `
 <p>A cone sleeve only does its job when it fits. Too loose and it slides down the cone with the first drip; too tight and staff tear it forcing the cone in during a rush. Getting the size right is the single decision that most affects whether your sleeves actually get used behind the counter.</p>

@@ -37,6 +37,30 @@ export const product: Product = {
     },
   ],
 
+  gallery: [
+    {
+      src: '/media/lib/custom-waffle-trays/custom-waffle-tray.jpg',
+      alt: 'Pink and white board waffle tray photographed on a pink backdrop',
+    },
+    {
+      src: '/media/lib/custom-waffle-trays/custom-waffle-trays.jpg',
+      alt: 'Deep white waffle tray with a red interior shown at an angle',
+    },
+    {
+      src: '/media/lib/custom-waffle-trays/printed-waffle-trays.jpg',
+      alt: 'Waffle tray printed with a red and green swirl pattern',
+    },
+    {
+      src: '/media/lib/custom-waffle-trays/waffle-trays.jpg',
+      alt: 'Kraft waffle tray holding waffles with berries and cream',
+    },
+    {
+      src: '/media/lib/custom-waffle-trays/wholesale-waffle-trays.jpg',
+      alt: 'White dessert tray holding a chocolate slice and a layered cheesecake',
+    },
+  ],
+
+
   specs: [
     { label: 'Fits', value: 'Belgian squares, round Liege waffles, mini stacks and waffle-on-a-stick' },
     { label: 'Capacity', value: 'One dressed waffle, or two to four minis side by side in a wider cut' },

@@ -3,6 +3,9 @@ import Base from '../layouts/Base.astro';
 import Icon from '../components/Icon.astro';
 import Picture from '../components/Picture.astro';
 import QuoteForm from '../components/QuoteForm.astro';
+import Gallery from '../components/Gallery.astro';
+import OptionShowcase from '../components/OptionShowcase.astro';
+import Configurator from '../components/Configurator.astro';
 import { ALL_PRODUCTS, productsByGroup } from '../data/products';
 import { productBySlug, GROUPS } from '../data/nav';
 import { POSTS } from '../data/posts';
@@ -12,11 +15,11 @@ import { abs, faqNode } from '../lib/seo';
 const featured = [
   'ice-cream-cone-sleeves',
   'waffle-cone-sleeves',
-  'custom-sugar-cone-sleeves',
+  'custom-rolled-ice-cream-cone-sleeves',
   'custom-crepe-sleeves',
   'custom-burger-sleeves',
-  'custom-sandwich-sleeves',
   'custom-coffee-sleeves',
+  'custom-pizza-slice-sleeves',
   'custom-food-trays',
 ]
   .map((s) => ({ p: ALL_PRODUCTS.find((x) => x.slug === s)!, n: productBySlug(s)! }))
@@ -27,6 +30,18 @@ const groups = (['cone', 'food', 'tray'] as const).map((g) => ({
   ...GROUPS[g],
   items: productsByGroup(g).map((p) => ({ p, n: productBySlug(p.slug)! })),
 }));
+
+/** Home gallery: one image from each family, so the range reads at a glance. */
+const showcase = [
+  { src: '/media/lib/custom-rolled-ice-cream-cone-sleeves/custom-printed-rolled-ice-cream-cone-sleeves-1.jpg', alt: 'Fan of printed cone sleeves showing eight different artwork designs' },
+  { src: '/media/lib/custom-printed-coffee-sleeves/custom-paper-coffee-cup-lids-packaging.jpg', alt: 'Hot cups fitted with kraft coffee sleeves beside loose flat sleeves' },
+  { src: '/media/lib/burger-sleeves/burger-sleeves-wholesale.jpg', alt: 'Three printed burger clamshell sleeves loaded with sliders' },
+  { src: '/media/lib/custom-cardboard-food-trays/custom-cardboard-food-trays.jpg', alt: 'Stack of printed food trays in three sizes on a blue backdrop' },
+  { src: '/media/lib/custom-taco-paper/custom-taco-paper.jpg', alt: 'Two filled tacos held in printed board sleeves' },
+  { src: '/media/lib/custom-fries-sleeves/fries-sleeves.jpg', alt: 'Red and white striped fry carton filled with fries' },
+  { src: '/media/lib/ice-cream-cone-tray/custom-ice-cream-cone-tray.jpg', alt: 'Kraft cone tray filled with paper cones topped with sprinkles' },
+  { src: '/media/lib/custom-pastry-sleeves/custom-pastry-sleeves.jpg', alt: 'Deep red printed pastry sleeve drawn part way off its inner tray' },
+];
 
 const homeFaqs = [
   {
@@ -107,7 +122,7 @@ const schema = [
         <dl class="hero-stats">
           <div><dt>500</dt><dd>minimum order</dd></div>
           <div><dt>6–7 days</dt><dd>standard turnaround</dd></div>
-          <div><dt>18</dt><dd>sleeve &amp; tray formats</dd></div>
+          <div><dt>{ALL_PRODUCTS.length}</dt><dd>sleeve &amp; tray formats</dd></div>
         </dl>
       </div>
 
@@ -209,6 +224,15 @@ const schema = [
       </div>
     </div>
   </section>
+
+  <Gallery
+    images={showcase}
+    eyebrow="Printed work"
+    heading="A year of runs off the same presses"
+    intro="Cone sleeves, cup sleeves, wraps and trays, all printed to order on food-safe board. Nothing here is a stock design."
+  />
+
+  <OptionShowcase tone="bg-cream" />
 
   <section class="section">
     <div class="container steps-grid">
@@ -385,6 +409,8 @@ const schema = [
       }
     </div>
   </section>
+
+  <Configurator />
 
   <section class="section bg-cream">
     <div class="container">

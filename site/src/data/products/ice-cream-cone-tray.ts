@@ -37,6 +37,38 @@ export const product: Product = {
     },
   ],
 
+  gallery: [
+    {
+      src: '/media/lib/ice-cream-cone-tray/cardboard-ice-cream-cone-tray.jpg',
+      alt: 'Kraft cone tray with four die-cut holes for takeaway cones',
+    },
+    {
+      src: '/media/lib/ice-cream-cone-tray/custom-ice-cream-cone-tray.jpg',
+      alt: 'Cone tray filled with paper cones topped with pink sprinkles',
+    },
+    {
+      src: '/media/lib/ice-cream-cone-tray/custom-printed-ice-cream-cone-tray.jpg',
+      alt: 'Nine-hole kraft cone tray shown empty from above',
+    },
+    {
+      src: '/media/lib/ice-cream-cone-tray/ice-cream-cone-tray.jpg',
+      alt: 'Printed cone tray carrying a row of filled paper cones',
+    },
+    {
+      src: '/media/lib/ice-cream-cone-holder/ice-cream-cone-holder.jpg',
+      alt: 'Large kraft cone holder drilled with twenty-four cone holes',
+    },
+    {
+      src: '/media/lib/ice-cream-cone-holder/ice-cream-cone-paper-holder.jpg',
+      alt: 'Branded kraft cone caddy holding filled paper cones',
+    },
+    {
+      src: '/media/lib/ice-cream-cone-holder/mini-ice-cream-cone-holder.jpg',
+      alt: 'Mini cone carrier with a handle holding popcorn filled cones',
+    },
+  ],
+
+
   specs: [
     { label: 'Holds', value: '2, 4 or 6 filled cones upright; custom hole counts and layouts on request' },
     { label: 'Hole diameter', value: 'Cut to your cone, typically around 1.5–2 in across the top rim' },

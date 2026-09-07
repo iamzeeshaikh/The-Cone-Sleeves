@@ -37,6 +37,34 @@ export const product: Product = {
     },
   ],
 
+  gallery: [
+    {
+      src: '/media/lib/custom-waffle-cone-sleeves/custom-printed-waffle-cone-sleeve.jpg',
+      alt: 'Waffle cone seated in a two-tone printed sleeve on a cream backdrop',
+    },
+    {
+      src: '/media/lib/custom-waffle-cone-sleeves/custom-waffle-cone-sleeves-detail-5.jpg',
+      alt: 'Chocolate dipped waffle cone held in a dark printed sleeve',
+    },
+    {
+      src: '/media/lib/custom-waffle-cone-sleeves/custom-waffle-cone-sleeves.jpg',
+      alt: 'White waffle cone sleeve printed with a navy polka dot pattern',
+    },
+    {
+      src: '/media/lib/custom-waffle-cone-sleeves/waffle-cone-sleeves-wholesale.jpg',
+      alt: 'Wholesale waffle cone sleeve printed with a blue scalloped band',
+    },
+    {
+      src: '/media/lib/custom-child-size-waffle-cone-sleeves/custom-child-size-waffle-cone-sleeves-detail-5.jpg',
+      alt: 'Two short child-size waffle cone sleeves in red and yellow prints',
+    },
+    {
+      src: '/media/lib/custom-child-size-waffle-cone-sleeves/custom-child-size-waffle-cone-sleeves.jpg',
+      alt: 'Fan of pastel polka dot cone sleeves cut for child-size cones',
+    },
+  ],
+
+
   specs: [
     { label: 'Cone diameter', value: 'Cut to your cone; standard waffle cones sit roughly 2.4–2.9 in across the mouth' },
     { label: 'Wrap height', value: 'Set so the sleeve clears the flare and stops short of the tip' },

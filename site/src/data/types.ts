@@ -85,6 +85,13 @@ export interface Product {
   /** First image is the hero. 3–6 entries. */
   images: ImageRef[];
 
+  /**
+   * Printed-work photography for this shape, used by the on-page gallery and
+   * by the alternating body sections. 4–10 entries, hero excluded. Imported
+   * from the Cone Sleeves UK library; see tools/README for how they are cropped.
+   */
+  gallery: ImageRef[];
+
   /** 6–9 rows: Sizes, Board, Print, Finish, MOQ, Turnaround, Artwork, Packing… */
   specs: SpecRow[];
 

@@ -9,6 +9,10 @@
  *
  * Originals are never deleted — the <img> fallback still points at them, so a
  * browser without WebP support and any external hotlink keep working.
+ *
+ * The script also rewrites src/data/renditions.json, the map Picture.astro
+ * reads to build its srcset. Keeping the map generated means adding an image to
+ * a product file is enough — nothing has to be registered by hand.
  */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -36,26 +40,39 @@ function referenced() {
   return [...found];
 }
 
-const files = referenced();
+const files = referenced().sort();
+const map = {};
 let made = 0;
-let saved = 0;
+let missing = 0;
 
 for (const rel of files) {
   const src = path.join(PUBLIC, rel);
   if (!fs.existsSync(src)) {
     console.warn(`  missing: ${rel}`);
+    missing++;
     continue;
   }
   const meta = await sharp(src).metadata();
+  const widths = [];
   for (const w of WIDTHS) {
     // Never upscale: a 600px original gets no 800w rendition.
     if (meta.width && meta.width < w) continue;
     const out = src.replace(/\.(jpe?g|png)$/i, `-${w}.webp`);
-    if (fs.existsSync(out)) continue;
-    await sharp(src).resize({ width: w }).webp({ quality: 78 }).toFile(out);
-    made++;
-    saved += fs.statSync(src).size - fs.statSync(out).size;
+    if (!fs.existsSync(out)) {
+      await sharp(src).resize({ width: w }).webp({ quality: 78 }).toFile(out);
+      made++;
+    }
+    widths.push(w);
   }
+  if (widths.length) map[rel] = widths;
 }
 
-console.log(`renditions: ${made} written for ${files.length} source images`);
+const MAP_FILE = path.resolve('src/data/renditions.json');
+const next = JSON.stringify(map, null, 0).replace(/,"/g, ',\n"').replace(/^\{/, '{\n').replace(/\}$/, '\n}');
+const prev = fs.existsSync(MAP_FILE) ? fs.readFileSync(MAP_FILE, 'utf8') : '';
+if (next !== prev) fs.writeFileSync(MAP_FILE, next);
+
+console.log(
+  `renditions: ${made} written, ${Object.keys(map).length} images mapped` +
+    (missing ? `, ${missing} referenced files missing` : '')
+);

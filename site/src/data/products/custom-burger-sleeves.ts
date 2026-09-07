@@ -41,6 +41,26 @@ export const product: Product = {
     },
   ],
 
+  gallery: [
+    {
+      src: '/media/lib/burger-sleeves/burger-sleeves-wholesale.jpg',
+      alt: 'Three printed burger clamshell sleeves loaded with sliders',
+    },
+    {
+      src: '/media/lib/burger-sleeves/burger-sleeves.jpg',
+      alt: 'Gold foil-lined burger sleeve wrapped around a cheeseburger',
+    },
+    {
+      src: '/media/lib/burger-sleeves/custom-burger-sleeves.jpg',
+      alt: 'White greaseproof burger sleeve folded around a sesame bun',
+    },
+    {
+      src: '/media/lib/burger-sleeves/hamburger-sleeves.jpg',
+      alt: 'Black and white printed hamburger sleeve holding a stacked burger',
+    },
+  ],
+
+
   specs: [
     { label: 'Fits', value: 'Sliders, single smash, quarter-pound, double stacks and brioche-bun builds' },
     { label: 'Band width', value: 'Cut to sit at mid-stack height so the top bun stays clear of the bite' },

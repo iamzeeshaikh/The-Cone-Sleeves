@@ -1,0 +1,131 @@
+---
+/**
+ * Printed-work gallery.
+ *
+ * Every tile is the same size. An earlier version made the first one double
+ * width, which left the tiles beside it stretched to match its height and the
+ * last row ragged; equal tiles read better and survive any image count.
+ *
+ * Captions are visible text rather than hover-only, so they are available to a
+ * reader on a touch screen and to search engines reading the page.
+ */
+import Picture from './Picture.astro';
+import type { ImageRef } from '../data/types';
+
+interface Props {
+  images: ImageRef[];
+  eyebrow?: string;
+  heading: string;
+  intro?: string;
+  /** Section background; matches the utility classes in base.css. */
+  tone?: '' | 'bg-alt' | 'bg-cream';
+}
+
+const { images, eyebrow = 'Printed work', heading, intro, tone = '' } = Astro.props as Props;
+const shown = images.slice(0, 8);
+---
+
+{
+  shown.length > 0 && (
+    <section class={`section ${tone}`.trim()}>
+      <div class="container">
+        <div class="gal-head">
+          <div>
+            <p class="eyebrow eyebrow-line">{eyebrow}</p>
+            <h2>{heading}</h2>
+          </div>
+          {intro && <p class="gal-intro">{intro}</p>}
+        </div>
+
+        <div class="gal-grid">
+          {shown.map((img, i) => (
+            <figure class="gal-item">
+              <Picture
+                src={img.src}
+                alt={img.alt}
+                width={1200}
+                height={996}
+                sizes="(max-width: 700px) 50vw, 280px"
+              />
+              <figcaption>{img.alt}</figcaption>
+            </figure>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+<style>
+  .gal-head {
+    display: grid;
+    gap: var(--sp-4) clamp(2rem, 5vw, 4rem);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.8fr);
+    align-items: end;
+    margin-bottom: var(--sp-6);
+  }
+
+  .gal-head h2 {
+    margin: 0;
+  }
+
+  .gal-intro {
+    margin: 0;
+    color: var(--ink-600);
+    font-size: 1rem;
+  }
+
+  .gal-grid {
+    display: grid;
+    gap: var(--sp-4);
+    grid-template-columns: repeat(auto-fit, minmax(max(200px, (100% - 3 * var(--sp-4)) / 4), 1fr));
+    align-items: start;
+  }
+
+  .gal-item {
+    margin: 0;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    background: var(--paper-cream);
+    border: 1px solid var(--line-soft);
+  }
+
+  .gal-item img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  .gal-item:hover img {
+    transform: scale(1.04);
+  }
+
+  .gal-item figcaption {
+    padding: 0.7rem 0.85rem 0.85rem;
+    min-height: 3.6rem;
+    font-size: 0.84rem;
+    line-height: 1.45;
+    color: var(--ink-600);
+    background: var(--surface);
+  }
+
+  @media (max-width: 760px) {
+    .gal-head {
+      grid-template-columns: minmax(0, 1fr);
+      align-items: start;
+    }
+    .gal-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: var(--sp-3);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .gal-item img,
+    .gal-item:hover img {
+      transition: none;
+      transform: none;
+    }
+  }
+</style>

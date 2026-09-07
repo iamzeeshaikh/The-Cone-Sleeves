@@ -13,7 +13,9 @@
     "verify:css": "node tools/verify-all.mjs",
     "verify:headings": "node tools/headings.mjs",
     "shots": "node tools/shoot.mjs",
-    "renditions": "node tools/renditions.mjs"
+    "renditions": "node tools/renditions.mjs",
+    "links": "node tools/link-audit.mjs",
+    "dupes": "node tools/duplication.mjs"
   },
   "dependencies": {
     "@astrojs/vercel": "^11.0.5",
@@ -23,6 +25,7 @@
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^8.0.0",
     "playwright": "^1.62.1",
-    "purgecss": "^8.0.0"
+    "purgecss": "^8.0.0",
+    "sharp": "^0.35.3"
   }
 }

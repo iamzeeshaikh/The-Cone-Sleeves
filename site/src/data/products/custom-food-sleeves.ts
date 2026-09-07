@@ -41,6 +41,42 @@ export const product: Product = {
     },
   ],
 
+  gallery: [
+    {
+      src: '/media/lib/burger-sleeves/custom-food-sleeves.jpg',
+      alt: 'Printed food-to-go sleeves wrapped around a salad pot and a snack box',
+    },
+    {
+      src: '/media/lib/burger-sleeves/food-packaging-sleeves.jpg',
+      alt: 'Two stacked meal trays banded with illustrated food packaging sleeves',
+    },
+    {
+      src: '/media/lib/burger-sleeves/food-sleeves-wholesale.jpg',
+      alt: 'Ready-meal tray finished with a bold printed board sleeve',
+    },
+    {
+      src: '/media/lib/burger-sleeves/food-sleeves.jpg',
+      alt: 'Clear snack tray banded with an orange printed retail sleeve',
+    },
+    {
+      src: '/media/lib/burger-sleeves/printed-food-sleeves.jpg',
+      alt: 'Printed board sleeve wrapped around a chilled pizza tray',
+    },
+    {
+      src: '/media/lib/custom-die-cut-sleeves/die-cut-sleeves.jpg',
+      alt: 'Die-cut sleeve with a shaped window revealing the product inside',
+    },
+    {
+      src: '/media/lib/custom-wrap-sleeves/wrap-sleeves.jpg',
+      alt: 'Red and white wrap sleeve slid over a plain white product box',
+    },
+    {
+      src: '/media/lib/tray-and-sleeves/tray-and-sleeves.jpg',
+      alt: 'Matching board tray and printed outer sleeve shown separated',
+    },
+  ],
+
+
   specs: [
     { label: 'Sleeve types', value: 'Burger, sandwich, hot dog, donut, dessert, coffee and beverage sleeves' },
     { label: 'Fits', value: 'Cut to the item you serve — send a sample, a photo with a ruler, or the dimensions' },

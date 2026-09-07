@@ -41,6 +41,42 @@ export const product: Product = {
     },
   ],
 
+  gallery: [
+    {
+      src: '/media/lib/custom-ice-cream-cone-sleeves/custom-ice-cream-cone-sleeves.jpg',
+      alt: 'Green and red striped cone sleeve wrapped around a soft-serve ice cream',
+    },
+    {
+      src: '/media/lib/custom-ice-cream-cone-sleeves/custom-ice-cream-cone-sleeves-detail-7.jpg',
+      alt: 'Mint soft-serve held in a red, white and blue printed cone sleeve',
+    },
+    {
+      src: '/media/lib/custom-ice-cream-cone-sleeves/ice-cream-cone-paper-sleeves.jpg',
+      alt: 'Purple and black printed paper cone sleeve photographed on its side',
+    },
+    {
+      src: '/media/lib/custom-ice-cream-cone-sleeves/ice-cream-cone-sleeves.jpg',
+      alt: 'Rainbow banded cone sleeve holding a yellow soft-serve swirl',
+    },
+    {
+      src: '/media/lib/polka-designs-ice-cream-cone-sleeves/custom-printed-polka-designs-ice-cream-cone-sleeves.jpg',
+      alt: 'Teal polka dot cone sleeve wrapped around a scoop of strawberry ice cream',
+    },
+    {
+      src: '/media/lib/polka-designs-ice-cream-cone-sleeves/polka-designs-ice-cream-cone-sleeves.jpg',
+      alt: 'White cone sleeve with gold polka dots holding pink gelato',
+    },
+    {
+      src: '/media/lib/abstract-design-ice-cream-cone-sleeves/abstract-design-ice-cream-cone-sleeves-detail-5.jpg',
+      alt: 'Speckled black and white cone sleeves around chocolate scoops',
+    },
+    {
+      src: '/media/lib/custom-rolled-ice-cream-cone-sleeves/rolled-ice-cream-cone-sleeves-1.jpg',
+      alt: 'A fan of brightly printed cone sleeves showing different artwork',
+    },
+  ],
+
+
   specs: [
     { label: 'Fits', value: 'Standard, waffle, sugar and kiddie cones; custom sizes cut to your cone' },
     { label: 'Board', value: 'White SBS cardstock, natural kraft or recycled board' },

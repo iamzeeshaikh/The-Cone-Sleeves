@@ -5,6 +5,7 @@ import Picture from '../components/Picture.astro';
 import { POSTS } from '../data/posts';
 import { SITE } from '../data/site';
 import { abs } from '../lib/seo';
+import Configurator from '../components/Configurator.astro';
 
 const posts = [...POSTS].sort(
   (a, b) => new Date(b.published).getTime() - new Date(a.published).getTime()
@@ -98,6 +99,11 @@ const schema = [
       </div>
     </div>
   </section>
+
+  <Configurator
+    heading="Ready to price a run?"
+    intro="Answer what you know about the job and we come back with a written price and a free dieline."
+  />
 </Base>
 
 <style>

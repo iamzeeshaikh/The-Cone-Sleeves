@@ -41,6 +41,26 @@ export const product: Product = {
     },
   ],
 
+  gallery: [
+    {
+      src: '/media/lib/custom-sandwich-sleeves/custom-sandwich-sleeves.jpg',
+      alt: 'Kraft sandwich sleeve holding a filled baguette',
+    },
+    {
+      src: '/media/lib/custom-sandwich-sleeves/custom-sandwich-sleeves-packaging.jpg',
+      alt: 'Sandwich wrapped in printed paper and set on a kraft board base',
+    },
+    {
+      src: '/media/lib/custom-sandwich-sleeves/sandwich-sleeves-packaging.jpg',
+      alt: 'Blue printed sandwich sleeve with a clear window over the filling',
+    },
+    {
+      src: '/media/lib/custom-sandwich-sleeves/sandwich-sleeves.jpg',
+      alt: 'Club sandwich halves held together by a printed board sleeve',
+    },
+  ],
+
+
   specs: [
     { label: 'Fits', value: 'Half-cut subs, baguettes, paninis, club sandwiches, wraps and rolls' },
     { label: 'Cut style', value: 'Straight band, angled front for a diagonal cut, or stepped tuck-close' },

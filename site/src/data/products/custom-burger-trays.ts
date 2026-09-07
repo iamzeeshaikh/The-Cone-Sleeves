@@ -37,6 +37,26 @@ export const product: Product = {
     },
   ],
 
+  gallery: [
+    {
+      src: '/media/lib/custom-burger-trays/burger-trays-packaging.jpg',
+      alt: 'Yellow printed burger tray branded for a diner, holding a burger',
+    },
+    {
+      src: '/media/lib/custom-burger-trays/burger-trays.jpg',
+      alt: 'Burger set on checked greaseproof paper inside a board tray',
+    },
+    {
+      src: '/media/lib/custom-burger-trays/custom-burger-trays-packaging.jpg',
+      alt: 'Kraft burger meal trays stacked with a burger and fries',
+    },
+    {
+      src: '/media/lib/custom-burger-trays/custom-burger-trays.jpg',
+      alt: 'Printed kraft tray holding a burger, fries and a dip pot',
+    },
+  ],
+
+
   specs: [
     { label: 'Capacity', value: 'One burger plus a side of fries; sizes from sliders up to double-stack builds' },
     { label: 'Wall style', value: 'Four-corner glued for counters or foot-lock flat-pack for mobile service; 1 in to 1.5 in walls' },

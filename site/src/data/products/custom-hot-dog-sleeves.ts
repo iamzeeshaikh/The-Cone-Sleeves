@@ -37,6 +37,30 @@ export const product: Product = {
     },
   ],
 
+  gallery: [
+    {
+      src: '/media/lib/custom-hot-dog-trays/hot-dog-trays-packaging.jpg',
+      alt: 'Red printed hot dog sleeves lined up with loaded hot dogs',
+    },
+    {
+      src: '/media/lib/custom-hot-dog-sleeves/hot-dog-sleeves-packaging.jpg',
+      alt: 'Open-ended hot dog holder printed in green and white',
+    },
+    {
+      src: '/media/lib/custom-hot-dog-sleeves/custom-hot-dog-sleeves-packaging.jpg',
+      alt: 'Brown and black printed hot dog holder with a loaded hot dog',
+    },
+    {
+      src: '/media/lib/custom-hot-dog-sleeves/custom-hot-dog-sleeves.jpg',
+      alt: 'Pink printed holder supporting a corn dog on a stick',
+    },
+    {
+      src: '/media/lib/custom-hot-dog-sleeves/hot-dog-sleeves.jpg',
+      alt: 'Red and white striped hot dog holder with a loaded hot dog',
+    },
+  ],
+
+
   specs: [
     { label: 'Fits', value: 'Standard six-inch buns, footlongs, brat rolls and loaded dogs — cut to the bun you buy' },
     { label: 'Styles', value: 'Open band, closed-bottom sleeve, window cut or custom die-cut shape' },

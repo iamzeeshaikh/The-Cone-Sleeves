@@ -3,6 +3,7 @@ import Base from '../layouts/Base.astro';
 import Icon from '../components/Icon.astro';
 import QuoteForm from '../components/QuoteForm.astro';
 import { SITE } from '../data/site';
+import Configurator from '../components/Configurator.astro';
 
 const waHref = `https://wa.me/${SITE.whatsapp.telephone}?text=${encodeURIComponent(SITE.whatsapp.message)}`;
 
@@ -40,6 +41,7 @@ const schema = [
   <section class="section">
     <div class="container contact-grid">
       <div>
+        <h2 style="margin-bottom:var(--sp-4)">Ways to reach us</h2>
         <div class="contact-cards">
           <a class="contact-card" href={`tel:${SITE.phone}`}>
             <span class="tile-icon"><Icon name="phone" size={20} /></span>
@@ -105,6 +107,11 @@ const schema = [
       />
     </div>
   </section>
+
+  <Configurator
+    heading="Build the spec while you are here"
+    intro="Five steps and the details land in the same inbox as the form above, with your specification already written out."
+  />
 </Base>
 
 <style>

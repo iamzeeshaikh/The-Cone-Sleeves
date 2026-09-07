@@ -21,3 +21,6 @@ dist/
 .env
 .env.*
 !.env.example
+
+# tool output
+site/audit.json

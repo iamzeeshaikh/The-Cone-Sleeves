@@ -97,6 +97,13 @@ picture {
   display: contents;
 }
 
+/* Components toggle visibility with `el.hidden`. Without this, a class that
+   sets `display` (`.field`, `.btn`, `.cfg-panel`) wins over the attribute and
+   the element stays on screen. */
+[hidden] {
+  display: none !important;
+}
+
 ul,
 ol {
   margin: 0 0 var(--sp-4);
