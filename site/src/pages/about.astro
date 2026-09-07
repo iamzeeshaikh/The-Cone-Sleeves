@@ -10,6 +10,7 @@
  */
 import Base from '../layouts/Base.astro';
 import Icon from '../components/Icon.astro';
+import Picture from '../components/Picture.astro';
 import { SITE } from '../data/site';
 import { ALL_PRODUCTS } from '../data/products';
 import { abs } from '../lib/seo';
@@ -49,11 +50,13 @@ const schema = [
         </p>
       </div>
       <div class="about-media">
-        <img
+        <Picture
           src="/media/2023/03/waffle-cone-paper-sleeves-1024x1024-1.jpg"
           alt="Printed waffle cone paper sleeves in a stack"
-          width="1024"
-          height="1024"
+          width={1024}
+          height={1024}
+          sizes="(max-width: 900px) 100vw, 460px"
+          loading="eager"
           fetchpriority="high"
         />
       </div>

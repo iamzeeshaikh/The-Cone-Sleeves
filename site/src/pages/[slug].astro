@@ -13,6 +13,7 @@
  */
 import Base from '../layouts/Base.astro';
 import Icon from '../components/Icon.astro';
+import Picture from '../components/Picture.astro';
 import QuoteForm from '../components/QuoteForm.astro';
 import { ALL_PRODUCTS, getProduct } from '../data/products';
 import { productBySlug } from '../data/nav';
@@ -164,13 +165,14 @@ const schema = [
 
       <div class="p-media">
         <figure class="p-media-main">
-          <img
+          <Picture
             src={heroImage.src}
             alt={heroImage.alt}
-            width="768"
-            height="768"
+            width={768}
+            height={768}
+            sizes="(max-width: 900px) 100vw, 520px"
+            loading="eager"
             fetchpriority="high"
-            decoding="async"
           />
         </figure>
         {
@@ -178,7 +180,7 @@ const schema = [
             <div class="p-media-strip">
               {gallery.map((img) => (
                 <figure>
-                  <img src={img.src} alt={img.alt} width="768" height="768" loading="lazy" decoding="async" />
+                  <Picture src={img.src} alt={img.alt} width={768} height={768} sizes="(max-width: 900px) 32vw, 170px" />
                 </figure>
               ))}
             </div>
@@ -316,7 +318,7 @@ const schema = [
             {related.map(({ product: r, nav: rn }) => (
               <a class="card card-link" href={rn!.path}>
                 <div class="card-media">
-                  <img src={r!.images[0].src} alt={r!.images[0].alt} width="768" height="768" loading="lazy" />
+                  <Picture src={r!.images[0].src} alt={r!.images[0].alt} width={768} height={768} sizes="(max-width: 700px) 100vw, 280px" />
                 </div>
                 <div class="card-body">
                   <h3 class="card-title">{rn!.label}</h3>

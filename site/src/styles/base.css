@@ -81,12 +81,20 @@ a:hover {
 }
 
 img,
-picture,
 svg,
 video {
   display: block;
   max-width: 100%;
   height: auto;
+}
+
+/* Picture.astro wraps images in <picture> to offer a WebP source. An inline
+   <picture> becomes the img's containing block, so rules like
+   `.card-media img { height: 100% }` stop resolving against the real container
+   and the card's 4:3 ratio collapses. display:contents removes the wrapper
+   from layout entirely, so the markup change is invisible to the CSS. */
+picture {
+  display: contents;
 }
 
 ul,

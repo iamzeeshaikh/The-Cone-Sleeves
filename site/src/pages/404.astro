@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import Icon from '../components/Icon.astro';
+import Picture from '../components/Picture.astro';
 import { ALL_PRODUCTS } from '../data/products';
 import { productBySlug } from '../data/nav';
 
@@ -36,7 +37,7 @@ const picks = ['ice-cream-cone-sleeves', 'waffle-cone-sleeves', 'custom-burger-s
           picks.map(({ p, n }) => (
             <a class="card card-link" href={n.path}>
               <div class="card-media">
-                <img src={p.images[0].src} alt={p.images[0].alt} width="768" height="768" loading="lazy" />
+                <Picture src={p.images[0].src} alt={p.images[0].alt} width={768} height={768} sizes="(max-width: 700px) 100vw, 280px" />
               </div>
               <div class="card-body">
                 <h3 class="card-title">{n.label}</h3>

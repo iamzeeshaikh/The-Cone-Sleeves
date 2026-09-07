@@ -1,6 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import Icon from '../../components/Icon.astro';
+import Picture from '../../components/Picture.astro';
 import { POSTS } from '../../data/posts';
 import { SITE } from '../../data/site';
 import { abs, ORG_ID } from '../../lib/seo';
@@ -65,7 +66,7 @@ const schema = [
     </header>
 
     <figure class="post-hero container">
-      <img src={post.image} alt={post.imageAlt} width="1200" height="675" fetchpriority="high" />
+      <Picture src={post.image} alt={post.imageAlt} width={1200} height={675} sizes="(max-width: 980px) 100vw, 940px" loading="eager" fetchpriority="high" />
     </figure>
 
     <div class="container-narrow prose post-body">
@@ -95,7 +96,7 @@ const schema = [
           others.map((p) => (
             <a class="card card-link" href={`/blog/${p.slug}/`}>
               <div class="card-media">
-                <img src={p.image} alt={p.imageAlt} width="768" height="576" loading="lazy" />
+                <Picture src={p.image} alt={p.imageAlt} width={768} height={576} sizes="(max-width: 700px) 100vw, 380px" />
               </div>
               <div class="card-body">
                 <h3 class="card-title" style="font-size:var(--step-1)">{p.title}</h3>

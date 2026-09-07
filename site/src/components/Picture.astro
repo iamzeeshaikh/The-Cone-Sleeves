@@ -1,0 +1,70 @@
+---
+/**
+ * <img> with a WebP srcset when a rendition exists.
+ *
+ * Renditions are produced by tools/renditions.mjs, which writes `-400.webp`
+ * and `-800.webp` beside each source file in public/. The original stays as the
+ * <img> src so the markup degrades to exactly what it was before, and any
+ * external link to the original URL still resolves.
+ */
+import renditions from '../data/renditions.json';
+
+interface Props {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+  /** `sizes` for the srcset; give the real rendered width, not 100vw. */
+  sizes?: string;
+  loading?: 'lazy' | 'eager';
+  fetchpriority?: 'high' | 'low' | 'auto';
+  class?: string;
+  style?: string;
+}
+
+const {
+  src,
+  alt,
+  width,
+  height,
+  sizes = '(max-width: 900px) 100vw, 500px',
+  loading = 'lazy',
+  fetchpriority,
+  class: cls,
+  style,
+} = Astro.props as Props;
+
+const available: string[] = (renditions as Record<string, string[]>)[src] ?? [];
+const srcset = available.map((w) => `${src.replace(/\.(jpe?g|png)$/i, `-${w}.webp`)} ${w}w`).join(', ');
+---
+
+{
+  srcset ? (
+    <picture>
+      <source type="image/webp" srcset={srcset} sizes={sizes} />
+      <img
+        src={src}
+        alt={alt}
+        width={width}
+        height={height}
+        loading={loading}
+        fetchpriority={fetchpriority}
+        decoding="async"
+        class={cls}
+        style={style}
+      />
+    </picture>
+  ) : (
+    <img
+      src={src}
+      alt={alt}
+      width={width}
+      height={height}
+      loading={loading}
+      fetchpriority={fetchpriority}
+      decoding="async"
+      class={cls}
+      style={style}
+    />
+  )
+}

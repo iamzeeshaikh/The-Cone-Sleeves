@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import Icon from '../components/Icon.astro';
+import Picture from '../components/Picture.astro';
 import { POSTS } from '../data/posts';
 import { SITE } from '../data/site';
 import { abs } from '../lib/seo';
@@ -57,7 +58,7 @@ const schema = [
         lead && (
           <a class="blog-lead" href={`/blog/${lead.slug}/`}>
             <div class="blog-lead-media">
-              <img src={lead.image} alt={lead.imageAlt} width="1024" height="640" fetchpriority="high" />
+              <Picture src={lead.image} alt={lead.imageAlt} width={1024} height={640} sizes="(max-width: 860px) 100vw, 600px" loading="eager" fetchpriority="high" />
             </div>
             <div class="blog-lead-body">
               <span class="pill">Latest guide</span>
@@ -79,7 +80,7 @@ const schema = [
           rest.map((post) => (
             <a class="card card-link" href={`/blog/${post.slug}/`}>
               <div class="card-media">
-                <img src={post.image} alt={post.imageAlt} width="768" height="576" loading="lazy" />
+                <Picture src={post.image} alt={post.imageAlt} width={768} height={576} sizes="(max-width: 700px) 100vw, 380px" />
               </div>
               <div class="card-body">
                 <h3 class="card-title" style="font-size:var(--step-1)">{post.title}</h3>

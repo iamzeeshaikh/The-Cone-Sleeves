@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import Icon from '../components/Icon.astro';
+import Picture from '../components/Picture.astro';
 import QuoteForm from '../components/QuoteForm.astro';
 import { ALL_PRODUCTS, productsByGroup } from '../data/products';
 import { productBySlug, GROUPS } from '../data/nav';
@@ -111,13 +112,14 @@ const schema = [
       </div>
 
       <div class="hero-media">
-        <img
+        <Picture
           src="/media/2023/11/Custom-Cardboard-Cone-Sleeves.jpg"
           alt="Custom printed cardboard cone sleeves wrapped around filled ice cream cones"
-          width="1200"
-          height="1200"
+          width={1200}
+          height={1200}
+          sizes="(max-width: 900px) 100vw, 560px"
+          loading="eager"
           fetchpriority="high"
-          decoding="async"
         />
       </div>
     </div>
@@ -160,7 +162,7 @@ const schema = [
           featured.map(({ p, n }) => (
             <a class="card card-link" href={n.path}>
               <div class="card-media">
-                <img src={p.images[0].src} alt={p.images[0].alt} width="768" height="768" loading="lazy" decoding="async" />
+                <Picture src={p.images[0].src} alt={p.images[0].alt} width={768} height={768} sizes="(max-width: 700px) 100vw, 280px" />
               </div>
               <div class="card-body">
                 <h3 class="card-title">{n.label}</h3>
@@ -399,7 +401,7 @@ const schema = [
           POSTS.slice(0, 3).map((post) => (
             <a class="card card-link" href={`/blog/${post.slug}/`}>
               <div class="card-media">
-                <img src={post.image} alt={post.imageAlt} width="768" height="576" loading="lazy" />
+                <Picture src={post.image} alt={post.imageAlt} width={768} height={576} sizes="(max-width: 700px) 100vw, 380px" />
               </div>
               <div class="card-body">
                 <h3 class="card-title" style="font-size:var(--step-1)">{post.title}</h3>
