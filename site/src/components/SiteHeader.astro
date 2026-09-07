@@ -70,7 +70,19 @@ const waHref = `https://wa.me/${SITE.whatsapp.telephone}?text=${encodeURICompone
                   {g.items.map((i) => (
                     <li>
                       <a class="mega-link" href={i.path} aria-current={isCurrent(i.path) ? 'page' : undefined}>
-                        {i.label}
+                        {/* The src is withheld until the menu is first opened — these 31
+                            thumbnails would otherwise load in the header of every page. */}
+                        <img
+                          class="mega-thumb"
+                          src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'%3E%3C/svg%3E"
+                          data-thumb={`/media/thumbs/${i.slug}.webp`}
+                          alt=""
+                          aria-hidden="true"
+                          width="44"
+                          height="44"
+                          decoding="async"
+                        />
+                        <span>{i.label}</span>
                       </a>
                     </li>
                   ))}
@@ -111,7 +123,19 @@ const waHref = `https://wa.me/${SITE.whatsapp.telephone}?text=${encodeURICompone
             <ul class="drawer-sub" hidden>
               {g.items.map((i) => (
                 <li>
-                  <a href={i.path}>{i.label}</a>
+                  <a href={i.path}>
+                    <img
+                      class="drawer-thumb"
+                      src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'%3E%3C/svg%3E"
+                      data-thumb={`/media/thumbs/${i.slug}.webp`}
+                      alt=""
+                      aria-hidden="true"
+                      width="36"
+                      height="36"
+                      decoding="async"
+                    />
+                    <span>{i.label}</span>
+                  </a>
                 </li>
               ))}
             </ul>
@@ -134,6 +158,20 @@ const waHref = `https://wa.me/${SITE.whatsapp.telephone}?text=${encodeURICompone
 </div>
 
 <script>
+  /**
+   * Menu thumbnails carry their URL in data-thumb and only become real images
+   * the first time the panel they sit in is opened. Left as plain `src` they
+   * would be 31 extra requests in the header of every page; `loading="lazy"`
+   * does not help, because the panel sits inside the viewport and is hidden
+   * with visibility rather than display.
+   */
+  function loadThumbs(root: ParentNode) {
+    for (const img of root.querySelectorAll<HTMLImageElement>('img[data-thumb]')) {
+      img.src = img.dataset.thumb!;
+      img.removeAttribute('data-thumb');
+    }
+  }
+
   // Desktop dropdowns: click to open (works for touch and keyboard alike),
   // hover only as an enhancement on devices that actually have a pointer.
   const menus = Array.from(document.querySelectorAll<HTMLElement>('[data-menu]'));
@@ -156,6 +194,7 @@ const waHref = `https://wa.me/${SITE.whatsapp.telephone}?text=${encodeURICompone
     let openedByHover = false;
 
     const setOpen = (open: boolean) => {
+      if (open) loadThumbs(panel);
       panel.setAttribute('data-open', String(open));
       btn.setAttribute('aria-expanded', String(open));
     };
@@ -200,7 +239,10 @@ const waHref = `https://wa.me/${SITE.whatsapp.telephone}?text=${encodeURICompone
 
   function setDrawer(open: boolean) {
     if (!drawer || !burger) return;
-    if (open) drawer.hidden = false;
+    if (open) {
+      drawer.hidden = false;
+      loadThumbs(drawer);
+    }
     // Let the element paint before transitioning in.
     requestAnimationFrame(() => drawer.setAttribute('data-open', String(open)));
     burger.setAttribute('aria-expanded', String(open));

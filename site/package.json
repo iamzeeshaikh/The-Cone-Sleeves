@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "astro dev",
-    "build": "node tools/renditions.mjs && astro build",
+    "build": "node tools/renditions.mjs && node tools/thumbs.mjs && astro build",
     "preview": "astro preview",
     "prune-assets": "node tools/prune-assets.mjs",
     "audit": "node tools/audit.mjs",
@@ -15,7 +15,8 @@
     "shots": "node tools/shoot.mjs",
     "renditions": "node tools/renditions.mjs",
     "links": "node tools/link-audit.mjs",
-    "dupes": "node tools/duplication.mjs"
+    "dupes": "node tools/duplication.mjs",
+    "thumbs": "node tools/thumbs.mjs"
   },
   "dependencies": {
     "@astrojs/vercel": "^11.0.5",

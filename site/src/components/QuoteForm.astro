@@ -28,9 +28,12 @@ const {
   <input type="hidden" name="form_id" value="2725c75" />
   <input type="hidden" name="source_page" value={Astro.url.pathname} />
 
-  <div>
-    <h3 style="margin-bottom:.4rem">{heading}</h3>
-    <p class="form-note" style="margin-bottom:1.1rem">{intro}</p>
+  <div class="qf-head">
+    <span class="qf-badge"><Icon name="quote" size={16} /></span>
+    <div>
+      <h3>{heading}</h3>
+      <p class="form-note">{intro}</p>
+    </div>
   </div>
 
   <div class="quote-grid" data-compact={String(compact)}>
@@ -86,23 +89,84 @@ const {
 
   <p class="form-msg error" data-form-error hidden></p>
 
-  <button class="btn btn-primary btn-block btn-lg" type="submit" style="margin-top:1.1rem">
+  <button class="btn btn-primary btn-block btn-lg qf-submit" type="submit">
     <span data-submit-label>Send my request</span>
     <Icon name="arrow" size={17} />
   </button>
 
-  <p class="form-note" style="margin-top:.85rem;text-align:center">
-    {SITE.replyPromise}. No obligation, no spam.
-  </p>
+  <ul class="qf-assure">
+    <li><Icon name="check" size={13} />{SITE.replyPromise}</li>
+    <li><Icon name="check" size={13} />Free dieline and digital proof</li>
+    <li><Icon name="check" size={13} />No obligation, no spam</li>
+  </ul>
 </form>
 
 <style>
   .quote-form {
     background: var(--surface);
-    border: 1px solid var(--line);
-    border-radius: var(--radius-lg);
+    border: 1px solid var(--line-soft);
+    border-radius: 20px;
     padding: var(--sp-6);
-    box-shadow: var(--shadow);
+    box-shadow:
+      0 1px 2px rgb(60 40 30 / 0.04),
+      0 12px 32px -12px rgb(60 40 30 / 0.14);
+  }
+
+  .qf-head {
+    display: flex;
+    gap: 0.85rem;
+    align-items: flex-start;
+    margin-bottom: var(--sp-5);
+    padding-bottom: var(--sp-4);
+    border-bottom: 1px solid var(--line-soft);
+  }
+
+  .qf-badge {
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
+    border-radius: 12px;
+    background: var(--coral-50);
+    color: var(--coral-600);
+  }
+
+  .qf-head h3 {
+    margin: 0 0 0.2rem;
+    font-size: var(--step-1);
+  }
+
+  .qf-head .form-note {
+    margin: 0;
+  }
+
+  .qf-submit {
+    margin-top: var(--sp-5);
+  }
+
+  .qf-assure {
+    list-style: none;
+    margin: var(--sp-4) 0 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem 1rem;
+    justify-content: center;
+  }
+
+  .qf-assure li {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    margin: 0;
+    font-size: 0.79rem;
+    color: var(--ink-500);
+  }
+
+  .qf-assure svg {
+    color: var(--mint-600);
+    flex-shrink: 0;
   }
 
   .quote-grid {

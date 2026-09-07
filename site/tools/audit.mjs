@@ -94,6 +94,7 @@ for (const p of PAGES) {
         w: i.getAttribute('width'),
         h: i.getAttribute('height'),
         loading: i.getAttribute('loading'),
+        decorative: i.getAttribute('aria-hidden') === 'true',
         broken: i.complete && i.naturalWidth === 0,
       })),
       text: document.querySelector('.site-content')?.innerText ?? '',
@@ -142,7 +143,10 @@ for (const p of PAGES) {
   // images
   for (const img of data.images) {
     if (img.broken) report.brokenAssets.push(`${p} img ${img.src}`);
-    if (img.alt === null || img.alt.trim() === '') report.emptyAlts.push(`${p} ${img.src}`);
+    // alt="" plus aria-hidden is the correct markup for a decorative image.
+    if (!img.decorative && (img.alt === null || img.alt.trim() === '')) {
+      report.emptyAlts.push(`${p} ${img.src}`);
+    }
     if (!img.w || !img.h) report.imagesWithoutDimensions.push(`${p} ${img.src}`);
   }
 
