@@ -17,6 +17,9 @@ dist/
 .DS_Store
 *.log
 
+# macOS writes an AppleDouble sidecar beside every file on the exFAT drive
+._*
+
 # --- secrets ---
 .env
 .env.*
