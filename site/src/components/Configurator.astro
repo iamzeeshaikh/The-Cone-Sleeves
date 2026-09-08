@@ -18,6 +18,8 @@ import { FACTS } from '../data/types';
 interface Props {
   /** Pre-selects the product, e.g. 'Ice Cream Cone Sleeves'. */
   product?: string;
+  /** Small label above the heading. */
+  eyebrow?: string;
   heading?: string;
   intro?: string;
   /** Anchor id, so a page can link to it. */
@@ -26,9 +28,10 @@ interface Props {
 
 const {
   product = '',
-  heading = 'Build your packaging spec',
+  eyebrow = 'Packaging designer',
+  heading = 'Design your packaging',
   intro =
-    'Five short steps. Answer what you know, skip what you do not, and we come back with a written price and a free dieline.',
+    'Build the specification step by step — product, size, board, print and finish — and send it for a quote. Five short steps, no account.',
   id = 'configurator',
 } = Astro.props as Props;
 
@@ -68,9 +71,9 @@ const ADDONS = [
 ---
 
 <section class="cfg-section" id={id}>
-  <div class="container">
+  <div class="cfg-wrap">
     <div class="cfg-head">
-      <p class="eyebrow eyebrow-line">Quote configurator</p>
+      <p class="eyebrow eyebrow-line">{eyebrow}</p>
       <h2>{heading}</h2>
       <p class="cfg-intro">{intro}</p>
     </div>
@@ -374,8 +377,15 @@ const ADDONS = [
     border-block: 1px solid var(--line-soft);
   }
 
+  /* Full width on purpose. The 1200px container is a reading measure; this is
+     a grid of choices and it reads better with the room. */
+  .cfg-wrap {
+    width: 100%;
+    padding-inline: clamp(1.1rem, 4vw, 3.5rem);
+  }
+
   .cfg-head {
-    max-width: 60ch;
+    max-width: 62ch;
     margin-bottom: var(--sp-6);
   }
 
@@ -388,7 +398,7 @@ const ADDONS = [
   .cfg {
     display: grid;
     gap: clamp(1.25rem, 3vw, 2rem);
-    grid-template-columns: minmax(0, 1.55fr) minmax(0, 0.45fr);
+    grid-template-columns: minmax(0, 1fr) minmax(260px, 320px);
     align-items: start;
   }
 
@@ -487,7 +497,7 @@ const ADDONS = [
   .cfg-cards {
     display: grid;
     gap: var(--sp-4);
-    grid-template-columns: repeat(auto-fit, minmax(max(170px, (100% - 3 * var(--sp-4)) / 4), 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
   }
 
   .cfg-card {
