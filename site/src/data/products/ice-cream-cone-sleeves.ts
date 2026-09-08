@@ -22,7 +22,14 @@ export const product: Product = {
   quickAnswer:
     'Ice cream cone sleeves are printed paper wraps that slide onto a cone to insulate the hand, catch drips and display your branding. The Cone Sleeves prints them on food-safe kraft, white SBS or recycled board in any size, from a minimum of 500 pieces per design, with a free digital proof and 6–7 business day production.',
 
+  // The kraft shot that used to lead here is near-identical to the hero on
+  // /custom-cardboard-cone-sleeves/, and the two sit next to each other in the
+  // menu. The lead image now actually shows ice cream.
   images: [
+    {
+      src: '/media/lib/custom-ice-cream-cone-sleeves/custom-ice-cream-cone-sleeves.jpg',
+      alt: 'Green and red striped cone sleeve wrapped around a soft-serve ice cream',
+    },
     {
       src: '/media/2023/11/Custom-Cardboard-Cone-Sleeves.jpg',
       alt: 'Printed cardboard ice cream cone sleeves wrapped around waffle cones',

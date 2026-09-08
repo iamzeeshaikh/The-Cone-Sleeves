@@ -503,7 +503,10 @@
 .drawer-sub a {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
+  /* The parent rule spreads its children apart to push the chevron right; a
+     sub-item is a thumbnail and a label that belong next to each other. */
+  justify-content: flex-start;
+  gap: 0.7rem;
   padding: 0.45rem 0.25rem;
   font-weight: 500;
   color: var(--ink-600);
