@@ -13,6 +13,11 @@ interface Props {
   heading?: string;
   intro?: string;
   compact?: boolean;
+  /**
+   * Gives the card a dark header band and a heavier shadow. Use it where the
+   * form is the point of the section rather than one thing among several.
+   */
+  featured?: boolean;
 }
 
 const {
@@ -20,10 +25,11 @@ const {
   heading = 'Get a free quote',
   intro = 'Send your size, quantity and artwork. We reply with a written price and a free digital proof.',
   compact = false,
+  featured = false,
 } = Astro.props as Props;
 ---
 
-<form class="quote-form" method="POST" action="/api/contact/" data-quote-form>
+<form class:list={['quote-form', featured && 'is-featured']} method="POST" action="/api/contact/" data-quote-form>
   {/* Field ids match the Elementor form the endpoint already understands. */}
   <input type="hidden" name="form_id" value="2725c75" />
   <input type="hidden" name="source_page" value={Astro.url.pathname} />
@@ -36,6 +42,7 @@ const {
     </div>
   </div>
 
+  <div class="qf-body">
   <div class="quote-grid" data-compact={String(compact)}>
     <div class="field">
       <label for="qf-name">Your name</label>
@@ -99,6 +106,7 @@ const {
     <li><Icon name="check" size={13} />Free dieline and digital proof</li>
     <li><Icon name="check" size={13} />No obligation, no spam</li>
   </ul>
+  </div>
 </form>
 
 <style>
@@ -167,6 +175,42 @@ const {
   .qf-assure svg {
     color: var(--mint-600);
     flex-shrink: 0;
+  }
+
+  /* Featured: the form is the point of the section, so it gets a dark header
+     band and a heavier shadow instead of sitting quietly beside the copy. */
+  .quote-form.is-featured {
+    padding: 0;
+    overflow: hidden;
+    border-color: transparent;
+    box-shadow:
+      0 2px 6px rgb(60 40 30 / 0.06),
+      0 28px 60px -26px rgb(45 28 20 / 0.5);
+  }
+
+  .quote-form.is-featured .qf-head {
+    margin: 0;
+    padding: var(--sp-5) var(--sp-6);
+    border-bottom: 0;
+    background: var(--ink-900);
+    border-top: 4px solid var(--coral-500);
+  }
+
+  .quote-form.is-featured .qf-head h3 {
+    color: #fff;
+  }
+
+  .quote-form.is-featured .qf-head .form-note {
+    color: var(--ink-300);
+  }
+
+  .quote-form.is-featured .qf-badge {
+    background: rgb(255 255 255 / 0.1);
+    color: var(--coral-300);
+  }
+
+  .quote-form.is-featured .qf-body {
+    padding: var(--sp-6);
   }
 
   .quote-grid {
