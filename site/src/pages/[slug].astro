@@ -24,6 +24,15 @@ import { productBySlug } from '../data/nav';
 import { SITE } from '../data/site';
 import { abs, faqNode, stripTags, BUSINESS_ID, ORG_ID } from '../lib/seo';
 import schemaData from '../data/product-schema.json';
+import {
+  PRICE_CURRENCY,
+  UNIT_PRICE_SCHEMA,
+  priceValidUntil,
+  unitPriceLabel,
+} from '../data/pricing';
+
+/** Computed once per build so the offer never carries a stale date. */
+const PRICE_VALID_UNTIL = priceValidUntil();
 
 export function getStaticPaths() {
   return ALL_PRODUCTS.map((p) => ({ params: { slug: p.slug } }));
@@ -58,25 +67,35 @@ const productNode = {
   name: product.name,
   description: product.quickAnswer,
   image: product.images.map((i) => abs(i.src)),
-  sku: legacy.sku,
-  mpn: legacy.sku,
+  ...(legacy.sku ? { sku: legacy.sku, mpn: legacy.sku } : {}),
   brand: { '@type': 'Brand', name: SITE.name },
   category: 'Food Packaging',
   material: 'Paperboard',
-  ...(legacy.price
-    ? {
-        offers: {
-          '@type': 'Offer',
-          url: abs(nav.path),
-          priceCurrency: 'USD',
-          price: legacy.price,
-          priceValidUntil: '2027-12-31',
-          availability: 'https://schema.org/InStock',
-          itemCondition: 'https://schema.org/NewCondition',
-          seller: { '@id': ORG_ID },
-        },
-      }
-    : {}),
+  /**
+   * The offer is UNCONDITIONAL. It used to be spread only when the product had
+   * a product-schema.json entry, so the 13 products added after the WordPress
+   * migration shipped a Product node with no offer at all and were ineligible
+   * for both Product snippets and Merchant listings. Any product without a
+   * legacy price falls back to the site-wide unit price.
+   */
+  offers: {
+    '@type': 'Offer',
+    url: abs(nav.path),
+    priceCurrency: PRICE_CURRENCY,
+    price: legacy.price ?? UNIT_PRICE_SCHEMA,
+    priceValidUntil: PRICE_VALID_UNTIL,
+    availability: 'https://schema.org/InStock',
+    itemCondition: 'https://schema.org/NewCondition',
+    seller: { '@id': ORG_ID },
+    /* Quoting the published policy at /terms-conditions/ verbatim in structure:
+       custom-printed goods are not returnable for a change of mind. */
+    hasMerchantReturnPolicy: {
+      '@type': 'MerchantReturnPolicy',
+      applicableCountry: 'US',
+      returnPolicyCategory: 'https://schema.org/MerchantReturnNotPermitted',
+      merchantReturnLink: abs('/terms-conditions/'),
+    },
+  },
   ...(legacy.rating ? { aggregateRating: legacy.rating } : {}),
   ...(legacy.review ? { review: legacy.review } : {}),
 };
@@ -165,6 +184,13 @@ const schema = [
             ))
           }
         </ul>
+
+        {/* Rendered from the same constant the Offer reads, so the price in the
+            schema and the price the reader sees can never drift apart. */}
+        <p class="p-price">
+          <span class="p-price-figure">{unitPriceLabel(product.group)}</span>
+          <span class="p-price-note">Volume pricing from 500 units &middot; final price on your quote</span>
+        </p>
 
         <div class="p-actions">
           <a class="btn btn-primary btn-lg" href="#quote">
@@ -431,6 +457,25 @@ const schema = [
   .p-bullets svg {
     color: var(--mint-600);
     flex-shrink: 0;
+  }
+
+  .p-price {
+    margin: 0 0 var(--sp-5);
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  .p-price-figure {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--ink-900);
+    line-height: 1.2;
+  }
+
+  .p-price-note {
+    font-size: 0.86rem;
+    color: var(--ink-700);
   }
 
   .p-actions {
