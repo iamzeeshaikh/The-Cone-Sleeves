@@ -1,0 +1,927 @@
+{
+ "/": {
+  "h2": "More answers before you order sleeves",
+  "faqs": [
+   {
+    "q": "Can I order cone sleeves and food trays on one quote?",
+    "a": "Yes. Tell us every item you serve, from cone sleeves to burger bands and open trays, and we price them together on one written quote. Each item gets its own dieline built around it, and the same artwork can carry across the whole set."
+   },
+   {
+    "q": "Do I need an account before ordering custom cone sleeves?",
+    "a": "No account is needed and there is no design fee. Send the item, the quantity and any artwork you have, and a person reads the specification and replies with a written price and a free dieline for your cone, cup or burger."
+   },
+   {
+    "q": "Why does a stock size cone sleeve often fit badly?",
+    "a": "Cones vary more than most buyers expect. A waffle cone flares wide at the mouth, a sugar cone tapers the whole way down and a cake cone has near-parallel walls, so a wrap cut for one sits loose on another. We build each dieline around the cone you serve."
+   },
+   {
+    "q": "What changes the price of a custom cone sleeve run most?",
+    "a": "Quantity, the number of separate designs and lamination move a quote more than anything else. Press setup costs the same for a short or long run, so larger orders spread it thinner, and our guide on <a href=\"/blog/bulk-ordering-lead-times-and-moqs/\">how run size affects your quote</a> works through it."
+   }
+  ]
+ },
+ "/get-a-free-quote/": {
+  "h2": "Questions about getting your free quote",
+  "faqs": [
+   {
+    "q": "What details do I need to request a free sleeve quote?",
+    "a": "The item you serve, such as a cone type, cup size or burger height, plus the quantity, a rough date and any artwork you have. Answer what you know and skip the rest, and we follow up on anything missing before pricing."
+   },
+   {
+    "q": "Is a price calculated automatically when I use the packaging designer?",
+    "a": "No. The five steps build a written specification of product, size, board, print and finish. A person reads that specification and comes back with a written price, so nothing shown on screen is an estimate you have to second-guess."
+   },
+   {
+    "q": "Should I use the step-by-step designer or the long quote form?",
+    "a": "Either works, because both ask the same questions and land in the same inbox. The designer suits buyers who like to go one choice at a time, while the long form suits anyone who already knows the full specification."
+   },
+   {
+    "q": "Is the cutting dieline included when I ask for a quote?",
+    "a": "Yes. Once we have read your request we build the cutting dieline around your item at no charge. It is drawn to your actual cone, cup or burger rather than to a nearest-fit stock size, so the proof shows a true fit."
+   },
+   {
+    "q": "What happens after my quote request for sleeves is sent?",
+    "a": "We read the request and send a written price, then build the dieline and send a digital proof with a mock-up to approve. Printing starts only after approval and takes six to seven business days, or three to four on a rush."
+   },
+   {
+    "q": "Can I request a quote without finished artwork for my sleeves?",
+    "a": "Yes. A logo and an idea are enough to start. Our team lays out the sleeve or tray for you without a design fee, and you see the result as a digital proof before anything goes to press."
+   },
+   {
+    "q": "Can I describe my packaging by phone instead of a form?",
+    "a": "Yes. Calling or messaging and describing the item is often quicker than filling in a form. We still send the price in writing afterward, so you have the specification and the figures in one place to check."
+   },
+   {
+    "q": "Is there any obligation once I receive a written quote?",
+    "a": "None. There is no minimum quote value and no obligation to order. You can compare our written price with other suppliers, ask questions, or change the specification and request a revised figure."
+   },
+   {
+    "q": "Can my quote show prices at more than one quantity?",
+    "a": "Yes, and it is worth asking for. Pricing at two or three quantities shows where setup stops dominating the unit cost, which our <a href=\"/blog/bulk-ordering-lead-times-and-moqs/\">guide to lead times and minimums</a> explains in more detail."
+   },
+   {
+    "q": "How do I give sizes if I cannot measure my item?",
+    "a": "Send a photo of the cone, cup or burger with a ruler beside it, or post us a sample. Either is enough for us to build the dieline, and we confirm the fit on the proof before anything is printed."
+   }
+  ]
+ },
+ "/about/": {
+  "h2": "Questions about how The Cone Sleeves works",
+  "faqs": [
+   {
+    "q": "What does The Cone Sleeves make for food businesses?",
+    "a": "We print sleeves, wraps and trays for food eaten by hand, including cones, burgers, sandwiches, hot dogs, donuts and cups. Every piece is printed to your artwork and cut to your sizes, across 31 formats."
+   },
+   {
+    "q": "Why does The Cone Sleeves ask for a sample before quoting?",
+    "a": "We build the cutting template around the exact item you serve instead of offering a nearest stock size. A sample, or a photo with a ruler beside it, lets us measure the item so the finished sleeve fits the first time."
+   },
+   {
+    "q": "Does The Cone Sleeves print to order or sell pre-printed stock?",
+    "a": "Everything is made to order. There is no stock of pre-printed sleeves waiting to be sold, which keeps the minimum genuinely low and lets a small shop test a design without buying a pallet of it."
+   },
+   {
+    "q": "Who checks my artwork before it goes to the press?",
+    "a": "Our team does. If you send a print-ready PDF we check bleed, safe margins and color build. If you only have a logo and an idea, we lay the sleeve out ourselves, with no design fee and no artwork charge."
+   },
+   {
+    "q": "Will you tell me if a board is wrong for my food?",
+    "a": "Yes. If a finish will not survive what you serve, or a board is wrong for a greasy item, we say so before you order rather than after. That is easier for everyone than a reprint."
+   },
+   {
+    "q": "Will The Cone Sleeves steer me toward the most expensive finish?",
+    "a": "No. Uncoated kraft is often the right answer for a shop that leads on sustainability, and it costs less than a laminated sleeve. Our <a href=\"/blog/cone-sleeve-materials-explained/\">guide to sleeve materials</a> shows where each board makes sense."
+   },
+   {
+    "q": "How does The Cone Sleeves approach delivery dates on orders?",
+    "a": "We do not quote a delivery date we cannot hold. Production takes six to seven business days after proof approval, or three to four on a rush, and every order ships flat-packed with tracking."
+   },
+   {
+    "q": "Does The Cone Sleeves claim any packaging certifications?",
+    "a": "We do not claim certifications we do not have. If you need a specific standard or a local requirement met, tell us when you ask for a quote and we will say plainly whether we can meet it."
+   },
+   {
+    "q": "What does the approval step involve before sleeves are printed?",
+    "a": "You receive a digital proof showing the flat cutting layout and a mock-up of the design on the product. Nothing goes to press until you approve that proof in writing, so you can request changes first."
+   },
+   {
+    "q": "Will The Cone Sleeves say if another printer suits better?",
+    "a": "Yes. Tell us what you serve and how many you need. If we are not the right printer for that job, we will tell you, rather than quoting for work that would not suit our presses or your food."
+   }
+  ]
+ },
+ "/contact/": {
+  "h2": "Questions before you get in touch",
+  "faqs": [
+   {
+    "q": "What should I include for the fastest sleeve quote reply?",
+    "a": "The item size, such as cone type, cup size, burger height or tray capacity, plus the quantity, whether the order repeats, any board preference, your artwork or logo, and when you need the packaging in hand."
+   },
+   {
+    "q": "Can I send a photo of my cone instead of measurements?",
+    "a": "Yes. A photo of the cone or cup with a ruler beside it is enough for us to build the dieline. Send it with your quantity and we take the sizing from there, then confirm the fit on the proof."
+   },
+   {
+    "q": "Where do reorders, samples and artwork questions get handled?",
+    "a": "All of them land in the same inbox as quote requests. Use whichever channel suits you, and the same team picks up pricing, artwork checks, reorders and sample requests without passing you between departments."
+   },
+   {
+    "q": "Can I contact The Cone Sleeves on WhatsApp about an order?",
+    "a": "Yes, WhatsApp is one of the ways to reach us, alongside phone and email. It is handy for sending a quick photo of your cone, cup or burger with a ruler beside it so we can start on the dieline."
+   },
+   {
+    "q": "How quickly will I hear back after sending my details?",
+    "a": "Send the item size and the quantity and you will have a written price back quickly. Missing details slow things down, so include what you know, or <a href=\"/get-a-free-quote/\">request a written quote online</a> with every field laid out."
+   },
+   {
+    "q": "Should I say whether my sleeve order is one-off or repeating?",
+    "a": "Yes. Knowing whether the job is a one-off or a repeating order helps us plan the run. Approved dielines and artwork stay on file, so a repeat order skips setup and goes straight to proof confirmation."
+   },
+   {
+    "q": "Can I get in touch before choosing kraft, white or recycled board?",
+    "a": "Yes. A board preference helps but is not required. Tell us what you serve and how you want the packaging to feel, and we will suggest a stock, with the same artwork proofed on two boards if you want to compare."
+   },
+   {
+    "q": "Can I request sample sleeves when I get in touch?",
+    "a": "Yes. Sample requests go to the same inbox as quotes. Mention the item and the stocks you want to compare, such as kraft against white SBS, and we will follow up with you on what suits the job."
+   },
+   {
+    "q": "Is there a way to send my specification without writing an email?",
+    "a": "Yes. The five-step packaging designer writes out your specification as you answer, then sends it to the same inbox as the form, so we receive product, size, board, print and finish in one message."
+   },
+   {
+    "q": "What if I am unsure when I need the sleeves delivered?",
+    "a": "Give us a rough date and we will work back from it. Production runs six to seven business days after proof approval, or three to four on a rush, so proofing is usually the stage worth planning around."
+   }
+  ]
+ },
+ "/blog/": {
+  "h2": "Questions about our cone sleeve guides",
+  "faqs": [
+   {
+    "q": "Which guide should I read before my first cone sleeve order?",
+    "a": "Start with <a href=\"/blog/how-to-choose-cone-sleeve-size/\">how to choose cone sleeve size</a>, because fit decides whether staff actually use the sleeves. Then read the materials guide to settle the board before you prepare artwork."
+   },
+   {
+    "q": "Who are The Cone Sleeves blog guides written for?",
+    "a": "Shop owners buying printed packaging. They are short, specific guides on sizing, board, artwork and run sizes, written to help you order the right sleeve rather than to push you toward the most expensive one."
+   },
+   {
+    "q": "Which guide explains minimums, lead times and sleeve storage?",
+    "a": "Bulk Ordering Cone Sleeves: Lead Times, Minimums and Storage covers what drives lead time, why minimums exist and how much stock is sensible to hold, including how humidity affects board kept in a stockroom."
+   },
+   {
+    "q": "Is there a guide on whether printed cone sleeves pay off?",
+    "a": "Yes. Are Branded Cone Sleeves Worth It? looks at cost per serve, where the return comes from, and the cases where plain sleeves are the smarter choice, such as small volumes or a product name that may change."
+   },
+   {
+    "q": "Where can I learn to prepare print-ready sleeve artwork files?",
+    "a": "Preparing Artwork for Printed Sleeves: A Practical Checklist covers bleed, resolution, color mode, fonts and the dieline, along with the file mistakes that cause most reprints and proofing delays."
+   },
+   {
+    "q": "Which guide compares kraft, white SBS and recycled board?",
+    "a": "Cone Sleeve Materials Explained sets out grease resistance, print quality and cost for each stock, plus thickness and coatings, so you can match the board to what you serve before asking for a quote."
+   },
+   {
+    "q": "Do the blog guides cover kiddie and waffle cone sizing?",
+    "a": "Yes. The sizing guide covers standard, waffle, sugar and kiddie cones, including where to measure, why taper matters as much as diameter, and how to test grip in the shop before a full run."
+   },
+   {
+    "q": "How long does each cone sleeve guide take to read?",
+    "a": "Each guide is a five or six minute read. They are written to be finished in one sitting before you send a quote request, and most end with a short checklist or summary you can work from."
+   },
+   {
+    "q": "Can I get help if a sleeve guide leaves questions open?",
+    "a": "Yes. Send your item size and quantity and ask the question alongside them. The dieline and the digital proof are free either way, and a person reads every specification before replying."
+   },
+   {
+    "q": "Does the advice in the guides apply to burger and food sleeves?",
+    "a": "Much of it carries over. Measuring the item, choosing board for grease, setting artwork to a dieline and planning run sizes work the same way for burger, sandwich and hot dog sleeves as they do for cones."
+   }
+  ]
+ },
+ "/ice-cream-cone-sleeves/": {
+  "h2": "More questions about ice cream cone sleeves",
+  "faqs": [
+   {
+    "q": "Which finish should I pick for ice cream cone sleeves?",
+    "a": "Matte lamination gives a soft surface that hides fingerprints, gloss lifts color and photographs, spot UV picks out a logo, and foil reads as premium. Uncoated pairs naturally with kraft and takes a pencil or stamp for marking flavors."
+   },
+   {
+    "q": "Can I see my ice cream cone sleeve artwork on two boards?",
+    "a": "Yes. Ask for the same artwork proofed on kraft and on white SBS. Seeing the two side by side usually settles the choice in a minute, and there is no charge for the comparison."
+   }
+  ]
+ },
+ "/waffle-cone-sleeves/": {
+  "h2": "More questions about waffle cone sleeves",
+  "faqs": [
+   {
+    "q": "Where should my logo sit on a waffle cone sleeve?",
+    "a": "Put the logo at the center of the wrap and keep secondary text such as a website, handle or QR code away from the glued edge, because anything near the seam is foreshortened when the sleeve is rolled."
+   },
+   {
+    "q": "Do foil stamping and spot UV work on waffle cone sleeves?",
+    "a": "Yes, and they work well here. The waffle cone sleeve has the largest print panel in the cone range, so a foil or spot UV detail is big enough to register from a few feet away."
+   }
+  ]
+ },
+ "/custom-sugar-cone-sleeves/": {
+  "h2": "More questions about sugar cone sleeves",
+  "faqs": [
+   {
+    "q": "Can one dieline fit both my sugar and cake cones?",
+    "a": "Only when the two cones are within a few millimeters at the grip point. Otherwise the usual route is one design on two cuts, a tapered sugar wrap and a straight cake band, sharing artwork and setup. Send one of each and we will advise."
+   },
+   {
+    "q": "Where does the logo go on a tapered sugar cone sleeve?",
+    "a": "Set the main mark in the widest third of the wrap near the mouth end, where the panel is broadest, and run supporting text along the taper rather than across it so the converging edges never clip it."
+   }
+  ]
+ },
+ "/custom-cake-cone-sleeves/": {
+  "h2": "More questions about cake cone sleeves",
+  "faqs": [
+   {
+    "q": "Should I choose a sleeve or a cone holder for cake cones?",
+    "a": "If you pick one, pick the sleeve, because it touches the hand and leaves the building with your name on it. Holders solve carrying several cones, and many family shops pair sleeves with <a href=\"/ice-cream-cone-tray/\">printed trays for carrying several cones</a>."
+   },
+   {
+    "q": "Which finish suits cake cone sleeves served on a sunny patio?",
+    "a": "Uncoated is a sensible default, since a cake cone is usually eaten quickly and holds less ice cream. Add matte lamination if cones go out to an unshaded patio in summer, so the band keeps its shape for longer."
+   }
+  ]
+ },
+ "/custom-crepe-sleeves/": {
+  "h2": "More questions about custom crepe sleeves",
+  "faqs": [
+   {
+    "q": "Should I choose a crepe sleeve, foil wrap or paper cone bag?",
+    "a": "A printed sleeve holds the roll rigid, keeps the top visible and carries your artwork. Foil holds heat but hides the filling and takes almost no print, while a paper bag has no rigidity and works only as an outer carrier."
+   },
+   {
+    "q": "How far up the roll should a crepe sleeve reach?",
+    "a": "Past the widest part of the roll. A sleeve covering only the bottom third looks neat in a photograph but lets the fold open in the street, so we cut ours deep enough to hold the crepe closed."
+   },
+   {
+    "q": "Which board suits a creperie serving mostly sweet crepes?",
+    "a": "Coated white SBS is the usual default for a sweet-led creperie. It is the brightest ground, the easiest to keep grease-resistant, and it reproduces fruit photography and pastel menus cleanly, while kraft shows grease faster."
+   }
+  ]
+ },
+ "/custom-rolled-ice-cream-cone-sleeves/": {
+  "h2": "More questions about rolled cone sleeves",
+  "faqs": [
+   {
+    "q": "What measurements do you need for a rolled cone sleeve?",
+    "a": "Three numbers settle the dieline: the cone diameter at the rim, the height of the cone and the fill height above the rim. Send them with a photo of a filled cone beside a ruler and we cut a wrap that closes cleanly."
+   },
+   {
+    "q": "How should I lay out artwork for a rolled cone flavor range?",
+    "a": "Change the base color per flavor and keep the layout the same. It reads faster through a freezer lid than four different designs, and adding another flavor later is simple because the dieline is already on file."
+   },
+   {
+    "q": "What if I have not settled the fill height for rolled cones?",
+    "a": "Order the dieline against the largest fill height you might use. Trimming a rolled wrap down later is a small change, while adding height means producing a new cutting die, which takes time and adds setup."
+   }
+  ]
+ },
+ "/custom-paper-cone-sleeves/": {
+  "h2": "More questions about paper cone sleeves",
+  "faqs": [
+   {
+    "q": "Should I choose paper or board for my cone sleeves?",
+    "a": "Paper suits cones eaten within a few minutes of leaving the counter, since it is thin, cheaper and prints edge to edge. If cones travel further, <a href=\"/custom-cardboard-cone-sleeves/\">rigid cardboard cone sleeves</a> absorb more melt before softening."
+   },
+   {
+    "q": "Where should I measure a cone for a paper sleeve?",
+    "a": "Measure the outside diameter of the cone where the sleeve will sit, usually about 25 mm below the rim, and send that figure with your quote request. If you would rather not measure, post us two cones and we do it."
+   },
+   {
+    "q": "Can paper and board cone sleeves share one dieline?",
+    "a": "Yes. Plenty of shops run paper for everyday flavors and a heavier board for a signature cone, and both share the same dieline once we have measured your cone, so the fit stays identical across the two."
+   }
+  ]
+ },
+ "/custom-cardboard-cone-sleeves/": {
+  "h2": "More questions about cardboard cone sleeves",
+  "faqs": [
+   {
+    "q": "Is a heavier cardboard cone sleeve always the better choice?",
+    "a": "No. A very heavy sleeve on a small kids cone is stiff enough to crack the wafer as staff push it in. We match board weight to the cone and to how long customers hold it, and the quote names one specific weight."
+   },
+   {
+    "q": "Why is two-color printing popular on cardboard cone sleeves?",
+    "a": "Two mixed inks carry a brand mark and a background tint at a cost a small shop can manage. Flat areas stay flat and edges stay hard, even on kraft, though photographs still need full four-color printing."
+   },
+   {
+    "q": "Can I run kraft and white cardboard sleeves on one order?",
+    "a": "Yes. Running both boards on the same dieline is straightforward, such as kraft for an artisan line and white SBS for a mainstream one, and pricing works out close to a single-board order of the same total quantity."
+   }
+  ]
+ },
+ "/custom-eco-friendly-cone-sleeves/": {
+  "h2": "More questions about recycled cone sleeves",
+  "faqs": [
+   {
+    "q": "What artwork works best on recycled board cone sleeves?",
+    "a": "One or two flat inks, generous open space and type set slightly heavier than usual. Recycled fiber is a little gray and flecked, so photographic artwork is the thing to avoid, because process dots break up on the fleck."
+   },
+   {
+    "q": "Can these cone sleeves meet my local authority's packaging rules?",
+    "a": "Send the specific requirement with your quote request. We will either meet it and say so plainly, or tell you that we cannot, rather than printing a claim on the sleeve that your local rules do not support."
+   },
+   {
+    "q": "Can I order matching cone trays with recycled board sleeves?",
+    "a": "Yes. Our <a href=\"/ice-cream-cone-tray/\">kraft trays that carry several cones</a> run on the same unbleached board and can be quoted in the same order, and one artwork file supplies the mark for both."
+   }
+  ]
+ },
+ "/custom-ice-cream-cone-wrappers/": {
+  "h2": "More questions about ice cream cone wrappers",
+  "faqs": [
+   {
+    "q": "Should I choose foil or plain paper cone wrappers?",
+    "a": "Foil lamination blocks moisture, odor and light, which matters for cones stored in a mixed freezer cabinet. For cones sold the same day neither barrier matters much, so plain paper is the sensible, lower-cost specification."
+   },
+   {
+    "q": "Which wrapper cut is easiest for hand wrapping filled cones?",
+    "a": "A petal cut, with shallow scallops around the edge, folds into itself and sits flatter than a plain circle. It forgives a rushed twist, which is why we usually recommend it when cones are wrapped by hand."
+   },
+   {
+    "q": "Which colors read best on metallic foil cone wrappers?",
+    "a": "Flat, saturated blocks of color read very well on foil, and dark colors gain depth. Light colors look washed out and soft pastels rarely work, because the ink sits on a reflective surface rather than white board."
+   }
+  ]
+ },
+ "/custom-food-sleeves/": {
+  "h2": "More questions about custom food sleeves",
+  "faqs": [
+   {
+    "q": "How do I pick the right food sleeve for my menu?",
+    "a": "Pick by shape first and by mess second. Decide whether the item is round and stacked, long and thin, or soft and rolled, then whether anything runs out of it while someone eats, and those answers set the dieline and coating."
+   },
+   {
+    "q": "When should I use a food tray instead of a food sleeve?",
+    "a": "A tray takes over when there is more than one item, or the food will not stand up alone, such as loaded fries or a burger with sides. For those, our <a href=\"/custom-food-trays/\">open food trays for counters</a> carry more print area too."
+   }
+  ]
+ },
+ "/custom-burger-sleeves/": {
+  "h2": "More questions about custom burger sleeves",
+  "faqs": [
+   {
+    "q": "How tall should a printed burger sleeve band be?",
+    "a": "The band should cover roughly the middle third of the stack, high enough to trap the patty, cheese and sauce and low enough to keep the top bun clear. Burger bands usually run about 40 to 70 mm tall."
+   },
+   {
+    "q": "Which board works best for a juicy smash burger sleeve?",
+    "a": "Laminated white SBS resists grease and keeps artwork crisp through the meal. Uncoated kraft absorbs and darkens where the patty sits, which some shops like, and recycled board sits between the two for a single patty."
+   },
+   {
+    "q": "Should I order burger sleeves, burger trays or both?",
+    "a": "The sleeve holds the build in a hand and travels well, while a tray holds the burger with fries on a counter. Plenty of kitchens pair sleeves with <a href=\"/custom-burger-trays/\">printed burger trays for counter service</a> as a matched set."
+   }
+  ]
+ },
+ "/custom-sandwich-sleeves/": {
+  "h2": "More questions about custom sandwich sleeves",
+  "faqs": [
+   {
+    "q": "Should a deli choose straight band or angle-cut sandwich sleeves?",
+    "a": "Delis with a chiller almost always want the angle cut, because the exposed cut face of the sub sells the sandwich. Cafes serving to the table usually suit the plain band, and many kitchens order both on one artwork."
+   },
+   {
+    "q": "What is a stepped tuck-close sandwich sleeve used for?",
+    "a": "A stepped or tuck-close sleeve has a taller back panel with a folded front. It holds the halves of a loaded club sandwich tightly together while still letting the pack stand upright in a display."
+   },
+   {
+    "q": "How should text sit on an angle-cut sandwich sleeve?",
+    "a": "Align key text to the diagonal. Type set parallel to the bottom edge looks crooked against the angled cut, so we usually set it along the angle instead and show you the result on the digital proof."
+   }
+  ]
+ },
+ "/custom-hot-dog-sleeves/": {
+  "h2": "More questions about hot dog sleeves",
+  "faqs": [
+   {
+    "q": "Which hot dog sleeve format suits a loaded chili dog?",
+    "a": "A closed-bottom sleeve. The folded, sealed base holds drips from chili or slaw and lets the sleeve stand in a carrier or cup holder, which is why loaded-dog operations settle on it over an open band."
+   },
+   {
+    "q": "Which finish keeps mustard stains off hot dog sleeve artwork?",
+    "a": "Gloss or matte lamination puts a film over the printed face, which stops mustard and melted cheese staining the artwork and keeps the sleeve rigid. Uncoated board is the least forgiving option against condiments."
+   }
+  ]
+ },
+ "/custom-donut-sleeves/": {
+  "h2": "More questions about custom donut sleeves",
+  "faqs": [
+   {
+    "q": "Which donut sleeve style suits a counter selling single rings?",
+    "a": "The half wrap. Board sits around the lower half with an open top, so staff slide it on quickly and the glaze stays on show. Filled donuts usually move to a full band, which stops them rolling."
+   },
+   {
+    "q": "How small can text be on a printed donut sleeve band?",
+    "a": "Type below roughly 7 pt disappears once the board wraps. Keep the logo away from the glue seam, and run any website, handle or hours as a small block on the back rather than spreading them around the band."
+   }
+  ]
+ },
+ "/custom-dessert-sleeves/": {
+  "h2": "More questions about custom dessert sleeves",
+  "faqs": [
+   {
+    "q": "Which dessert sleeve shape stops a cake slice tipping over?",
+    "a": "An L-fold with a base. The folded floor takes the weight under the slice, so it does not tip onto its frosted face on the walk home, and it makes a soft, layered dessert transportable at all."
+   },
+   {
+    "q": "Should I choose a dessert sleeve, box or tray for takeaway?",
+    "a": "A sleeve shows the dessert and reads as presentation. A box wins when the item is fragile in every direction or traveling far, and a tray wins when someone carries several items or eats standing up at an event."
+   }
+  ]
+ },
+ "/custom-coffee-sleeves/": {
+  "h2": "More questions about custom coffee sleeves",
+  "faqs": [
+   {
+    "q": "Should I choose corrugated or flat board coffee sleeves?",
+    "a": "Corrugated sleeves trap air in the flutes and suit single-wall cups poured hot. Flat cardstock bands print sharper and take foil or spot UV well but insulate less, so they suit double-walled cups and cooler drinks."
+   },
+   {
+    "q": "How many coffee sleeve sizes does a typical cafe menu need?",
+    "a": "Most shops end up with two sleeve sizes rather than four, one covering the small cups and one for the large. Tell us the cups on your menu and we will say which combination fits them best."
+   }
+  ]
+ },
+ "/custom-beverage-sleeves/": {
+  "h2": "More questions about custom beverage sleeves",
+  "faqs": [
+   {
+    "q": "Which lamination works best on a sweating smoothie cup sleeve?",
+    "a": "Matte lamination gives the same moisture barrier as gloss with a soft, less slippery surface, so it grips better on a sweating cup. That is why most bubble tea and smoothie sleeves end up with a matte finish."
+   },
+   {
+    "q": "Are cold drink sleeves made heavier than hot cup sleeves?",
+    "a": "Usually, yes. A sleeve that is fine when dry can buckle once it is wet and squeezed, so cold drink sleeves are normally run on heavier board than an equivalent hot cup band."
+   }
+  ]
+ },
+ "/custom-pizza-slice-sleeves/": {
+  "h2": "More questions about pizza slice sleeves",
+  "faqs": [
+   {
+    "q": "What is the difference between a pizza slice sleeve and wedge box?",
+    "a": "A sleeve is an open holder the slice slides into, which is quickest for staff and cheapest per piece. A wedge box closes over the top, which suits delivery and stops the slice sliding out inside a bag."
+   },
+   {
+    "q": "What measurements do you need for a pizza slice holder?",
+    "a": "The length of the slice from crust to tip and the width of the crust end. A pie cut into six gives a very different slice from the same pie cut into eight, so send both figures or post us a template."
+   },
+   {
+    "q": "Why use grease-resistant board instead of a plastic liner for slices?",
+    "a": "Treated board handles a hot, oily slice without the translucent patch, while a plastic liner makes the holder harder to recycle and adds little performance at this size. Some counters pair holders with <a href=\"/custom-food-trays/\">open board trays for counter service</a>."
+   },
+   {
+    "q": "Do I need heavier board for a pepperoni slice counter?",
+    "a": "Possibly. If your slices are unusually oily, mention it in your inquiry. There is a heavier grade that costs a little more, and it earns its keep on a pepperoni counter in a way it does not on a margherita one."
+   }
+  ]
+ },
+ "/custom-fries-sleeves/": {
+  "h2": "More questions about custom fries sleeves",
+  "faqs": [
+   {
+    "q": "Should I serve fries in a scoop, carton or cone?",
+    "a": "A scoop is fastest to fill and shows the fries. A squared carton holds more, stands in a bag and keeps heat longer, so it suits delivery. A cone is cheap and distinctive for walking crowds but awkward to set down."
+   },
+   {
+    "q": "Why size a fries holder to portion weight, not size name?",
+    "a": "Names like regular and large mean nothing between suppliers. Tell us the cooked weight you serve and we size the holder so a correct portion reaches the rim, rather than looking mean in an oversized carton."
+   },
+   {
+    "q": "Does photographic artwork work well on a printed fries sleeve?",
+    "a": "Usually not at small sizes. A picture of fries on a holder that is already full of fries adds little, so flat brand color with a strong logo reads better across a counter and holds up once the oil warms."
+   },
+   {
+    "q": "Can I order regular and large fries sleeves together?",
+    "a": "Yes, and running both dielines together in one order is cheaper than two separate orders later. Both stay on file afterward, so a reprint of either size needs nothing more than a quantity."
+   }
+  ]
+ },
+ "/custom-taco-sleeves/": {
+  "h2": "More questions about custom taco sleeves",
+  "faqs": [
+   {
+    "q": "How do I measure hard taco shells for a printed sleeve?",
+    "a": "Measure the shell across its widest point and its height when standing, then send both figures. If you use more than one shell size, we cut two dielines in the same order instead of compromising on one."
+   },
+   {
+    "q": "Why do soft tortilla tacos need a looser sleeve cut?",
+    "a": "Soft tortillas are filled before they are placed, and a tight sleeve squeezes the filling out of the back. A slightly looser cut avoids that, and the proof lets you test it with a real taco before the run is printed."
+   },
+   {
+    "q": "Should I order single or double taco holders for my counter?",
+    "a": "A double holds two tacos side by side, which is what most customers order, and it removes the need for a tray underneath. Singles are cheapest per piece and suit menus where tacos are priced individually."
+   },
+   {
+    "q": "Can taco sleeves match my fries scoops and loaded sides?",
+    "a": "Yes. Kitchens serving loaded sides alongside tacos often order <a href=\"/custom-fries-sleeves/\">printed scoops for fries and sides</a> at the same time, so the whole tray carries one brand and one board specification."
+   }
+  ]
+ },
+ "/custom-popcorn-sleeves/": {
+  "h2": "More questions about custom popcorn sleeves",
+  "faqs": [
+   {
+    "q": "Should I choose popcorn bags, tubs or printed tub sleeves?",
+    "a": "A flat bag is cheapest and stores in little space. An open tub costs more but stands up and survives being passed along a row, while a printed sleeve over a plain tub lets the artwork change without reprinting the tub."
+   },
+   {
+    "q": "How do I size popcorn holders so portions look generous?",
+    "a": "Tell us the volume you serve, in liters or cups, and we cut the holder so a proper portion reaches the rim. A full holder feels generous, while the same amount in a larger carton feels mean."
+   },
+   {
+    "q": "Can one board handle both salted and caramel popcorn?",
+    "a": "Usually, yes. Tell us you sell both and we will normally recommend one board that copes with butter and with sticky sugar coatings, so you are not holding two lines of stock in a small back room."
+   },
+   {
+    "q": "Can popcorn holders match my printed drink cup sleeves?",
+    "a": "Yes. Sites that serve drinks often order popcorn holders with matching <a href=\"/custom-beverage-sleeves/\">printed sleeves for cold drink cups</a>, so a combo on a tray looks like one product rather than two."
+   }
+  ]
+ },
+ "/custom-pastry-sleeves/": {
+  "h2": "More questions about custom pastry sleeves",
+  "faqs": [
+   {
+    "q": "Why do bakeries use a pastry sleeve and tray, not a box?",
+    "a": "A one-piece printed box means every design change is a full reprint. With a sleeve and tray, the plain tray never changes and only the printed band is reordered when the season does."
+   },
+   {
+    "q": "How tight should a pastry sleeve fit over its inner tray?",
+    "a": "The tolerance is small, usually a millimeter or two, and depends on the board weight of both parts. We cut both dielines together and proof them as a matched pair, so you can slide one over the other first."
+   },
+   {
+    "q": "Is foil stamping worth adding to a printed pastry sleeve?",
+    "a": "On a matte laminated sleeve, a small foil mark reads as expensive in a way printed gold never does, and it costs less than most people assume. The quote prices the plain version alongside so you can compare."
+   },
+   {
+    "q": "Can one inner tray size cover several pastry product lines?",
+    "a": "Yes, as long as the footprint matches. One tray size can cover three product lines, with the printed sleeves telling them apart on the shelf, which keeps tray stock simple for a small bakery."
+   }
+  ]
+ },
+ "/custom-food-trays/": {
+  "h2": "More questions about custom food trays",
+  "faqs": [
+   {
+    "q": "Should I choose glued, foot-lock or double wall food trays?",
+    "a": "Glued trays arrive ready to use and suit a counter with shelf storage. Foot-lock trays ship flat and fold in seconds, which suits trucks and events, and double wall gives a stiffer rim for heavy sharing portions."
+   },
+   {
+    "q": "Should I print the inside base of a custom food tray?",
+    "a": "Yes. Customers look at the inside base for the length of a meal, while the outside walls face away from them. We print the base, not just the walls, so your logo stays in view while people eat."
+   }
+  ]
+ },
+ "/custom-burger-trays/": {
+  "h2": "More questions about custom burger trays",
+  "faqs": [
+   {
+    "q": "How tall should the walls be on a burger tray?",
+    "a": "About an inch gives a plated look with the burger fully visible. An inch and a half hides more of the food but stops loose fries escaping, and we can proof both heights so you can test a real burger."
+   },
+   {
+    "q": "When do burger trays need a double-wall rim?",
+    "a": "It is worth asking for when a double-stack burger and fries leave your pass carried by one edge. That is a lot of weight on a single span, and the folded rim keeps the tray stiff on the way to the table."
+   }
+  ]
+ },
+ "/custom-hot-dog-trays/": {
+  "h2": "More questions about custom hot dog trays",
+  "faqs": [
+   {
+    "q": "Should I serve hot dogs in a tray or a sleeve?",
+    "a": "Use a tray when the dog is dressed with chili, cheese sauce, slaw or onions, since it needs walls and a floor. For a simple dog eaten walking, <a href=\"/custom-hot-dog-sleeves/\">printed hot dog sleeves</a> are faster to load and use less board."
+   },
+   {
+    "q": "Why does a footlong hot dog tray need heavier board?",
+    "a": "The longer floor wants to flex in the middle when the tray is picked up by one end. A slightly heavier board keeps it from sagging under a loaded footlong, so toppings stay put on the walk to a seat."
+   }
+  ]
+ },
+ "/custom-waffle-trays/": {
+  "h2": "More questions about custom waffle trays",
+  "faqs": [
+   {
+    "q": "Which tray shape suits Liege waffles with pearl sugar?",
+    "a": "A compact tray with slightly higher walls. Liege waffles are smaller, rounder, denser and stickier than Belgian squares, and the higher wall keeps the caramelized sugar off your customers' hands."
+   },
+   {
+    "q": "Which finish photographs best on a printed waffle tray?",
+    "a": "Matte lamination, because it kills reflections under overhead lights and phone flashes. Gloss deepens color but bounces light, and spot UV on a matte tray makes a logo catch the light in one place only."
+   }
+  ]
+ },
+ "/ice-cream-cone-tray/": {
+  "h2": "More questions about ice cream cone trays",
+  "faqs": [
+   {
+    "q": "Which cone tray layout suits a family order at the counter?",
+    "a": "Four holes is the family size and the most common order. Two by two is the steadiest arrangement, while a single row of four carries more easily through a crowd but needs a stiffer board."
+   },
+   {
+    "q": "Can an ice cream cone tray have a raised handle panel?",
+    "a": "Yes. A raised center panel between the holes gives the tray a handle and a second printed surface at eye level. Spot UV or foil is worth considering there, since that panel is seen while the tray is carried."
+   }
+  ]
+ },
+ "/custom-snack-trays/": {
+  "h2": "More questions about custom snack trays",
+  "faqs": [
+   {
+    "q": "Are shallow snack trays the right pick for wings and churros?",
+    "a": "Yes. A shallow tray suits dry items such as wings or churros, where the appeal is seeing the whole portion at once. Deep trays are best kept for sharers and for anything that travels in a delivery bag."
+   },
+   {
+    "q": "What is the difference between a snack tray and a boat?",
+    "a": "A tray is open with four low walls. A boat has raised ends and lower sides, which suits a hot dog or a sub, while a sleeve is a band that wraps a product rather than containing it."
+   },
+   {
+    "q": "Why do mixed menus often use two-compartment snack trays throughout?",
+    "a": "When a menu mixes wet and dry items, managing a single line of stock is worth more than the small saving on the simpler shape, so one two-compartment tray ends up covering both nachos and dry sides."
+   },
+   {
+    "q": "Can snack trays share a board with burger meal trays?",
+    "a": "Yes. Sites running a full fast-food menu often order snack trays alongside <a href=\"/custom-burger-trays/\">printed trays sized for a burger meal</a>, since the two share a board specification and arrive in the same delivery."
+   }
+  ]
+ },
+ "/custom-combo-meal-trays/": {
+  "h2": "More questions about combo meal trays",
+  "faqs": [
+   {
+    "q": "Should combo meal trays use corrugated or solid board?",
+    "a": "It depends how far the tray travels. If a customer carries it to a car, use corrugated, which carries weight without flexing. For a short trip from counter to table, smoother solid board is enough and prints sharper."
+   },
+   {
+    "q": "How do you stop combo meal tray handles from tearing?",
+    "a": "We build a double-thickness panel into the dieline at each handle, so the load spreads across the fold rather than pulling on a single cut edge. It costs nothing extra in material and keeps a loaded tray intact."
+   },
+   {
+    "q": "Is a board insert worth adding to a combo meal tray?",
+    "a": "Inserts earn their cost when a drink is included, because an unsecured cup is what turns a delivered meal into a complaint. A simple insert with two or three wells covers most menus, and we quote with and without."
+   },
+   {
+    "q": "What works better than side handles for heavy catering platters?",
+    "a": "A folding carry panel that closes over the top. It handles very heavy platters better than side handles, and the proof lets you load one and test it before you commit to the full run."
+   }
+  ]
+ },
+ "/custom-dessert-trays/": {
+  "h2": "More questions about custom dessert trays",
+  "faqs": [
+   {
+    "q": "Should I choose scalloped or straight-walled dessert trays?",
+    "a": "Counters handing desserts over directly tend to prefer the scallop, which reads as patisserie and photographs well. Sites with a display cabinet usually pick straight walls, which nest and stack without crushing."
+   },
+   {
+    "q": "How do I size a dessert tray for waffles and cake slices?",
+    "a": "Send the plate you serve on, or a photo of a finished dessert beside a ruler. A loaded waffle needs a long tray with room for fruit, while a cake slice needs a short, narrow footprint so it does not slide."
+   },
+   {
+    "q": "Can a printed dessert tray liner change with my seasonal menu?",
+    "a": "Yes. The liner can change with a seasonal menu while the tray stays constant, much as a sleeve works on a bakery box, and it gives you a second printed surface for far less than the tray itself."
+   },
+   {
+    "q": "Can dessert trays match my boxed patisserie packaging?",
+    "a": "Yes. Counters that also box desserts to go usually add <a href=\"/custom-pastry-sleeves/\">printed sleeves for boxed patisserie</a> on the same artwork, so trays and boxes read as one range on the counter."
+   }
+  ]
+ },
+ "/blog/how-to-choose-cone-sleeve-size/": {
+  "h2": "Cone sleeve sizing questions, answered",
+  "faqs": [
+   {
+    "q": "Which three cone measurements does the sizing guide recommend taking?",
+    "a": "The diameter across the open top, the diameter roughly 40 mm down from the rim, and the total height. The second measurement matters most, because that is where the sleeve actually grips the cone."
+   },
+   {
+    "q": "Why measure several cones from the same box before sizing?",
+    "a": "Baked cones are a food product, not a machined part, and a spread of two to three millimeters across a batch is normal. The guide advises sizing for the middle of that spread rather than the smallest cone."
+   },
+   {
+    "q": "What grip-point size do standard and waffle cones usually need?",
+    "a": "Standard cake or wafer cones usually take a sleeve in the 55 to 60 mm range at the grip point. Waffle cones are wider and more tapered, generally 65 to 75 mm, so they need a deeper taper."
+   },
+   {
+    "q": "How should a kiddie cone sleeve differ from a standard one?",
+    "a": "It should be shorter, so it does not swallow the cone and hide the ice cream, which is the part the customer is buying. The guide treats kiddie and mini cones as a sizing profile of their own."
+   },
+   {
+    "q": "Why does cone taper matter as much as rim diameter?",
+    "a": "Two cones can share a rim diameter and narrow at different rates. A sleeve cut for a gentle taper gaps along one edge on a steep cone and drips escape there, so send measurements at two heights."
+   },
+   {
+    "q": "How much should I size up a sleeve for dipped cones?",
+    "a": "By a couple of millimeters. A chocolate shell adds up to two millimeters of diameter and is fragile, so a sleeve that has to be forced on will crack the coating before the customer gets it."
+   },
+   {
+    "q": "Does a soft-serve swirl need a taller cone sleeve?",
+    "a": "Often, yes. Soft serve sits higher and wider than a scoop, so if your product regularly sits proud of the cone, a slightly taller sleeve protects the customer's hand from melt running down the outside."
+   },
+   {
+    "q": "How should I test a sample cone sleeve in the shop?",
+    "a": "Hand it to the person assembling cones at peak time. Check that it stays put when tilted, goes on in one motion, and still holds after ten minutes once condensation has softened the paper."
+   },
+   {
+    "q": "Can one middle-size sleeve cover scoop and waffle cones?",
+    "a": "The guide advises against it. A sleeve that half-fits both ends up used for neither, and two sizes cost less than people assume, because setup is shared and only the cutting die changes for <a href=\"/waffle-cone-sleeves/\">custom waffle cone sleeves</a>."
+   },
+   {
+    "q": "Can a cone sleeve be stretched to fit crepes or churros?",
+    "a": "No. Crepes, churros and loaded waffles need their own wrap rather than a stretched cone sleeve. A purpose-made crepe sleeve is a different shape entirely, with a flat base that a cone sleeve does not have."
+   }
+  ]
+ },
+ "/blog/cone-sleeve-materials-explained/": {
+  "h2": "Cone sleeve material questions, answered",
+  "faqs": [
+   {
+    "q": "Why does kraft board handle grease better than white board?",
+    "a": "Kraft fibers are longer and less processed than bleached board, so kraft holds up better against butter, chocolate and warm dough. That is why it appears so often on bakery items such as donut sleeves."
+   },
+   {
+    "q": "Can kraft cone sleeves print pure white or photographs well?",
+    "a": "Not well. Every ink sits on a warm brown base, so pale colors shift and pure white needs a white underlay. Bold one- or two-color designs work beautifully on kraft, while photographic art usually does not."
+   },
+   {
+    "q": "When is white SBS the safer board for cone sleeves?",
+    "a": "When your branding depends on a specific color or uses gradients, drop shadows or small reversed type. SBS gives a neutral, smooth base, though it shows grease marks more readily than kraft does."
+   },
+   {
+    "q": "Is recycled board consistent between separate cone sleeve print runs?",
+    "a": "Less so than other stocks. Color can shift slightly between runs and the rougher surface softens fine detail, so if two orders months apart must match exactly, know about the variation before committing."
+   },
+   {
+    "q": "What board thickness do most cone sleeves use?",
+    "a": "Most cone sleeves land between 14pt and 18pt, where a point is a thousandth of an inch. Too thin and the sleeve creases when applied, while too thick and it will not follow the cone's curve, so it gaps."
+   },
+   {
+    "q": "Why do coffee sleeves often use corrugated stock instead of flat board?",
+    "a": "Hot cups need insulation more than cones do. Corrugated or E-flute stock creates an air gap between the cup and the hand, which is why <a href=\"/custom-coffee-sleeves/\">printed coffee sleeves for hot cups</a> often use it."
+   },
+   {
+    "q": "How do gloss, matte and soft-touch sleeve coatings differ?",
+    "a": "Gloss lifts color and adds a little moisture resistance. Matte reduces glare and feels softer but scuffs more visibly, and soft-touch adds a noticeably premium feel at a cost to match."
+   },
+   {
+    "q": "Do coatings on food sleeves need to be food-safe?",
+    "a": "Any coating on a surface that touches food has to be food-safe, and the guide advises confirming it explicitly. Where a sleeve only touches the outside of a cone or wrapper, the requirement is looser."
+   },
+   {
+    "q": "How should I choose a sleeve board for a greasy product?",
+    "a": "Work backward from the product. For anything greasy or warm, start with kraft or a coated stock and check grease resistance first, then confirm with a physical sample printed with your actual artwork."
+   },
+   {
+    "q": "Can I compare several board stocks before ordering cone sleeves?",
+    "a": "Yes. The guide suggests asking for samples across two or three stocks with your quote, because board looks different under warm shop light and grease resistance cannot be judged from a photograph."
+   }
+  ]
+ },
+ "/blog/branded-cone-sleeves-worth-it/": {
+  "h2": "Branded cone sleeve questions, answered",
+  "faqs": [
+   {
+    "q": "Why judge branded cone sleeves by cost per serve?",
+    "a": "A total that sounds large is usually small per cone. Most printing cost is setup charged once, so the gap between plain and printed sleeves narrows sharply as volume rises and the setup spreads thinner."
+   },
+   {
+    "q": "Where does the return on printed cone sleeves come from?",
+    "a": "From impressions. A cone is carried for several minutes, often outdoors and in a group, so many people see your name at the moment they are watching someone enjoy your product."
+   },
+   {
+    "q": "Does shop location change whether branded cone sleeves pay off?",
+    "a": "Yes. A seafront or market-square shop whose customers walk away gets far more from branding than a food-court counter, where everyone already knows exactly where the ice cream came from."
+   },
+   {
+    "q": "When are plain cone sleeves the smarter choice for a shop?",
+    "a": "When you are testing a product whose name may change, when you supply white-label and the customer does not want your name, or when volume is so small that setup cost never amortizes."
+   },
+   {
+    "q": "Is one-color printing a sensible middle option for cone sleeves?",
+    "a": "Often. One-color printing costs substantially less than full color and, for a wordmark or simple logo, loses very little. Many recognizable food brands run one or two colors on packaging for that reason."
+   },
+   {
+    "q": "Can a sticker replace printing on plain cone sleeves?",
+    "a": "For low volumes, yes. Plain kraft on a good-quality stock looks intentional rather than cheap, and a well-designed sticker can carry the branding with far less commitment than a full print run."
+   },
+   {
+    "q": "What should I ask a supplier before ordering branded cone sleeves?",
+    "a": "Ask for pricing at three quantities to see where setup stops dominating, ask the reorder cost for the same design, and ask what happens if you want to change the artwork later."
+   },
+   {
+    "q": "How can a small shop tell if branded sleeves worked?",
+    "a": "Decide the evidence in advance. Watch for unprompted mentions, tags in photographs and people asking for the place with the branded cones, plus repeat visits tracked through a loyalty scheme."
+   },
+   {
+    "q": "What design choices make a printed cone sleeve more photogenic?",
+    "a": "High contrast, a legible name and a clean area free of small print. A cone attractive enough to be photographed puts your name in front of an audience you did not pay to reach."
+   },
+   {
+    "q": "Should I order branded sleeves for the demand I hope for?",
+    "a": "Order for the demand you have instead. Board absorbs humidity over time and an outgrown design in a stockroom is poor value, so ask for <a href=\"/get-a-free-quote/\">pricing across several quantities</a> before choosing a run."
+   }
+  ]
+ },
+ "/blog/artwork-setup-for-printed-sleeves/": {
+  "h2": "Sleeve artwork setup questions, answered",
+  "faqs": [
+   {
+    "q": "When should I ask for the dieline for sleeve artwork?",
+    "a": "Before you start designing. Designing to a guessed shape and adapting it later is where most layout problems begin, so get the template first and work to the cut line, folds and glue tab it shows."
+   },
+   {
+    "q": "What should stay clear of the folds and glue tab?",
+    "a": "Logos and body text. Anything placed across a fold distorts slightly and anything on the glue tab is hidden, and on a cone sleeve the taper also makes horizontal lines look curved once wrapped."
+   },
+   {
+    "q": "How much bleed does printed sleeve artwork need?",
+    "a": "Three millimeters is standard. Bleed extends the artwork past the cut line, so a slight shift during cutting does not leave a white sliver along the edge of some units in the run."
+   },
+   {
+    "q": "Why does a logo taken from my website print badly?",
+    "a": "Screens run at around 72 to 96 DPI, while print needs at least 300 DPI at final size. A logo pulled from a website is almost always too low-resolution, so it is worth having it redrawn as a vector."
+   },
+   {
+    "q": "Should I design printed sleeve artwork in RGB or CMYK?",
+    "a": "CMYK. Screens can show colors that ink on board cannot reproduce, such as bright oranges, vivid greens and electric blues, and converting at the last moment usually produces a dull surprise."
+   },
+   {
+    "q": "When should I specify a Pantone color for printed sleeves?",
+    "a": "When a brand color must be exact, which for most food brands it must. Spot colors are mixed to a standard rather than built from four inks, so they hold across reprints, especially on kraft."
+   },
+   {
+    "q": "Should I outline fonts or embed them in sleeve artwork?",
+    "a": "Either works. Outlining converts letters to shapes and guarantees how they look, but the text can no longer be edited, so keep an editable copy for yourself and send the outlined version."
+   },
+   {
+    "q": "How small can reversed-out text be on uncoated sleeve stock?",
+    "a": "Text below about 6pt reversed out of a dark background tends to fill in, particularly on uncoated stocks. Set small reversed type larger, or print it dark on a light ground so it stays legible."
+   },
+   {
+    "q": "What should I send alongside a print-ready PDF for sleeves?",
+    "a": "A flattened JPEG or PNG as a visual reference. When ordering several products together, such as cone sleeves and matching trays, send each as a separate file rather than several designs on one page."
+   },
+   {
+    "q": "How should I check a printed sleeve proof before approving it?",
+    "a": "Check it against the brief, read every word aloud, and wrap it around a real cone to confirm the folds. Then check color under your shop lighting, and <a href=\"/get-a-free-quote/\">request a free digital proof</a> when ready."
+   }
+  ]
+ },
+ "/blog/bulk-ordering-lead-times-and-moqs/": {
+  "h2": "Bulk sleeve ordering questions, answered",
+  "faqs": [
+   {
+    "q": "Which stage of a bulk sleeve order most often causes delays?",
+    "a": "Proofing. A job can sit waiting for approval far longer than it takes to print, so if you have a deadline, agree the proofing turnaround up front rather than assuming it will be quick."
+   },
+   {
+    "q": "Why is a reorder of the same sleeve usually faster?",
+    "a": "A new sleeve size needs a cutting die, which is a physical tool that takes time to produce. A reorder of an existing design skips that step entirely, so it moves to print sooner."
+   },
+   {
+    "q": "Why do printed sleeve orders have minimum quantities at all?",
+    "a": "Setting up a run costs roughly the same at any size, because plates are made, the press is set, color is matched and test sheets are discarded. The minimum is where the job makes sense for both sides."
+   },
+   {
+    "q": "How should I work out how many cone sleeves to order?",
+    "a": "Start from serves, not feeling. Take your busiest recent month, multiply by the months you want to cover, then add a margin for growth and for sleeves lost to damage or misapplication in service."
+   },
+   {
+    "q": "Should a seasonal ice cream shop order sleeves once a year?",
+    "a": "Often not. Ordering an annual quantity in March means storing most of it through months you need none. Splitting into two runs costs a little more per unit but frees cash and reduces storage risk."
+   },
+   {
+    "q": "How should cartons of cone sleeves be stored?",
+    "a": "Off the floor, away from exterior walls and out of direct sunlight, which fades ink. Paperboard absorbs moisture, so damp storage softens it while very dry air can make folds brittle. Use the oldest stock first."
+   },
+   {
+    "q": "How big a buffer of cone sleeves should I keep?",
+    "a": "However long a reorder takes, plus a margin. Set a physical reorder marker in the stack or a stock level in your system, and keep a few plain sleeves as an emergency backstop."
+   },
+   {
+    "q": "How should I inspect a pallet of sleeves on delivery?",
+    "a": "Open a carton from the middle, check the print against your approved proof, confirm the count matches the label, and look along the folds for cracking. Then test a handful on a real cone."
+   },
+   {
+    "q": "Why ask how long a supplier keeps artwork and dies?",
+    "a": "A supplier who retains your artwork and cutting dies makes reorders cheaper and faster. One who does not means paying setup again on every repeat run of the same sleeve."
+   },
+   {
+    "q": "What should I ask about quantities before committing to a sleeve run?",
+    "a": "Ask the price at your quantity and at double it. Doubling sometimes adds far less than expected, because you mostly pay for setup either way, so <a href=\"/get-a-free-quote/\">request a quote with quantity breaks</a>."
+   }
+  ]
+ }
+}

@@ -1,4 +1,5 @@
 ---
+import { withExtras } from '../lib/page-faqs';
 /**
  * Product page template — renders all 18 products.
  *
@@ -134,7 +135,7 @@ const groupLabel = { cone: 'Cone Sleeves', food: 'Food Sleeves', tray: 'Food Tra
 const schema = [
   productNode,
   serviceNode,
-  faqNode(product.faqs),
+  faqNode(withExtras(Astro.url.pathname, product.faqs)),
   {
     '@type': 'WebPage',
     '@id': `${abs(nav.path)}#webpage`,
@@ -376,7 +377,7 @@ const schema = [
       <p class="eyebrow eyebrow-line" style="justify-content:center">Questions</p>
       <h2 class="center" style="margin-bottom:var(--sp-6)">{nav.label}: common questions</h2>
       {
-        product.faqs.map((f, i) => (
+        withExtras(Astro.url.pathname, product.faqs).map((f, i) => (
           <details class="faq" open={i === 0}>
             <summary>{f.q}</summary>
             <div class="faq-body">

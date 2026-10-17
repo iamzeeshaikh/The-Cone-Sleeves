@@ -1,0 +1,23 @@
+---
+// A FAQ block plus its FAQPage node, for pages that had no FAQs of their own.
+import { extraFaqs, extraHeading } from '../lib/page-faqs';
+import { faqNode } from '../lib/seo';
+const route = Astro.url.pathname;
+const faqs = extraFaqs(route);
+const schema = JSON.stringify({ '@context': 'https://schema.org', ...faqNode(faqs) }).replace(/</g, '\\u003c');
+---
+{faqs.length > 0 && (
+  <section class="section">
+    <div class="container-narrow">
+      <p class="eyebrow eyebrow-line" style="justify-content:center">Questions</p>
+      <h2 class="center" style="margin-bottom:var(--sp-6)">{extraHeading(route)}</h2>
+      {faqs.map((f, i) => (
+        <details class="faq" open={i === 0}>
+          <summary>{f.q}</summary>
+          <div class="faq-body"><p set:html={f.a} /></div>
+        </details>
+      ))}
+    </div>
+    <script type="application/ld+json" is:inline set:html={schema} />
+  </section>
+)}
