@@ -100,7 +100,7 @@ export const POST: APIRoute = async ({ request }) => {
   } catch (err) {
     console.error('quote form send failed', err);
     return json(
-      { ok: false, error: 'We could not send your request. Please email support@conesleeves.com.' },
+      { ok: false, error: 'We could not send your request. Please email info@theconesleeves.com.' },
       502
     );
   }

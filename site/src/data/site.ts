@@ -2,7 +2,7 @@ export const SITE = {
   origin: 'https://www.theconesleeves.com',
   name: 'The Cone Sleeves',
   phone: '+1-503-358-0443',
-  email: 'support@conesleeves.com',
+  email: 'info@theconesleeves.com',
   address: 'Da 408, San Jose, CA 95128, United States',
   streetAddress: 'Da 408',
   addressLocality: 'San Jose',
