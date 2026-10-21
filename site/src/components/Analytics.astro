@@ -2,7 +2,6 @@
 /**
  * Third-party integrations carried over from WordPress, byte-for-byte:
  *   - Google Tag Manager container GTM-K4R5CPR
- *   - Zendesk Chat (Zopim) widget
  * plus the Google tag for GA4 (G-XR2P10889D), which GTM also loads. It is
  * emitted BEFORE the GTM snippet so gtag() owns the instance and the
  * conversion events sent by /ga4-events.js (whatsapp_click, phone_call,
@@ -11,8 +10,10 @@
  * 2026-09-16: after GTM the events are dropped; send_page_view:false drops the
  * page_view.)
  *
- * Both were inline <script> tags in <head> on the live site and are reproduced
- * as-is so the containers keep firing exactly as before. IDs live in
+ * GTM was an inline <script> tag in <head> on the live site and is reproduced
+ * as-is so the container keeps firing exactly as before. Chat is the
+ * LiveChat Desk widget (async external tag, renders in its own shadow root);
+ * it replaced Zendesk Chat on 2026-10-21. IDs live in
  * src/data/site.ts; nothing here is a secret.
  */
 import { INTEGRATIONS } from '../data/site';
@@ -34,24 +35,4 @@ import { INTEGRATIONS } from '../data/site';
   })(window, document, 'script', 'dataLayer', gtmId);
 </script>
 
-<script is:inline define:vars={{ zopimKey: INTEGRATIONS.zopimKey }}>
-  window.$zopim ||
-    (function (d, s) {
-      var z = ($zopim = function (c) {
-          z._.push(c);
-        }),
-        $ = (z.s = d.createElement(s)),
-        e = d.getElementsByTagName(s)[0];
-      z.set = function (o) {
-        z.set._.push(o);
-      };
-      z._ = [];
-      z.set._ = [];
-      $.async = !0;
-      $.setAttribute('charset', 'utf-8');
-      $.src = 'https://v2.zopim.com/?' + zopimKey;
-      z.t = +new Date();
-      $.type = 'text/javascript';
-      e.parentNode.insertBefore($, e);
-    })(document, 'script');
-</script>
+<script is:inline src="https://livechat-desk-omega.vercel.app/w.js" data-site="theconesleeves-com" async></script>
