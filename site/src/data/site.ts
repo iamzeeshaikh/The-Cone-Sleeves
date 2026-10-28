@@ -43,5 +43,6 @@ export const SITE = {
  */
 export const INTEGRATIONS = {
   gtmId: 'GTM-K4R5CPR',
+  zopimKey: '4h3lbyJihoT1mCOqDA0VoQOaVQE9qTOP',
   googleSiteVerification: 'h_UiL3GzyYXjVStjbOcg-4P9bZUGGTUX9cZe1rAWgO8',
 } as const;
